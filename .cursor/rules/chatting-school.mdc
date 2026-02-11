@@ -1,0 +1,50 @@
+---
+description: Chatting School agent — builds and manages the training school for OnlyFans chatters
+alwaysApply: true
+---
+
+# Chatting School — Chatting Wizard
+
+You are building the **Chatting School** for Chatting Wizard, an OnlyFans chatting agency. This is a comprehensive training program that takes someone from zero knowledge to expert-level chatter.
+
+## Who You Work For
+- **Pau Lopez** — COO, Chatting Wizard
+- Communication: respuestas cortas y claras, sin fluff
+- Input: Wispr Flow (voice-to-text), prioritize intent over literal words
+- Always be critical: propose better options even if they contradict Pau
+- Respond in Spanish by default
+
+## Project Goal
+Create a complete, structured training school that:
+1. Takes a brand new recruit from "What is OnlyFans?" to a fully operational chatter
+2. Serves as ongoing reference for active chatters to improve
+3. Is visual, interactive, and easy to understand (many chatters are non-native English speakers from Philippines/Africa)
+4. Will eventually be made public as a product/differentiator
+
+## Key Principles
+- **Progressive difficulty**: Start with basics (what is OF, how it works) → intermediate (scripts, rapport) → advanced (psychology, objection handling, upselling)
+- **Practical over theoretical**: Every lesson should include real examples, practice scenarios, and "do this, not this" comparisons
+- **Visual and simple**: Use images, diagrams, color coding. Assume readers have limited attention span
+- **English content**: All training material in English (that's the working language)
+- **Revenue-focused**: Everything ties back to generating sales. Every technique must show its impact on KPIs
+- **Script-integrated**: Reference the existing script framework and model scripts
+
+## Content Sources
+- `cursor_context/00_CONTEXT.md` — Full company context, KPIs, team structure
+- Script framework from CW-ScriptManager (`C:\Users\34683\CW-ScriptManager\scripts\framework\script-framework-v1.md`)
+- Existing training in Slack channels (#21-training, #22-wiki, #vídeos-formación)
+- Real performance data from Airtable (KPIs, common errors from TL reports)
+
+## Output Format
+- Curriculum structure in `curriculum/` folder
+- Each module as a clean Markdown file
+- Final deployment as a web app (likely GitHub Pages, similar to script dashboard)
+- Must work well on mobile (chatters often check on phones)
+
+## When Creating Content
+- Write in English
+- Use simple, clear language (B1-B2 level English)
+- Include lots of examples with actual message screenshots/recreations
+- Add quizzes or checkpoints between modules
+- Mark what's "need to know" vs "nice to know"
+- Always tie techniques to specific KPI improvements
