@@ -1,0 +1,245 @@
+/* ============================================================
+   Chatting Wizard School — Curriculum Site
+   ============================================================ */
+
+:root {
+  --bg: #f8f7f4;
+  --card: #ffffff;
+  --text: #1a1a2e;
+  --text-light: #6b6b80;
+  --border: #e8e5dd;
+  --accent: #2563eb;
+  --day1: #2563eb;
+  --day2: #7c3aed;
+  --day3: #059669;
+  --day4: #d97706;
+  --day5: #dc2626;
+  --ongoing: #6b7280;
+  --badge-ready: #059669;
+  --badge-wip: #d97706;
+  --badge-soon: #9ca3af;
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* --- Header --- */
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d5e 100%);
+  color: white;
+  padding: 40px 24px;
+  text-align: center;
+}
+.header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+.header p { color: #a0a0c0; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+.header .badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 12px;
+}
+
+/* --- Nav --- */
+.nav {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  background: var(--card);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav a {
+  flex: 1;
+  min-width: 120px;
+  padding: 14px 8px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav a:hover { color: var(--text); background: #f5f5f0; }
+.nav a.day1 { border-bottom-color: var(--day1); color: var(--day1); }
+.nav a.day2 { border-bottom-color: var(--day2); color: var(--day2); }
+.nav a.day3 { border-bottom-color: var(--day3); color: var(--day3); }
+.nav a.day4 { border-bottom-color: var(--day4); color: var(--day4); }
+.nav a.day5 { border-bottom-color: var(--day5); color: var(--day5); }
+.nav a.ongoing { border-bottom-color: var(--ongoing); color: var(--ongoing); }
+
+/* --- Main --- */
+.main { max-width: 900px; margin: 0 auto; padding: 24px 16px 80px; }
+
+/* --- Day Section --- */
+.day-section { margin-bottom: 48px; }
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.day-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.day-header h2 { font-size: 1.4rem; font-weight: 700; }
+.day-subtitle {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  margin-left: 64px;
+}
+.day-outcome {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin-bottom: 16px;
+  margin-left: 64px;
+  font-size: 0.85rem;
+  color: #166534;
+}
+.day-outcome strong { color: #15803d; }
+
+/* --- Module Card --- */
+.module {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  margin-left: 64px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.module:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.module-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+}
+.module-title {
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.module-title .icon { font-size: 1.2rem; }
+.module-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.module-duration {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  background: #f5f5f0;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+.module-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-soon { background: #f3f4f6; color: var(--badge-soon); }
+.badge-wip { background: #fef3c7; color: var(--badge-wip); }
+.badge-ready { background: #d1fae5; color: var(--badge-ready); }
+
+.module-content {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: none;
+}
+.module.open .module-content { display: block; }
+.module-content ul { padding-left: 20px; margin-top: 8px; }
+.module-content li { margin-bottom: 6px; }
+.module-content h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 12px 0 6px;
+}
+
+.toggle-arrow {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  transition: transform 0.2s;
+}
+.module.open .toggle-arrow { transform: rotate(90deg); }
+
+/* --- Ongoing Section --- */
+.ongoing-section { opacity: 0.75; }
+.ongoing-section .module { border-style: dashed; }
+
+/* --- Stats Bar --- */
+.stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 24px 0 40px;
+}
+.stat {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 24px;
+  text-align: center;
+  min-width: 140px;
+}
+.stat-value { font-size: 1.5rem; font-weight: 800; }
+.stat-label { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+  .header h1 { font-size: 1.5rem; }
+  .day-header h2 { font-size: 1.1rem; }
+  .module { margin-left: 0; }
+  .day-subtitle, .day-outcome { margin-left: 0; }
+  .day-number { width: 40px; height: 40px; font-size: 1rem; }
+  .stats { gap: 8px; }
+  .stat { min-width: 100px; padding: 12px 16px; }
+  .nav a { min-width: 80px; font-size: 0.75rem; padding: 10px 4px; }
+}
