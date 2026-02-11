@@ -34,8 +34,12 @@
 ### Chatter Manager
 - Rycel Monique — manages all 3 TLs, responsible for coaching oversight
 
+### Hiring Manager
+- Mileh — responsible for recruiting, interviewing, and onboarding new chatters. Manages the full recruitment pipeline and the 5-day initial training process. Reports to Pau.
+
 ### Coaching Chain
 - Pau → coaches Rycel
+- Pau → oversees Mileh (hiring)
 - Rycel → coaches TLs every 2 days
 - TLs → coach their Chatters every 2 days
 
