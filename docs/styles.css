@@ -81,9 +81,9 @@ body {
   z-index: 1;
 }
 .header-logo {
-  width: 200px;
+  width: 260px;
   height: auto;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   filter: brightness(0) invert(1);
 }
 .header h1 {

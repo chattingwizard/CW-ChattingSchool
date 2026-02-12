@@ -1,0 +1,27 @@
+{
+  "title": "Whiteboard Demo",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "What is OnlyFans?",
+      "subtitle": "Module 1.1 — Foundations",
+      "narration": "Welcome to Chatting Wizard School. Let's learn what OnlyFans is."
+    },
+    {
+      "type": "wb-content",
+      "heading": "A Content Platform",
+      "points": [
+        "Creators share exclusive photos and videos",
+        "Fans pay monthly to access the content",
+        "Chatters talk to fans and drive sales"
+      ],
+      "narration": "OnlyFans is a content platform. Creators share exclusive photos and videos. Fans pay a monthly subscription to see this content. And chatters, like you, talk to fans and drive the sales."
+    },
+    {
+      "type": "wb-outro",
+      "title": "That's the basics!",
+      "subtitle": "Next: Your Role as a Chatter",
+      "narration": "Now you know the basics. Next up, your role as a chatter."
+    }
+  ]
+}
