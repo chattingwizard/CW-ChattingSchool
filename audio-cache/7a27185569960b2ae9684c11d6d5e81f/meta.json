@@ -1,0 +1,414 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "The",
+      "start": 0,
+      "end": 0.163
+    },
+    {
+      "word": "golden",
+      "start": 0.221,
+      "end": 0.488
+    },
+    {
+      "word": "rule",
+      "start": 0.534,
+      "end": 0.743
+    },
+    {
+      "word": "is",
+      "start": 0.766,
+      "end": 0.836
+    },
+    {
+      "word": "simple.",
+      "start": 0.871,
+      "end": 1.324
+    },
+    {
+      "word": "Ignore",
+      "start": 1.567,
+      "end": 1.927
+    },
+    {
+      "word": "it.",
+      "start": 1.962,
+      "end": 2.206
+    },
+    {
+      "word": "Do",
+      "start": 2.531,
+      "end": 2.647
+    },
+    {
+      "word": "not",
+      "start": 2.717,
+      "end": 2.844
+    },
+    {
+      "word": "say",
+      "start": 2.902,
+      "end": 3.077
+    },
+    {
+      "word": "no.",
+      "start": 3.146,
+      "end": 3.541
+    },
+    {
+      "word": "Do",
+      "start": 3.866,
+      "end": 3.982
+    },
+    {
+      "word": "not",
+      "start": 4.04,
+      "end": 4.156
+    },
+    {
+      "word": "explain",
+      "start": 4.203,
+      "end": 4.563
+    },
+    {
+      "word": "why",
+      "start": 4.609,
+      "end": 4.748
+    },
+    {
+      "word": "you",
+      "start": 4.818,
+      "end": 4.899
+    },
+    {
+      "word": "can't.",
+      "start": 4.969,
+      "end": 5.445
+    },
+    {
+      "word": "Do",
+      "start": 5.77,
+      "end": 5.875
+    },
+    {
+      "word": "not",
+      "start": 5.933,
+      "end": 6.049
+    },
+    {
+      "word": "lecture",
+      "start": 6.107,
+      "end": 6.409
+    },
+    {
+      "word": "the",
+      "start": 6.432,
+      "end": 6.502
+    },
+    {
+      "word": "fan.",
+      "start": 6.548,
+      "end": 7.082
+    },
+    {
+      "word": "Just",
+      "start": 7.407,
+      "end": 7.616
+    },
+    {
+      "word": "ignore",
+      "start": 7.663,
+      "end": 7.988
+    },
+    {
+      "word": "the",
+      "start": 8.022,
+      "end": 8.092
+    },
+    {
+      "word": "topic",
+      "start": 8.139,
+      "end": 8.475
+    },
+    {
+      "word": "completely.",
+      "start": 8.522,
+      "end": 9.23
+    },
+    {
+      "word": "Act",
+      "start": 9.555,
+      "end": 9.787
+    },
+    {
+      "word": "like",
+      "start": 9.845,
+      "end": 10.008
+    },
+    {
+      "word": "they",
+      "start": 10.043,
+      "end": 10.182
+    },
+    {
+      "word": "never",
+      "start": 10.275,
+      "end": 10.519
+    },
+    {
+      "word": "said",
+      "start": 10.588,
+      "end": 10.797
+    },
+    {
+      "word": "it.",
+      "start": 10.844,
+      "end": 11.076
+    },
+    {
+      "word": "Change",
+      "start": 11.401,
+      "end": 11.691
+    },
+    {
+      "word": "the",
+      "start": 11.726,
+      "end": 11.796
+    },
+    {
+      "word": "subject.",
+      "start": 11.842,
+      "end": 12.446
+    },
+    {
+      "word": "Ask",
+      "start": 12.829,
+      "end": 13.061
+    },
+    {
+      "word": "them",
+      "start": 13.108,
+      "end": 13.212
+    },
+    {
+      "word": "a",
+      "start": 13.247,
+      "end": 13.27
+    },
+    {
+      "word": "question",
+      "start": 13.328,
+      "end": 13.688
+    },
+    {
+      "word": "about",
+      "start": 13.723,
+      "end": 13.909
+    },
+    {
+      "word": "something",
+      "start": 13.944,
+      "end": 14.222
+    },
+    {
+      "word": "else.",
+      "start": 14.28,
+      "end": 14.675
+    },
+    {
+      "word": "Keep",
+      "start": 15,
+      "end": 15.197
+    },
+    {
+      "word": "the",
+      "start": 15.244,
+      "end": 15.314
+    },
+    {
+      "word": "energy",
+      "start": 15.372,
+      "end": 15.65
+    },
+    {
+      "word": "positive",
+      "start": 15.72,
+      "end": 16.173
+    },
+    {
+      "word": "and",
+      "start": 16.196,
+      "end": 16.266
+    },
+    {
+      "word": "move",
+      "start": 16.312,
+      "end": 16.475
+    },
+    {
+      "word": "on.",
+      "start": 16.533,
+      "end": 16.869
+    },
+    {
+      "word": "If",
+      "start": 17.31,
+      "end": 17.438
+    },
+    {
+      "word": "you",
+      "start": 17.485,
+      "end": 17.566
+    },
+    {
+      "word": "say",
+      "start": 17.636,
+      "end": 17.81
+    },
+    {
+      "word": "no",
+      "start": 17.879,
+      "end": 18.112
+    },
+    {
+      "word": "or",
+      "start": 18.262,
+      "end": 18.425
+    },
+    {
+      "word": "reject",
+      "start": 18.495,
+      "end": 18.785
+    },
+    {
+      "word": "the",
+      "start": 18.82,
+      "end": 18.889
+    },
+    {
+      "word": "fan",
+      "start": 18.924,
+      "end": 19.098
+    },
+    {
+      "word": "directly",
+      "start": 19.145,
+      "end": 19.609
+    },
+    {
+      "word": "you",
+      "start": 20.05,
+      "end": 20.143
+    },
+    {
+      "word": "kill",
+      "start": 20.213,
+      "end": 20.387
+    },
+    {
+      "word": "the",
+      "start": 20.434,
+      "end": 20.503
+    },
+    {
+      "word": "vibe",
+      "start": 20.538,
+      "end": 20.91
+    },
+    {
+      "word": "and",
+      "start": 20.944,
+      "end": 21.107
+    },
+    {
+      "word": "lose",
+      "start": 21.177,
+      "end": 21.397
+    },
+    {
+      "word": "the",
+      "start": 21.432,
+      "end": 21.502
+    },
+    {
+      "word": "sale.",
+      "start": 21.548,
+      "end": 21.978
+    },
+    {
+      "word": "If",
+      "start": 22.674,
+      "end": 22.802
+    },
+    {
+      "word": "you",
+      "start": 22.837,
+      "end": 22.918
+    },
+    {
+      "word": "ignore",
+      "start": 22.976,
+      "end": 23.278
+    },
+    {
+      "word": "it",
+      "start": 23.313,
+      "end": 23.382
+    },
+    {
+      "word": "and",
+      "start": 23.429,
+      "end": 23.499
+    },
+    {
+      "word": "redirect",
+      "start": 23.568,
+      "end": 24.091
+    },
+    {
+      "word": "the",
+      "start": 24.358,
+      "end": 24.451
+    },
+    {
+      "word": "conversation",
+      "start": 24.509,
+      "end": 25.089
+    },
+    {
+      "word": "keeps",
+      "start": 25.147,
+      "end": 25.356
+    },
+    {
+      "word": "flowing",
+      "start": 25.403,
+      "end": 25.774
+    },
+    {
+      "word": "and",
+      "start": 25.925,
+      "end": 26.099
+    },
+    {
+      "word": "the",
+      "start": 26.146,
+      "end": 26.215
+    },
+    {
+      "word": "fan",
+      "start": 26.273,
+      "end": 26.506
+    },
+    {
+      "word": "stays",
+      "start": 26.575,
+      "end": 26.854
+    },
+    {
+      "word": "happy.",
+      "start": 26.912,
+      "end": 27.585
+    }
+  ]
+}

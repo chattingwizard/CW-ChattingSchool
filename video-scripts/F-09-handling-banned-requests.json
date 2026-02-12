@@ -1,39 +1,33 @@
 {
-  "title": "F-09: How to Handle Banned Requests",
+  "title": "F-09: Handling Banned Requests",
   "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
   "scenes": [
     {
       "type": "wb-title",
-      "title": "Handling Banned Requests",
+      "title": "How to Handle Banned Requests",
       "subtitle": "F-09 — Foundations",
-      "narration": "You know the banned topics. Now let's learn exactly what to do when a fan brings one up."
+      "narration": "Now you know the banned topics. But what do you actually do when a fan brings one up? The answer is simple. You ignore it. You never reject it, you never argue about it, you just ignore it and steer the conversation somewhere else."
     },
     {
       "type": "wb-content",
-      "heading": "The 3-Step Response",
-      "points": [
-        "Step 1: Reject — shut it down immediately",
-        "Step 2: Show discomfort — make it clear it's not okay",
-        "Step 3: Redirect — move the conversation somewhere safe"
-      ],
-      "narration": "Three steps. Reject, show discomfort, redirect. Step one, reject. Shut it down immediately. Don't hesitate, don't play along, not even a little. Step two, show discomfort. Make it clear this topic makes the model uncomfortable. Step three, redirect. Move the conversation to something safe and positive. Here's an example. A fan says, can we meet up sometime? You reply, aw babe I wish, but I like keeping this our little private space here. I'd rather show you something special right now. See? Reject, show it's not happening, redirect to content."
+      "heading": "The Golden Rule: Ignore",
+      "narration": "The golden rule is simple. Ignore it. Do not say no. Do not explain why you can't. Do not lecture the fan. Just ignore the topic completely. Act like they never said it. Change the subject. Ask them a question about something else. Keep the energy positive and move on. If you say no or reject the fan directly, you kill the vibe and lose the sale. If you ignore it and redirect, the conversation keeps flowing and the fan stays happy."
     },
     {
       "type": "wb-content",
-      "heading": "What NOT to Do",
-      "points": [
-        "Never play along, not even as a joke",
-        "Never use alternate spellings to get around it",
-        "Never linger on the topic — move on fast",
-        "If the fan keeps pushing → escalate to your Team Leader"
-      ],
-      "narration": "What you must never do. Never play along with a banned topic, not even as a joke. Never use alternate spellings to get around it. Never linger on the subject. Move on fast. And if a fan keeps pushing after you've redirected? Stop trying to handle it yourself. Escalate to your Team Leader immediately. That's what they're there for. Jump on Discord, use your voice, and tell them what's happening. They'll take over."
+      "heading": "Meet-Ups — The Special Case",
+      "narration": "Meet-ups are a special case. When a fan asks to meet up, you do not say yes and you do not say no. You play it in between. There are specific scripts for this. Here is an example. A fan says hey, do you want to meet up? You say, honestly, I would love to find a real connection, but right now is not the right time because I have had some really bad experiences in the past. For now, I would love to keep getting to know you better. Where are you from, by the way? See what happened? You did not reject the fan. You kept the dream alive. You showed vulnerability. And you redirected the conversation. The fan still feels like there is a chance, and they keep spending. That is the script. Never kill the illusion."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Redirect Techniques",
+      "narration": "Here are some redirect techniques you can use after ignoring a banned topic. First, ask a personal question. Something like, tell me something about yourself, or what did you do today? Second, send a selfie or a photo. It changes the topic instantly. Third, bring up something they mentioned before. Like, hey, did you end up going to that concert you told me about? The key is speed. Ignore the banned topic, redirect immediately, and keep the conversation alive. The fan should barely notice you skipped over it."
     },
     {
       "type": "wb-outro",
-      "title": "Foundations Complete!",
-      "subtitle": "Next: Take the Foundations Quiz",
-      "narration": "Quick check. A fan keeps pushing a banned topic after you've redirected. What do you do? Pause. You escalate to your Team Leader immediately. Don't keep trying to handle it alone. Perfect. You've now completed all nine Foundations lessons. You know what OnlyFans is, how money works, what your role is, and the rules you must never break. Next up, take the Foundations quiz to make sure you've got it all down."
+      "title": "Remember",
+      "subtitle": "Ignore — Redirect — Keep Selling",
+      "narration": "Let's recap. When you see a banned topic, ignore it completely. Do not engage, do not reject, do not explain. For meet-ups, use the script. Play it in between, never say yes, never say no. Redirect the conversation to something positive and keep selling. If you get this right, the fan never even notices, and you keep making money."
     }
   ]
 }

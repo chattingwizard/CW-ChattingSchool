@@ -1,0 +1,299 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "Let's",
+      "start": 0,
+      "end": 0.255
+    },
+    {
+      "word": "recap.",
+      "start": 0.313,
+      "end": 0.871
+    },
+    {
+      "word": "When",
+      "start": 1.254,
+      "end": 1.428
+    },
+    {
+      "word": "you",
+      "start": 1.474,
+      "end": 1.556
+    },
+    {
+      "word": "see",
+      "start": 1.625,
+      "end": 1.776
+    },
+    {
+      "word": "a",
+      "start": 1.823,
+      "end": 1.846
+    },
+    {
+      "word": "banned",
+      "start": 1.927,
+      "end": 2.206
+    },
+    {
+      "word": "topic",
+      "start": 2.276,
+      "end": 2.694
+    },
+    {
+      "word": "ignore",
+      "start": 2.937,
+      "end": 3.274
+    },
+    {
+      "word": "it",
+      "start": 3.309,
+      "end": 3.355
+    },
+    {
+      "word": "completely.",
+      "start": 3.402,
+      "end": 4.052
+    },
+    {
+      "word": "Do",
+      "start": 4.656,
+      "end": 4.772
+    },
+    {
+      "word": "not",
+      "start": 4.841,
+      "end": 4.957
+    },
+    {
+      "word": "engage",
+      "start": 5.004,
+      "end": 5.573
+    },
+    {
+      "word": "do",
+      "start": 5.77,
+      "end": 5.886
+    },
+    {
+      "word": "not",
+      "start": 5.968,
+      "end": 6.095
+    },
+    {
+      "word": "reject",
+      "start": 6.142,
+      "end": 6.583
+    },
+    {
+      "word": "do",
+      "start": 6.873,
+      "end": 6.989
+    },
+    {
+      "word": "not",
+      "start": 7.082,
+      "end": 7.245
+    },
+    {
+      "word": "explain.",
+      "start": 7.291,
+      "end": 7.941
+    },
+    {
+      "word": "For",
+      "start": 8.893,
+      "end": 9.056
+    },
+    {
+      "word": "meet-ups",
+      "start": 9.114,
+      "end": 9.555
+    },
+    {
+      "word": "use",
+      "start": 9.741,
+      "end": 9.961
+    },
+    {
+      "word": "the",
+      "start": 9.996,
+      "end": 10.066
+    },
+    {
+      "word": "script.",
+      "start": 10.101,
+      "end": 10.623
+    },
+    {
+      "word": "Play",
+      "start": 10.948,
+      "end": 11.157
+    },
+    {
+      "word": "it",
+      "start": 11.204,
+      "end": 11.262
+    },
+    {
+      "word": "in",
+      "start": 11.308,
+      "end": 11.366
+    },
+    {
+      "word": "between",
+      "start": 11.424,
+      "end": 11.877
+    },
+    {
+      "word": "never",
+      "start": 12.167,
+      "end": 12.399
+    },
+    {
+      "word": "say",
+      "start": 12.457,
+      "end": 12.632
+    },
+    {
+      "word": "yes",
+      "start": 12.69,
+      "end": 13.003
+    },
+    {
+      "word": "never",
+      "start": 13.293,
+      "end": 13.526
+    },
+    {
+      "word": "say",
+      "start": 13.584,
+      "end": 13.746
+    },
+    {
+      "word": "no.",
+      "start": 13.804,
+      "end": 14.234
+    },
+    {
+      "word": "Redirect",
+      "start": 14.617,
+      "end": 15.116
+    },
+    {
+      "word": "the",
+      "start": 15.151,
+      "end": 15.221
+    },
+    {
+      "word": "conversation",
+      "start": 15.255,
+      "end": 15.848
+    },
+    {
+      "word": "to",
+      "start": 15.894,
+      "end": 15.952
+    },
+    {
+      "word": "something",
+      "start": 16.022,
+      "end": 16.312
+    },
+    {
+      "word": "positive",
+      "start": 16.382,
+      "end": 16.974
+    },
+    {
+      "word": "and",
+      "start": 17.032,
+      "end": 17.195
+    },
+    {
+      "word": "keep",
+      "start": 17.264,
+      "end": 17.473
+    },
+    {
+      "word": "selling.",
+      "start": 17.52,
+      "end": 18.03
+    },
+    {
+      "word": "If",
+      "start": 18.472,
+      "end": 18.599
+    },
+    {
+      "word": "you",
+      "start": 18.634,
+      "end": 18.704
+    },
+    {
+      "word": "get",
+      "start": 18.762,
+      "end": 18.878
+    },
+    {
+      "word": "this",
+      "start": 18.913,
+      "end": 19.041
+    },
+    {
+      "word": "right",
+      "start": 19.11,
+      "end": 19.342
+    },
+    {
+      "word": "the",
+      "start": 19.54,
+      "end": 19.644
+    },
+    {
+      "word": "fan",
+      "start": 19.714,
+      "end": 19.923
+    },
+    {
+      "word": "never",
+      "start": 19.981,
+      "end": 20.155
+    },
+    {
+      "word": "even",
+      "start": 20.202,
+      "end": 20.376
+    },
+    {
+      "word": "notices",
+      "start": 20.422,
+      "end": 20.91
+    },
+    {
+      "word": "and",
+      "start": 21.177,
+      "end": 21.305
+    },
+    {
+      "word": "you",
+      "start": 21.351,
+      "end": 21.421
+    },
+    {
+      "word": "keep",
+      "start": 21.479,
+      "end": 21.641
+    },
+    {
+      "word": "making",
+      "start": 21.688,
+      "end": 21.931
+    },
+    {
+      "word": "money.",
+      "start": 21.978,
+      "end": 22.524
+    }
+  ]
+}

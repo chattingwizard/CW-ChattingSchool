@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame, interpolate, useVideoConfig } from "remotion";
 import { WrittenText } from "../components/WrittenText";
 import { DefinitionCard, SummaryCard, CalloutBox } from "../components/VisualElements";
+import { NarrationDisplay } from "../components/NarrationDisplay";
 import { FONT, CW_BLUE, TEXT_COLOR, CARD_BG, BORDER_COLOR, FontImport, BrandedBackground, TopBar, Watermark, CornerMarks, BottomAccentLine, FloatingDots, SideAccentBar } from "../components/Brand";
 
 // ── Trigger timing ──────────────────────────────────────
@@ -147,12 +148,24 @@ export const WhiteboardContentScene = ({
   const headingEndFrame = 5 + headingWords * headingFPW + 10;
 
   const renderContent = () => {
+    // Special visual layouts (definition cards, summary row) keep their designs
     if (layout === "definition-cards" && visuals) {
       return <DefinitionCardsLayout visuals={visuals} wordTimestamps={wordTimestamps} fps={fps} headingEndFrame={headingEndFrame} />;
     }
     if (layout === "summary-row" && visuals) {
       return <SummaryRowLayout visuals={visuals} wordTimestamps={wordTimestamps} fps={fps} headingEndFrame={headingEndFrame} />;
     }
+
+    // DEFAULT: Synced narration display — what you see = what you hear
+    if (wordTimestamps && wordTimestamps.length > 0) {
+      return (
+        <div style={{ marginLeft: 20, marginRight: 20 }}>
+          <NarrationDisplay wordTimestamps={wordTimestamps} fontSize={40} />
+        </div>
+      );
+    }
+
+    // Fallback: bullet cards (only if no wordTimestamps)
     if (points.length > 0) {
       return <BulletCardsLayout points={points} bulletStartFrames={bulletStartFrames} headingDurationFrames={headingDurationFrames} framesPerWord={framesPerWord} />;
     }
