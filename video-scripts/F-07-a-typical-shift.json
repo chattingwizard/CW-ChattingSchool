@@ -1,0 +1,41 @@
+{
+  "title": "F-07: A Typical Shift",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "A Typical Shift",
+      "subtitle": "F-07 — Foundations",
+      "narration": "Let's walk through what a real eight-hour shift looks like, step by step."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Your Shift: Start to Finish",
+      "points": [
+        "Log in → Open the Unread tab first",
+        "Backread active conversations from the last shift",
+        "Prioritize: who needs a reply most?",
+        "Respond using scripts → sell PPVs",
+        "End of shift → write handoff notes for every chat"
+      ],
+      "narration": "Here's your day. You log in and open the Unread tab. That's always your starting point. Then you backread. Check what happened in conversations from the previous shift. Next, prioritize. Who needs your attention first? New subscribers and active conversations come first. Then you start replying, using scripts for every interaction. Throughout your shift, you'll sell PPVs and manage five to fifteen fans at the same time. At the end of your shift, you write handoff notes for every active conversation. The next chatter should be able to pick up without asking you a single question."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Key Rules to Remember",
+      "points": [
+        "Keep reply time under 2 minutes",
+        "You manage 5-15 fans at the same time",
+        "Scripts handle 80% of your messages",
+        "Always log fan info in your notes"
+      ],
+      "narration": "A few key rules. Keep your reply time under two minutes. Fans lose interest if you're slow. You'll manage five to fifteen fans at the same time. That sounds like a lot, but scripts make it manageable. Eighty percent of your messages come from scripts. And always, always log fan info in your notes. Their name, age, job, preferences. Everything you learn goes in the notes. This helps you and every chatter who comes after you."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Banned Topics",
+      "narration": "Quick check. What's the first thing you do when you start your shift? Pause. The answer is open the Unread tab. That's always step one. Great. Next up, the most important rules you must never break. Banned topics."
+    }
+  ]
+}

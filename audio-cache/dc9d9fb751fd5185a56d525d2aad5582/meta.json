@@ -1,0 +1,184 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "Quick",
+      "start": 0,
+      "end": 0.29
+    },
+    {
+      "word": "check.",
+      "start": 0.348,
+      "end": 0.801
+    },
+    {
+      "word": "Do",
+      "start": 1.242,
+      "end": 1.358
+    },
+    {
+      "word": "you",
+      "start": 1.428,
+      "end": 1.509
+    },
+    {
+      "word": "chat",
+      "start": 1.579,
+      "end": 1.8
+    },
+    {
+      "word": "as",
+      "start": 1.846,
+      "end": 1.916
+    },
+    {
+      "word": "yourself",
+      "start": 1.95,
+      "end": 2.438
+    },
+    {
+      "word": "or",
+      "start": 2.647,
+      "end": 2.81
+    },
+    {
+      "word": "as",
+      "start": 2.879,
+      "end": 2.972
+    },
+    {
+      "word": "the",
+      "start": 3.03,
+      "end": 3.1
+    },
+    {
+      "word": "model?",
+      "start": 3.146,
+      "end": 3.646
+    },
+    {
+      "word": "Pause.",
+      "start": 4.156,
+      "end": 4.702
+    },
+    {
+      "word": "The",
+      "start": 5.085,
+      "end": 5.213
+    },
+    {
+      "word": "answer",
+      "start": 5.271,
+      "end": 5.538
+    },
+    {
+      "word": "is",
+      "start": 5.596,
+      "end": 5.677
+    },
+    {
+      "word": "always",
+      "start": 5.735,
+      "end": 6.06
+    },
+    {
+      "word": "as",
+      "start": 6.142,
+      "end": 6.316
+    },
+    {
+      "word": "the",
+      "start": 6.385,
+      "end": 6.455
+    },
+    {
+      "word": "model.",
+      "start": 6.513,
+      "end": 7.001
+    },
+    {
+      "word": "Never",
+      "start": 7.326,
+      "end": 7.605
+    },
+    {
+      "word": "as",
+      "start": 7.674,
+      "end": 7.755
+    },
+    {
+      "word": "yourself.",
+      "start": 7.814,
+      "end": 8.429
+    },
+    {
+      "word": "Good.",
+      "start": 9.125,
+      "end": 9.555
+    },
+    {
+      "word": "Next",
+      "start": 10.368,
+      "end": 10.728
+    },
+    {
+      "word": "let's",
+      "start": 10.844,
+      "end": 11.053
+    },
+    {
+      "word": "see",
+      "start": 11.088,
+      "end": 11.238
+    },
+    {
+      "word": "what",
+      "start": 11.262,
+      "end": 11.378
+    },
+    {
+      "word": "a",
+      "start": 11.413,
+      "end": 11.436
+    },
+    {
+      "word": "full",
+      "start": 11.482,
+      "end": 11.668
+    },
+    {
+      "word": "shift",
+      "start": 11.726,
+      "end": 11.958
+    },
+    {
+      "word": "looks",
+      "start": 12.005,
+      "end": 12.19
+    },
+    {
+      "word": "like",
+      "start": 12.225,
+      "end": 12.376
+    },
+    {
+      "word": "from",
+      "start": 12.399,
+      "end": 12.527
+    },
+    {
+      "word": "start",
+      "start": 12.597,
+      "end": 12.841
+    },
+    {
+      "word": "to",
+      "start": 12.875,
+      "end": 12.934
+    },
+    {
+      "word": "finish.",
+      "start": 12.992,
+      "end": 13.7
+    }
+  ]
+}

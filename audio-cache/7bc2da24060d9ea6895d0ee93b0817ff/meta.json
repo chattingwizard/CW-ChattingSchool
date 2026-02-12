@@ -1,0 +1,359 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "Here's",
+      "start": 0,
+      "end": 0.313
+    },
+    {
+      "word": "the",
+      "start": 0.348,
+      "end": 0.418
+    },
+    {
+      "word": "most",
+      "start": 0.464,
+      "end": 0.65
+    },
+    {
+      "word": "important",
+      "start": 0.697,
+      "end": 1.08
+    },
+    {
+      "word": "thing",
+      "start": 1.115,
+      "end": 1.265
+    },
+    {
+      "word": "to",
+      "start": 1.312,
+      "end": 1.358
+    },
+    {
+      "word": "understand.",
+      "start": 1.428,
+      "end": 2.148
+    },
+    {
+      "word": "You",
+      "start": 2.844,
+      "end": 2.995
+    },
+    {
+      "word": "chat",
+      "start": 3.088,
+      "end": 3.297
+    },
+    {
+      "word": "with",
+      "start": 3.332,
+      "end": 3.448
+    },
+    {
+      "word": "fans",
+      "start": 3.506,
+      "end": 3.808
+    },
+    {
+      "word": "as",
+      "start": 3.866,
+      "end": 3.994
+    },
+    {
+      "word": "the",
+      "start": 4.063,
+      "end": 4.133
+    },
+    {
+      "word": "model.",
+      "start": 4.18,
+      "end": 4.714
+    },
+    {
+      "word": "You",
+      "start": 5.097,
+      "end": 5.224
+    },
+    {
+      "word": "are",
+      "start": 5.283,
+      "end": 5.41
+    },
+    {
+      "word": "not",
+      "start": 5.445,
+      "end": 5.584
+    },
+    {
+      "word": "yourself.",
+      "start": 5.631,
+      "end": 6.293
+    },
+    {
+      "word": "You",
+      "start": 6.502,
+      "end": 6.653
+    },
+    {
+      "word": "are",
+      "start": 6.711,
+      "end": 6.838
+    },
+    {
+      "word": "her.",
+      "start": 6.885,
+      "end": 7.291
+    },
+    {
+      "word": "If",
+      "start": 7.674,
+      "end": 7.814
+    },
+    {
+      "word": "a",
+      "start": 7.872,
+      "end": 7.895
+    },
+    {
+      "word": "fan",
+      "start": 7.964,
+      "end": 8.185
+    },
+    {
+      "word": "says",
+      "start": 8.266,
+      "end": 8.487
+    },
+    {
+      "word": "hey",
+      "start": 8.568,
+      "end": 8.731
+    },
+    {
+      "word": "sexy",
+      "start": 8.8,
+      "end": 9.288
+    },
+    {
+      "word": "you",
+      "start": 9.578,
+      "end": 9.671
+    },
+    {
+      "word": "don't",
+      "start": 9.706,
+      "end": 9.845
+    },
+    {
+      "word": "reply",
+      "start": 9.88,
+      "end": 10.159
+    },
+    {
+      "word": "as",
+      "start": 10.217,
+      "end": 10.275
+    },
+    {
+      "word": "yourself.",
+      "start": 10.321,
+      "end": 10.983
+    },
+    {
+      "word": "You",
+      "start": 11.308,
+      "end": 11.447
+    },
+    {
+      "word": "reply",
+      "start": 11.517,
+      "end": 11.819
+    },
+    {
+      "word": "as",
+      "start": 11.877,
+      "end": 11.947
+    },
+    {
+      "word": "the",
+      "start": 11.993,
+      "end": 12.063
+    },
+    {
+      "word": "model.",
+      "start": 12.109,
+      "end": 12.643
+    },
+    {
+      "word": "If",
+      "start": 13.34,
+      "end": 13.479
+    },
+    {
+      "word": "she's",
+      "start": 13.526,
+      "end": 13.723
+    },
+    {
+      "word": "playful",
+      "start": 13.769,
+      "end": 14.199
+    },
+    {
+      "word": "and",
+      "start": 14.269,
+      "end": 14.338
+    },
+    {
+      "word": "uses",
+      "start": 14.408,
+      "end": 14.675
+    },
+    {
+      "word": "lots",
+      "start": 14.768,
+      "end": 15.012
+    },
+    {
+      "word": "of",
+      "start": 15.047,
+      "end": 15.105
+    },
+    {
+      "word": "emojis",
+      "start": 15.151,
+      "end": 15.732
+    },
+    {
+      "word": "so",
+      "start": 16.057,
+      "end": 16.231
+    },
+    {
+      "word": "do",
+      "start": 16.301,
+      "end": 16.359
+    },
+    {
+      "word": "you.",
+      "start": 16.44,
+      "end": 16.765
+    },
+    {
+      "word": "If",
+      "start": 17.462,
+      "end": 17.589
+    },
+    {
+      "word": "she's",
+      "start": 17.636,
+      "end": 17.833
+    },
+    {
+      "word": "more",
+      "start": 17.868,
+      "end": 18.007
+    },
+    {
+      "word": "sophisticated",
+      "start": 18.042,
+      "end": 18.716
+    },
+    {
+      "word": "you",
+      "start": 18.774,
+      "end": 18.855
+    },
+    {
+      "word": "match",
+      "start": 18.948,
+      "end": 19.18
+    },
+    {
+      "word": "that",
+      "start": 19.226,
+      "end": 19.389
+    },
+    {
+      "word": "tone.",
+      "start": 19.435,
+      "end": 19.842
+    },
+    {
+      "word": "The",
+      "start": 20.353,
+      "end": 20.469
+    },
+    {
+      "word": "fan",
+      "start": 20.527,
+      "end": 20.724
+    },
+    {
+      "word": "must",
+      "start": 20.77,
+      "end": 20.933
+    },
+    {
+      "word": "always",
+      "start": 21.003,
+      "end": 21.305
+    },
+    {
+      "word": "believe",
+      "start": 21.351,
+      "end": 21.595
+    },
+    {
+      "word": "they're",
+      "start": 21.618,
+      "end": 21.781
+    },
+    {
+      "word": "talking",
+      "start": 21.804,
+      "end": 22.094
+    },
+    {
+      "word": "to",
+      "start": 22.129,
+      "end": 22.175
+    },
+    {
+      "word": "the",
+      "start": 22.222,
+      "end": 22.291
+    },
+    {
+      "word": "real",
+      "start": 22.349,
+      "end": 22.547
+    },
+    {
+      "word": "model.",
+      "start": 22.593,
+      "end": 23.011
+    },
+    {
+      "word": "Never",
+      "start": 23.336,
+      "end": 23.557
+    },
+    {
+      "word": "break",
+      "start": 23.603,
+      "end": 23.789
+    },
+    {
+      "word": "that",
+      "start": 23.836,
+      "end": 23.963
+    },
+    {
+      "word": "illusion.",
+      "start": 24.01,
+      "end": 24.753
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "Three",
+      "start": 0,
+      "end": 0.279
+    },
+    {
+      "word": "steps.",
+      "start": 0.325,
+      "end": 0.848
+    },
+    {
+      "word": "Reject",
+      "start": 1.149,
+      "end": 1.602
+    },
+    {
+      "word": "show",
+      "start": 2.125,
+      "end": 2.31
+    },
+    {
+      "word": "discomfort",
+      "start": 2.368,
+      "end": 2.902
+    },
+    {
+      "word": "redirect.",
+      "start": 3.355,
+      "end": 4.017
+    },
+    {
+      "word": "Step",
+      "start": 4.888,
+      "end": 5.132
+    },
+    {
+      "word": "one",
+      "start": 5.224,
+      "end": 5.515
+    },
+    {
+      "word": "reject.",
+      "start": 5.689,
+      "end": 6.269
+    },
+    {
+      "word": "Shut",
+      "start": 7.024,
+      "end": 7.21
+    },
+    {
+      "word": "it",
+      "start": 7.245,
+      "end": 7.303
+    },
+    {
+      "word": "down",
+      "start": 7.326,
+      "end": 7.465
+    },
+    {
+      "word": "immediately.",
+      "start": 7.5,
+      "end": 8.173
+    },
+    {
+      "word": "Don't",
+      "start": 8.824,
+      "end": 9.033
+    },
+    {
+      "word": "hesitate",
+      "start": 9.067,
+      "end": 9.578
+    },
+    {
+      "word": "don't",
+      "start": 9.834,
+      "end": 10.043
+    },
+    {
+      "word": "play",
+      "start": 10.066,
+      "end": 10.217
+    },
+    {
+      "word": "along",
+      "start": 10.263,
+      "end": 10.577
+    },
+    {
+      "word": "not",
+      "start": 10.786,
+      "end": 10.925
+    },
+    {
+      "word": "even",
+      "start": 10.971,
+      "end": 11.111
+    },
+    {
+      "word": "a",
+      "start": 11.146,
+      "end": 11.157
+    },
+    {
+      "word": "little.",
+      "start": 11.192,
+      "end": 11.552
+    },
+    {
+      "word": "Step",
+      "start": 12.295,
+      "end": 12.55
+    },
+    {
+      "word": "two",
+      "start": 12.608,
+      "end": 12.829
+    },
+    {
+      "word": "show",
+      "start": 13.212,
+      "end": 13.421
+    },
+    {
+      "word": "discomfort.",
+      "start": 13.491,
+      "end": 14.141
+    },
+    {
+      "word": "Make",
+      "start": 15.163,
+      "end": 15.348
+    },
+    {
+      "word": "it",
+      "start": 15.383,
+      "end": 15.441
+    },
+    {
+      "word": "clear",
+      "start": 15.488,
+      "end": 15.697
+    },
+    {
+      "word": "this",
+      "start": 15.755,
+      "end": 15.871
+    },
+    {
+      "word": "topic",
+      "start": 15.917,
+      "end": 16.219
+    },
+    {
+      "word": "makes",
+      "start": 16.266,
+      "end": 16.44
+    },
+    {
+      "word": "the",
+      "start": 16.475,
+      "end": 16.533
+    },
+    {
+      "word": "model",
+      "start": 16.567,
+      "end": 16.788
+    },
+    {
+      "word": "uncomfortable.",
+      "start": 16.869,
+      "end": 17.612
+    },
+    {
+      "word": "Step",
+      "start": 18.645,
+      "end": 18.889
+    },
+    {
+      "word": "three",
+      "start": 18.936,
+      "end": 19.295
+    },
+    {
+      "word": "redirect.",
+      "start": 19.551,
+      "end": 20.201
+    },
+    {
+      "word": "Move",
+      "start": 21.234,
+      "end": 21.432
+    },
+    {
+      "word": "the",
+      "start": 21.467,
+      "end": 21.536
+    },
+    {
+      "word": "conversation",
+      "start": 21.559,
+      "end": 22.152
+    },
+    {
+      "word": "to",
+      "start": 22.198,
+      "end": 22.244
+    },
+    {
+      "word": "something",
+      "start": 22.302,
+      "end": 22.593
+    },
+    {
+      "word": "safe",
+      "start": 22.662,
+      "end": 22.906
+    },
+    {
+      "word": "and",
+      "start": 22.941,
+      "end": 23.011
+    },
+    {
+      "word": "positive.",
+      "start": 23.069,
+      "end": 23.672
+    },
+    {
+      "word": "Here's",
+      "start": 24.056,
+      "end": 24.276
+    },
+    {
+      "word": "an",
+      "start": 24.299,
+      "end": 24.346
+    },
+    {
+      "word": "example.",
+      "start": 24.392,
+      "end": 24.938
+    },
+    {
+      "word": "A",
+      "start": 25.321,
+      "end": 25.402
+    },
+    {
+      "word": "fan",
+      "start": 25.472,
+      "end": 25.681
+    },
+    {
+      "word": "says",
+      "start": 25.762,
+      "end": 26.076
+    },
+    {
+      "word": "can",
+      "start": 26.447,
+      "end": 26.575
+    },
+    {
+      "word": "we",
+      "start": 26.633,
+      "end": 26.714
+    },
+    {
+      "word": "meet",
+      "start": 26.772,
+      "end": 26.912
+    },
+    {
+      "word": "up",
+      "start": 26.946,
+      "end": 27.028
+    },
+    {
+      "word": "sometime?",
+      "start": 27.074,
+      "end": 27.62
+    },
+    {
+      "word": "You",
+      "start": 28.224,
+      "end": 28.363
+    },
+    {
+      "word": "reply",
+      "start": 28.433,
+      "end": 28.804
+    },
+    {
+      "word": "aw",
+      "start": 28.92,
+      "end": 29.071
+    },
+    {
+      "word": "babe",
+      "start": 29.129,
+      "end": 29.338
+    },
+    {
+      "word": "I",
+      "start": 29.373,
+      "end": 29.396
+    },
+    {
+      "word": "wish",
+      "start": 29.477,
+      "end": 29.71
+    },
+    {
+      "word": "but",
+      "start": 29.756,
+      "end": 29.919
+    },
+    {
+      "word": "I",
+      "start": 30.093,
+      "end": 30.151
+    },
+    {
+      "word": "like",
+      "start": 30.267,
+      "end": 30.418
+    },
+    {
+      "word": "keeping",
+      "start": 30.453,
+      "end": 30.72
+    },
+    {
+      "word": "this",
+      "start": 30.755,
+      "end": 30.871
+    },
+    {
+      "word": "our",
+      "start": 30.917,
+      "end": 30.998
+    },
+    {
+      "word": "little",
+      "start": 31.045,
+      "end": 31.219
+    },
+    {
+      "word": "private",
+      "start": 31.254,
+      "end": 31.579
+    },
+    {
+      "word": "space",
+      "start": 31.602,
+      "end": 31.904
+    },
+    {
+      "word": "here.",
+      "start": 31.939,
+      "end": 32.241
+    },
+    {
+      "word": "I'd",
+      "start": 32.751,
+      "end": 32.879
+    },
+    {
+      "word": "rather",
+      "start": 32.914,
+      "end": 33.1
+    },
+    {
+      "word": "show",
+      "start": 33.135,
+      "end": 33.262
+    },
+    {
+      "word": "you",
+      "start": 33.297,
+      "end": 33.367
+    },
+    {
+      "word": "something",
+      "start": 33.413,
+      "end": 33.657
+    },
+    {
+      "word": "special",
+      "start": 33.704,
+      "end": 34.04
+    },
+    {
+      "word": "right",
+      "start": 34.087,
+      "end": 34.238
+    },
+    {
+      "word": "now.",
+      "start": 34.272,
+      "end": 34.563
+    },
+    {
+      "word": "See?",
+      "start": 35.259,
+      "end": 35.642
+    },
+    {
+      "word": "Reject",
+      "start": 36.339,
+      "end": 36.78
+    },
+    {
+      "word": "show",
+      "start": 37.535,
+      "end": 37.779
+    },
+    {
+      "word": "it's",
+      "start": 37.848,
+      "end": 37.964
+    },
+    {
+      "word": "not",
+      "start": 38.011,
+      "end": 38.139
+    },
+    {
+      "word": "happening",
+      "start": 38.185,
+      "end": 38.58
+    },
+    {
+      "word": "redirect",
+      "start": 39.021,
+      "end": 39.45
+    },
+    {
+      "word": "to",
+      "start": 39.474,
+      "end": 39.52
+    },
+    {
+      "word": "content.",
+      "start": 39.578,
+      "end": 40.356
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "Now",
+      "start": 0,
+      "end": 0.197
+    },
+    {
+      "word": "let's",
+      "start": 0.244,
+      "end": 0.418
+    },
+    {
+      "word": "talk",
+      "start": 0.464,
+      "end": 0.639
+    },
+    {
+      "word": "about",
+      "start": 0.685,
+      "end": 0.871
+    },
+    {
+      "word": "money.",
+      "start": 0.917,
+      "end": 1.312
+    },
+    {
+      "word": "Where",
+      "start": 1.637,
+      "end": 1.881
+    },
+    {
+      "word": "it",
+      "start": 1.916,
+      "end": 1.985
+    },
+    {
+      "word": "comes",
+      "start": 2.032,
+      "end": 2.276
+    },
+    {
+      "word": "from",
+      "start": 2.334,
+      "end": 2.577
+    },
+    {
+      "word": "where",
+      "start": 2.868,
+      "end": 3.1
+    },
+    {
+      "word": "it",
+      "start": 3.135,
+      "end": 3.204
+    },
+    {
+      "word": "goes",
+      "start": 3.262,
+      "end": 3.622
+    },
+    {
+      "word": "and",
+      "start": 3.947,
+      "end": 4.098
+    },
+    {
+      "word": "how",
+      "start": 4.168,
+      "end": 4.307
+    },
+    {
+      "word": "you",
+      "start": 4.377,
+      "end": 4.47
+    },
+    {
+      "word": "earn",
+      "start": 4.563,
+      "end": 4.76
+    },
+    {
+      "word": "from",
+      "start": 4.807,
+      "end": 4.946
+    },
+    {
+      "word": "every",
+      "start": 5.039,
+      "end": 5.294
+    },
+    {
+      "word": "sale.",
+      "start": 5.364,
+      "end": 5.991
+    }
+  ]
+}

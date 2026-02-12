@@ -1,0 +1,399 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "You",
+      "start": 0,
+      "end": 0.163
+    },
+    {
+      "word": "have",
+      "start": 0.232,
+      "end": 0.383
+    },
+    {
+      "word": "two",
+      "start": 0.43,
+      "end": 0.65
+    },
+    {
+      "word": "goals",
+      "start": 0.731,
+      "end": 0.998
+    },
+    {
+      "word": "in",
+      "start": 1.045,
+      "end": 1.103
+    },
+    {
+      "word": "every",
+      "start": 1.173,
+      "end": 1.37
+    },
+    {
+      "word": "conversation.",
+      "start": 1.428,
+      "end": 2.287
+    },
+    {
+      "word": "One",
+      "start": 2.891,
+      "end": 3.274
+    },
+    {
+      "word": "build",
+      "start": 3.483,
+      "end": 3.738
+    },
+    {
+      "word": "a",
+      "start": 3.785,
+      "end": 3.808
+    },
+    {
+      "word": "connection.",
+      "start": 3.855,
+      "end": 4.47
+    },
+    {
+      "word": "Make",
+      "start": 5.074,
+      "end": 5.271
+    },
+    {
+      "word": "the",
+      "start": 5.294,
+      "end": 5.364
+    },
+    {
+      "word": "fan",
+      "start": 5.41,
+      "end": 5.642
+    },
+    {
+      "word": "feel",
+      "start": 5.724,
+      "end": 5.921
+    },
+    {
+      "word": "special",
+      "start": 5.991,
+      "end": 6.478
+    },
+    {
+      "word": "seen",
+      "start": 6.711,
+      "end": 7.07
+    },
+    {
+      "word": "important.",
+      "start": 7.256,
+      "end": 7.918
+    },
+    {
+      "word": "Two",
+      "start": 8.615,
+      "end": 8.94
+    },
+    {
+      "word": "sell",
+      "start": 9.323,
+      "end": 9.543
+    },
+    {
+      "word": "content.",
+      "start": 9.625,
+      "end": 10.228
+    },
+    {
+      "word": "PPVs",
+      "start": 10.925,
+      "end": 11.61
+    },
+    {
+      "word": "and",
+      "start": 11.691,
+      "end": 11.854
+    },
+    {
+      "word": "customs.",
+      "start": 11.935,
+      "end": 12.574
+    },
+    {
+      "word": "That's",
+      "start": 13.27,
+      "end": 13.514
+    },
+    {
+      "word": "how",
+      "start": 13.56,
+      "end": 13.653
+    },
+    {
+      "word": "money",
+      "start": 13.711,
+      "end": 13.909
+    },
+    {
+      "word": "is",
+      "start": 13.944,
+      "end": 14.025
+    },
+    {
+      "word": "made.",
+      "start": 14.083,
+      "end": 14.454
+    },
+    {
+      "word": "And",
+      "start": 15.267,
+      "end": 15.418
+    },
+    {
+      "word": "here's",
+      "start": 15.476,
+      "end": 15.673
+    },
+    {
+      "word": "the",
+      "start": 15.697,
+      "end": 15.766
+    },
+    {
+      "word": "good",
+      "start": 15.79,
+      "end": 15.94
+    },
+    {
+      "word": "news.",
+      "start": 15.987,
+      "end": 16.358
+    },
+    {
+      "word": "You",
+      "start": 17.171,
+      "end": 17.287
+    },
+    {
+      "word": "don't",
+      "start": 17.334,
+      "end": 17.473
+    },
+    {
+      "word": "have",
+      "start": 17.496,
+      "end": 17.601
+    },
+    {
+      "word": "to",
+      "start": 17.624,
+      "end": 17.67
+    },
+    {
+      "word": "figure",
+      "start": 17.717,
+      "end": 17.972
+    },
+    {
+      "word": "out",
+      "start": 17.995,
+      "end": 18.1
+    },
+    {
+      "word": "what",
+      "start": 18.123,
+      "end": 18.239
+    },
+    {
+      "word": "to",
+      "start": 18.274,
+      "end": 18.32
+    },
+    {
+      "word": "say.",
+      "start": 18.402,
+      "end": 18.878
+    },
+    {
+      "word": "You",
+      "start": 19.574,
+      "end": 19.714
+    },
+    {
+      "word": "use",
+      "start": 19.806,
+      "end": 19.969
+    },
+    {
+      "word": "scripts",
+      "start": 20.004,
+      "end": 20.294
+    },
+    {
+      "word": "for",
+      "start": 20.329,
+      "end": 20.445
+    },
+    {
+      "word": "eighty",
+      "start": 20.526,
+      "end": 20.747
+    },
+    {
+      "word": "percent",
+      "start": 20.805,
+      "end": 21.084
+    },
+    {
+      "word": "of",
+      "start": 21.118,
+      "end": 21.165
+    },
+    {
+      "word": "your",
+      "start": 21.211,
+      "end": 21.304
+    },
+    {
+      "word": "messages.",
+      "start": 21.351,
+      "end": 22.036
+    },
+    {
+      "word": "You",
+      "start": 22.279,
+      "end": 22.407
+    },
+    {
+      "word": "type",
+      "start": 22.477,
+      "end": 22.709
+    },
+    {
+      "word": "slash",
+      "start": 22.744,
+      "end": 23.104
+    },
+    {
+      "word": "n",
+      "start": 23.15,
+      "end": 23.429
+    },
+    {
+      "word": "and",
+      "start": 23.8,
+      "end": 23.928
+    },
+    {
+      "word": "the",
+      "start": 23.974,
+      "end": 24.044
+    },
+    {
+      "word": "perfect",
+      "start": 24.114,
+      "end": 24.485
+    },
+    {
+      "word": "welcome",
+      "start": 24.543,
+      "end": 24.88
+    },
+    {
+      "word": "message",
+      "start": 24.915,
+      "end": 25.24
+    },
+    {
+      "word": "appears.",
+      "start": 25.263,
+      "end": 25.902
+    },
+    {
+      "word": "The",
+      "start": 26.598,
+      "end": 26.726
+    },
+    {
+      "word": "fan",
+      "start": 26.796,
+      "end": 27.005
+    },
+    {
+      "word": "responds",
+      "start": 27.074,
+      "end": 27.597
+    },
+    {
+      "word": "the",
+      "start": 28.096,
+      "end": 28.201
+    },
+    {
+      "word": "script",
+      "start": 28.235,
+      "end": 28.514
+    },
+    {
+      "word": "tells",
+      "start": 28.537,
+      "end": 28.735
+    },
+    {
+      "word": "you",
+      "start": 28.769,
+      "end": 28.839
+    },
+    {
+      "word": "what",
+      "start": 28.874,
+      "end": 28.99
+    },
+    {
+      "word": "to",
+      "start": 29.025,
+      "end": 29.071
+    },
+    {
+      "word": "say",
+      "start": 29.118,
+      "end": 29.28
+    },
+    {
+      "word": "next.",
+      "start": 29.35,
+      "end": 29.861
+    },
+    {
+      "word": "It's",
+      "start": 30.186,
+      "end": 30.36
+    },
+    {
+      "word": "like",
+      "start": 30.395,
+      "end": 30.522
+    },
+    {
+      "word": "having",
+      "start": 30.569,
+      "end": 30.79
+    },
+    {
+      "word": "a",
+      "start": 30.848,
+      "end": 30.871
+    },
+    {
+      "word": "cheat",
+      "start": 30.94,
+      "end": 31.184
+    },
+    {
+      "word": "code.",
+      "start": 31.242,
+      "end": 31.858
+    }
+  ]
+}

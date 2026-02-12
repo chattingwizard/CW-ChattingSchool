@@ -1,0 +1,384 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "A",
+      "start": 0,
+      "end": 0.093
+    },
+    {
+      "word": "few",
+      "start": 0.209,
+      "end": 0.383
+    },
+    {
+      "word": "key",
+      "start": 0.453,
+      "end": 0.639
+    },
+    {
+      "word": "rules.",
+      "start": 0.697,
+      "end": 1.138
+    },
+    {
+      "word": "Keep",
+      "start": 1.834,
+      "end": 2.032
+    },
+    {
+      "word": "your",
+      "start": 2.078,
+      "end": 2.171
+    },
+    {
+      "word": "reply",
+      "start": 2.218,
+      "end": 2.485
+    },
+    {
+      "word": "time",
+      "start": 2.543,
+      "end": 2.786
+    },
+    {
+      "word": "under",
+      "start": 2.833,
+      "end": 3.03
+    },
+    {
+      "word": "two",
+      "start": 3.088,
+      "end": 3.274
+    },
+    {
+      "word": "minutes.",
+      "start": 3.344,
+      "end": 3.831
+    },
+    {
+      "word": "Fans",
+      "start": 4.435,
+      "end": 4.76
+    },
+    {
+      "word": "lose",
+      "start": 4.818,
+      "end": 5.016
+    },
+    {
+      "word": "interest",
+      "start": 5.074,
+      "end": 5.387
+    },
+    {
+      "word": "if",
+      "start": 5.433,
+      "end": 5.492
+    },
+    {
+      "word": "you're",
+      "start": 5.526,
+      "end": 5.689
+    },
+    {
+      "word": "slow.",
+      "start": 5.712,
+      "end": 6.2
+    },
+    {
+      "word": "You'll",
+      "start": 6.803,
+      "end": 7.012
+    },
+    {
+      "word": "manage",
+      "start": 7.047,
+      "end": 7.303
+    },
+    {
+      "word": "five",
+      "start": 7.338,
+      "end": 7.593
+    },
+    {
+      "word": "to",
+      "start": 7.616,
+      "end": 7.663
+    },
+    {
+      "word": "fifteen",
+      "start": 7.732,
+      "end": 8.104
+    },
+    {
+      "word": "fans",
+      "start": 8.173,
+      "end": 8.464
+    },
+    {
+      "word": "at",
+      "start": 8.499,
+      "end": 8.557
+    },
+    {
+      "word": "the",
+      "start": 8.591,
+      "end": 8.661
+    },
+    {
+      "word": "same",
+      "start": 8.696,
+      "end": 8.916
+    },
+    {
+      "word": "time.",
+      "start": 8.951,
+      "end": 9.346
+    },
+    {
+      "word": "That",
+      "start": 10.043,
+      "end": 10.217
+    },
+    {
+      "word": "sounds",
+      "start": 10.263,
+      "end": 10.472
+    },
+    {
+      "word": "like",
+      "start": 10.495,
+      "end": 10.612
+    },
+    {
+      "word": "a",
+      "start": 10.635,
+      "end": 10.658
+    },
+    {
+      "word": "lot",
+      "start": 10.716,
+      "end": 11.006
+    },
+    {
+      "word": "but",
+      "start": 11.273,
+      "end": 11.436
+    },
+    {
+      "word": "scripts",
+      "start": 11.494,
+      "end": 11.796
+    },
+    {
+      "word": "make",
+      "start": 11.842,
+      "end": 11.981
+    },
+    {
+      "word": "it",
+      "start": 12.016,
+      "end": 12.074
+    },
+    {
+      "word": "manageable.",
+      "start": 12.121,
+      "end": 12.759
+    },
+    {
+      "word": "Eighty",
+      "start": 13.456,
+      "end": 13.7
+    },
+    {
+      "word": "percent",
+      "start": 13.746,
+      "end": 14.025
+    },
+    {
+      "word": "of",
+      "start": 14.048,
+      "end": 14.094
+    },
+    {
+      "word": "your",
+      "start": 14.129,
+      "end": 14.222
+    },
+    {
+      "word": "messages",
+      "start": 14.269,
+      "end": 14.675
+    },
+    {
+      "word": "come",
+      "start": 14.733,
+      "end": 14.896
+    },
+    {
+      "word": "from",
+      "start": 14.919,
+      "end": 15.047
+    },
+    {
+      "word": "scripts.",
+      "start": 15.105,
+      "end": 15.673
+    },
+    {
+      "word": "And",
+      "start": 16.37,
+      "end": 16.556
+    },
+    {
+      "word": "always",
+      "start": 16.649,
+      "end": 17.136
+    },
+    {
+      "word": "always",
+      "start": 17.276,
+      "end": 17.647
+    },
+    {
+      "word": "log",
+      "start": 17.717,
+      "end": 17.937
+    },
+    {
+      "word": "fan",
+      "start": 18.007,
+      "end": 18.228
+    },
+    {
+      "word": "info",
+      "start": 18.297,
+      "end": 18.622
+    },
+    {
+      "word": "in",
+      "start": 18.692,
+      "end": 18.762
+    },
+    {
+      "word": "your",
+      "start": 18.808,
+      "end": 18.924
+    },
+    {
+      "word": "notes.",
+      "start": 18.982,
+      "end": 19.4
+    },
+    {
+      "word": "Their",
+      "start": 20.004,
+      "end": 20.213
+    },
+    {
+      "word": "name",
+      "start": 20.271,
+      "end": 20.654
+    },
+    {
+      "word": "age",
+      "start": 20.817,
+      "end": 21.293
+    },
+    {
+      "word": "job",
+      "start": 21.467,
+      "end": 21.838
+    },
+    {
+      "word": "preferences.",
+      "start": 22.001,
+      "end": 22.837
+    },
+    {
+      "word": "Everything",
+      "start": 23.441,
+      "end": 23.824
+    },
+    {
+      "word": "you",
+      "start": 23.87,
+      "end": 23.951
+    },
+    {
+      "word": "learn",
+      "start": 24.021,
+      "end": 24.218
+    },
+    {
+      "word": "goes",
+      "start": 24.276,
+      "end": 24.485
+    },
+    {
+      "word": "in",
+      "start": 24.532,
+      "end": 24.59
+    },
+    {
+      "word": "the",
+      "start": 24.625,
+      "end": 24.694
+    },
+    {
+      "word": "notes.",
+      "start": 24.752,
+      "end": 25.24
+    },
+    {
+      "word": "This",
+      "start": 25.937,
+      "end": 26.146
+    },
+    {
+      "word": "helps",
+      "start": 26.204,
+      "end": 26.413
+    },
+    {
+      "word": "you",
+      "start": 26.471,
+      "end": 26.587
+    },
+    {
+      "word": "and",
+      "start": 26.657,
+      "end": 26.738
+    },
+    {
+      "word": "every",
+      "start": 26.796,
+      "end": 26.993
+    },
+    {
+      "word": "chatter",
+      "start": 27.051,
+      "end": 27.33
+    },
+    {
+      "word": "who",
+      "start": 27.365,
+      "end": 27.458
+    },
+    {
+      "word": "comes",
+      "start": 27.504,
+      "end": 27.701
+    },
+    {
+      "word": "after",
+      "start": 27.748,
+      "end": 27.98
+    },
+    {
+      "word": "you.",
+      "start": 28.038,
+      "end": 28.514
+    }
+  ]
+}

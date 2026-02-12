@@ -1,0 +1,39 @@
+{
+  "title": "F-09: How to Handle Banned Requests",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Handling Banned Requests",
+      "subtitle": "F-09 — Foundations",
+      "narration": "You know the banned topics. Now let's learn exactly what to do when a fan brings one up."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The 3-Step Response",
+      "points": [
+        "Step 1: Reject — shut it down immediately",
+        "Step 2: Show discomfort — make it clear it's not okay",
+        "Step 3: Redirect — move the conversation somewhere safe"
+      ],
+      "narration": "Three steps. Reject, show discomfort, redirect. Step one, reject. Shut it down immediately. Don't hesitate, don't play along, not even a little. Step two, show discomfort. Make it clear this topic makes the model uncomfortable. Step three, redirect. Move the conversation to something safe and positive. Here's an example. A fan says, can we meet up sometime? You reply, aw babe I wish, but I like keeping this our little private space here. I'd rather show you something special right now. See? Reject, show it's not happening, redirect to content."
+    },
+    {
+      "type": "wb-content",
+      "heading": "What NOT to Do",
+      "points": [
+        "Never play along, not even as a joke",
+        "Never use alternate spellings to get around it",
+        "Never linger on the topic — move on fast",
+        "If the fan keeps pushing → escalate to your Team Leader"
+      ],
+      "narration": "What you must never do. Never play along with a banned topic, not even as a joke. Never use alternate spellings to get around it. Never linger on the subject. Move on fast. And if a fan keeps pushing after you've redirected? Stop trying to handle it yourself. Escalate to your Team Leader immediately. That's what they're there for. Jump on Discord, use your voice, and tell them what's happening. They'll take over."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Foundations Complete!",
+      "subtitle": "Next: Take the Foundations Quiz",
+      "narration": "Quick check. A fan keeps pushing a banned topic after you've redirected. What do you do? Pause. You escalate to your Team Leader immediately. Don't keep trying to handle it alone. Perfect. You've now completed all nine Foundations lessons. You know what OnlyFans is, how money works, what your role is, and the rules you must never break. Next up, take the Foundations quiz to make sure you've got it all down."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "title": "F-08: The Banned Topics List",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Banned Topics",
+      "subtitle": "F-08 — Foundations",
+      "narration": "This is the most critical lesson in the entire training. Breaking these rules means instant termination. Pay attention."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Zero Tolerance — Instant Termination",
+      "points": [
+        "Underage references — any mention of minors",
+        "Non-consensual acts — anything forced",
+        "Meet-ups — never agree to meet in person",
+        "Illegal substances — drugs of any kind",
+        "Outside payments — Venmo, CashApp, crypto"
+      ],
+      "narration": "These topics will get you fired instantly. And they can get the creator's account permanently banned from OnlyFans. Underage references. Any mention of minors in any context. Zero tolerance. Non-consensual acts. Anything involving force or lack of consent. Meet-ups. Never agree to meet a fan in person, ever. Illegal substances. No drug references, no exceptions. And outside payment methods. Never accept or suggest Venmo, CashApp, crypto, or anything outside OnlyFans. All payments go through the platform."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Also Banned",
+      "points": [
+        "Extreme fetishes that violate platform rules",
+        "Racism or hate speech of any kind",
+        "These are OnlyFans rules — not just ours",
+        "Breaking them = account ban + you're fired"
+      ],
+      "narration": "Also banned. Extreme fetishes that violate OnlyFans terms of service. And racism or hate speech of any kind. These aren't just our rules. These are OnlyFans platform rules. If you break them, the creator's account gets banned. That means the creator loses their income, the agency loses a client, and you lose your job. Immediately. No second chances."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Handling Banned Requests",
+      "narration": "Quick check. A fan asks to meet up in person. What do you do? Pause. You reject it immediately. This is a banned topic. No discussion. Good. Next, let's learn exactly how to handle these situations when they come up."
+    }
+  ]
+}
