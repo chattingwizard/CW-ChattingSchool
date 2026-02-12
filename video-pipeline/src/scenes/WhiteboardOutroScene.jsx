@@ -2,9 +2,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame, interpolate } from "remotion";
 import { DrawnCheckmark } from "../components/DrawnPath";
 import { WrittenText } from "../components/WrittenText";
-
-const FONT = '"Patrick Hand", "Segoe Print", cursive';
-const BG = "#f7f3eb";
+import { FONT, CW_BLUE, TEXT_COLOR, TEXT_LIGHT, CARD_BG, BORDER_COLOR, FontImport, BrandedBackground, TopBar, Watermark, CornerMarks, BottomAccentLine, FloatingDots } from "../components/Brand";
 
 export const WhiteboardOutroScene = ({
   title,
@@ -12,115 +10,73 @@ export const WhiteboardOutroScene = ({
   framesPerWord = 6,
 }) => {
   const frame = useCurrentFrame();
-
   const headingFPW = Math.max(2, Math.round(framesPerWord * 0.5));
 
   const cardOpacity = interpolate(frame, [0, 15], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
   const cardScale = interpolate(frame, [0, 15], [0.9, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: BG, fontFamily: FONT }}>
-      {/* Top accent bar */}
+    <AbsoluteFill style={{ fontFamily: FONT }}>
+      <FontImport />
+      <BrandedBackground />
+      <TopBar height={50} />
+
+      {/* Decorative elements */}
+      <CornerMarks />
+      <FloatingDots />
+      <BottomAccentLine />
+
+      {/* True vertical center below top bar */}
       <div
         style={{
           position: "absolute",
-          top: 0,
+          top: 50,
           left: 0,
           right: 0,
-          height: 6,
-          background: "linear-gradient(90deg, #16a34a, #2563eb)",
+          bottom: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
-      />
-
-      {/* Grid lines */}
-      <svg
-        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-        preserveAspectRatio="none"
       >
-        {Array.from({ length: 18 }).map((_, i) => (
-          <line
-            key={i}
-            x1="0"
-            y1={`${(i + 1) * 5.5}%`}
-            x2="100%"
-            y2={`${(i + 1) * 5.5}%`}
-            stroke="#e8e3d8"
-            strokeWidth="0.5"
-          />
-        ))}
-      </svg>
-
-      {/* Center card */}
       <div
         style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: `translate(-50%, -50%) scale(${cardScale})`,
+          transform: `scale(${cardScale})`,
           opacity: cardOpacity,
           textAlign: "center",
         }}
       >
         <div
           style={{
-            backgroundColor: "#ffffff",
+            backgroundColor: CARD_BG,
             borderRadius: 24,
             padding: "50px 80px 60px",
-            boxShadow: "0 4px 30px rgba(0,0,0,0.06)",
-            border: "2px solid #e0dbd0",
-            borderTop: "5px solid #16a34a",
+            boxShadow: "0 8px 40px rgba(11,125,186,0.15), 0 2px 10px rgba(0,0,0,0.05)",
+            border: `2px solid ${BORDER_COLOR}`,
+            borderTop: `6px solid ${CW_BLUE}`,
           }}
         >
-          {/* Drawn checkmark */}
-          <svg
-            style={{
-              width: 100,
-              height: 100,
-              marginBottom: 20,
-              overflow: "visible",
-            }}
-          >
-            <DrawnCheckmark
-              x={10}
-              y={10}
-              size={80}
-              startFrame={5}
-              duration={18}
-              stroke="#16a34a"
-              strokeWidth={5}
-            />
+          <svg style={{ width: 100, height: 100, marginBottom: 20, overflow: "visible" }}>
+            <DrawnCheckmark x={10} y={10} size={80} startFrame={5} duration={18} stroke={CW_BLUE} strokeWidth={5} />
           </svg>
 
-          <h2
-            style={{
-              color: "#2d2d2d",
-              fontSize: 50,
-              fontWeight: 400,
-              margin: 0,
-            }}
-          >
-            <WrittenText
-              text={title || "Lesson Complete!"}
-              startFrame={15}
-              framesPerWord={headingFPW}
-            />
+          <h2 style={{ color: TEXT_COLOR, fontSize: 48, fontWeight: 700, margin: 0 }}>
+            <WrittenText text={title || "Lesson Complete!"} startFrame={15} framesPerWord={headingFPW} />
           </h2>
 
           {subtitle && (
             <p
               style={{
-                color: "#7c7c78",
-                fontSize: 28,
+                color: TEXT_LIGHT,
+                fontSize: 26,
+                fontWeight: 500,
                 marginTop: 16,
                 opacity: interpolate(frame, [35, 55], [0, 1], {
-                  extrapolateLeft: "clamp",
-                  extrapolateRight: "clamp",
+                  extrapolateLeft: "clamp", extrapolateRight: "clamp",
                 }),
               }}
             >
@@ -129,20 +85,9 @@ export const WhiteboardOutroScene = ({
           )}
         </div>
       </div>
-
-      {/* Bottom branding */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 22,
-          right: 36,
-          color: "#b8b4aa",
-          fontSize: 16,
-          fontFamily: FONT,
-        }}
-      >
-        Chatting Wizard School
       </div>
+
+      <Watermark />
     </AbsoluteFill>
   );
 };

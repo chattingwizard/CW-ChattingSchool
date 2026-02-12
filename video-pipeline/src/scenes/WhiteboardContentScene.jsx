@@ -1,288 +1,237 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } from "remotion";
+import { AbsoluteFill, useCurrentFrame, interpolate, useVideoConfig } from "remotion";
 import { WrittenText } from "../components/WrittenText";
-import { DrawnCircle, DrawnUnderline } from "../components/DrawnPath";
+import { DefinitionCard, SummaryCard, CalloutBox } from "../components/VisualElements";
+import { FONT, CW_BLUE, TEXT_COLOR, CARD_BG, BORDER_COLOR, FontImport, BrandedBackground, TopBar, Watermark, CornerMarks, BottomAccentLine, FloatingDots, SideAccentBar } from "../components/Brand";
 
-const FONT = '"Patrick Hand", "Segoe Print", cursive';
-const BG = "#f7f3eb";
+// ── Trigger timing ──────────────────────────────────────
 
-const PANEL_COLORS = [
-  { bg: "#e8f4fd", border: "#bdd9f0", accent: "#2563eb" },
-  { bg: "#e8f8e8", border: "#b8e8b8", accent: "#16a34a" },
-  { bg: "#f3e8fd", border: "#d4b8f0", accent: "#7c3aed" },
-  { bg: "#fff3e0", border: "#f0d8a8", accent: "#d97706" },
-  { bg: "#fde8e8", border: "#f0b8b8", accent: "#dc2626" },
-];
+function findTriggerFrame(wordTimestamps, trigger, fps) {
+  if (!wordTimestamps || !trigger) return null;
+  const lowerTrigger = trigger.toLowerCase();
+  const match = wordTimestamps.find((wt) => {
+    const cleanWord = wt.word.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cleanWord === lowerTrigger;
+  });
+  return match ? Math.round(match.start * fps) : null;
+}
+
+// ── Layout: Definition Cards ────────────────────────────
+
+const DefinitionCardsLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
+  const definitions = (visuals || []).filter((v) => v.type === "definition");
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", marginLeft: 20, marginRight: 20 }}>
+      {definitions.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame = headingEndFrame + i * Math.round(2.5 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <DefinitionCard
+            key={i}
+            term={v.term}
+            definition={v.definition}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+// ── Layout: Summary Row ─────────────────────────────────
+
+const SummaryRowLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
+  const summaryCards = (visuals || []).filter((v) => v.type === "summary-card");
+  const callouts = (visuals || []).filter((v) => v.type === "callout");
+
+  return (
+    <div style={{ marginLeft: 20, marginRight: 20 }}>
+      <div style={{ display: "flex", gap: 18 }}>
+        {summaryCards.map((v, i) => {
+          const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+          const fallbackFrame = headingEndFrame + i * Math.round(1.5 * fps);
+          const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+          return (
+            <SummaryCard
+              key={i}
+              term={v.term}
+              short={v.short}
+              icon={v.icon}
+              color={v.color}
+              startFrame={startFrame}
+            />
+          );
+        })}
+      </div>
+
+      {callouts.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame = headingEndFrame + summaryCards.length * Math.round(1.5 * fps) + Math.round(3 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <CalloutBox
+            key={`callout-${i}`}
+            text={v.text}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+// ── Layout: Bullet Cards (fallback) ─────────────────────
+
+const BulletCardsLayout = ({ points, bulletStartFrames, headingDurationFrames, framesPerWord }) => {
+  const frame = useCurrentFrame();
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 14, marginLeft: 20 }}>
+      {points.map((point, i) => {
+        const bulletStart = bulletStartFrames[i] || (headingDurationFrames + i * 50);
+        const cardOpacity = interpolate(
+          frame,
+          [bulletStart, bulletStart + 12],
+          [0, 1],
+          { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+        );
+        return (
+          <div
+            key={i}
+            style={{
+              backgroundColor: CARD_BG,
+              borderLeft: `5px solid ${CW_BLUE}`,
+              borderRadius: 14,
+              padding: "18px 28px",
+              opacity: cardOpacity,
+              boxShadow: "0 4px 16px rgba(11,125,186,0.1)",
+            }}
+          >
+            <span style={{ color: TEXT_COLOR, fontSize: 32, lineHeight: 1.5, fontWeight: 500 }}>
+              <WrittenText text={point} startFrame={bulletStart + 6} framesPerWord={framesPerWord} />
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+// ── Main Scene Component ────────────────────────────────
 
 export const WhiteboardContentScene = ({
   heading,
   points = [],
-  text,
+  layout,
+  visuals,
+  narration,
   framesPerWord = 8,
   bulletStartFrames = [],
   headingDurationFrames = 45,
+  wordTimestamps,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   const headingFPW = Math.max(2, Math.round(framesPerWord * 0.4));
+  const headingWords = heading ? heading.split(" ").length : 0;
+  const headingEndFrame = 5 + headingWords * headingFPW + 10;
 
-  // Fallback bullet timing if not provided
-  const effectiveBulletStarts = bulletStartFrames.length > 0
-    ? bulletStartFrames
-    : points.map((_, i) => headingDurationFrames + 10 + i * 50);
+  const renderContent = () => {
+    if (layout === "definition-cards" && visuals) {
+      return <DefinitionCardsLayout visuals={visuals} wordTimestamps={wordTimestamps} fps={fps} headingEndFrame={headingEndFrame} />;
+    }
+    if (layout === "summary-row" && visuals) {
+      return <SummaryRowLayout visuals={visuals} wordTimestamps={wordTimestamps} fps={fps} headingEndFrame={headingEndFrame} />;
+    }
+    if (points.length > 0) {
+      return <BulletCardsLayout points={points} bulletStartFrames={bulletStartFrames} headingDurationFrames={headingDurationFrames} framesPerWord={framesPerWord} />;
+    }
+    return null;
+  };
 
   return (
-    <AbsoluteFill style={{ backgroundColor: BG, fontFamily: FONT }}>
-      {/* Colored top accent bar */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 6,
-          background: "linear-gradient(90deg, #2563eb, #7c3aed)",
-        }}
-      />
+    <AbsoluteFill style={{ fontFamily: FONT }}>
+      <FontImport />
+      <BrandedBackground />
+      <TopBar height={50} />
+
+      {/* Decorative elements */}
+      <CornerMarks />
+      <FloatingDots />
+      <BottomAccentLine />
+      <SideAccentBar side="right" />
 
       {/* Left accent bar */}
       <div
         style={{
           position: "absolute",
-          top: 6,
+          top: 50,
           left: 0,
-          width: 6,
-          bottom: 0,
-          backgroundColor: "#2563eb",
-          opacity: 0.3,
+          width: 5,
+          height: 180,
+          background: `linear-gradient(to bottom, ${CW_BLUE}, transparent)`,
+          opacity: 0.35,
+          borderRadius: "0 2px 2px 0",
         }}
       />
 
-      {/* Subtle grid lines */}
-      <svg
-        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-        preserveAspectRatio="none"
-      >
-        {Array.from({ length: 18 }).map((_, i) => (
-          <line
-            key={i}
-            x1="0"
-            y1={`${(i + 1) * 5.5}%`}
-            x2="100%"
-            y2={`${(i + 1) * 5.5}%`}
-            stroke="#e8e3d8"
-            strokeWidth="0.5"
-          />
-        ))}
-      </svg>
-
-      {/* Main content area */}
+      {/* Main content area — VERTICALLY CENTERED below top bar */}
       <div
         style={{
+          position: "absolute",
+          top: 50,
+          left: 0,
+          right: 0,
+          bottom: 0,
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-start",
-          padding: "60px 100px 60px 80px",
-          height: "100%",
+          justifyContent: "center",
+          padding: "20px 60px 50px 50px",
         }}
       >
-        {/* Heading area */}
+        {/* Heading */}
         {heading && (
-          <div
-            style={{
-              position: "relative",
-              marginBottom: 36,
-              marginLeft: 20,
-            }}
-          >
+          <div style={{ position: "relative", marginBottom: 24, marginLeft: 20 }}>
             <div
               style={{
-                backgroundColor: "#ffffff",
+                backgroundColor: CARD_BG,
                 borderRadius: 14,
-                padding: "18px 32px 24px",
+                padding: "14px 28px 18px",
                 display: "inline-block",
-                boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-                border: "1.5px solid #e0dbd0",
-                position: "relative",
+                boxShadow: "0 4px 20px rgba(11,125,186,0.12)",
+                border: `1.5px solid ${BORDER_COLOR}`,
+                borderLeft: `6px solid ${CW_BLUE}`,
               }}
             >
               <h2
                 style={{
-                  color: "#2d2d2d",
-                  fontSize: 50,
-                  fontWeight: 400,
+                  color: TEXT_COLOR,
+                  fontSize: 42,
+                  fontWeight: 700,
                   margin: 0,
                   lineHeight: 1.3,
                 }}
               >
-                <WrittenText
-                  text={heading}
-                  startFrame={5}
-                  framesPerWord={headingFPW}
-                />
+                <WrittenText text={heading} startFrame={5} framesPerWord={headingFPW} />
               </h2>
-
-              <svg
-                style={{
-                  position: "absolute",
-                  bottom: 8,
-                  left: 32,
-                  width: Math.min(heading.length * 24, 700),
-                  height: 15,
-                  overflow: "visible",
-                }}
-              >
-                <DrawnUnderline
-                  x={0}
-                  y={8}
-                  width={Math.min(heading.length * 24, 700)}
-                  startFrame={5 + heading.split(" ").length * headingFPW + 3}
-                  duration={12}
-                  stroke="#2563eb"
-                  strokeWidth={2.5}
-                />
-              </svg>
             </div>
           </div>
         )}
 
-        {/* Bullet points as colored cards */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 16, marginLeft: 20 }}>
-          {points.map((point, i) => {
-            const bulletStart = effectiveBulletStarts[i] || (headingDurationFrames + i * 50);
-            const colors = PANEL_COLORS[i % PANEL_COLORS.length];
-
-            const cardOpacity = interpolate(
-              frame,
-              [bulletStart, bulletStart + 12],
-              [0, 1],
-              { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-            );
-
-            const cardProgress = spring({
-              frame: Math.max(0, frame - bulletStart),
-              fps,
-              config: { damping: 200 },
-            });
-            const cardY = interpolate(cardProgress, [0, 1], [25, 0]);
-            const cardScale = interpolate(cardProgress, [0, 1], [0.97, 1]);
-
-            return (
-              <div
-                key={i}
-                style={{
-                  backgroundColor: colors.bg,
-                  border: `2px solid ${colors.border}`,
-                  borderRadius: 16,
-                  padding: "18px 28px",
-                  display: "flex",
-                  alignItems: "flex-start",
-                  opacity: cardOpacity,
-                  transform: `translateY(${cardY}px) scale(${cardScale})`,
-                  position: "relative",
-                  borderLeft: `5px solid ${colors.accent}`,
-                }}
-              >
-                {/* Drawn bullet circle */}
-                <svg
-                  style={{
-                    width: 28,
-                    height: 28,
-                    marginRight: 18,
-                    marginTop: 6,
-                    flexShrink: 0,
-                    overflow: "visible",
-                  }}
-                >
-                  <DrawnCircle
-                    cx={14}
-                    cy={14}
-                    r={10}
-                    startFrame={bulletStart + 3}
-                    duration={8}
-                    stroke={colors.accent}
-                    strokeWidth={2.5}
-                  />
-                </svg>
-
-                {/* Bullet text — synced to narration speed */}
-                <span
-                  style={{
-                    color: "#2d2d2d",
-                    fontSize: 34,
-                    lineHeight: 1.5,
-                  }}
-                >
-                  <WrittenText
-                    text={point}
-                    startFrame={bulletStart + 6}
-                    framesPerWord={framesPerWord}
-                  />
-                </span>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Plain text (when no bullets) */}
-        {text && points.length === 0 && (
-          <div
-            style={{
-              backgroundColor: "#ffffff",
-              borderRadius: 16,
-              padding: "24px 32px",
-              marginLeft: 20,
-              border: "1.5px solid #e0dbd0",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
-            }}
-          >
-            <p
-              style={{
-                color: "#2d2d2d",
-                fontSize: 34,
-                lineHeight: 1.7,
-                margin: 0,
-              }}
-            >
-              <WrittenText
-                text={text}
-                startFrame={headingDurationFrames + 5}
-                framesPerWord={framesPerWord}
-              />
-            </p>
-          </div>
-        )}
+        {renderContent()}
       </div>
 
-      {/* Bottom branding */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 20,
-          right: 36,
-          color: "#b8b4aa",
-          fontSize: 16,
-          fontFamily: FONT,
-        }}
-      >
-        Chatting Wizard School
-      </div>
-
-      {/* Decorative corner element */}
-      <svg
-        style={{
-          position: "absolute",
-          bottom: 50,
-          left: 30,
-          width: 60,
-          height: 60,
-          opacity: 0.15,
-        }}
-      >
-        <circle cx="20" cy="20" r="12" fill="none" stroke="#2563eb" strokeWidth="1.5" />
-        <circle cx="45" cy="40" r="8" fill="none" stroke="#7c3aed" strokeWidth="1.5" />
-      </svg>
+      <Watermark />
     </AbsoluteFill>
   );
 };

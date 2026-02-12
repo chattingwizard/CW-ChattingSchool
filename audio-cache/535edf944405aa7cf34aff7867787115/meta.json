@@ -1,0 +1,84 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "Welcome",
+      "start": 0,
+      "end": 0.418
+    },
+    {
+      "word": "to",
+      "start": 0.453,
+      "end": 0.511
+    },
+    {
+      "word": "Chatting",
+      "start": 0.58,
+      "end": 0.906
+    },
+    {
+      "word": "Wizard",
+      "start": 0.952,
+      "end": 1.231
+    },
+    {
+      "word": "School.",
+      "start": 1.277,
+      "end": 1.718
+    },
+    {
+      "word": "This",
+      "start": 1.962,
+      "end": 2.148
+    },
+    {
+      "word": "is",
+      "start": 2.194,
+      "end": 2.264
+    },
+    {
+      "word": "your",
+      "start": 2.31,
+      "end": 2.426
+    },
+    {
+      "word": "first",
+      "start": 2.473,
+      "end": 2.705
+    },
+    {
+      "word": "lesson.",
+      "start": 2.763,
+      "end": 3.228
+    },
+    {
+      "word": "Let's",
+      "start": 3.402,
+      "end": 3.611
+    },
+    {
+      "word": "start",
+      "start": 3.646,
+      "end": 3.866
+    },
+    {
+      "word": "with",
+      "start": 3.889,
+      "end": 4.005
+    },
+    {
+      "word": "who",
+      "start": 4.04,
+      "end": 4.156
+    },
+    {
+      "word": "we",
+      "start": 4.214,
+      "end": 4.296
+    },
+    {
+      "word": "are.",
+      "start": 4.354,
+      "end": 4.876
+    }
+  ]
+}

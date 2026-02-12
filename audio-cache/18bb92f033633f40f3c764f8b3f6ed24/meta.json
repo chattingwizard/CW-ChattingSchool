@@ -1,0 +1,279 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "Important.",
+      "start": 0,
+      "end": 0.685
+    },
+    {
+      "word": "All",
+      "start": 1.382,
+      "end": 1.591
+    },
+    {
+      "word": "team",
+      "start": 1.649,
+      "end": 1.823
+    },
+    {
+      "word": "communication",
+      "start": 1.881,
+      "end": 2.438
+    },
+    {
+      "word": "happens",
+      "start": 2.496,
+      "end": 2.798
+    },
+    {
+      "word": "on",
+      "start": 2.844,
+      "end": 2.926
+    },
+    {
+      "word": "Discord.",
+      "start": 2.984,
+      "end": 3.553
+    },
+    {
+      "word": "And",
+      "start": 3.831,
+      "end": 3.971
+    },
+    {
+      "word": "we",
+      "start": 4.029,
+      "end": 4.11
+    },
+    {
+      "word": "use",
+      "start": 4.18,
+      "end": 4.365
+    },
+    {
+      "word": "voice",
+      "start": 4.423,
+      "end": 4.899
+    },
+    {
+      "word": "not",
+      "start": 5.05,
+      "end": 5.236
+    },
+    {
+      "word": "text.",
+      "start": 5.271,
+      "end": 5.793
+    },
+    {
+      "word": "If",
+      "start": 6.49,
+      "end": 6.618
+    },
+    {
+      "word": "you",
+      "start": 6.653,
+      "end": 6.722
+    },
+    {
+      "word": "have",
+      "start": 6.78,
+      "end": 6.873
+    },
+    {
+      "word": "a",
+      "start": 6.896,
+      "end": 6.92
+    },
+    {
+      "word": "question",
+      "start": 6.966,
+      "end": 7.326
+    },
+    {
+      "word": "during",
+      "start": 7.372,
+      "end": 7.57
+    },
+    {
+      "word": "your",
+      "start": 7.605,
+      "end": 7.709
+    },
+    {
+      "word": "shift",
+      "start": 7.767,
+      "end": 8.081
+    },
+    {
+      "word": "jump",
+      "start": 8.371,
+      "end": 8.568
+    },
+    {
+      "word": "on",
+      "start": 8.626,
+      "end": 8.696
+    },
+    {
+      "word": "Discord",
+      "start": 8.754,
+      "end": 9.172
+    },
+    {
+      "word": "and",
+      "start": 9.207,
+      "end": 9.288
+    },
+    {
+      "word": "talk",
+      "start": 9.334,
+      "end": 9.509
+    },
+    {
+      "word": "to",
+      "start": 9.555,
+      "end": 9.601
+    },
+    {
+      "word": "your",
+      "start": 9.648,
+      "end": 9.752
+    },
+    {
+      "word": "Team",
+      "start": 9.799,
+      "end": 9.985
+    },
+    {
+      "word": "Leader.",
+      "start": 10.043,
+      "end": 10.472
+    },
+    {
+      "word": "Out",
+      "start": 11.076,
+      "end": 11.285
+    },
+    {
+      "word": "loud.",
+      "start": 11.331,
+      "end": 11.749
+    },
+    {
+      "word": "With",
+      "start": 12.353,
+      "end": 12.539
+    },
+    {
+      "word": "your",
+      "start": 12.585,
+      "end": 12.69
+    },
+    {
+      "word": "voice.",
+      "start": 12.748,
+      "end": 13.27
+    },
+    {
+      "word": "We",
+      "start": 14.083,
+      "end": 14.222
+    },
+    {
+      "word": "do",
+      "start": 14.292,
+      "end": 14.373
+    },
+    {
+      "word": "this",
+      "start": 14.431,
+      "end": 14.559
+    },
+    {
+      "word": "because",
+      "start": 14.605,
+      "end": 14.872
+    },
+    {
+      "word": "it's",
+      "start": 14.896,
+      "end": 15.023
+    },
+    {
+      "word": "faster",
+      "start": 15.07,
+      "end": 15.523
+    },
+    {
+      "word": "clearer",
+      "start": 15.79,
+      "end": 16.185
+    },
+    {
+      "word": "and",
+      "start": 16.452,
+      "end": 16.591
+    },
+    {
+      "word": "we",
+      "start": 16.638,
+      "end": 16.707
+    },
+    {
+      "word": "want",
+      "start": 16.777,
+      "end": 16.951
+    },
+    {
+      "word": "you",
+      "start": 16.986,
+      "end": 17.067
+    },
+    {
+      "word": "comfortable",
+      "start": 17.137,
+      "end": 17.555
+    },
+    {
+      "word": "speaking.",
+      "start": 17.578,
+      "end": 18.112
+    },
+    {
+      "word": "Get",
+      "start": 18.437,
+      "end": 18.6
+    },
+    {
+      "word": "used",
+      "start": 18.669,
+      "end": 18.832
+    },
+    {
+      "word": "to",
+      "start": 18.855,
+      "end": 18.913
+    },
+    {
+      "word": "it",
+      "start": 18.994,
+      "end": 19.052
+    },
+    {
+      "word": "from",
+      "start": 19.087,
+      "end": 19.215
+    },
+    {
+      "word": "day",
+      "start": 19.273,
+      "end": 19.412
+    },
+    {
+      "word": "one.",
+      "start": 19.494,
+      "end": 20.063
+    }
+  ]
+}

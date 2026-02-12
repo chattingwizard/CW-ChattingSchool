@@ -1,0 +1,69 @@
+{
+  "wordTimestamps": [
+    {
+      "word": "Before",
+      "start": 0,
+      "end": 0.348
+    },
+    {
+      "word": "you",
+      "start": 0.383,
+      "end": 0.453
+    },
+    {
+      "word": "start",
+      "start": 0.511,
+      "end": 0.731
+    },
+    {
+      "word": "chatting",
+      "start": 0.778,
+      "end": 1.149
+    },
+    {
+      "word": "you",
+      "start": 1.556,
+      "end": 1.672
+    },
+    {
+      "word": "need",
+      "start": 1.741,
+      "end": 1.904
+    },
+    {
+      "word": "to",
+      "start": 1.939,
+      "end": 1.985
+    },
+    {
+      "word": "understand",
+      "start": 2.055,
+      "end": 2.426
+    },
+    {
+      "word": "the",
+      "start": 2.461,
+      "end": 2.531
+    },
+    {
+      "word": "platform",
+      "start": 2.566,
+      "end": 2.984
+    },
+    {
+      "word": "you're",
+      "start": 3.007,
+      "end": 3.158
+    },
+    {
+      "word": "working",
+      "start": 3.181,
+      "end": 3.437
+    },
+    {
+      "word": "on.",
+      "start": 3.506,
+      "end": 3.994
+    }
+  ]
+}

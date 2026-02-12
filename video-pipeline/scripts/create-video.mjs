@@ -50,6 +50,36 @@ if (!ELEVENLABS_API_KEY) {
 const FPS = 30;
 const DEFAULT_VOICE_ID = "21m00Tcm4TlvDq8ikWAM";
 const DEFAULT_MODEL = "eleven_multilingual_v2";
+const AUDIO_CACHE_DIR = path.resolve(PROJECT_ROOT, "audio-cache");
+
+// ============================================================
+//  Audio caching helpers
+// ============================================================
+
+import crypto from "crypto";
+
+function audioCacheKey(text, voiceId) {
+  const hash = crypto.createHash("md5").update(`${voiceId}::${text}`).digest("hex");
+  return hash;
+}
+
+function getCachedAudio(cacheKey) {
+  const dir = path.join(AUDIO_CACHE_DIR, cacheKey);
+  const audioPath = path.join(dir, "audio.mp3");
+  const metaPath = path.join(dir, "meta.json");
+  if (fs.existsSync(audioPath) && fs.existsSync(metaPath)) {
+    const meta = JSON.parse(fs.readFileSync(metaPath, "utf-8"));
+    return { audioPath, wordTimestamps: meta.wordTimestamps };
+  }
+  return null;
+}
+
+function saveAudioCache(cacheKey, audioBuffer, wordTimestamps) {
+  const dir = path.join(AUDIO_CACHE_DIR, cacheKey);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, "audio.mp3"), audioBuffer);
+  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ wordTimestamps }, null, 2));
+}
 
 // ============================================================
 //  Audio generation WITH timestamps (for sync)
@@ -243,7 +273,25 @@ async function processScenes(videoScript) {
 
     if (scene.narration) {
       const audioPath = path.join(AUDIO_DIR, `scene-${i}.mp3`);
-      const { wordTimestamps } = await generateAudioWithTimestamps(scene.narration, audioPath, voiceId);
+      const cacheKey = audioCacheKey(scene.narration, voiceId);
+      const cached = getCachedAudio(cacheKey);
+
+      let wordTimestamps;
+      if (cached) {
+        // Use cached audio — no ElevenLabs API call
+        fs.copyFileSync(cached.audioPath, audioPath);
+        wordTimestamps = cached.wordTimestamps;
+        console.log(`  ✅  Audio loaded from cache (0 chars used)`);
+        console.log(`  🔤  Got ${(wordTimestamps || []).length} word timestamps (cached)`);
+      } else {
+        // Generate fresh audio and cache it
+        const result = await generateAudioWithTimestamps(scene.narration, audioPath, voiceId);
+        wordTimestamps = result.wordTimestamps;
+        // Save to cache for future re-renders
+        const audioBuffer = fs.readFileSync(audioPath);
+        saveAudioCache(cacheKey, audioBuffer, wordTimestamps);
+        console.log(`  💾  Audio cached for future re-renders`);
+      }
 
       const durationSec = await getAudioDuration(audioPath);
       durationInFrames = Math.ceil((durationSec + 1.5) * FPS);

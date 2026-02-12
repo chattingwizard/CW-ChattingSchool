@@ -1,0 +1,40 @@
+{
+  "title": "F-01: Who is Chatting Wizard?",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Who is Chatting Wizard?",
+      "subtitle": "F-01 — Foundations",
+      "narration": "Welcome to Chatting Wizard School. This is your first lesson. Let's start with who we are."
+    },
+    {
+      "type": "wb-content",
+      "heading": "What We Do",
+      "points": [
+        "We manage OnlyFans accounts for creators",
+        "Our chatters talk to fans and sell content",
+        "We work from home, online, worldwide"
+      ],
+      "narration": "Chatting Wizard is an OnlyFans management agency. We help creators make money by managing their fan conversations. Our chatters work from home, anywhere in the world. Your job is to talk to fans and sell content. Simple."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Our 5 Values",
+      "points": [
+        "Respect — treat everyone with dignity",
+        "Commitment — show up and do the work",
+        "Open Mindset — learn from feedback",
+        "Constant Progress — get better every day",
+        "Enjoy the Journey — have fun doing it"
+      ],
+      "narration": "We have five values. Respect. Treat everyone well, fans and teammates. Commitment. Show up every shift and give your best. Open Mindset. Accept feedback and learn from it. Constant Progress. Get a little better every single day. And Enjoy the Journey. This job can be fun if you have the right attitude."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Your Team",
+      "narration": "Quick check. Can you name at least three of our five values? Pause and think. The answer: Respect, Commitment, Open Mindset, Constant Progress, and Enjoy the Journey. Nice. Next up, let's talk about your team."
+    }
+  ]
+}

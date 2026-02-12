@@ -1,0 +1,39 @@
+{
+  "title": "F-02: Your Team and How Coaching Works",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Your Team",
+      "subtitle": "F-02 — Foundations",
+      "narration": "Let's talk about the people you'll work with and how you'll get help."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The Team Structure",
+      "points": [
+        "You → Chatter",
+        "Your Team Leader → coaches you every 2 days",
+        "Chatter Manager → oversees all Team Leaders",
+        "COO → runs the company"
+      ],
+      "narration": "Here's how the team works. You are a Chatter. Above you is your Team Leader. Your Team Leader reviews your chats and gives you feedback every two days. Above them is the Chatter Manager, who oversees all Team Leaders. And above that is the COO, who runs the company. You don't need to worry about everyone. Just know your Team Leader. They're your direct support."
+    },
+    {
+      "type": "wb-content",
+      "heading": "How to Communicate",
+      "points": [
+        "All communication is on Discord",
+        "Use VOICE, not text messages",
+        "Get used to speaking — it's how we work"
+      ],
+      "narration": "Important. All team communication happens on Discord. And we use voice, not text. If you have a question during your shift, jump on Discord and talk to your Team Leader. Out loud. With your voice. We do this because it's faster, clearer, and we want you comfortable speaking. Get used to it from day one."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: What is OnlyFans?",
+      "narration": "Quick check. How do you communicate with your Team Leader? Pause and think. The answer: through Discord, using voice. Not text. Great. Next, let's learn what OnlyFans actually is."
+    }
+  ]
+}

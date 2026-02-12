@@ -1,0 +1,39 @@
+{
+  "title": "F-03: What is OnlyFans?",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "What is OnlyFans?",
+      "subtitle": "F-03 — Foundations",
+      "narration": "Before you start chatting, you need to understand the platform you're working on."
+    },
+    {
+      "type": "wb-content",
+      "heading": "OnlyFans in Simple Words",
+      "points": [
+        "A website where creators share exclusive content",
+        "Fans pay to see photos, videos, and messages",
+        "Think of it like a private Instagram with a paywall"
+      ],
+      "narration": "OnlyFans is a website where creators share exclusive content. Photos, videos, and messages. Fans pay money to access this content. Think of it like a private Instagram, but with a paywall. Nothing is free. Fans subscribe, and then they can see what the creator posts and buy extra content."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Why Fans Pay",
+      "points": [
+        "Connection — they feel close to the creator",
+        "Fantasy — they get what they can't in real life",
+        "Exclusivity — only they have this content",
+        "Attention — the creator talks to THEM"
+      ],
+      "narration": "Why do fans spend money? Four reasons. Connection. They feel close to the creator, like she knows them. Fantasy. They get experiences they can't have in real life. Exclusivity. The content is just for them, nobody else has it. And attention. On Instagram, a model ignores them. On OnlyFans, she talks to them directly. That attention is what they pay for."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: How Money Flows",
+      "narration": "Quick check. True or false. OnlyFans content is free for everyone. Pause. The answer is false. Fans pay to access it. Nothing is free. Next up, let's see exactly how the money works."
+    }
+  ]
+}

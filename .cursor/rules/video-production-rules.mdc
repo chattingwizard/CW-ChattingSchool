@@ -1,0 +1,122 @@
+---
+description: Mandatory quality standards for ALL Chatting School content (videos, text, exercises, workflows). Apply BEFORE creating or rendering any content.
+globs:
+  - video-scripts/**
+  - video-pipeline/**
+  - docs/**
+  - video-map.md
+alwaysApply: true
+---
+
+# Chatting School — Content Quality Rules
+
+## RULE 0: AUDIENCE PROFILE (never forget this)
+The person consuming this content:
+- Has NEVER heard of OnlyFans, chatting, or this industry
+- English is their SECOND language (Filipino, African, Venezuelan backgrounds)
+- May have limited formal education / low cognitive load tolerance
+- Needs EVERYTHING explained from scratch, step by step
+- Cannot be expected to "just know" anything
+
+## RULE 1: ZERO UNDEFINED TERMS
+**NEVER use a word or concept before it has been explicitly defined in the curriculum.**
+- Before saying "fan", you MUST have already explained: "A fan is a person who pays money to follow and talk to a creator on OnlyFans."
+- Before saying "chatter", you MUST have already explained: "A chatter is the person (you) who talks to fans on behalf of the creator."
+- Before saying "PPV", you MUST have already explained: "PPV stands for Pay Per View — a locked photo or video that a fan pays to unlock."
+- This applies to EVERY term: OnlyFans, creator, subscriber, tip, custom, script, sequence, GFE, rapport, sexting, Infloww, etc.
+- If a video needs to reference a term not yet taught, it MUST include a brief inline definition the FIRST time it appears.
+- When in doubt: DEFINE IT. Over-explaining is always better than under-explaining for this audience.
+
+### Term Introduction Order (mandatory)
+Terms must be introduced in this order across the curriculum. A video CANNOT use a term from a later position without defining it first:
+1. OnlyFans (the platform)
+2. Creator / Model (the person who owns the account)
+3. Fan / Subscriber (the person who pays)
+4. Chatter (you — the person who talks to fans)
+5. Content (photos, videos, messages)
+6. Subscription (monthly fee to follow a creator)
+7. PPV — Pay Per View (locked content fans pay to unlock)
+8. Tip (extra money fans send)
+9. Custom / Custom content (personalized content for one fan)
+10. Script / Sequence (pre-written messages you use)
+11. All other industry terms (GFE, rapport, sexting, objection handling, etc.)
+
+## RULE 2: CONTENT STRUCTURE — Every micro-video follows this format
+1. **Concept** (15-30 sec): Explain ONE idea in simple words. Define any new terms immediately.
+2. **Practical Example** (30-60 sec): Show a LITERAL, concrete example. Dialogue, numbers, scenarios.
+3. **Recall Question** (10-15 sec): "Pause and think... [question]. The answer is [answer]."
+- Total target: 1-2 minutes per video. NEVER exceed 2.5 minutes.
+- ONE concept per video. If you need two concepts, make two videos.
+
+## RULE 3: LANGUAGE STANDARDS
+- Use the SIMPLEST possible words. "Get" not "obtain". "Help" not "assist". "Talk" not "communicate".
+- Sentences: MAX 12 words. Prefer 6-8.
+- No passive voice. "You talk to fans" not "Fans are talked to by you."
+- When introducing a technical term (PPV, GFE, etc.): say the term, immediately define it in plain words, then use it.
+- Repeat key terms multiple times after introduction to reinforce.
+- The "sale mantra" must appear in every section: "Remember: every conversation has one goal — a sale."
+
+## RULE 4: VISUAL STANDARDS — Videos are NOT just text
+Every content scene MUST include at least 2 of these visual elements:
+- **Colored boxes/cards**: Key concepts in colored panels (blue, green, purple, orange)
+- **Diagrams**: Flow arrows, chains (e.g., Fan → pays → Creator → Agency → You)
+- **Icons/symbols**: Dollar signs ($), chat bubbles, checkmarks, X marks, arrows, stars
+- **Number highlights**: Big numbers for percentages, prices, counts (e.g., "20%" in a large colored circle)
+- **Comparison layouts**: Side-by-side "Do this / Don't do this" panels
+- **Hierarchy visuals**: Team structure as a visual tree, not just text
+
+### Scene composition rules:
+- Maximum 40% of screen area is plain text
+- Minimum 30% is visual elements (boxes, diagrams, icons)
+- Background: warm paper tone (#f7f3eb), NOT white
+- Grid lines for notebook feel
+- Colored accent bars on top and left
+
+### Keyword highlighting rules (CONSISTENT):
+- ALL defined terms get highlighted in blue (#2563eb) + bold the FIRST time in each scene
+- ALL values/principles get highlighted (not just some)
+- ALL numbers/percentages get highlighted in a colored circle or box
+- Highlighting must be SYSTEMATIC, never random
+
+## RULE 5: AUDIO-VISUAL SYNC
+- Words on screen MUST appear at the EXACT moment they are spoken (using ElevenLabs word timestamps)
+- Visual elements (boxes, diagrams) appear when their related content is being narrated
+- Nothing should appear on screen that isn't currently being discussed in audio
+- Nothing should be discussed in audio without a corresponding visual element
+
+## RULE 6: SELF-QA CHECKLIST — Run BEFORE every render
+Before rendering ANY video, verify ALL of these:
+- [ ] Does this video use any term not yet defined? → If yes, either add a definition or reorder.
+- [ ] Does every sentence pass the "would a person with no industry knowledge understand this?" test?
+- [ ] Are there at least 2 visual elements per content scene (boxes, diagrams, icons)?
+- [ ] Are ALL keywords highlighted consistently (not just some)?
+- [ ] Is audio-visual sync using exact word timestamps?
+- [ ] Is there a practical example with literal dialogue or numbers?
+- [ ] Does it end with a recall question?
+- [ ] Is the total duration under 2.5 minutes?
+- [ ] Does the "sale mantra" appear where appropriate?
+- [ ] Would I (Santi) be proud to show this to Pau? If not, what needs fixing?
+
+## RULE 7: PRODUCTION WORKFLOW
+1. Write the narration script (JSON)
+2. Run the Self-QA checklist (Rule 6)
+3. Fix ALL issues found
+4. Run QA again
+5. Only THEN generate audio + render
+6. Watch the rendered video yourself — does it look professional?
+7. If not, fix and re-render (audio is cached, no ElevenLabs cost)
+8. Only show to Pau when you'd rate it 8/10 or higher
+
+## RULE 8: RECURRING REMINDERS
+These messages must be woven into the content at natural points throughout the curriculum:
+- "Every conversation has one goal: a SALE." (every section)
+- "You earn 2% of every net sale. The more you sell, the more you make." (money-related videos)
+- "Talk to your Team Leader through Discord, using VOICE. Not text." (team-related videos)
+- "If you don't know a word, ask. There are no stupid questions." (early videos)
+
+## RULE 9: CRITICAL MINDSET (mentalidad de tiburón)
+- Question every decision. "Is this the best way?" not "Is this good enough?"
+- Never assume the audience knows something. When in doubt, explain.
+- Never deliver mediocre work. If it's not at least 8/10 quality, redo it.
+- Prioritize what's best for the SCHOOL and the LEARNER, not what's fastest to produce.
+- Be honest about limitations and propose alternatives.
