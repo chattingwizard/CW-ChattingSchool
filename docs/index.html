@@ -16,25 +16,17 @@
 </div>
 
 
-<!-- Header -->
-<div class="header">
-  <div class="header-content">
-    <img src="logo.png" alt="Chatting Wizard" class="header-logo">
-    <h1>Chatting <span>School</span></h1>
-    <p>From zero to chatter. Everything you need to start earning.</p>
-    <span class="badge">Initial Training Program</span>
-    <br>
-    <a href="hiring-workflow.html" style="color: rgba(255,255,255,0.7); font-size: 0.8rem; text-decoration: underline; margin-top: 8px; display: inline-block;">Hiring Manager Workflow →</a>
+<!-- Top Bar: Brand + User -->
+<div class="topbar">
+  <div class="topbar-left">
+    <img src="logo.png" alt="CW" class="topbar-logo">
+    <span class="topbar-title">Chatting <strong>School</strong></span>
+    <span class="topbar-badge">Training Program</span>
   </div>
-</div>
-
-<!-- User Bar -->
-<div id="user-bar" class="user-bar" style="display:none;">
-  <div class="user-bar-left">
-    <span class="user-greeting">Welcome, <strong class="user-name"></strong></span>
-  </div>
-  <div class="user-bar-right">
-    <a href="admin.html" class="admin-link" style="display:none;">Admin Panel</a>
+  <div id="user-bar" class="topbar-right" style="display:none;">
+    <span class="topbar-user"><span class="user-name"></span></span>
+    <a href="admin.html" class="admin-link" style="display:none;">Admin</a>
+    <a href="hiring-workflow.html" class="topbar-link">Hiring</a>
     <button onclick="cwSignOut()" class="logout-btn">Log Out</button>
   </div>
 </div>
@@ -49,22 +41,8 @@
   <a href="#ongoing" class="ongoing">Ongoing</a>
 </nav>
 
-<!-- Stats -->
+<!-- Main content -->
 <div class="main">
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-value" style="color: var(--cw-dark);">33</div>
-      <div class="stat-label">Modules</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value" style="color: var(--cw-mid);">~16h</div>
-      <div class="stat-label">Total Content</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value" style="color: var(--day2);">10</div>
-      <div class="stat-label">Videos Live</div>
-    </div>
-  </div>
 
   <!-- ============================================================ -->
   <!-- DAY 1: FOUNDATIONS -->
