@@ -234,6 +234,11 @@ async function adminRevokeSection(targetId, sectionId) {
   if (res.error) throw res.error;
 }
 
+async function adminSetActive(targetId, isActive) {
+  var res = await sb().rpc('admin_set_active', { target_id: targetId, is_active: isActive });
+  if (res.error) throw res.error;
+}
+
 async function adminUpdateStudent(targetId, newName, newRole) {
   var res = await sb().rpc('admin_update_student', {
     target_id: targetId,

@@ -81,6 +81,7 @@
         <option value="active">Active (1+ quiz)</option>
         <option value="inactive">Not started</option>
         <option value="graduated">Graduated</option>
+        <option value="deactivated">Deactivated</option>
       </select>
       <span id="studentCount" class="admin-result-count"></span>
     </div>
@@ -148,14 +149,24 @@
         <h4>&#128221; Quiz Results</h4>
         <div id="detailQuizzes" class="admin-quiz-list"></div>
 
-        <!-- Danger zone -->
-        <div class="admin-danger-section">
-          <h4>&#9888; Reset</h4>
-          <div class="admin-danger-actions">
-            <button onclick="resetStudentQuizzes()" class="admin-btn-danger" id="resetQuizBtn">Reset Quizzes</button>
-            <button onclick="resetStudentProgress()" class="admin-btn-danger" id="resetProgressBtn">Reset Everything</button>
-          </div>
+      <!-- Account status -->
+      <div id="accountStatusSection" class="admin-status-section">
+        <h4>&#128100; Account Status</h4>
+        <div class="admin-status-row">
+          <span id="accountStatusLabel" class="admin-status-label"></span>
+          <button onclick="toggleAccountActive()" class="admin-btn-danger" id="toggleActiveBtn">Deactivate</button>
         </div>
+        <p class="admin-status-note" id="accountStatusNote"></p>
+      </div>
+
+      <!-- Danger zone -->
+      <div class="admin-danger-section">
+        <h4>&#9888; Reset</h4>
+        <div class="admin-danger-actions">
+          <button onclick="resetStudentQuizzes()" class="admin-btn-danger" id="resetQuizBtn">Reset Quizzes</button>
+          <button onclick="resetStudentProgress()" class="admin-btn-danger" id="resetProgressBtn">Reset Everything</button>
+        </div>
+      </div>
 
         <p id="detailMeta" class="admin-detail-meta"></p>
       </div>
@@ -310,6 +321,7 @@ function filterStudents() {
     if (filter === 'active') return s.quizzes_passed > 0;
     if (filter === 'inactive') return !s.quizzes_passed;
     if (filter === 'graduated') return s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === 'g-2' && q.passed; });
+    if (filter === 'deactivated') return s.active === false;
     return true;
   });
 
@@ -342,7 +354,10 @@ function renderStudentList() {
     var quizCount = s.quizzes_passed || 0;
     var moduleCount = s.modules_completed || 0;
 
-    return '<div class="student-card" onclick="showDetail(' + realIdx + ')">' +
+    var inactive = s.active === false;
+    var inactiveClass = inactive ? ' student-inactive' : '';
+
+    return '<div class="student-card' + inactiveClass + '" onclick="showDetail(' + realIdx + ')">' +
       '<div class="student-card-main">' +
         '<div class="student-card-name">' + (s.full_name || '(no name)') + '</div>' +
         '<div class="student-card-email">' + s.email + '</div>' +
@@ -352,6 +367,7 @@ function renderStudentList() {
         '<span title="Modules completed">' + moduleCount + ' mod</span>' +
         '<span title="Quizzes passed">' + quizCount + ' quiz</span>' +
       '</div>' +
+      (inactive ? '<span class="admin-tag admin-tag-inactive">Deactivated</span>' : '') +
       '<div class="student-card-date">' + new Date(s.created_at).toLocaleDateString() + '</div>' +
     '</div>';
   }).join('');
@@ -447,6 +463,9 @@ function showDetail(idx) {
     qDiv.innerHTML = '<p class="admin-empty">No quizzes taken yet.</p>';
   }
 
+  // Account status
+  renderAccountStatus(s);
+
   // Access grid
   renderAccessGrid(s);
 
@@ -481,6 +500,50 @@ function renderAccessGrid(student) {
       '</label>';
     grid.appendChild(card);
   });
+}
+
+function renderAccountStatus(student) {
+  var isActive = student.active !== false;
+  var label = document.getElementById('accountStatusLabel');
+  var btn = document.getElementById('toggleActiveBtn');
+  var note = document.getElementById('accountStatusNote');
+  var section = document.getElementById('accountStatusSection');
+
+  if (isActive) {
+    label.innerHTML = '<span class="admin-tag admin-tag-available">Active</span>';
+    btn.textContent = 'Deactivate Account';
+    btn.className = 'admin-btn-danger';
+    note.textContent = 'Deactivating blocks the student from accessing the school. Their data is preserved.';
+    section.className = 'admin-status-section';
+  } else {
+    label.innerHTML = '<span class="admin-tag admin-tag-inactive">Deactivated</span>';
+    btn.textContent = 'Reactivate Account';
+    btn.className = 'admin-btn';
+    note.textContent = 'This account is deactivated. The student cannot log in or access any content.';
+    section.className = 'admin-status-section status-inactive';
+  }
+}
+
+async function toggleAccountActive() {
+  if (currentDetailIdx < 0) return;
+  var s = allStudents[currentDetailIdx];
+  var isActive = s.active !== false;
+  var action = isActive ? 'deactivate' : 'reactivate';
+
+  if (!confirm((isActive
+    ? 'Deactivate ' + (s.full_name || s.email) + '? They will be immediately blocked from the school.'
+    : 'Reactivate ' + (s.full_name || s.email) + '? They will regain access to the school.'))) return;
+
+  var btn = document.getElementById('toggleActiveBtn');
+  btn.disabled = true;
+  try {
+    await adminSetActive(s.id, !isActive);
+    await loadAllData();
+    showDetail(currentDetailIdx);
+  } catch(err) {
+    alert('Error: ' + err.message);
+  }
+  btn.disabled = false;
 }
 
 function closeDetail() {

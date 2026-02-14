@@ -2971,6 +2971,10 @@ var CW_USER_ID = null;
     // 2. Load profile
     var profile = await getUserProfile(user.id);
     if (!profile) { await cwSignOut(); return; }
+    if (profile.active === false) {
+      if (overlay) overlay.innerHTML = '<p style="color:#dc2626;font-size:1.1rem;font-weight:600;">Your account has been deactivated.</p><p style="color:#6b7280;margin-top:8px;">Contact your Team Leader for more information.</p>';
+      return;
+    }
 
     // 3. Show user bar
     var bar = document.getElementById('user-bar');
