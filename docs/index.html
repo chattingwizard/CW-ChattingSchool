@@ -114,7 +114,7 @@
           <div class="quiz-question" data-correct="c">
             <p>2. Every conversation has one goal. What is it?</p>
             <label class="quiz-option"><input type="radio" name="m1q2" value="a"> Making friends with the fan</label>
-            <label class="quiz-option"><input type="radio" name="m1q2" value="b"> Getting the fan to tip</label>
+            <label class="quiz-option"><input type="radio" name="m1q2" value="b"> Keeping the conversation going as long as possible</label>
             <label class="quiz-option"><input type="radio" name="m1q2" value="c"> A sale</label>
             <div class="quiz-feedback"></div>
           </div>
@@ -242,17 +242,41 @@
         </div>
 
         <div class="activity-box" id="quiz-m3">
-          <h4>&#128170; Earnings Calculator</h4>
-          <div class="calc-exercise">
-            <p>Scenario 1: A fan buys a <strong>$50 PPV</strong>. OnlyFans takes 20%.</p>
-            <div class="calc-input-group">Net sale (after OF takes 20%): $<input type="number" class="calc-input" id="calc1a" step="0.01" placeholder="?"> <small>(Hint: $50 &minus; 20%)</small></div>
-            <div class="calc-input-group">Your earnings (2% of net): $<input type="number" class="calc-input" id="calc1b" step="0.01" placeholder="?"></div>
+          <h4>&#128176; What Type of Revenue Is This?</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 10px;">Read each scenario and identify the revenue type.</p>
+          <div class="quiz-question" data-correct="a">
+            <p>1. A fan pays $9.99 per month to follow a creator's page.</p>
+            <label class="quiz-option"><input type="radio" name="m3r1" value="a"> Subscription</label>
+            <label class="quiz-option"><input type="radio" name="m3r1" value="b"> PPV</label>
+            <label class="quiz-option"><input type="radio" name="m3r1" value="c"> Tip</label>
+            <label class="quiz-option"><input type="radio" name="m3r1" value="d"> Custom</label>
+            <div class="quiz-feedback"></div>
           </div>
-          <div class="calc-exercise">
-            <p>Scenario 2: You make <strong>25 sales</strong> in a shift totaling <strong>$500 net</strong>.</p>
-            <div class="calc-input-group">Your earnings (2%): $<input type="number" class="calc-input" id="calc2" step="0.01" placeholder="?"></div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. You send a locked video priced at $25. The fan pays to unlock it.</p>
+            <label class="quiz-option"><input type="radio" name="m3r2" value="a"> Subscription</label>
+            <label class="quiz-option"><input type="radio" name="m3r2" value="b"> PPV</label>
+            <label class="quiz-option"><input type="radio" name="m3r2" value="c"> Tip</label>
+            <label class="quiz-option"><input type="radio" name="m3r2" value="d"> Custom</label>
+            <div class="quiz-feedback"></div>
           </div>
-          <button class="check-answers-btn" onclick="checkCalcs(this)">Check My Math</button>
+          <div class="quiz-question" data-correct="c">
+            <p>3. A happy fan sends you an extra $15 after a great conversation.</p>
+            <label class="quiz-option"><input type="radio" name="m3r3" value="a"> Subscription</label>
+            <label class="quiz-option"><input type="radio" name="m3r3" value="b"> PPV</label>
+            <label class="quiz-option"><input type="radio" name="m3r3" value="c"> Tip</label>
+            <label class="quiz-option"><input type="radio" name="m3r3" value="d"> Custom</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="d">
+            <p>4. A fan asks for a personalized video saying his name. You charge $150.</p>
+            <label class="quiz-option"><input type="radio" name="m3r4" value="a"> Subscription</label>
+            <label class="quiz-option"><input type="radio" name="m3r4" value="b"> PPV</label>
+            <label class="quiz-option"><input type="radio" name="m3r4" value="c"> Tip</label>
+            <label class="quiz-option"><input type="radio" name="m3r4" value="d"> Custom</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
           <div class="quiz-score"></div>
 
           <h4 style="margin-top: 20px;">&#9989; Quick Check</h4>
@@ -311,7 +335,7 @@
           <li>Match her <strong>personality, emojis, and tone</strong> &mdash; the fan must believe it's really her</li>
           <li>Your two goals: <strong>Build connection</strong> (make the fan feel special) + <strong>Sell content</strong> (PPVs and customs)</li>
           <li><strong>Scripts handle 80%</strong> of your messages &mdash; type a command and the perfect message appears</li>
-          <li>Shift flow: <strong>Login &rarr; Unread tab &rarr; Backread &rarr; Prioritize &rarr; Reply &amp; sell &rarr; Handoff notes</strong></li>
+          <li>Shift flow: <strong>Login &rarr; Read handoff notes &rarr; Unread tab &rarr; Prioritize &rarr; Reply &amp; sell &rarr; Write handoff notes</strong></li>
           <li>Keep reply time under <strong>2 minutes</strong> &mdash; fans lose interest if you're slow</li>
           <li>You'll manage <strong>5-15 fans</strong> at the same time</li>
           <li>Log everything in notes: fan's name, age, job, hobbies, preferences</li>
@@ -322,8 +346,8 @@
           <div class="term-grid">
             <div class="term-item"><span class="term-word">The Illusion</span> <span class="term-def">The fan believes they're talking to the real model &mdash; never break it</span></div>
             <div class="term-item"><span class="term-word">Scripts</span> <span class="term-def">Pre-written messages &mdash; 80% of your messages come from these</span></div>
-            <div class="term-item"><span class="term-word">Unread Tab</span> <span class="term-def">Your starting point every shift &mdash; shows all unanswered messages</span></div>
-            <div class="term-item"><span class="term-word">Backread</span> <span class="term-def">Check what happened in conversations from the previous shift</span></div>
+            <div class="term-item"><span class="term-word">Unread Tab</span> <span class="term-def">Shows all fans waiting for a reply &mdash; open after reading handoff notes</span></div>
+            <div class="term-item"><span class="term-word">Backread</span> <span class="term-def">Read previous conversations to understand context before replying</span></div>
             <div class="term-item"><span class="term-word">Handoff Notes</span> <span class="term-def">Notes at end of shift so the next chatter can continue seamlessly</span></div>
             <div class="term-item"><span class="term-word">Reply Time</span> <span class="term-def">Maximum 2 minutes between fan message and your response</span></div>
           </div>
@@ -352,11 +376,11 @@
             <div class="quiz-feedback"></div>
           </div>
           <div class="quiz-question" data-correct="b">
-            <p>3. What's the first thing you do when starting a shift?</p>
-            <label class="quiz-option"><input type="radio" name="m4q3" value="a"> Check Discord for messages</label>
-            <label class="quiz-option"><input type="radio" name="m4q3" value="b"> Open the Unread tab</label>
-            <label class="quiz-option"><input type="radio" name="m4q3" value="c"> Send a mass message</label>
-            <label class="quiz-option"><input type="radio" name="m4q3" value="d"> Read your notes from last shift</label>
+            <p>3. What should you ALWAYS do at the end of every shift?</p>
+            <label class="quiz-option"><input type="radio" name="m4q3" value="a"> Close all conversations</label>
+            <label class="quiz-option"><input type="radio" name="m4q3" value="b"> Write handoff notes for every active conversation</label>
+            <label class="quiz-option"><input type="radio" name="m4q3" value="c"> Send a goodbye message to all fans</label>
+            <label class="quiz-option"><input type="radio" name="m4q3" value="d"> Delete your notes</label>
             <div class="quiz-feedback"></div>
           </div>
           <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
@@ -395,7 +419,7 @@
           <li>The Golden Rule: <strong>IGNORE</strong> the banned topic. Do NOT say no. Do NOT explain. Do NOT lecture.</li>
           <li>Act like they never said it. Change the subject immediately.</li>
           <li><strong>Why not say "no"?</strong> Because saying no kills the vibe, the fan feels rejected, and you lose the sale.</li>
-          <li>For <strong>meet-up requests</strong>: Play it in between &mdash; don't say yes, don't say no. Show vulnerability, then redirect. Example: <em>"I'd love to meet someone special someday... Where are you from?"</em></li>
+          <li>For <strong>meet-up requests</strong>: Play it in between &mdash; don't say yes, don't say no. Show vulnerability, then redirect. Example: <em>"I'd love to know someone special someday... I just had a bad experience recently. Where are you from?"</em></li>
           <li><strong>Redirect techniques:</strong> Ask a personal question, send a selfie or photo, reference something from a past chat</li>
           <li><strong>Speed is key</strong> &mdash; ignore and redirect immediately. Don't linger on the topic.</li>
           <li>Keep energy positive. Keep selling.</li>
@@ -422,8 +446,8 @@
           <div class="do-box">
             <strong>&#10004; DO THIS</strong>
             Fan: "Let's meet up this weekend"<br>
-            You: "I'd love to meet someone special someday... Where are you from, by the way?"<br>
-            <em>&#8594; Fan feels heard. Conversation continues. Sale alive.</em>
+            You: "I'd love to know someone special someday... I just had a bad experience recently. Where are you from, by the way?"<br>
+            <em>&#8594; Fan feels heard. Real vulnerability shown. Conversation continues. Sale alive.</em>
           </div>
         </div>
 
@@ -462,7 +486,7 @@
             <br>
             <button class="reveal-btn" data-show-text="Show Answer" data-hide-text="Hide Answer" onclick="revealAnswer(this)">Show Answer</button>
             <div class="reveal-content">
-              <strong>Special case:</strong> Meet-up request. <strong>Action:</strong> Play it in between &mdash; don't say yes or no. Show vulnerability: <em>"Honestly, I'd love to meet someone special someday... it's just hard with my schedule right now. But that's what makes this so special &mdash; having you here. Where in [city] are you going?"</em>
+              <strong>Special case:</strong> Meet-up request. <strong>Action:</strong> Play it in between &mdash; don't say yes or no. Show real vulnerability: <em>"Honestly, I'd love to know someone special someday... I just had a bad experience recently. But that's what makes this so special &mdash; having you here. Where in [city] are you going?"</em> (Never use the word "meet" &mdash; it's flagged on OnlyFans.)
             </div>
           </div>
 
@@ -654,10 +678,10 @@
 
           <div class="chat-bubble model">
             <div class="chat-label">Emma (You)</div>
-            Honestly I'd love to meet someone special someday... it's just hard with my schedule right now &#128532; But that's what makes this so special to me, having you here &#128149; What games do you play btw?
+            Honestly I'd love to know someone special someday... I just had a bad experience recently &#128532; But that's what makes this so special to me, having you here &#128149; What games do you play btw?
           </div>
 
-          <div class="chat-annotation">&#127942; PERFECT redirect! She "plays it in between" &mdash; didn't say yes or no. Showed vulnerability ("it's hard"). Then immediately redirected to a safe topic (video games). Fan feels heard, not rejected. Conversation continues.</div>
+          <div class="chat-annotation">&#127942; PERFECT redirect! She "plays it in between" &mdash; didn't say yes or no. She says "know" not "meet" (the word "meet" is flagged on OnlyFans). She shows real vulnerability ("bad experience"). Then immediately redirected to a safe topic (video games). Fan feels heard, not rejected. Conversation continues.</div>
 
           <div class="chat-bubble fan">
             <div class="chat-label">Fan (Jake)</div>
@@ -729,7 +753,7 @@
           <div class="glossary-item"><div class="glossary-term">Net Sale</div><div class="glossary-def">Sale amount after OnlyFans takes their 20% cut</div></div>
           <div class="glossary-item"><div class="glossary-term">The Illusion</div><div class="glossary-def">The fan believes they're talking to the real model &mdash; never break it</div></div>
           <div class="glossary-item"><div class="glossary-term">Scripts</div><div class="glossary-def">Pre-written message sequences &mdash; 80% of your messages come from these</div></div>
-          <div class="glossary-item"><div class="glossary-term">Unread Tab</div><div class="glossary-def">Your starting point every shift &mdash; shows all unanswered messages</div></div>
+          <div class="glossary-item"><div class="glossary-term">Unread Tab</div><div class="glossary-def">Shows all fans waiting for a reply &mdash; open after reading handoff notes</div></div>
           <div class="glossary-item"><div class="glossary-term">Backread</div><div class="glossary-def">Reading previous conversations to understand context before replying</div></div>
           <div class="glossary-item"><div class="glossary-term">Handoff Notes</div><div class="glossary-def">Notes at end of shift so the next chatter continues seamlessly</div></div>
           <div class="glossary-item"><div class="glossary-term">Banned Topics</div><div class="glossary-def">Topics that result in instant termination &mdash; zero tolerance</div></div>

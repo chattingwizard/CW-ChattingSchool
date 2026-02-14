@@ -120,3 +120,35 @@ These messages must be woven into the content at natural points throughout the c
 - Never deliver mediocre work. If it's not at least 8/10 quality, redo it.
 - Prioritize what's best for the SCHOOL and the LEARNER, not what's fastest to produce.
 - Be honest about limitations and propose alternatives.
+
+## RULE 10: QUIZ & EXERCISE QUALITY (learned from review)
+These rules apply to ALL quizzes, exercises, and interactive content:
+
+### Quiz Options Must Be Clearly Distinct
+- NEVER have two answer options that could mean the same thing (e.g., "getting a tip" and "a sale" are essentially the same — both = money)
+- All wrong answers must be CLEARLY wrong, not ambiguously similar to the correct answer
+- Before writing options, ask: "Could a smart person argue that two of these mean the same thing?" If yes, rewrite
+
+### Use Banned Words List in Content Too
+- NEVER use words flagged on OnlyFans in model/chatter responses, even in training examples
+- Specifically: never use "meet" in a model's response — always use "know" instead
+- The word "meet" is banned on OnlyFans itself. We must practice what we preach in training
+- Always check: does this example response contain ANY banned word? If yes, rewrite
+
+### Vulnerability Must Be Realistic, Not Cheap
+- When showing vulnerability (e.g., for meet-up handling), use REAL emotional vulnerability: "I had a bad experience recently"
+- NEVER use logistical excuses like "my schedule is busy" — these are transparent and cheap
+- The fan should feel genuine emotion, not sense an excuse
+
+### Exercises Must Be Practical, Not Academic
+- Chatters are NOT engineers or accountants. No math exercises, no calculators, no abstract logic puzzles
+- Every exercise must simulate REAL work scenarios the chatter will face
+- Good exercises: "Identify the revenue type", "What would you say?", "Spot the banned topic"
+- Bad exercises: "Calculate 2% of net sales", "Solve this equation"
+- Ask: "Would a chatter ever need to do this exact task?" If no, replace it
+
+### Avoid Presenting Nuanced Processes as Absolute Rules
+- Don't say "THE first thing you do is X" when there's no single mandatory first step
+- Use softer language: "your first steps include...", "start by..."
+- If a video presents something as absolute, verify it IS absolute before making a quiz question about it
+- When in doubt, ask Pau for clarification rather than inventing rules

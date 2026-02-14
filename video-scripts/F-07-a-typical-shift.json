@@ -17,19 +17,19 @@
       "visuals": [
         {
           "type": "flow-node",
-          "icon": "eye",
-          "label": "Open Unread Tab",
-          "value": "Login",
+          "icon": "chat",
+          "label": "Read Handoff Notes",
+          "value": "Context",
           "color": "#0b7dba",
-          "trigger": "Unread"
+          "trigger": "handoff"
         },
         {
           "type": "flow-node",
-          "icon": "chat",
-          "label": "Backread Chats",
-          "value": "Read",
+          "icon": "eye",
+          "label": "Open Unread Tab",
+          "value": "Reply",
           "color": "#8e44ad",
-          "trigger": "backread"
+          "trigger": "Unread"
         },
         {
           "type": "flow-node",
@@ -55,7 +55,7 @@
           "trigger": "prioritize"
         }
       ],
-      "narration": "Here's your day. You log in and open the Unread tab. That's always your starting point. Then you backread. Check what happened in conversations from the previous shift. Next, prioritize. Who needs your attention first? New subscribers and active conversations come first. Then you start replying, using scripts for every interaction. Throughout your shift, you'll sell PPVs and manage five to fifteen fans at the same time. At the end of your shift, you write handoff notes for every active conversation. The next chatter should be able to pick up without asking you a single question."
+      "narration": "Here's your day. You log in and start by reading the handoff notes from the last shift. These tell you what happened while you were away, which fans are active, and what to do next. Then you open the Unread tab to see who needs a reply. Prioritize. Who needs your attention first? New subscribers and active conversations always come first. Then you start replying, using scripts for every interaction. Throughout your shift, you'll sell PPVs and manage five to fifteen fans at the same time. At the end of your shift, you write handoff notes for every active conversation. The next chatter should be able to pick up without asking you a single question."
     },
     {
       "type": "wb-content",
@@ -110,7 +110,7 @@
       "title": "Quick Check",
       "subtitle": "Next: Banned Topics",
       "sectionLabel": "Foundations",
-      "narration": "Quick check. What's the first thing you do when you start your shift? Pause. The answer is open the Unread tab. That's always step one. Great. Next up, the most important rules you must never break. Banned topics."
+      "narration": "Quick check. Why are handoff notes so important? Pause. Because the next chatter needs to continue your conversations without asking you a single question. Everything they need should be in the notes. Great. Next up, the most important rules you must never break. Banned topics."
     }
   ]
 }
