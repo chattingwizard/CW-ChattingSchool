@@ -6,22 +6,110 @@
       "type": "wb-title",
       "title": "Banned Topics",
       "subtitle": "F-08 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "This is the most important lesson in the entire training. If you talk about any of these topics, you lose your job. No second chances. Listen carefully."
     },
     {
       "type": "wb-content",
       "heading": "Banned Topics — Part 1",
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Non-Consensual",
+          "description": "Kidnapping, blackmail, rape, molestation",
+          "color": "#e74c3c",
+          "trigger": "consensual"
+        },
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Non-Conscious",
+          "description": "Drugs, coma, hypnosis, paralysis",
+          "color": "#e74c3c",
+          "trigger": "conscious"
+        },
+        {
+          "type": "icon-card",
+          "icon": "shield",
+          "term": "Underage",
+          "description": "Any mention of anyone under 18 — including roleplay",
+          "color": "#e74c3c",
+          "trigger": "Underage"
+        },
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Incest & Extreme",
+          "description": "Family content, cannibalism, torture, bodily fluids",
+          "color": "#e74c3c",
+          "trigger": "Incest"
+        },
+        {
+          "type": "callout",
+          "text": "ANY of these topics = you lose your job. Zero tolerance.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "dangerous"
+        }
+      ],
       "narration": "Here is the full list. Non-consensual acts. That means kidnapping, blackmail, rape, or molestation. Non-conscious acts. That means drugs, coma, hypnosis, or paralysis. Underage references. Pedophilia, child content, or any mention of anyone under eighteen, including fictional roleplay. Incest scenarios. Any family-related sexual content. Bodily fluids and functions. Blood, feces, menstruation, or vomit. And extreme or dangerous acts. Cannibalism, torture, or strangling."
     },
     {
       "type": "wb-content",
       "heading": "Banned Topics — Part 2",
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Public & Illegal",
+          "description": "Public nudity, prostitution, escorts, meet-ups",
+          "color": "#e74c3c",
+          "trigger": "Public"
+        },
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Substances",
+          "description": "Alcohol, intoxication, illegal substances",
+          "color": "#e74c3c",
+          "trigger": "Illegal"
+        },
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Animal & BDSM",
+          "description": "Bestiality, pet play, fisting, medical play",
+          "color": "#e74c3c",
+          "trigger": "Animal"
+        },
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "External Payment",
+          "description": "Never mention PayPal, Venmo, CashApp, or crypto",
+          "color": "#e74c3c",
+          "trigger": "PayPal"
+        },
+        {
+          "type": "callout",
+          "text": "If a fan brings up ANY of these — do NOT engage. You lose your job.",
+          "icon": "shield",
+          "color": "#e74c3c",
+          "trigger": "engage"
+        }
+      ],
       "narration": "Continuing the list. Public acts. Nudity or sex in public. Illegal acts. Prostitution, escorts, or meet-ups. Illegal substances. Alcohol or intoxication. Animal-related acts. Bestiality, zoophilia, or pet play. B D S M practices. Fisting, pegging, or medical play. Mention of payment methods outside OnlyFans. Never mention PayPal, Venmo, CashApp, or crypto. And finally, any racism or xenophobia. If a fan brings up ANY of these topics, you do not engage. You ignore it completely. If you engage with any of these, you lose your job."
     },
     {
       "type": "wb-outro",
       "title": "Quick Check",
       "subtitle": "Next: How to Handle Banned Requests",
+      "sectionLabel": "Foundations",
       "narration": "Quick check. A fan starts talking about something involving a minor. What do you do? Pause. You ignore it completely. You do not engage, you do not respond to it, you move on. If you engage, you lose your job. Good. Next, let's learn exactly how to handle these situations."
     }
   ]

@@ -6,26 +6,94 @@
       "type": "wb-title",
       "title": "Your Team",
       "subtitle": "F-02 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "Let's talk about the people you'll work with and how you'll get help."
     },
     {
       "type": "wb-content",
       "heading": "The Team Structure",
-      "points": [
-        "You → Chatter",
-        "Your Team Leader → coaches you every 2 days",
-        "Chatter Manager → oversees all Team Leaders",
-        "COO → runs the company"
+      "layout": "flow-chain",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "You (Chatter)",
+          "value": "Chat",
+          "color": "#27ae60",
+          "trigger": "Chatter"
+        },
+        {
+          "type": "flow-node",
+          "icon": "star",
+          "label": "Team Leader",
+          "value": "Coach",
+          "color": "#0b7dba",
+          "trigger": "Leader"
+        },
+        {
+          "type": "flow-node",
+          "icon": "users",
+          "label": "Chatter Manager",
+          "value": "Manage",
+          "color": "#8e44ad",
+          "trigger": "Manager"
+        },
+        {
+          "type": "flow-node",
+          "icon": "building",
+          "label": "COO",
+          "value": "Run",
+          "color": "#e67e22",
+          "trigger": "COO"
+        },
+        {
+          "type": "callout",
+          "text": "Just know your Team Leader — they're your direct support.",
+          "icon": "target",
+          "color": "#0b7dba",
+          "trigger": "support"
+        }
       ],
       "narration": "Here's how the team works. You are a Chatter. Above you is your Team Leader. Your Team Leader reviews your chats and gives you feedback every two days. Above them is the Chatter Manager, who oversees all Team Leaders. And above that is the COO, who runs the company. You don't need to worry about everyone. Just know your Team Leader. They're your direct support."
     },
     {
       "type": "wb-content",
       "heading": "How to Communicate",
-      "points": [
-        "All communication is on Discord",
-        "Use VOICE, not text messages",
-        "Get used to speaking — it's how we work"
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "chat",
+          "term": "Discord",
+          "description": "All team communication happens on Discord",
+          "color": "#8e44ad",
+          "trigger": "Discord"
+        },
+        {
+          "type": "icon-card",
+          "icon": "user",
+          "term": "Use VOICE",
+          "description": "Talk out loud — not text messages",
+          "color": "#e67e22",
+          "trigger": "voice"
+        },
+        {
+          "type": "icon-card",
+          "icon": "trending",
+          "term": "Day One",
+          "description": "Get comfortable speaking from day one",
+          "color": "#27ae60",
+          "trigger": "comfortable"
+        },
+        {
+          "type": "callout",
+          "text": "Talk to your Team Leader through Discord, using VOICE. Not text.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "faster"
+        }
       ],
       "narration": "Important. All team communication happens on Discord. And we use voice, not text. If you have a question during your shift, jump on Discord and talk to your Team Leader. Out loud. With your voice. We do this because it's faster, clearer, and we want you comfortable speaking. Get used to it from day one."
     },
@@ -33,6 +101,7 @@
       "type": "wb-outro",
       "title": "Quick Check",
       "subtitle": "Next: What is OnlyFans?",
+      "sectionLabel": "Foundations",
       "narration": "Quick check. How do you communicate with your Team Leader? Pause and think. The answer: through Discord, using voice. Not text. Great. Next, let's learn what OnlyFans actually is."
     }
   ]

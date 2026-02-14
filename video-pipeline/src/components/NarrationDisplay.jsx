@@ -1,29 +1,34 @@
 /**
- * NarrationDisplay — Main visual for content scenes.
- * Shows the narrated text synced word-by-word with audio.
- * What you SEE = what you HEAR. No separate bullet points.
+ * NarrationDisplay v3 — Synced narration with keyword highlighting.
+ * Key terms get an animated colored underline when spoken.
  */
 import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate } from "remotion";
-import { FONT, CW_BLUE, TEXT_COLOR, CARD_BG, BORDER_COLOR } from "./Brand";
+import { FONT, COLORS } from "./Brand";
 
 export const NarrationDisplay = ({
   wordTimestamps = [],
-  fontSize = 40,
+  fontSize = 38,
+  highlightWords = [],
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   if (!wordTimestamps || wordTimestamps.length === 0) return null;
 
+  // Normalize highlight words for matching
+  const hlSet = new Set(
+    highlightWords.map((w) => w.toLowerCase().replace(/[^a-z0-9]/g, ""))
+  );
+
   return (
     <div
       style={{
-        backgroundColor: CARD_BG,
-        borderRadius: 18,
-        padding: "40px 50px",
-        boxShadow: "0 4px 24px rgba(11,125,186,0.1)",
-        border: `1.5px solid ${BORDER_COLOR}`,
+        backgroundColor: COLORS.card,
+        borderRadius: 16,
+        padding: "36px 44px",
+        boxShadow: `0 3px 18px ${COLORS.cardShadow}`,
+        border: `1.5px solid ${COLORS.cardBorder}`,
         fontFamily: FONT,
         lineHeight: 2.0,
         display: "flex",
@@ -35,7 +40,6 @@ export const NarrationDisplay = ({
         const wordStartFrame = Math.round(wt.start * fps);
         const fadeFrames = 3;
 
-        // Word appears when narrator says it
         const opacity = interpolate(
           frame,
           [wordStartFrame - 1, wordStartFrame + fadeFrames],
@@ -43,7 +47,6 @@ export const NarrationDisplay = ({
           { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
         );
 
-        // Gentle slide up
         const y = interpolate(
           frame,
           [wordStartFrame - 1, wordStartFrame + fadeFrames],
@@ -51,7 +54,7 @@ export const NarrationDisplay = ({
           { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
         );
 
-        // "Active" glow — word is bright when just spoken
+        // Active glow when word is just spoken
         const activeProgress = interpolate(
           frame,
           [wordStartFrame, wordStartFrame + 15],
@@ -60,12 +63,28 @@ export const NarrationDisplay = ({
         );
 
         const isActive = activeProgress > 0.05;
-        const fontWeight = isActive ? 600 : 400;
-        const color = isActive
-          ? interpolate(activeProgress, [0, 1], [0, 1]) > 0.3
-            ? CW_BLUE
-            : TEXT_COLOR
-          : TEXT_COLOR;
+
+        // Check if this is a highlighted keyword
+        const cleanWord = wt.word.toLowerCase().replace(/[^a-z0-9]/g, "");
+        const isHighlighted = hlSet.has(cleanWord);
+
+        // Highlight underline animation
+        const highlightWidth =
+          isHighlighted && frame >= wordStartFrame
+            ? interpolate(
+                frame,
+                [wordStartFrame, wordStartFrame + 8],
+                [0, 100],
+                { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+              )
+            : 0;
+
+        const fontWeight = isHighlighted ? 700 : isActive ? 600 : 400;
+        const color = isHighlighted
+          ? COLORS.primary
+          : isActive && activeProgress > 0.3
+            ? COLORS.primary
+            : COLORS.text;
 
         return (
           <span
@@ -75,13 +94,28 @@ export const NarrationDisplay = ({
               transform: `translateY(${y}px)`,
               display: "inline-block",
               marginRight: "0.3em",
-              fontSize,
+              fontSize: isHighlighted ? fontSize + 1 : fontSize,
               fontWeight,
               color,
-              transition: "color 0.3s ease",
+              position: "relative",
             }}
           >
             {wt.word}
+            {/* Animated underline for highlighted words */}
+            {isHighlighted && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: -2,
+                  left: 0,
+                  height: 3,
+                  width: `${highlightWidth}%`,
+                  backgroundColor: COLORS.primary,
+                  borderRadius: 2,
+                  opacity: 0.6,
+                }}
+              />
+            )}
           </span>
         );
       })}

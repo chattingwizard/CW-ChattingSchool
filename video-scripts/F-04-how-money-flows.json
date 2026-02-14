@@ -6,27 +6,111 @@
       "type": "wb-title",
       "title": "How Money Flows",
       "subtitle": "F-04 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "Now let's talk about money. Where it comes from, where it goes, and how you earn from every sale."
     },
     {
       "type": "wb-content",
       "heading": "4 Ways Fans Spend Money",
-      "points": [
-        "Subscriptions — monthly fee to follow a creator",
-        "PPV — locked content the fan pays to unlock",
-        "Tips — extra money fans send as a bonus",
-        "Customs — personalized content made just for them"
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "calendar",
+          "term": "Subscriptions",
+          "description": "Monthly fee to follow a creator",
+          "color": "#0b7dba",
+          "trigger": "Subscriptions"
+        },
+        {
+          "type": "icon-card",
+          "icon": "lock",
+          "term": "PPV",
+          "description": "Locked content fans pay to unlock",
+          "color": "#8e44ad",
+          "trigger": "PPV"
+        },
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "Tips",
+          "description": "Extra money fans send as a bonus",
+          "color": "#27ae60",
+          "trigger": "Tips"
+        },
+        {
+          "type": "icon-card",
+          "icon": "film",
+          "term": "Customs",
+          "description": "Personalized content just for one fan",
+          "color": "#e67e22",
+          "trigger": "customs"
+        },
+        {
+          "type": "callout",
+          "text": "PPV is your main tool. Remember that word: PPV.",
+          "icon": "target",
+          "color": "#8e44ad",
+          "trigger": "Remember"
+        }
       ],
       "narration": "Fans spend money in four ways. Subscriptions, a monthly fee to follow the creator. PPV, which stands for Pay Per View. This is a locked photo or video that the fan pays to unlock. Tips, extra money fans send when they're happy. And customs, personalized content made just for one fan. PPV is your main tool. Remember that word. PPV."
     },
     {
       "type": "wb-content",
       "heading": "Where Does the Money Go?",
-      "points": [
-        "OnlyFans takes 20% of every payment",
-        "The remaining 80% goes to the creator",
-        "The agency takes their cut from the creator",
-        "YOU earn 2% of every net sale you make"
+      "layout": "flow-chain",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "user",
+          "label": "Fan Pays",
+          "value": "$100",
+          "color": "#0b7dba",
+          "trigger": "hundred"
+        },
+        {
+          "type": "flow-node",
+          "icon": "globe",
+          "label": "OnlyFans Takes",
+          "value": "20%",
+          "color": "#e74c3c",
+          "trigger": "twenty"
+        },
+        {
+          "type": "flow-node",
+          "icon": "building",
+          "label": "Agency + Creator",
+          "value": "$80",
+          "color": "#27ae60",
+          "trigger": "Eighty"
+        },
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "You (Chatter)",
+          "value": "2%",
+          "color": "#e67e22",
+          "trigger": "chatter"
+        },
+        {
+          "type": "highlight-box",
+          "value": "$1.60",
+          "label": "your cut per sale",
+          "secondary": "20 sales per shift = $32",
+          "icon": "trending",
+          "color": "#e67e22",
+          "trigger": "sixty"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a SALE.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "goal"
+        }
       ],
       "narration": "Here's how the money splits. A fan pays one hundred dollars for a PPV. OnlyFans takes twenty percent, that's twenty dollars. Eighty dollars remain. The agency and creator split that eighty dollars. And you, the chatter, earn two percent of every net sale. That's one dollar sixty from that single sale. It sounds small, but think about it. If you make twenty sales in one shift, that adds up fast. The more you sell, the more you make. Remember this. Every conversation has one goal. A sale."
     },
@@ -34,6 +118,7 @@
       "type": "wb-outro",
       "title": "Quick Check",
       "subtitle": "Next: Why Fans Pay",
+      "sectionLabel": "Foundations",
       "narration": "Quick check. What percentage do you earn from every net sale? Pause. The answer is two percent. And what percentage does OnlyFans take? Twenty percent. Good. Next, let's understand why fans actually open their wallets."
     }
   ]

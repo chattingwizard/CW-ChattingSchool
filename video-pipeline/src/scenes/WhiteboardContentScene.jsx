@@ -1,15 +1,50 @@
+/**
+ * WhiteboardContentScene v2 — Main content scene.
+ *
+ * Supports multiple layouts:
+ *   - "definition-cards"  — Term + definition cards
+ *   - "summary-row"       — Compact summary cards + callouts
+ *   - "icon-grid"         — 2x2 grid of icon cards
+ *   - "flow-chain"        — Horizontal process flow diagram
+ *   - (default)           — Synced narration display or bullet cards
+ */
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, interpolate, useVideoConfig } from "remotion";
+import {
+  AbsoluteFill,
+  useCurrentFrame,
+  useVideoConfig,
+  interpolate,
+} from "remotion";
 import { WrittenText } from "../components/WrittenText";
-import { DefinitionCard, SummaryCard, CalloutBox } from "../components/VisualElements";
+import {
+  DefinitionCard,
+  SummaryCard,
+  CalloutBox,
+  FlowNode,
+  FlowArrowConnector,
+  IconGridCard,
+  StatHighlight,
+  QuoteBox,
+  HighlightBox,
+} from "../components/VisualElements";
 import { NarrationDisplay } from "../components/NarrationDisplay";
-import { FONT, CW_BLUE, TEXT_COLOR, CARD_BG, BORDER_COLOR, FontImport, BrandedBackground, TopBar, Watermark, CornerMarks, BottomAccentLine, FloatingDots, SideAccentBar } from "../components/Brand";
+import {
+  FONT,
+  COLORS,
+  FontImport,
+  WarmBackground,
+  TopBar,
+  Watermark,
+  CornerMarks,
+  ProgressBar,
+  AnimatedBackground,
+} from "../components/Brand";
 
-// ── Trigger timing ──────────────────────────────────────
+// ── Trigger timing — find the frame when a word is spoken ─
 
 function findTriggerFrame(wordTimestamps, trigger, fps) {
   if (!wordTimestamps || !trigger) return null;
-  const lowerTrigger = trigger.toLowerCase();
+  const lowerTrigger = trigger.toLowerCase().replace(/[^a-z0-9]/g, "");
   const match = wordTimestamps.find((wt) => {
     const cleanWord = wt.word.toLowerCase().replace(/[^a-z0-9]/g, "");
     return cleanWord === lowerTrigger;
@@ -17,13 +52,191 @@ function findTriggerFrame(wordTimestamps, trigger, fps) {
   return match ? Math.round(match.start * fps) : null;
 }
 
+// ── Layout: Flow Chain ──────────────────────────────────
+
+const FlowChainLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
+  const nodes = (visuals || []).filter((v) => v.type === "flow-node");
+  const callouts = (visuals || []).filter((v) => v.type === "callout");
+  const quotes = (visuals || []).filter((v) => v.type === "quote");
+  const highlights = (visuals || []).filter((v) => v.type === "highlight-box");
+
+  return (
+    <div style={{ marginLeft: 16, marginRight: 16 }}>
+      {/* Flow chain — horizontal */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 0,
+          marginBottom: 20,
+        }}
+      >
+        {nodes.map((node, i) => {
+          const triggerFrame = findTriggerFrame(wordTimestamps, node.trigger, fps);
+          const fallbackFrame = headingEndFrame + i * Math.round(2.2 * fps);
+          const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+          return (
+            <React.Fragment key={i}>
+              <FlowNode
+                icon={node.icon}
+                label={node.label}
+                value={node.value}
+                color={node.color}
+                startFrame={startFrame}
+                index={i}
+              />
+              {i < nodes.length - 1 && (
+                <FlowArrowConnector
+                  startFrame={startFrame + 12}
+                  color={node.color}
+                />
+              )}
+            </React.Fragment>
+          );
+        })}
+      </div>
+
+      {/* Highlight boxes (Your Cut emphasis) */}
+      {highlights.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          nodes.length * Math.round(2.2 * fps) +
+          Math.round(1.5 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <HighlightBox
+            key={`hl-${i}`}
+            value={v.value}
+            label={v.label}
+            secondary={v.secondary}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+
+      {/* Callouts below */}
+      {callouts.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          nodes.length * Math.round(2.2 * fps) +
+          Math.round(2 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <CalloutBox
+            key={`callout-${i}`}
+            text={v.text}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+
+      {/* Quotes below */}
+      {quotes.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          nodes.length * Math.round(2.2 * fps) +
+          Math.round(3 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <QuoteBox
+            key={`quote-${i}`}
+            text={v.text}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+// ── Layout: Icon Grid ───────────────────────────────────
+
+const IconGridLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
+  const cards = (visuals || []).filter((v) => v.type === "icon-card");
+  const callouts = (visuals || []).filter((v) => v.type === "callout");
+  const cols = 2;
+  const rows = Math.ceil(cards.length / cols);
+
+  return (
+    <div style={{ marginLeft: 16, marginRight: 16 }}>
+      {Array.from({ length: rows }).map((_, row) => (
+        <div key={row} style={{ display: "flex", gap: 18, marginBottom: 18 }}>
+          {cards.slice(row * cols, (row + 1) * cols).map((card, col) => {
+            const i = row * cols + col;
+            const triggerFrame = findTriggerFrame(
+              wordTimestamps,
+              card.trigger,
+              fps
+            );
+            const fallbackFrame = headingEndFrame + i * Math.round(1.8 * fps);
+            const startFrame =
+              triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+            return (
+              <IconGridCard
+                key={i}
+                icon={card.icon}
+                term={card.term}
+                description={card.description}
+                color={card.color}
+                startFrame={startFrame}
+              />
+            );
+          })}
+        </div>
+      ))}
+
+      {/* Callouts below grid */}
+      {callouts.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          cards.length * Math.round(1.8 * fps) +
+          Math.round(2 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <CalloutBox
+            key={`callout-${i}`}
+            text={v.text}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
 // ── Layout: Definition Cards ────────────────────────────
 
-const DefinitionCardsLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
+const DefinitionCardsLayout = ({
+  visuals,
+  wordTimestamps,
+  fps,
+  headingEndFrame,
+}) => {
   const definitions = (visuals || []).filter((v) => v.type === "definition");
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", marginLeft: 20, marginRight: 20 }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", marginLeft: 16, marginRight: 16 }}
+    >
       {definitions.map((v, i) => {
         const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
         const fallbackFrame = headingEndFrame + i * Math.round(2.5 * fps);
@@ -46,17 +259,23 @@ const DefinitionCardsLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }
 
 // ── Layout: Summary Row ─────────────────────────────────
 
-const SummaryRowLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
+const SummaryRowLayout = ({
+  visuals,
+  wordTimestamps,
+  fps,
+  headingEndFrame,
+}) => {
   const summaryCards = (visuals || []).filter((v) => v.type === "summary-card");
   const callouts = (visuals || []).filter((v) => v.type === "callout");
 
   return (
-    <div style={{ marginLeft: 20, marginRight: 20 }}>
+    <div style={{ marginLeft: 16, marginRight: 16 }}>
       <div style={{ display: "flex", gap: 18 }}>
         {summaryCards.map((v, i) => {
           const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
           const fallbackFrame = headingEndFrame + i * Math.round(1.5 * fps);
-          const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+          const startFrame =
+            triggerFrame !== null ? triggerFrame : fallbackFrame;
 
           return (
             <SummaryCard
@@ -73,7 +292,10 @@ const SummaryRowLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => 
 
       {callouts.map((v, i) => {
         const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
-        const fallbackFrame = headingEndFrame + summaryCards.length * Math.round(1.5 * fps) + Math.round(3 * fps);
+        const fallbackFrame =
+          headingEndFrame +
+          summaryCards.length * Math.round(1.5 * fps) +
+          Math.round(3 * fps);
         const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
 
         return (
@@ -92,33 +314,65 @@ const SummaryRowLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => 
 
 // ── Layout: Bullet Cards (fallback) ─────────────────────
 
-const BulletCardsLayout = ({ points, bulletStartFrames, headingDurationFrames, framesPerWord }) => {
+const BulletCardsLayout = ({
+  points,
+  bulletStartFrames,
+  headingDurationFrames,
+  framesPerWord,
+}) => {
   const frame = useCurrentFrame();
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 14, marginLeft: 20 }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 12,
+        marginLeft: 16,
+        marginRight: 16,
+      }}
+    >
       {points.map((point, i) => {
-        const bulletStart = bulletStartFrames[i] || (headingDurationFrames + i * 50);
+        const bulletStart =
+          bulletStartFrames[i] || headingDurationFrames + i * 50;
         const cardOpacity = interpolate(
           frame,
           [bulletStart, bulletStart + 12],
           [0, 1],
           { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
         );
+        const cardSlide = interpolate(
+          frame,
+          [bulletStart, bulletStart + 12],
+          [15, 0],
+          { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+        );
         return (
           <div
             key={i}
             style={{
-              backgroundColor: CARD_BG,
-              borderLeft: `5px solid ${CW_BLUE}`,
-              borderRadius: 14,
-              padding: "18px 28px",
+              backgroundColor: COLORS.card,
+              borderLeft: `5px solid ${COLORS.primary}`,
+              borderRadius: 12,
+              padding: "16px 26px",
               opacity: cardOpacity,
-              boxShadow: "0 4px 16px rgba(11,125,186,0.1)",
+              transform: `translateY(${cardSlide}px)`,
+              boxShadow: `0 3px 12px ${COLORS.cardShadow}`,
             }}
           >
-            <span style={{ color: TEXT_COLOR, fontSize: 32, lineHeight: 1.5, fontWeight: 500 }}>
-              <WrittenText text={point} startFrame={bulletStart + 6} framesPerWord={framesPerWord} />
+            <span
+              style={{
+                color: COLORS.text,
+                fontSize: 30,
+                lineHeight: 1.5,
+                fontWeight: 500,
+              }}
+            >
+              <WrittenText
+                text={point}
+                startFrame={bulletStart + 6}
+                framesPerWord={framesPerWord}
+              />
             </span>
           </div>
         );
@@ -139,6 +393,8 @@ export const WhiteboardContentScene = ({
   bulletStartFrames = [],
   headingDurationFrames = 45,
   wordTimestamps,
+  sceneProgress,
+  sectionLabel,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -147,97 +403,147 @@ export const WhiteboardContentScene = ({
   const headingWords = heading ? heading.split(" ").length : 0;
   const headingEndFrame = 5 + headingWords * headingFPW + 10;
 
+  // Heading underline animation
+  const underlineWidth = interpolate(
+    frame,
+    [headingEndFrame - 5, headingEndFrame + 8],
+    [0, 260],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+  );
+
   const renderContent = () => {
-    // Special visual layouts (definition cards, summary row) keep their designs
+    if (layout === "flow-chain" && visuals) {
+      return (
+        <FlowChainLayout
+          visuals={visuals}
+          wordTimestamps={wordTimestamps}
+          fps={fps}
+          headingEndFrame={headingEndFrame}
+        />
+      );
+    }
+    if (layout === "icon-grid" && visuals) {
+      return (
+        <IconGridLayout
+          visuals={visuals}
+          wordTimestamps={wordTimestamps}
+          fps={fps}
+          headingEndFrame={headingEndFrame}
+        />
+      );
+    }
     if (layout === "definition-cards" && visuals) {
-      return <DefinitionCardsLayout visuals={visuals} wordTimestamps={wordTimestamps} fps={fps} headingEndFrame={headingEndFrame} />;
+      return (
+        <DefinitionCardsLayout
+          visuals={visuals}
+          wordTimestamps={wordTimestamps}
+          fps={fps}
+          headingEndFrame={headingEndFrame}
+        />
+      );
     }
     if (layout === "summary-row" && visuals) {
-      return <SummaryRowLayout visuals={visuals} wordTimestamps={wordTimestamps} fps={fps} headingEndFrame={headingEndFrame} />;
+      return (
+        <SummaryRowLayout
+          visuals={visuals}
+          wordTimestamps={wordTimestamps}
+          fps={fps}
+          headingEndFrame={headingEndFrame}
+        />
+      );
     }
 
-    // DEFAULT: Synced narration display — what you see = what you hear
+    // Default: Synced narration display
     if (wordTimestamps && wordTimestamps.length > 0) {
       return (
-        <div style={{ marginLeft: 20, marginRight: 20 }}>
-          <NarrationDisplay wordTimestamps={wordTimestamps} fontSize={40} />
+        <div style={{ marginLeft: 16, marginRight: 16 }}>
+          <NarrationDisplay wordTimestamps={wordTimestamps} fontSize={38} />
         </div>
       );
     }
 
-    // Fallback: bullet cards (only if no wordTimestamps)
+    // Fallback: bullet cards
     if (points.length > 0) {
-      return <BulletCardsLayout points={points} bulletStartFrames={bulletStartFrames} headingDurationFrames={headingDurationFrames} framesPerWord={framesPerWord} />;
+      return (
+        <BulletCardsLayout
+          points={points}
+          bulletStartFrames={bulletStartFrames}
+          headingDurationFrames={headingDurationFrames}
+          framesPerWord={framesPerWord}
+        />
+      );
     }
+
     return null;
   };
 
   return (
     <AbsoluteFill style={{ fontFamily: FONT }}>
       <FontImport />
-      <BrandedBackground />
-      <TopBar height={50} />
-
-      {/* Decorative elements */}
+      <WarmBackground />
+      <AnimatedBackground />
+      <TopBar height={44} sectionLabel={sectionLabel || ""} />
       <CornerMarks />
-      <FloatingDots />
-      <BottomAccentLine />
-      <SideAccentBar side="right" />
 
-      {/* Left accent bar */}
+      {/* Main content area */}
       <div
         style={{
           position: "absolute",
-          top: 50,
-          left: 0,
-          width: 5,
-          height: 180,
-          background: `linear-gradient(to bottom, ${CW_BLUE}, transparent)`,
-          opacity: 0.35,
-          borderRadius: "0 2px 2px 0",
-        }}
-      />
-
-      {/* Main content area — VERTICALLY CENTERED below top bar */}
-      <div
-        style={{
-          position: "absolute",
-          top: 50,
+          top: 44,
           left: 0,
           right: 0,
           bottom: 0,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: "20px 60px 50px 50px",
+          padding: "20px 56px 44px 48px",
         }}
       >
         {/* Heading */}
         {heading && (
-          <div style={{ position: "relative", marginBottom: 24, marginLeft: 20 }}>
-            <div
-              style={{
-                backgroundColor: CARD_BG,
-                borderRadius: 14,
-                padding: "14px 28px 18px",
-                display: "inline-block",
-                boxShadow: "0 4px 20px rgba(11,125,186,0.12)",
-                border: `1.5px solid ${BORDER_COLOR}`,
-                borderLeft: `6px solid ${CW_BLUE}`,
-              }}
-            >
+          <div style={{ marginBottom: 26, marginLeft: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              {/* Accent dot */}
+              <div
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: 5,
+                  backgroundColor: COLORS.primary,
+                  opacity: interpolate(frame, [0, 8], [0, 0.7], {
+                    extrapolateRight: "clamp",
+                  }),
+                  flexShrink: 0,
+                }}
+              />
               <h2
                 style={{
-                  color: TEXT_COLOR,
+                  color: COLORS.text,
                   fontSize: 42,
                   fontWeight: 700,
                   margin: 0,
                   lineHeight: 1.3,
                 }}
               >
-                <WrittenText text={heading} startFrame={5} framesPerWord={headingFPW} />
+                <WrittenText
+                  text={heading}
+                  startFrame={5}
+                  framesPerWord={headingFPW}
+                />
               </h2>
             </div>
+            {/* Animated underline */}
+            <div
+              style={{
+                marginTop: 6,
+                marginLeft: 24,
+                height: 3,
+                backgroundColor: COLORS.primary,
+                borderRadius: 2,
+                width: underlineWidth,
+                opacity: 0.35,
+              }}
+            />
           </div>
         )}
 
@@ -245,6 +551,9 @@ export const WhiteboardContentScene = ({
       </div>
 
       <Watermark />
+      {typeof sceneProgress === "number" && (
+        <ProgressBar progress={sceneProgress} />
+      )}
     </AbsoluteFill>
   );
 };

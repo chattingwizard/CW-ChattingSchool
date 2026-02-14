@@ -6,27 +6,94 @@
       "type": "wb-title",
       "title": "Who is Chatting Wizard?",
       "subtitle": "F-01 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "Welcome to Chatting Wizard School. This is your first lesson. Let's start with who we are."
     },
     {
       "type": "wb-content",
       "heading": "What We Do",
-      "points": [
-        "We manage OnlyFans accounts for creators",
-        "Our chatters talk to fans and sell content",
-        "We work from home, online, worldwide"
+      "layout": "definition-cards",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "Agency",
+          "definition": "We manage OnlyFans accounts for creators and help them make money.",
+          "icon": "building",
+          "color": "#0b7dba",
+          "trigger": "agency"
+        },
+        {
+          "type": "definition",
+          "term": "Chatters",
+          "definition": "Our chatters talk to fans and sell content — from home, worldwide.",
+          "icon": "chat",
+          "color": "#27ae60",
+          "trigger": "chatters"
+        },
+        {
+          "type": "definition",
+          "term": "Your Job",
+          "definition": "Talk to fans and sell content. Simple.",
+          "icon": "target",
+          "color": "#e67e22",
+          "trigger": "job"
+        },
+        {
+          "type": "callout",
+          "text": "Your job: talk to fans, sell content. From home, anywhere in the world.",
+          "icon": "globe",
+          "color": "#27ae60",
+          "trigger": "Simple"
+        }
       ],
       "narration": "Chatting Wizard is an OnlyFans management agency. We help creators make money by managing their fan conversations. Our chatters work from home, anywhere in the world. Your job is to talk to fans and sell content. Simple."
     },
     {
       "type": "wb-content",
       "heading": "Our 5 Values",
-      "points": [
-        "Respect — treat everyone with dignity",
-        "Commitment — show up and do the work",
-        "Open Mindset — learn from feedback",
-        "Constant Progress — get better every day",
-        "Enjoy the Journey — have fun doing it"
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "heart",
+          "term": "Respect",
+          "description": "Treat everyone well — fans and teammates",
+          "color": "#0b7dba",
+          "trigger": "Respect"
+        },
+        {
+          "type": "icon-card",
+          "icon": "check",
+          "term": "Commitment",
+          "description": "Show up every shift and give your best",
+          "color": "#27ae60",
+          "trigger": "Commitment"
+        },
+        {
+          "type": "icon-card",
+          "icon": "eye",
+          "term": "Open Mindset",
+          "description": "Accept feedback and learn from it",
+          "color": "#8e44ad",
+          "trigger": "Mindset"
+        },
+        {
+          "type": "icon-card",
+          "icon": "trending",
+          "term": "Constant Progress",
+          "description": "Get a little better every single day",
+          "color": "#e67e22",
+          "trigger": "Progress"
+        },
+        {
+          "type": "callout",
+          "text": "Enjoy the Journey — this job can be fun with the right attitude!",
+          "icon": "star",
+          "color": "#f39c12",
+          "trigger": "Enjoy"
+        }
       ],
       "narration": "We have five values. Respect. Treat everyone well, fans and teammates. Commitment. Show up every shift and give your best. Open Mindset. Accept feedback and learn from it. Constant Progress. Get a little better every single day. And Enjoy the Journey. This job can be fun if you have the right attitude."
     },
@@ -34,6 +101,7 @@
       "type": "wb-outro",
       "title": "Quick Check",
       "subtitle": "Next: Your Team",
+      "sectionLabel": "Foundations",
       "narration": "Quick check. Can you name at least three of our five values? Pause and think. The answer: Respect, Commitment, Open Mindset, Constant Progress, and Enjoy the Journey. Nice. Next up, let's talk about your team."
     }
   ]

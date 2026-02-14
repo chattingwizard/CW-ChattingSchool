@@ -1,0 +1,142 @@
+# Video Script v3 — Mandatory Creation System
+
+## WHEN THIS RULE APPLIES
+Any time you create or edit a video script JSON file in `video-scripts/`.
+
+## MANDATORY WORKFLOW
+1. Write the JSON script following the structure below
+2. Run `node video-pipeline/scripts/qa-check.mjs <script-path>` — MUST pass with 0 failures
+3. Fix ALL failures and warnings
+4. Run QA again until clean
+5. Only THEN proceed to render with `node video-pipeline/scripts/create-video.mjs <script-path>`
+
+## JSON STRUCTURE — Every script MUST follow this exactly
+
+```json
+{
+  "title": "F-XX: Video Title",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Video Title",
+      "subtitle": "F-XX — Section Name",
+      "sectionLabel": "Section Name",
+      "narration": "Opening narration text..."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Scene Heading",
+      "layout": "MUST be one of: flow-chain | icon-grid | definition-cards | summary-row",
+      "sectionLabel": "Section Name",
+      "visuals": [
+        { "type": "visual-type", "trigger": "word_from_narration", "...": "props" }
+      ],
+      "narration": "Scene narration text..."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: What Comes After",
+      "sectionLabel": "Section Name",
+      "narration": "Recall question... Pause... The answer is..."
+    }
+  ]
+}
+```
+
+## LAYOUT RULES — NO EXCEPTIONS
+
+Every `wb-content` scene MUST have a `layout` field. Plain bullet points and unstructured narration display are BANNED.
+
+| Layout | Use When | Required Visual Types |
+|--------|----------|----------------------|
+| `flow-chain` | Showing a process/sequence (A → B → C) | `flow-node` (2-5 nodes) + `callout` or `highlight-box` |
+| `icon-grid` | Listing 3-4 concepts with icons | `icon-card` (3-4 cards) + `callout` |
+| `definition-cards` | Teaching new terms/definitions | `definition` (2-4 cards) |
+| `summary-row` | Quick review of concepts | `summary-card` (3-4 cards) + `callout` |
+
+## VISUAL TYPES — Complete Reference
+
+### Primary content visuals
+| Type | Props | Use With Layout |
+|------|-------|-----------------|
+| `flow-node` | `icon`, `label`, `value`, `color`, `trigger` | flow-chain |
+| `icon-card` | `icon`, `term`, `description`, `color`, `trigger` | icon-grid |
+| `definition` | `icon`, `term`, `definition`, `color`, `trigger` | definition-cards |
+| `summary-card` | `icon`, `term`, `short`, `color`, `trigger` | summary-row |
+
+### Emphasis visuals (min 1 per content scene)
+| Type | Props | Description |
+|------|-------|-------------|
+| `callout` | `text`, `icon`, `color`, `trigger` | Key message with colored border. Use for mantras, rules, warnings. |
+| `highlight-box` | `value`, `label`, `secondary`, `icon`, `color`, `trigger` | Big animated number with explanation. Use when showing specific amounts ($1.60, 20%, etc). |
+| `quote` | `text`, `icon`, `color`, `trigger` | Italic quoted text. Use for memorable phrases. |
+
+## MANDATORY PROPERTIES ON EVERY VISUAL
+
+1. **`trigger`** — A word that appears in the scene's narration. The visual appears when this word is spoken. Without it, audio-visual sync breaks.
+2. **`color`** — Must be a hex color (#RRGGBB). Use the brand palette:
+   - Blue: `#0b7dba` (primary, default)
+   - Orange: `#e67e22` (energy, money, action)
+   - Green: `#27ae60` (positive, growth)
+   - Purple: `#8e44ad` (premium, special)
+   - Red: `#e74c3c` (warning, important)
+   - Gold: `#f39c12` (value, reward)
+3. **`icon`** — Must be from the valid set: `dollar`, `chat`, `user`, `globe`, `target`, `star`, `check`, `x`, `arrow`, `lock`, `calendar`, `film`, `building`, `percent`, `heart`, `eye`, `sparkle`, `shield`, `users`, `trending`
+
+## MANDATORY SCENE PROPERTIES
+
+- **`sectionLabel`** — Required on EVERY scene. Appears in top bar. Usually the module name (e.g., "Foundations", "Scripts", "Psychology").
+- **`narration`** — Required on EVERY scene. Minimum 10 words.
+
+## QUALITY RULES FOR NARRATION
+
+- Simple English (B1-B2). Max 12 words per sentence.
+- Define every term before using it (see term teaching order in video-production-rules.mdc).
+- Include the sale mantra where appropriate: "Every conversation has one goal — a sale."
+- Last scene (outro) MUST include a recall question with "?" and "The answer is..."
+- Include at least one practical example with real numbers ($, %).
+
+## MINIMUM VISUAL REQUIREMENTS PER CONTENT SCENE
+
+- At least 2 visual elements
+- At least 2 different visual types (don't use all the same type)
+- At least 1 emphasis element (callout, highlight-box, or quote)
+- Every visual has a `trigger` word
+
+## CHOOSING THE RIGHT LAYOUT — Decision Tree
+
+```
+Is this scene showing a PROCESS or FLOW? (A leads to B leads to C)
+  → YES: Use "flow-chain" with flow-nodes + arrows
+
+Is this scene LISTING 3-4 related concepts?
+  → YES: Use "icon-grid" with icon-cards
+
+Is this scene TEACHING new vocabulary/definitions?
+  → YES: Use "definition-cards" with definitions
+
+Is this scene doing a QUICK REVIEW of previously taught concepts?
+  → YES: Use "summary-row" with summary-cards
+```
+
+## COLOR STRATEGY
+
+- Use DIFFERENT colors for each visual in a scene (don't make all blue)
+- Reserve RED for warnings and the sale mantra callout
+- Use the creator/fan concept's established color consistently across videos
+- When showing money flow: blue (fan) → red (OnlyFans cut) → green (remaining) → orange (your cut)
+
+## ANTI-PATTERNS — NEVER DO THESE
+
+1. ❌ Content scene without `layout` field
+2. ❌ Visual without `trigger` word
+3. ❌ All visuals same color
+4. ❌ Missing `sectionLabel`
+5. ❌ Outro without recall question
+6. ❌ Using an icon not in the valid set
+7. ❌ Narration longer than 150 seconds estimated (~375 words total)
+8. ❌ Scene with only 1 visual element
+9. ❌ Using plain text/bullets instead of rich components
+10. ❌ Skipping the QA check before render

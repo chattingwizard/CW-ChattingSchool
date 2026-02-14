@@ -6,28 +6,127 @@
       "type": "wb-title",
       "title": "How to Handle Banned Requests",
       "subtitle": "F-09 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "Now you know the banned topics. But what do you actually do when a fan brings one up? The answer is simple. You ignore it. You never reject it, you never argue about it, you just ignore it and steer the conversation somewhere else."
     },
     {
       "type": "wb-content",
       "heading": "The Golden Rule: Ignore",
+      "layout": "flow-chain",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "eye",
+          "label": "See Banned Topic",
+          "value": "Stop",
+          "color": "#e74c3c",
+          "trigger": "Ignore"
+        },
+        {
+          "type": "flow-node",
+          "icon": "x",
+          "label": "Don't Say No",
+          "value": "Skip",
+          "color": "#e67e22",
+          "trigger": "explain"
+        },
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "Change Subject",
+          "value": "Redirect",
+          "color": "#27ae60",
+          "trigger": "subject"
+        },
+        {
+          "type": "callout",
+          "text": "If you say NO, you kill the vibe and lose the sale. Ignore and redirect.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "reject"
+        }
+      ],
       "narration": "The golden rule is simple. Ignore it. Do not say no. Do not explain why you can't. Do not lecture the fan. Just ignore the topic completely. Act like they never said it. Change the subject. Ask them a question about something else. Keep the energy positive and move on. If you say no or reject the fan directly, you kill the vibe and lose the sale. If you ignore it and redirect, the conversation keeps flowing and the fan stays happy."
     },
     {
       "type": "wb-content",
       "heading": "Meet-Ups — The Special Case",
+      "layout": "definition-cards",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "The Script",
+          "definition": "Don't say yes, don't say no. Play it in between. Show vulnerability.",
+          "icon": "chat",
+          "color": "#0b7dba",
+          "trigger": "script"
+        },
+        {
+          "type": "definition",
+          "term": "Keep the Dream Alive",
+          "definition": "The fan still feels there's a chance — and they keep spending.",
+          "icon": "heart",
+          "color": "#8e44ad",
+          "trigger": "dream"
+        },
+        {
+          "type": "callout",
+          "text": "Never kill the illusion. Keep the dream alive, keep selling.",
+          "icon": "shield",
+          "color": "#e74c3c",
+          "trigger": "illusion"
+        }
+      ],
       "narration": "Meet-ups are a special case. When a fan asks to meet up, you do not say yes and you do not say no. You play it in between. There are specific scripts for this. Here is an example. A fan says hey, do you want to meet up? You say, honestly, I would love to find a real connection, but right now is not the right time because I have had some really bad experiences in the past. For now, I would love to keep getting to know you better. Where are you from, by the way? See what happened? You did not reject the fan. You kept the dream alive. You showed vulnerability. And you redirected the conversation. The fan still feels like there is a chance, and they keep spending. That is the script. Never kill the illusion."
     },
     {
       "type": "wb-content",
       "heading": "Redirect Techniques",
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "user",
+          "term": "Ask a Question",
+          "description": "\"Tell me something about yourself\" or \"What did you do today?\"",
+          "color": "#0b7dba",
+          "trigger": "question"
+        },
+        {
+          "type": "icon-card",
+          "icon": "film",
+          "term": "Send a Photo",
+          "description": "A selfie changes the topic instantly",
+          "color": "#8e44ad",
+          "trigger": "selfie"
+        },
+        {
+          "type": "icon-card",
+          "icon": "chat",
+          "term": "Reference Past Chat",
+          "description": "\"Did you go to that concert you told me about?\"",
+          "color": "#27ae60",
+          "trigger": "mentioned"
+        },
+        {
+          "type": "callout",
+          "text": "Speed is key — ignore the banned topic and redirect IMMEDIATELY.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "speed"
+        }
+      ],
       "narration": "Here are some redirect techniques you can use after ignoring a banned topic. First, ask a personal question. Something like, tell me something about yourself, or what did you do today? Second, send a selfie or a photo. It changes the topic instantly. Third, bring up something they mentioned before. Like, hey, did you end up going to that concert you told me about? The key is speed. Ignore the banned topic, redirect immediately, and keep the conversation alive. The fan should barely notice you skipped over it."
     },
     {
       "type": "wb-outro",
       "title": "Remember",
       "subtitle": "Ignore — Redirect — Keep Selling",
-      "narration": "Let's recap. When you see a banned topic, ignore it completely. Do not engage, do not reject, do not explain. For meet-ups, use the script. Play it in between, never say yes, never say no. Redirect the conversation to something positive and keep selling. If you get this right, the fan never even notices, and you keep making money."
+      "sectionLabel": "Foundations",
+      "narration": "Quick check. A fan mentions a banned topic. What do you do? Pause. The answer is ignore it completely. Do not engage, do not reject, do not explain. For meet-ups, use the script. Play it in between, never say yes, never say no. Redirect the conversation to something positive and keep selling. If you get this right, the fan never even notices, and you keep making money."
     }
   ]
 }

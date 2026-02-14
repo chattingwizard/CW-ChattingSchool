@@ -6,19 +6,21 @@
       "type": "wb-title",
       "title": "Welcome to Chatting Wizard School",
       "subtitle": "F-01 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "Welcome to Chatting Wizard School. This training will teach you everything you need to start a new job. A job you can do from home, online, from anywhere in the world. And here's the best part. If you work hard and apply what you learn here, you can earn very good money. The harder you work, the more you earn. There is no limit. Before we begin, let's learn three important words. You will hear these words in every single lesson."
     },
     {
       "type": "wb-content",
       "heading": "3 Words You Need to Know",
       "layout": "definition-cards",
+      "sectionLabel": "Foundations",
       "visuals": [
         {
           "type": "definition",
           "term": "OnlyFans",
           "definition": "A website where people pay to see exclusive photos and videos.",
           "icon": "globe",
-          "color": "#2563eb",
+          "color": "#0b7dba",
           "trigger": "OnlyFans"
         },
         {
@@ -26,7 +28,7 @@
           "term": "Fan",
           "definition": "A person who pays money on OnlyFans.",
           "icon": "user",
-          "color": "#7c3aed",
+          "color": "#8e44ad",
           "trigger": "two"
         },
         {
@@ -34,8 +36,15 @@
           "term": "Chatter",
           "definition": "That's YOU. You become the model and chat with fans under her name.",
           "icon": "chat",
-          "color": "#16a34a",
+          "color": "#27ae60",
           "trigger": "three"
+        },
+        {
+          "type": "callout",
+          "text": "You build a connection, and you make sales. That is what a chatter does.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "sales"
         }
       ],
       "narration": "Word number one. OnlyFans. OnlyFans is a website. On this website, people pay money to see exclusive photos and videos. Think of it like a private Instagram, but everything costs money. Nothing is free. Word number two. Fan. A fan is a person who goes to OnlyFans and pays money. They pay to see photos, videos, and to talk to someone they like. Word number three. Chatter. A chatter is you. Your job is to chat with fans on OnlyFans, but not as yourself. You become the model. You take her personality, her name, her way of talking, and you chat as if you were her. The fan thinks they are talking to the model. But it's you. You build a connection, and you make sales. That is what a chatter does."
@@ -44,13 +53,14 @@
       "type": "wb-content",
       "heading": "Let's Review",
       "layout": "summary-row",
+      "sectionLabel": "Foundations",
       "visuals": [
         {
           "type": "summary-card",
           "term": "OnlyFans",
           "short": "The website",
           "icon": "globe",
-          "color": "#2563eb",
+          "color": "#0b7dba",
           "trigger": "OnlyFans"
         },
         {
@@ -58,7 +68,7 @@
           "term": "Fan",
           "short": "The person who pays",
           "icon": "user",
-          "color": "#7c3aed",
+          "color": "#8e44ad",
           "trigger": "fan"
         },
         {
@@ -66,14 +76,14 @@
           "term": "Chatter",
           "short": "YOU — you become the model",
           "icon": "chat",
-          "color": "#16a34a",
+          "color": "#27ae60",
           "trigger": "chatter"
         },
         {
           "type": "callout",
           "text": "Every conversation has one goal: a SALE.",
           "icon": "target",
-          "color": "#dc2626",
+          "color": "#e74c3c",
           "trigger": "goal"
         }
       ],
@@ -83,6 +93,7 @@
       "type": "wb-outro",
       "title": "Quick Check",
       "subtitle": "Next: What is OnlyFans?",
+      "sectionLabel": "Foundations",
       "narration": "Quick check. What is a chatter? Pause and think. A chatter is the person who talks to fans on OnlyFans. That's you. That's your job. And what is the goal of every conversation? A sale. Great. Next, we'll look at OnlyFans more closely so you understand the platform you're working on."
     }
   ]

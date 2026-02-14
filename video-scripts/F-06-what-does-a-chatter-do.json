@@ -6,27 +6,79 @@
       "type": "wb-title",
       "title": "What Does a Chatter Do?",
       "subtitle": "F-06 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "Now you know what OnlyFans is and how money works. Let's talk about what YOU actually do every day."
     },
     {
       "type": "wb-content",
       "heading": "You ARE the Model",
-      "points": [
-        "You chat with fans AS the model",
-        "You don't reply as yourself — ever",
-        "If she's playful and uses emojis, so do you",
-        "The fan must believe they're talking to HER"
+      "layout": "definition-cards",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "The Illusion",
+          "definition": "You chat with fans AS the model. You are not yourself — you are her.",
+          "icon": "user",
+          "color": "#8e44ad",
+          "trigger": "model"
+        },
+        {
+          "type": "definition",
+          "term": "Match Her Style",
+          "definition": "Copy her personality, emojis, and tone. The fan must believe it's her.",
+          "icon": "sparkle",
+          "color": "#e67e22",
+          "trigger": "playful"
+        },
+        {
+          "type": "callout",
+          "text": "Never break the illusion. The fan must always think it's the real model.",
+          "icon": "shield",
+          "color": "#e74c3c",
+          "trigger": "illusion"
+        }
       ],
       "narration": "Here's the most important thing to understand. You chat with fans as the model. You are not yourself. You are her. If a fan says hey sexy, you don't reply as yourself. You reply as the model. If she's playful and uses lots of emojis, so do you. If she's more sophisticated, you match that tone. The fan must always believe they're talking to the real model. Never break that illusion."
     },
     {
       "type": "wb-content",
       "heading": "Your Two Goals",
-      "points": [
-        "Build a connection — make the fan feel special",
-        "Sell content — PPVs and customs",
-        "You use scripts for 80% of your messages",
-        "Type /n and the perfect message appears"
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "heart",
+          "term": "Build Connection",
+          "description": "Make the fan feel special, seen, important",
+          "color": "#0b7dba",
+          "trigger": "connection"
+        },
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "Sell Content",
+          "description": "PPVs and customs — that's how money is made",
+          "color": "#27ae60",
+          "trigger": "Sell"
+        },
+        {
+          "type": "highlight-box",
+          "value": "80%",
+          "label": "of messages come from scripts",
+          "secondary": "Type /n → the perfect message appears",
+          "icon": "sparkle",
+          "color": "#8e44ad",
+          "trigger": "eighty"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a SALE.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "sale"
+        }
       ],
       "narration": "You have two goals in every conversation. One, build a connection. Make the fan feel special, seen, important. Two, sell content. PPVs and customs. That's how money is made. And here's the good news. You don't have to figure out what to say. You use scripts for eighty percent of your messages. You type slash n, and the perfect welcome message appears. The fan responds, the script tells you what to say next. It's like having a cheat code."
     },
@@ -34,6 +86,7 @@
       "type": "wb-outro",
       "title": "Quick Check",
       "subtitle": "Next: A Typical Shift",
+      "sectionLabel": "Foundations",
       "narration": "Quick check. Do you chat as yourself, or as the model? Pause. The answer is always as the model. Never as yourself. Good. Next, let's see what a full shift looks like from start to finish."
     }
   ]

@@ -1,85 +1,121 @@
 /**
- * Chatting Wizard — Shared branding for all video scenes.
- * VISIBLE, BOLD branding — not subtle.
+ * Chatting Wizard School — Design System v2
+ *
+ * WARM PAPER aesthetic with subtle grid.
+ * Professional, educational, clean.
  */
 import React from "react";
 import { Img, staticFile, useCurrentFrame, interpolate } from "remotion";
 
-// ── Colors ──────────────────────────────────────────────
-export const CW_BLUE = "#0b7dba";
-export const CW_BLUE_MID = "#1a90c8";
-export const CW_BLUE_LIGHT = "#4db0d9";
-export const CW_BLUE_PALE = "#d4edf8";
+// ── Color Tokens ────────────────────────────────────────
+export const COLORS = {
+  // Backgrounds
+  paper: "#f7f3eb",
+  paperDark: "#efe8db",
+  grid: "#e4ddd0",
 
-export const TEXT_COLOR = "#1a2a3a";
-export const TEXT_LIGHT = "#5a6f80";
-export const CARD_BG = "#ffffff";
-export const BORDER_COLOR = "#b8d8ea";
+  // Primary brand
+  primary: "#0b7dba",
+  primaryDark: "#063f5e",
+  primaryMid: "#1a90c8",
+  primaryLight: "#d4edf8",
+
+  // Accent palette
+  orange: "#e67e22",
+  orangeLight: "#fdebd0",
+  green: "#27ae60",
+  greenLight: "#d5f5e3",
+  purple: "#8e44ad",
+  purpleLight: "#ebdef0",
+  red: "#e74c3c",
+  redLight: "#fadbd8",
+  gold: "#f39c12",
+  goldLight: "#fef9e7",
+
+  // Text
+  text: "#2c3e50",
+  textLight: "#7f8c8d",
+  textMuted: "#bdc3c7",
+
+  // Cards
+  card: "#ffffff",
+  cardBorder: "#e8e0d4",
+  cardShadow: "rgba(44, 62, 80, 0.08)",
+};
+
+// Backward-compat named exports used by other files
+export const CW_BLUE = COLORS.primary;
+export const CW_BLUE_MID = COLORS.primaryMid;
+export const CW_BLUE_LIGHT = "#4db0d9";
+export const CW_BLUE_PALE = COLORS.primaryLight;
+export const TEXT_COLOR = COLORS.text;
+export const TEXT_LIGHT = COLORS.textLight;
+export const CARD_BG = COLORS.card;
+export const BORDER_COLOR = COLORS.cardBorder;
 
 // ── Font ────────────────────────────────────────────────
 export const FONT = '"Poppins", "Segoe UI", system-ui, sans-serif';
 
-// ── Google Fonts import ─────────────────────────────────
 export const FontImport = () => (
   <style>
-    {`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');`}
+    {`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');`}
   </style>
 );
 
-// ── Branded background with visible gradient + decorations ──
-export const BrandedBackground = () => (
+// ── Lighten helper ──────────────────────────────────────
+export function lightenColor(hex, amount = 0.9) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgb(${Math.round(r + (255 - r) * amount)}, ${Math.round(
+    g + (255 - g) * amount
+  )}, ${Math.round(b + (255 - b) * amount)})`;
+}
+
+// ── Warm Paper Background with Grid ─────────────────────
+export const WarmBackground = () => (
   <>
-    {/* Main gradient — clearly blue, NOT white */}
+    {/* Base warm paper */}
     <div
       style={{
         position: "absolute",
         inset: 0,
-        background: "linear-gradient(160deg, #b8ddf0 0%, #d6ecf6 35%, #e8f3fa 70%, #d0e7f3 100%)",
+        backgroundColor: COLORS.paper,
       }}
     />
 
-    {/* Subtle dot pattern for texture */}
-    <svg
-      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.08 }}
-    >
-      <defs>
-        <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-          <circle cx="15" cy="15" r="1.5" fill="#0b7dba" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#dots)" />
-    </svg>
-
-    {/* Large decorative circle top-right */}
+    {/* Subtle grid lines (notebook feel) */}
     <div
       style={{
         position: "absolute",
-        top: -80,
-        right: -80,
-        width: 350,
-        height: 350,
-        borderRadius: "50%",
-        background: "radial-gradient(circle, rgba(11,125,186,0.08) 0%, transparent 70%)",
+        inset: 0,
+        backgroundImage: `
+          linear-gradient(${COLORS.grid}44 1px, transparent 1px),
+          linear-gradient(90deg, ${COLORS.grid}44 1px, transparent 1px)
+        `,
+        backgroundSize: "48px 48px",
       }}
     />
 
-    {/* Small decorative circle bottom-left */}
+    {/* Warm gradient accents (very subtle) */}
     <div
       style={{
         position: "absolute",
-        bottom: -50,
-        left: -50,
-        width: 250,
-        height: 250,
-        borderRadius: "50%",
-        background: "radial-gradient(circle, rgba(11,125,186,0.06) 0%, transparent 70%)",
+        inset: 0,
+        background: `
+          radial-gradient(ellipse at 85% 8%, rgba(230,126,34,0.035) 0%, transparent 45%),
+          radial-gradient(ellipse at 8% 92%, rgba(11,125,186,0.03) 0%, transparent 45%)
+        `,
       }}
     />
   </>
 );
 
-// ── Top branded header bar with gradient ─────────────────
-export const TopBar = ({ height = 50 }) => (
+// Keep backward compat name
+export const BrandedBackground = WarmBackground;
+
+// ── Top Bar ─────────────────────────────────────────────
+export const TopBar = ({ height = 44, sectionLabel = "" }) => (
   <div
     style={{
       position: "absolute",
@@ -87,112 +123,125 @@ export const TopBar = ({ height = 50 }) => (
       left: 0,
       right: 0,
       height,
-      background: `linear-gradient(135deg, #063f5e 0%, ${CW_BLUE} 50%, ${CW_BLUE_MID} 100%)`,
+      background: `linear-gradient(135deg, ${COLORS.primaryDark} 0%, ${COLORS.primary} 55%, ${COLORS.primaryMid} 100%)`,
       display: "flex",
       alignItems: "center",
+      justifyContent: "space-between",
       paddingLeft: 24,
-      paddingRight: 24,
-      boxShadow: "0 3px 20px rgba(11,125,186,0.25)",
+      paddingRight: 32,
+      boxShadow: "0 2px 12px rgba(11,125,186,0.18)",
     }}
   >
     <Img
       src={staticFile("logo.png")}
-      style={{ width: 110, height: "auto", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.9 }}
+      style={{
+        width: 100,
+        height: "auto",
+        objectFit: "contain",
+        filter: "brightness(0) invert(1)",
+        opacity: 0.9,
+      }}
+    />
+    {sectionLabel && (
+      <span
+        style={{
+          color: "rgba(255,255,255,0.65)",
+          fontSize: 15,
+          fontFamily: FONT,
+          fontWeight: 600,
+          letterSpacing: 1.5,
+          textTransform: "uppercase",
+        }}
+      >
+        {sectionLabel}
+      </span>
+    )}
+  </div>
+);
+
+// ── Progress Bar (bottom of video) ──────────────────────
+export const ProgressBar = ({ progress = 0, color = COLORS.primary }) => (
+  <div
+    style={{
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: 4,
+      backgroundColor: "rgba(0,0,0,0.05)",
+    }}
+  >
+    <div
+      style={{
+        height: "100%",
+        width: `${Math.min(progress, 1) * 100}%`,
+        backgroundColor: color,
+        borderRadius: "0 2px 2px 0",
+      }}
     />
   </div>
 );
 
-// ── Decorative corner marks — adds professional framing ──
-export const CornerMarks = ({ inset = 28, size = 40, thickness = 3, color = CW_BLUE, opacity = 0.18 }) => {
-  const style = (top, right, bottom, left, rotDeg) => ({
+// ── Corner Marks ────────────────────────────────────────
+export const CornerMarks = ({
+  inset = 24,
+  size = 28,
+  thickness = 2,
+  color = COLORS.primary,
+  opacity = 0.1,
+}) => {
+  const s = (top, right, bottom, left, rot) => ({
     position: "absolute",
-    top, right, bottom, left,
-    width: size, height: size,
+    top,
+    right,
+    bottom,
+    left,
+    width: size,
+    height: size,
     opacity,
-    transform: `rotate(${rotDeg}deg)`,
+    transform: `rotate(${rot}deg)`,
   });
   const L = (
     <svg viewBox={`0 0 ${size} ${size}`} width={size} height={size} fill="none">
-      <path d={`M 0 ${size} L 0 0 L ${size} 0`} stroke={color} strokeWidth={thickness} strokeLinecap="round" />
+      <path
+        d={`M 0 ${size} L 0 0 L ${size} 0`}
+        stroke={color}
+        strokeWidth={thickness}
+        strokeLinecap="round"
+      />
     </svg>
   );
   return (
     <>
-      <div style={style(inset + 50, undefined, undefined, inset, 0)}>{L}</div>
-      <div style={style(inset + 50, inset, undefined, undefined, 90)}>{L}</div>
-      <div style={style(undefined, undefined, inset, inset, 270)}>{L}</div>
-      <div style={style(undefined, inset, inset, undefined, 180)}>{L}</div>
+      <div style={s(inset + 44, undefined, undefined, inset, 0)}>{L}</div>
+      <div style={s(inset + 44, inset, undefined, undefined, 90)}>{L}</div>
+      <div style={s(undefined, undefined, inset + 10, inset, 270)}>{L}</div>
+      <div style={s(undefined, inset, inset + 10, undefined, 180)}>{L}</div>
     </>
   );
 };
 
-// ── Bottom accent line ───────────────────────────────────
-export const BottomAccentLine = ({ y = 62 }) => (
-  <div
-    style={{
-      position: "absolute",
-      bottom: y,
-      left: "10%",
-      right: "10%",
-      height: 1,
-      background: `linear-gradient(90deg, transparent, ${CW_BLUE}33, ${CW_BLUE}55, ${CW_BLUE}33, transparent)`,
-    }}
-  />
-);
-
-// ── Floating accent dots — small circles for visual richness ──
-export const FloatingDots = () => (
-  <>
-    {/* Top-right cluster */}
-    <div style={{ position: "absolute", top: 100, right: 65, width: 10, height: 10, borderRadius: "50%", backgroundColor: CW_BLUE, opacity: 0.1 }} />
-    <div style={{ position: "absolute", top: 125, right: 90, width: 6, height: 6, borderRadius: "50%", backgroundColor: CW_BLUE_MID, opacity: 0.13 }} />
-    <div style={{ position: "absolute", top: 80, right: 110, width: 8, height: 8, borderRadius: "50%", backgroundColor: CW_BLUE_LIGHT, opacity: 0.1 }} />
-    {/* Bottom-left cluster */}
-    <div style={{ position: "absolute", bottom: 100, left: 55, width: 9, height: 9, borderRadius: "50%", backgroundColor: CW_BLUE, opacity: 0.1 }} />
-    <div style={{ position: "absolute", bottom: 130, left: 80, width: 6, height: 6, borderRadius: "50%", backgroundColor: CW_BLUE_MID, opacity: 0.12 }} />
-    {/* Mid-right */}
-    <div style={{ position: "absolute", top: "55%", right: 40, width: 12, height: 12, borderRadius: "50%", backgroundColor: CW_BLUE_PALE, opacity: 0.35 }} />
-    {/* Mid-left */}
-    <div style={{ position: "absolute", top: "40%", left: 30, width: 14, height: 14, borderRadius: "50%", backgroundColor: CW_BLUE_PALE, opacity: 0.3 }} />
-  </>
-);
-
-// ── Side accent bar (decorative vertical line on right) ──
-export const SideAccentBar = ({ side = "right" }) => (
-  <div
-    style={{
-      position: "absolute",
-      top: 80,
-      [side]: 0,
-      width: 4,
-      height: 120,
-      background: `linear-gradient(to bottom, ${CW_BLUE}44, transparent)`,
-      borderRadius: 2,
-    }}
-  />
-);
-
-// ── Watermark — VISIBLE (bottom-right, larger) ──────────
+// ── Watermark ───────────────────────────────────────────
 export const Watermark = () => (
   <div
     style={{
       position: "absolute",
-      bottom: 22,
-      right: 36,
+      bottom: 14,
+      right: 32,
       display: "flex",
       alignItems: "center",
-      gap: 10,
-      opacity: 0.5,
+      gap: 8,
+      opacity: 0.3,
     }}
   >
     <Img
       src={staticFile("logo.png")}
-      style={{ width: 50, height: "auto", objectFit: "contain" }}
+      style={{ width: 32, height: "auto", objectFit: "contain" }}
     />
     <span
       style={{
-        fontSize: 18,
-        color: CW_BLUE,
+        fontSize: 13,
+        color: COLORS.primary,
         fontFamily: FONT,
         fontWeight: 700,
         letterSpacing: 0.5,
@@ -202,3 +251,46 @@ export const Watermark = () => (
     </span>
   </div>
 );
+
+// ── Animated Background — Soft floating shapes for "breathing" feel ──
+export const AnimatedBackground = () => {
+  const frame = useCurrentFrame();
+
+  const shapes = [
+    { x: 10, y: 15, size: 140, spd: 0.008, color: COLORS.primary },
+    { x: 80, y: 70, size: 110, spd: 0.006, color: COLORS.orange },
+    { x: 40, y: 85, size: 90, spd: 0.01, color: COLORS.purple },
+    { x: 88, y: 22, size: 120, spd: 0.007, color: COLORS.green },
+    { x: 55, y: 45, size: 80, spd: 0.012, color: COLORS.gold },
+  ];
+
+  return (
+    <>
+      {shapes.map((s, i) => {
+        const yOff = Math.sin(frame * s.spd + i * 1.7) * 22;
+        const xOff = Math.cos(frame * s.spd * 0.7 + i * 2.3) * 16;
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              left: `${s.x}%`,
+              top: `${s.y}%`,
+              width: s.size,
+              height: s.size,
+              borderRadius: "50%",
+              background: `radial-gradient(circle, ${s.color}08 0%, transparent 70%)`,
+              transform: `translate(${xOff}px, ${yOff}px)`,
+              pointerEvents: "none",
+            }}
+          />
+        );
+      })}
+    </>
+  );
+};
+
+// ── Removed old decorative noise — replaced with AnimatedBackground ──
+export const FloatingDots = () => null;
+export const BottomAccentLine = () => null;
+export const SideAccentBar = () => null;

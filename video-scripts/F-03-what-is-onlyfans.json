@@ -6,26 +6,94 @@
       "type": "wb-title",
       "title": "What is OnlyFans?",
       "subtitle": "F-03 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "Before you start chatting, you need to understand the platform you're working on."
     },
     {
       "type": "wb-content",
       "heading": "OnlyFans in Simple Words",
-      "points": [
-        "A website where creators share exclusive content",
-        "Fans pay to see photos, videos, and messages",
-        "Think of it like a private Instagram with a paywall"
+      "layout": "definition-cards",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "The Platform",
+          "definition": "A website where creators share exclusive photos, videos, and messages.",
+          "icon": "globe",
+          "color": "#0b7dba",
+          "trigger": "website"
+        },
+        {
+          "type": "definition",
+          "term": "The Paywall",
+          "definition": "Fans pay money to access this content. Nothing is free.",
+          "icon": "lock",
+          "color": "#e67e22",
+          "trigger": "pay"
+        },
+        {
+          "type": "definition",
+          "term": "Subscription",
+          "definition": "Fans subscribe to see what the creator posts and buy extra content.",
+          "icon": "calendar",
+          "color": "#8e44ad",
+          "trigger": "subscribe"
+        },
+        {
+          "type": "callout",
+          "text": "Think of it like a private Instagram — but everything costs money.",
+          "icon": "eye",
+          "color": "#e74c3c",
+          "trigger": "Instagram"
+        }
       ],
       "narration": "OnlyFans is a website where creators share exclusive content. Photos, videos, and messages. Fans pay money to access this content. Think of it like a private Instagram, but with a paywall. Nothing is free. Fans subscribe, and then they can see what the creator posts and buy extra content."
     },
     {
       "type": "wb-content",
       "heading": "Why Fans Pay",
-      "points": [
-        "Connection — they feel close to the creator",
-        "Fantasy — they get what they can't in real life",
-        "Exclusivity — only they have this content",
-        "Attention — the creator talks to THEM"
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "heart",
+          "term": "Connection",
+          "description": "They feel close to the creator",
+          "color": "#e74c3c",
+          "trigger": "Connection"
+        },
+        {
+          "type": "icon-card",
+          "icon": "sparkle",
+          "term": "Fantasy",
+          "description": "Experiences they can't have in real life",
+          "color": "#8e44ad",
+          "trigger": "Fantasy"
+        },
+        {
+          "type": "icon-card",
+          "icon": "lock",
+          "term": "Exclusivity",
+          "description": "Content just for them, nobody else",
+          "color": "#e67e22",
+          "trigger": "Exclusivity"
+        },
+        {
+          "type": "icon-card",
+          "icon": "eye",
+          "term": "Attention",
+          "description": "The creator talks to THEM directly",
+          "color": "#27ae60",
+          "trigger": "attention"
+        },
+        {
+          "type": "callout",
+          "text": "Attention is what they pay for. On Instagram, nobody talks to them.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "ignores"
+        }
       ],
       "narration": "Why do fans spend money? Four reasons. Connection. They feel close to the creator, like she knows them. Fantasy. They get experiences they can't have in real life. Exclusivity. The content is just for them, nobody else has it. And attention. On Instagram, a model ignores them. On OnlyFans, she talks to them directly. That attention is what they pay for."
     },
@@ -33,6 +101,7 @@
       "type": "wb-outro",
       "title": "Quick Check",
       "subtitle": "Next: How Money Flows",
+      "sectionLabel": "Foundations",
       "narration": "Quick check. True or false. OnlyFans content is free for everyone. Pause. The answer is false. Fans pay to access it. Nothing is free. Next up, let's see exactly how the money works."
     }
   ]

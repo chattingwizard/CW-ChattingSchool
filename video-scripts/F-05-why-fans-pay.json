@@ -6,27 +6,104 @@
       "type": "wb-title",
       "title": "Why Do Fans Pay?",
       "subtitle": "F-05 — Foundations",
+      "sectionLabel": "Foundations",
       "narration": "Understanding why fans spend money is the key to being a great chatter. Let's break it down."
     },
     {
       "type": "wb-content",
       "heading": "The 4 Reasons Fans Pay",
-      "points": [
-        "Connection — feeling close to someone",
-        "Fantasy — getting what real life doesn't give",
-        "Exclusivity — owning something nobody else has",
-        "Attention — being seen and acknowledged"
+      "layout": "icon-grid",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "heart",
+          "term": "Connection",
+          "description": "Feeling close to someone beautiful who cares",
+          "color": "#e74c3c",
+          "trigger": "Connection"
+        },
+        {
+          "type": "icon-card",
+          "icon": "sparkle",
+          "term": "Fantasy",
+          "description": "Experiences they can't have in real life",
+          "color": "#8e44ad",
+          "trigger": "Fantasy"
+        },
+        {
+          "type": "icon-card",
+          "icon": "lock",
+          "term": "Exclusivity",
+          "description": "Content nobody else has — just for them",
+          "color": "#e67e22",
+          "trigger": "Exclusivity"
+        },
+        {
+          "type": "icon-card",
+          "icon": "eye",
+          "term": "Attention",
+          "description": "Being seen, heard, and acknowledged",
+          "color": "#27ae60",
+          "trigger": "attention"
+        },
+        {
+          "type": "highlight-box",
+          "value": "#1",
+          "label": "reason fans pay",
+          "secondary": "Attention — nobody else makes them feel special",
+          "icon": "star",
+          "color": "#27ae60",
+          "trigger": "biggest"
+        }
       ],
       "narration": "Fans pay for four reasons. Connection. They want to feel close to someone beautiful who cares about them. Fantasy. They want experiences they can't have in real life. Exclusivity. They want content that nobody else has. Just for them. And attention. This is the biggest one. On social media, nobody talks to them. On OnlyFans, the model says their name, asks about their day, makes them feel special. That feeling is what they pay for."
     },
     {
       "type": "wb-content",
       "heading": "A Real Example",
-      "points": [
-        "Mike follows 10 models on Instagram",
-        "None of them talk to him",
-        "On OnlyFans, the model says 'Hey Mike'",
-        "That personal attention is what he pays for"
+      "layout": "flow-chain",
+      "sectionLabel": "Foundations",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "user",
+          "label": "Mike on Instagram",
+          "value": "Ignored",
+          "color": "#e74c3c",
+          "trigger": "Instagram"
+        },
+        {
+          "type": "flow-node",
+          "icon": "globe",
+          "label": "Joins OnlyFans",
+          "value": "Pays",
+          "color": "#0b7dba",
+          "trigger": "OnlyFans"
+        },
+        {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "\"Hey Mike!\"",
+          "value": "Special",
+          "color": "#27ae60",
+          "trigger": "special"
+        },
+        {
+          "type": "flow-node",
+          "icon": "dollar",
+          "label": "Mike Buys PPV",
+          "value": "SALE",
+          "color": "#e67e22",
+          "trigger": "buys"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation should lead to a sale.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "sale"
+        }
       ],
       "narration": "Here's an example. Mike follows ten models on Instagram. He likes their photos. He comments. Nobody replies. Then he joins OnlyFans. The model says, hey Mike, I was thinking about you today. How was your day? Mike feels special. Mike feels seen. Mike buys a PPV. That's how it works. Your job is to make every fan feel like Mike. And every conversation should lead to a sale."
     },
@@ -34,6 +111,7 @@
       "type": "wb-outro",
       "title": "Quick Check",
       "subtitle": "Foundations Complete!",
+      "sectionLabel": "Foundations",
       "narration": "Quick check. Name two reasons fans pay on OnlyFans. Pause. Any two of these: connection, fantasy, exclusivity, or attention. If you said attention, that's the biggest one. Great job. You've completed the first five foundation lessons. Keep going."
     }
   ]

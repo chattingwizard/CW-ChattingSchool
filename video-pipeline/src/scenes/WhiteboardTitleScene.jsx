@@ -1,13 +1,29 @@
+/**
+ * WhiteboardTitleScene v2 — Opening title card.
+ * Clean, warm design with animated title and drawn underline.
+ */
 import React from "react";
 import { AbsoluteFill, useCurrentFrame, interpolate } from "remotion";
 import { WrittenText } from "../components/WrittenText";
 import { DrawnUnderline } from "../components/DrawnPath";
-import { FONT, CW_BLUE, CW_BLUE_MID, TEXT_COLOR, TEXT_LIGHT, CARD_BG, BORDER_COLOR, FontImport, BrandedBackground, TopBar, Watermark, CornerMarks, BottomAccentLine, FloatingDots } from "../components/Brand";
+import {
+  FONT,
+  COLORS,
+  FontImport,
+  WarmBackground,
+  TopBar,
+  Watermark,
+  CornerMarks,
+  ProgressBar,
+  AnimatedBackground,
+} from "../components/Brand";
 
 export const WhiteboardTitleScene = ({
   title,
   subtitle,
   framesPerWord = 6,
+  sceneProgress,
+  sectionLabel,
 }) => {
   const frame = useCurrentFrame();
 
@@ -22,22 +38,26 @@ export const WhiteboardTitleScene = ({
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
   );
 
+  const subtitleSlide = interpolate(
+    frame,
+    [titleEndFrame + 5, titleEndFrame + 25],
+    [10, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+  );
+
   return (
     <AbsoluteFill style={{ fontFamily: FONT }}>
       <FontImport />
-      <BrandedBackground />
-      <TopBar height={54} />
-
-      {/* Decorative elements */}
+      <WarmBackground />
+      <AnimatedBackground />
+      <TopBar height={44} sectionLabel={sectionLabel || ""} />
       <CornerMarks />
-      <FloatingDots />
-      <BottomAccentLine />
 
-      {/* Center content — true vertical center accounting for top bar */}
+      {/* Centered content */}
       <div
         style={{
           position: "absolute",
-          top: 54,
+          top: 44,
           left: 0,
           right: 0,
           bottom: 0,
@@ -47,79 +67,81 @@ export const WhiteboardTitleScene = ({
           justifyContent: "center",
         }}
       >
-      <div
-        style={{
-          textAlign: "center",
-          width: "78%",
-        }}
-      >
-        {/* Title panel — strong white card on blue bg */}
-        <div
-          style={{
-            backgroundColor: CARD_BG,
-            borderRadius: 22,
-            padding: "44px 64px 54px",
-            boxShadow: "0 8px 40px rgba(11,125,186,0.15), 0 2px 10px rgba(0,0,0,0.05)",
-            position: "relative",
-            border: `2px solid ${BORDER_COLOR}`,
-          }}
-        >
-          <h1
+        <div style={{ textAlign: "center", width: "76%" }}>
+          {/* Title card */}
+          <div
             style={{
-              color: TEXT_COLOR,
-              fontSize: 62,
-              fontWeight: 800,
-              margin: 0,
-              lineHeight: 1.3,
+              backgroundColor: COLORS.card,
+              borderRadius: 20,
+              padding: "44px 60px 50px",
+              boxShadow: `0 6px 32px ${COLORS.cardShadow}, 0 2px 8px rgba(0,0,0,0.04)`,
+              position: "relative",
+              border: `1.5px solid ${COLORS.cardBorder}`,
             }}
           >
-            <WrittenText text={title || ""} startFrame={5} framesPerWord={headingFPW} />
-          </h1>
+            <h1
+              style={{
+                color: COLORS.text,
+                fontSize: 58,
+                fontWeight: 800,
+                margin: 0,
+                lineHeight: 1.3,
+              }}
+            >
+              <WrittenText
+                text={title || ""}
+                startFrame={5}
+                framesPerWord={headingFPW}
+              />
+            </h1>
 
-          {/* Drawn underline in CW blue */}
-          <svg
-            style={{
-              position: "absolute",
-              bottom: 38,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: 500,
-              height: 20,
-              overflow: "visible",
-            }}
-          >
-            <DrawnUnderline
-              x={0}
-              y={10}
-              width={500}
-              startFrame={titleEndFrame}
-              duration={15}
-              stroke={CW_BLUE}
-              strokeWidth={4}
-            />
-          </svg>
+            {/* Drawn underline */}
+            <svg
+              style={{
+                position: "absolute",
+                bottom: 34,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: 420,
+                height: 20,
+                overflow: "visible",
+              }}
+            >
+              <DrawnUnderline
+                x={0}
+                y={10}
+                width={420}
+                startFrame={titleEndFrame}
+                duration={15}
+                stroke={COLORS.primary}
+                strokeWidth={3.5}
+              />
+            </svg>
+          </div>
+
+          {/* Subtitle */}
+          {subtitle && (
+            <p
+              style={{
+                color: COLORS.textLight,
+                fontSize: 24,
+                fontWeight: 600,
+                marginTop: 24,
+                opacity: subtitleOpacity,
+                transform: `translateY(${subtitleSlide}px)`,
+                letterSpacing: 1,
+              }}
+            >
+              {subtitle}
+            </p>
+          )}
         </div>
-
-        {/* Subtitle */}
-        {subtitle && (
-          <p
-            style={{
-              color: TEXT_LIGHT,
-              fontSize: 26,
-              fontWeight: 600,
-              marginTop: 28,
-              opacity: subtitleOpacity,
-              letterSpacing: 1,
-              textShadow: "0 1px 3px rgba(255,255,255,0.6)",
-            }}
-          >
-            {subtitle}
-          </p>
-        )}
-      </div>
       </div>
 
       <Watermark />
+      {typeof sceneProgress === "number" && (
+        <ProgressBar progress={sceneProgress} />
+      )}
     </AbsoluteFill>
   );
 };
