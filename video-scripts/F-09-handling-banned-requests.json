@@ -40,8 +40,23 @@
           "trigger": "subject"
         },
         {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "Stay Positive",
+          "value": "Move On",
+          "color": "#0b7dba",
+          "trigger": "positive"
+        },
+        {
+          "type": "quote",
+          "text": "Act like they never said it. Keep the energy positive and move on.",
+          "icon": "sparkle",
+          "color": "#f39c12",
+          "trigger": "never"
+        },
+        {
           "type": "callout",
-          "text": "If you say NO, you kill the vibe and lose the sale. Ignore and redirect.",
+          "text": "Say NO = kill the vibe and lose the sale. Ignore + redirect = keep selling.",
           "icon": "target",
           "color": "#e74c3c",
           "trigger": "reject"
@@ -52,29 +67,52 @@
     {
       "type": "wb-content",
       "heading": "Meet-Ups — The Special Case",
-      "layout": "definition-cards",
+      "layout": "flow-chain",
       "sectionLabel": "Foundations",
       "visuals": [
         {
-          "type": "definition",
-          "term": "The Script",
-          "definition": "Don't say yes, don't say no. Play it in between. Show vulnerability.",
-          "icon": "chat",
+          "type": "flow-node",
+          "icon": "user",
+          "label": "Fan Asks",
+          "value": "Meet up?",
           "color": "#0b7dba",
-          "trigger": "script"
+          "trigger": "meet"
         },
         {
-          "type": "definition",
-          "term": "Keep the Dream Alive",
-          "definition": "The fan still feels there's a chance — and they keep spending.",
-          "icon": "heart",
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "Play In Between",
+          "value": "Not Yes/No",
           "color": "#8e44ad",
-          "trigger": "dream"
+          "trigger": "between"
+        },
+        {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "Show Vulnerability",
+          "value": "Emotional",
+          "color": "#e67e22",
+          "trigger": "vulnerability"
+        },
+        {
+          "type": "flow-node",
+          "icon": "arrow",
+          "label": "Redirect",
+          "value": "New Topic",
+          "color": "#27ae60",
+          "trigger": "redirected"
+        },
+        {
+          "type": "quote",
+          "text": "I would love a real connection, but right now is not the right time... Where are you from, by the way?",
+          "icon": "chat",
+          "color": "#f39c12",
+          "trigger": "honestly"
         },
         {
           "type": "callout",
           "text": "Never kill the illusion. Keep the dream alive, keep selling.",
-          "icon": "shield",
+          "icon": "heart",
           "color": "#e74c3c",
           "trigger": "illusion"
         }
@@ -112,8 +150,15 @@
           "trigger": "mentioned"
         },
         {
+          "type": "quote",
+          "text": "Hey, did you end up going to that concert you told me about?",
+          "icon": "chat",
+          "color": "#f39c12",
+          "trigger": "concert"
+        },
+        {
           "type": "callout",
-          "text": "Speed is key — ignore the banned topic and redirect IMMEDIATELY.",
+          "text": "Speed is key — ignore and redirect IMMEDIATELY.",
           "icon": "target",
           "color": "#e74c3c",
           "trigger": "speed"

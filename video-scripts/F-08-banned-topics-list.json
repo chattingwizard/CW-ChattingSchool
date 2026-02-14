@@ -21,38 +21,54 @@
           "term": "Non-Consensual",
           "description": "Kidnapping, blackmail, rape, molestation",
           "color": "#e74c3c",
-          "trigger": "consensual"
+          "trigger": "kidnapping"
         },
         {
           "type": "icon-card",
-          "icon": "x",
+          "icon": "lock",
           "term": "Non-Conscious",
           "description": "Drugs, coma, hypnosis, paralysis",
           "color": "#e74c3c",
-          "trigger": "conscious"
+          "trigger": "drugs"
         },
         {
           "type": "icon-card",
           "icon": "shield",
           "term": "Underage",
-          "description": "Any mention of anyone under 18 — including roleplay",
+          "description": "Any reference to anyone under 18 — even roleplay",
           "color": "#e74c3c",
           "trigger": "Underage"
         },
         {
           "type": "icon-card",
           "icon": "x",
-          "term": "Incest & Extreme",
-          "description": "Family content, cannibalism, torture, bodily fluids",
+          "term": "Incest",
+          "description": "Any family-related sexual content",
           "color": "#e74c3c",
           "trigger": "Incest"
         },
         {
-          "type": "callout",
-          "text": "ANY of these topics = you lose your job. Zero tolerance.",
-          "icon": "target",
+          "type": "icon-card",
+          "icon": "eye",
+          "term": "Bodily Fluids",
+          "description": "Blood, feces, menstruation, vomit",
           "color": "#e74c3c",
-          "trigger": "dangerous"
+          "trigger": "Blood"
+        },
+        {
+          "type": "icon-card",
+          "icon": "target",
+          "term": "Extreme Acts",
+          "description": "Cannibalism, torture, strangling",
+          "color": "#e74c3c",
+          "trigger": "Cannibalism"
+        },
+        {
+          "type": "callout",
+          "text": "ANY of these topics = instant termination. Zero tolerance.",
+          "icon": "shield",
+          "color": "#e74c3c",
+          "trigger": "strangling"
         }
       ],
       "narration": "Here is the full list. Non-consensual acts. That means kidnapping, blackmail, rape, or molestation. Non-conscious acts. That means drugs, coma, hypnosis, or paralysis. Underage references. Pedophilia, child content, or any mention of anyone under eighteen, including fictional roleplay. Incest scenarios. Any family-related sexual content. Bodily fluids and functions. Blood, feces, menstruation, or vomit. And extreme or dangerous acts. Cannibalism, torture, or strangling."
@@ -65,42 +81,58 @@
       "visuals": [
         {
           "type": "icon-card",
-          "icon": "x",
-          "term": "Public & Illegal",
-          "description": "Public nudity, prostitution, escorts, meet-ups",
+          "icon": "eye",
+          "term": "Public Acts",
+          "description": "Nudity or sex in public places",
           "color": "#e74c3c",
-          "trigger": "Public"
+          "trigger": "Nudity"
         },
         {
           "type": "icon-card",
           "icon": "x",
+          "term": "Illegal Acts",
+          "description": "Prostitution, escorts, meet-ups",
+          "color": "#e74c3c",
+          "trigger": "Prostitution"
+        },
+        {
+          "type": "icon-card",
+          "icon": "lock",
           "term": "Substances",
-          "description": "Alcohol, intoxication, illegal substances",
+          "description": "Alcohol, intoxication, illegal drugs",
           "color": "#e74c3c",
-          "trigger": "Illegal"
+          "trigger": "Alcohol"
         },
         {
           "type": "icon-card",
-          "icon": "x",
-          "term": "Animal & BDSM",
-          "description": "Bestiality, pet play, fisting, medical play",
+          "icon": "shield",
+          "term": "Animal-Related",
+          "description": "Bestiality, zoophilia, pet play",
           "color": "#e74c3c",
           "trigger": "Animal"
         },
         {
           "type": "icon-card",
+          "icon": "x",
+          "term": "BDSM Practices",
+          "description": "Fisting, pegging, medical play",
+          "color": "#e74c3c",
+          "trigger": "practices"
+        },
+        {
+          "type": "icon-card",
           "icon": "dollar",
           "term": "External Payment",
-          "description": "Never mention PayPal, Venmo, CashApp, or crypto",
+          "description": "PayPal, Venmo, CashApp, crypto — never mention",
           "color": "#e74c3c",
           "trigger": "PayPal"
         },
         {
           "type": "callout",
-          "text": "If a fan brings up ANY of these — do NOT engage. You lose your job.",
-          "icon": "shield",
+          "text": "Also banned: racism & xenophobia. Engage with ANY of these = you lose your job.",
+          "icon": "x",
           "color": "#e74c3c",
-          "trigger": "engage"
+          "trigger": "racism"
         }
       ],
       "narration": "Continuing the list. Public acts. Nudity or sex in public. Illegal acts. Prostitution, escorts, or meet-ups. Illegal substances. Alcohol or intoxication. Animal-related acts. Bestiality, zoophilia, or pet play. B D S M practices. Fisting, pegging, or medical play. Mention of payment methods outside OnlyFans. Never mention PayPal, Venmo, CashApp, or crypto. And finally, any racism or xenophobia. If a fan brings up ANY of these topics, you do not engage. You ignore it completely. If you engage with any of these, you lose your job."

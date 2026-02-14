@@ -168,6 +168,8 @@ const FlowChainLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
 const IconGridLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
   const cards = (visuals || []).filter((v) => v.type === "icon-card");
   const callouts = (visuals || []).filter((v) => v.type === "callout");
+  const quotes = (visuals || []).filter((v) => v.type === "quote");
+  const highlights = (visuals || []).filter((v) => v.type === "highlight-box");
   const cols = 2;
   const rows = Math.ceil(cards.length / cols);
 
@@ -200,6 +202,28 @@ const IconGridLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
         </div>
       ))}
 
+      {/* Highlight boxes below grid */}
+      {highlights.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          cards.length * Math.round(1.8 * fps) +
+          Math.round(1.5 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <HighlightBox
+            key={`hl-${i}`}
+            value={v.value}
+            label={v.label}
+            secondary={v.secondary}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+
       {/* Callouts below grid */}
       {callouts.map((v, i) => {
         const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
@@ -212,6 +236,26 @@ const IconGridLayout = ({ visuals, wordTimestamps, fps, headingEndFrame }) => {
         return (
           <CalloutBox
             key={`callout-${i}`}
+            text={v.text}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+
+      {/* Quotes below callouts */}
+      {quotes.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          cards.length * Math.round(1.8 * fps) +
+          Math.round(3 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <QuoteBox
+            key={`quote-${i}`}
             text={v.text}
             icon={v.icon}
             color={v.color}
@@ -232,6 +276,9 @@ const DefinitionCardsLayout = ({
   headingEndFrame,
 }) => {
   const definitions = (visuals || []).filter((v) => v.type === "definition");
+  const callouts = (visuals || []).filter((v) => v.type === "callout");
+  const quotes = (visuals || []).filter((v) => v.type === "quote");
+  const highlights = (visuals || []).filter((v) => v.type === "highlight-box");
 
   return (
     <div
@@ -247,6 +294,68 @@ const DefinitionCardsLayout = ({
             key={i}
             term={v.term}
             definition={v.definition}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+
+      {/* Highlight boxes */}
+      {highlights.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          definitions.length * Math.round(2.5 * fps) +
+          Math.round(1.5 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <HighlightBox
+            key={`hl-${i}`}
+            value={v.value}
+            label={v.label}
+            secondary={v.secondary}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+
+      {/* Callouts */}
+      {callouts.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          definitions.length * Math.round(2.5 * fps) +
+          Math.round(2 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <CalloutBox
+            key={`callout-${i}`}
+            text={v.text}
+            icon={v.icon}
+            color={v.color}
+            startFrame={startFrame}
+          />
+        );
+      })}
+
+      {/* Quotes */}
+      {quotes.map((v, i) => {
+        const triggerFrame = findTriggerFrame(wordTimestamps, v.trigger, fps);
+        const fallbackFrame =
+          headingEndFrame +
+          definitions.length * Math.round(2.5 * fps) +
+          Math.round(3 * fps);
+        const startFrame = triggerFrame !== null ? triggerFrame : fallbackFrame;
+
+        return (
+          <QuoteBox
+            key={`quote-${i}`}
+            text={v.text}
             icon={v.icon}
             color={v.color}
             startFrame={startFrame}

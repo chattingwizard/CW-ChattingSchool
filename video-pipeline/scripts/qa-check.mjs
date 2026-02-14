@@ -389,6 +389,41 @@ function checkSceneStructure(script) {
   return { status: "pass", message: "Correct structure: title → content → outro, all narrated" };
 }
 
+function checkVisualDensity(script) {
+  const issues = [];
+
+  for (let i = 0; i < script.scenes.length; i++) {
+    const scene = script.scenes[i];
+    if (scene.type !== "wb-content" && scene.type !== "content") continue;
+
+    const narration = scene.narration || "";
+    const wordCount = narration.split(/\s+/).filter(Boolean).length;
+    const visuals = scene.visuals || [];
+    const visualCount = visuals.length;
+
+    if (visualCount === 0) continue; // other checks catch this
+
+    const ratio = Math.round(wordCount / visualCount);
+
+    if (ratio > 30) {
+      issues.push(
+        `Scene ${i + 1} ("${scene.heading || "untitled"}"): ${wordCount} words / ${visualCount} visuals = ${ratio} words/visual. Max recommended: 25. Add more visuals or shorten narration.`
+      );
+    }
+  }
+
+  if (issues.length > 0) {
+    return {
+      status: "fail",
+      message: `Low visual density (too much narration per visual — viewer sees nothing changing):\n    ${issues.join("\n    ")}`,
+    };
+  }
+  return {
+    status: "pass",
+    message: "Visual density OK — enough visuals to cover narration",
+  };
+}
+
 function checkLayoutDiversity(script) {
   const layouts = new Set();
   for (const scene of script.scenes) {
@@ -481,6 +516,7 @@ function runQA(scriptPath) {
     { name: "Section labels on all scenes", fn: checkSectionLabels },
     { name: "Icons are valid", fn: checkIconsExist },
     { name: "Colors are valid hex", fn: checkColorsExist },
+    { name: "Visual density (words/visual ratio)", fn: checkVisualDensity },
     { name: "Layout diversity", fn: checkLayoutDiversity },
     { name: "Recall question in outro", fn: checkRecallQuestion },
     { name: "Practical example present", fn: checkPracticalExample },
