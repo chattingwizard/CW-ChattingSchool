@@ -1,0 +1,142 @@
+{
+  "title": "A-03: Custom Content Sales (TPDs)",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Custom Content Sales",
+      "subtitle": "A-03 — Advanced",
+      "sectionLabel": "Advanced",
+      "narration": "Custom content is one of the highest revenue sources. A single custom can bring in fifty, a hundred, even two hundred dollars. Let's learn how to sell them."
+    },
+    {
+      "type": "wb-content",
+      "heading": "What Are Customs?",
+      "layout": "definition-cards",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "Custom Content",
+          "definition": "Photo or video made specifically for ONE fan — their name, their request.",
+          "color": "#0b7dba",
+          "trigger": "specifically"
+        },
+        {
+          "type": "definition",
+          "term": "When to Pitch",
+          "definition": "During Aftercare, when a fan mentions a fantasy, or when they ask.",
+          "color": "#27ae60",
+          "trigger": "Aftercare"
+        },
+        {
+          "type": "highlight-box",
+          "value": "$50+",
+          "secondary": "Solo photos. Videos start at $150-200+",
+          "color": "#e67e22",
+          "trigger": "fifty"
+        },
+        {
+          "type": "callout",
+          "text": "ALWAYS collect payment BEFORE making the custom. No exceptions.",
+          "icon": "shield",
+          "color": "#e74c3c",
+          "trigger": "exceptions"
+        }
+      ],
+      "narration": "Custom content is a photo or video made specifically for one fan. Their name, their request. When to pitch customs? During aftercare, when a fan mentions a fantasy, or when they directly ask. Pricing starts at fifty dollars or more for solo photos. Videos start at one hundred fifty to two hundred dollars or more. And the critical rule. Always collect payment before making the custom. No exceptions. If they haven't paid, the custom doesn't get made."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The TPDs Method",
+      "layout": "flow-chain",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "T — Tease",
+          "value": "Send something hot to build excitement",
+          "trigger": "Tease"
+        },
+        {
+          "type": "flow-node",
+          "icon": "dollar",
+          "label": "P — Price",
+          "value": "Drop the price while they're excited",
+          "trigger": "Price"
+        },
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "Ds — Distraction",
+          "value": "Ask a question to redirect attention",
+          "trigger": "Distraction"
+        },
+        {
+          "type": "callout",
+          "text": "The distraction shift is KEY. It moves attention AWAY from the price number.",
+          "icon": "target",
+          "color": "#8e44ad",
+          "trigger": "moves"
+        }
+      ],
+      "narration": "The TPDs method has three steps. T for Tease. Send something hot or exciting to build anticipation. P for Price. While the fan is excited, drop the price. They're emotionally charged and less likely to object. Ds for Distraction Shift. Immediately after the price, ask a question to redirect attention away from the number. The distraction shift is the key move. It moves attention away from the price and keeps the conversation flowing."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Custom Rules",
+      "layout": "icon-grid",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "Payment First",
+          "description": "Never promise content before payment clears",
+          "color": "#e74c3c",
+          "trigger": "clears"
+        },
+        {
+          "type": "icon-card",
+          "icon": "check",
+          "term": "Be Specific",
+          "description": "Confirm exactly what the fan wants before pricing",
+          "color": "#27ae60",
+          "trigger": "Specific"
+        },
+        {
+          "type": "icon-card",
+          "icon": "calendar",
+          "term": "Delivery Time",
+          "description": "Set expectations — usually 24-48 hours",
+          "color": "#0b7dba",
+          "trigger": "Delivery"
+        },
+        {
+          "type": "icon-card",
+          "icon": "star",
+          "term": "Upsell",
+          "description": "After they agree — offer extras like their name moaned",
+          "color": "#8e44ad",
+          "trigger": "Upsell"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. Customs are premium sales.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "premium"
+        }
+      ],
+      "narration": "Four key rules for customs. Payment first. Never promise content before payment clears. Be specific. Confirm exactly what the fan wants before you give a price. Delivery time. Set expectations. Usually twenty four to forty eight hours. And upsell. After they agree, offer extras. Their name moaned, a longer video, a specific outfit. Every conversation has one goal, a sale. Customs are your premium sales."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Multitasking",
+      "sectionLabel": "Advanced",
+      "narration": "Quick check. What does the D S in TPDs stand for? Pause. Distraction Shift. After you drop the price, you immediately ask a question to redirect the fan's attention away from the number. Good. Next, let's learn how to juggle multiple fans at the same time."
+    }
+  ]
+}

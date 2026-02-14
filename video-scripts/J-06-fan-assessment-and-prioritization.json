@@ -1,0 +1,112 @@
+{
+  "title": "J-06: Fan Assessment & Prioritization",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Fan Assessment & Prioritization",
+      "subtitle": "J-06 — The Journey",
+      "sectionLabel": "The Journey",
+      "narration": "You will have ten, fifteen, sometimes twenty fans in your inbox at the same time. You can't reply to all of them equally. Learning who to prioritize is one of the most important skills you'll develop."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Priority Order",
+      "layout": "flow-chain",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "star",
+          "label": "#1 Active Sexting",
+          "value": "Fan in a live session right now",
+          "trigger": "Active"
+        },
+        {
+          "type": "flow-node",
+          "icon": "sparkle",
+          "label": "#2 New Subs",
+          "value": "First 48h — golden window",
+          "trigger": "golden"
+        },
+        {
+          "type": "flow-node",
+          "icon": "dollar",
+          "label": "#3 Whales",
+          "value": "Big spenders — highest lifetime value",
+          "trigger": "Whales"
+        },
+        {
+          "type": "flow-node",
+          "icon": "user",
+          "label": "#4 Past Spenders",
+          "value": "Have bought before — warm leads",
+          "trigger": "warm"
+        },
+        {
+          "type": "callout",
+          "text": "Time wasters are #5 — lowest priority. Quick bundle offers only.",
+          "icon": "x",
+          "color": "#e74c3c",
+          "trigger": "Lowest"
+        }
+      ],
+      "narration": "Here's the priority order. Number one, active sexting. A fan in a live session right now always comes first. Number two, new subscribers. In their first forty eight hours, the golden window. Number three, whales. Big spenders with the highest lifetime value. Number four, past spenders. They've bought before, they're warm leads. Number five, time wasters. Lowest priority. They only get quick bundle offers."
+    },
+    {
+      "type": "wb-content",
+      "heading": "How Fan Info Affects Your Approach",
+      "layout": "icon-grid",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "High Spender",
+          "description": "Higher PPV prices. They've shown they will pay.",
+          "color": "#27ae60",
+          "trigger": "Higher"
+        },
+        {
+          "type": "icon-card",
+          "icon": "star",
+          "term": "New Fan",
+          "description": "Welcome prices (lower). Get the first sale.",
+          "color": "#0b7dba",
+          "trigger": "Welcome"
+        },
+        {
+          "type": "icon-card",
+          "icon": "trending",
+          "term": "Time Waster",
+          "description": "Deals and bundles. Progressive approach based on days.",
+          "color": "#e74c3c",
+          "trigger": "Progressive"
+        },
+        {
+          "type": "icon-card",
+          "icon": "eye",
+          "term": "Always Backread",
+          "description": "Check past conversations before replying. Every time.",
+          "color": "#8e44ad",
+          "trigger": "Backread"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. Prioritizing right maximizes your sales.",
+          "icon": "target",
+          "color": "#f39c12",
+          "trigger": "maximizes"
+        }
+      ],
+      "narration": "Fan info changes your approach. A High Spender gets higher PPV prices because they've already shown they will pay. A New Fan gets welcome prices, lower, to get that crucial first sale. Time Wasters get a progressive approach. Deals and bundles, more aggressive the longer they go without spending. And always Backread. Check past conversations before replying. Every single time. Every conversation has one goal, a sale. Prioritizing the right fans maximizes your total sales."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Annotated Chat Examples",
+      "sectionLabel": "The Journey",
+      "narration": "Quick check. You have five fans messaging you. One is mid-sexting, one subscribed an hour ago, and three have been subscribed for two weeks with zero dollars spent. Who do you reply to first? Pause. The mid-sexting fan. They're in an active session. That's always priority number one. Second is the new subscriber. The three time wasters are lowest priority. Good. Next, let's see all of this in action with real annotated chat examples."
+    }
+  ]
+}

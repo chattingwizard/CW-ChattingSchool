@@ -1,0 +1,152 @@
+{
+  "title": "A-06: Common Mistakes to Avoid",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "10 Common Mistakes",
+      "subtitle": "A-06 — Advanced",
+      "sectionLabel": "Advanced",
+      "narration": "Every new chatter makes mistakes. That's normal. But knowing the most common ones before you start gives you a huge advantage. Here are the top ten."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Mistakes 1 to 5",
+      "layout": "icon-grid",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "3+ Messages in a Row",
+          "description": "Sending 3 or more messages without a fan reply. Max is 2.",
+          "color": "#e74c3c",
+          "trigger": "Row"
+        },
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Freestyling",
+          "description": "Ignoring scripts and improvising. Scripts exist for a reason.",
+          "color": "#e74c3c",
+          "trigger": "Freestyling"
+        },
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Ignoring Fan Notes",
+          "description": "Not reading notes before replying. Causes character breaks.",
+          "color": "#e74c3c",
+          "trigger": "Ignoring"
+        },
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "PPV Too Early",
+          "description": "Dropping PPV before building enough excitement.",
+          "color": "#e74c3c",
+          "trigger": "Early"
+        },
+        {
+          "type": "callout",
+          "text": "Giving away explicit content for free is the #1 revenue killer. Never do it.",
+          "icon": "x",
+          "color": "#e74c3c",
+          "trigger": "killer"
+        }
+      ],
+      "narration": "Mistake one. Sending three or more messages in a row without a fan reply. Maximum is always two. Mistake two. Freestyling. Ignoring scripts and improvising when a script exists. Scripts are there for a reason. Mistake three. Ignoring fan notes. Not reading notes before replying causes character breaks and embarrassing mistakes. Mistake four. Dropping a PPV too early before building enough excitement. The fan needs to be ready. Mistake five. Giving away explicit content for free. That is a revenue killer."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Mistakes 6 to 10",
+      "layout": "definition-cards",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "Slow Reply Time",
+          "definition": "Over 2 minutes = lost fan. Speed is money.",
+          "color": "#e74c3c",
+          "trigger": "Slow"
+        },
+        {
+          "type": "definition",
+          "term": "Breaking Character",
+          "definition": "Using wrong voice, emojis, or personality for the model.",
+          "color": "#e74c3c",
+          "trigger": "Breaking"
+        },
+        {
+          "type": "definition",
+          "term": "Not Logging Fan Info",
+          "definition": "Forgetting to write down what you learn. Hurts future conversations.",
+          "color": "#e74c3c",
+          "trigger": "Logging"
+        },
+        {
+          "type": "highlight-box",
+          "value": "#9",
+          "secondary": "Spending too much time on time wasters — focus on new subs",
+          "color": "#e74c3c",
+          "trigger": "wasters"
+        },
+        {
+          "type": "callout",
+          "text": "Weak aftercare destroys repeat sales. Never go cold after a session.",
+          "icon": "heart",
+          "color": "#e74c3c",
+          "trigger": "Weak"
+        }
+      ],
+      "narration": "Mistake six. Slow reply time. Over two minutes means a lost fan. Speed is money. Mistake seven. Breaking character. Using the wrong voice, emojis, or personality for the model. Mistake eight. Not logging fan info. If you don't write it down, the next chatter has nothing to work with. Mistake nine. Spending too much time on time wasters. Twenty minutes on a fan who won't buy, while new subs wait. Mistake ten. Weak aftercare. Going cold after a session destroys your chance at repeat sales."
+    },
+    {
+      "type": "wb-content",
+      "heading": "What To Do Instead",
+      "layout": "summary-row",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "check",
+          "label": "Use Scripts",
+          "text": "80% scripts, 20% personal touch. Every time.",
+          "color": "#27ae60",
+          "trigger": "Scripts"
+        },
+        {
+          "type": "summary-card",
+          "icon": "check",
+          "label": "Check Before Reply",
+          "text": "Fan Insights → Notes → PPV History. 5 seconds.",
+          "color": "#27ae60",
+          "trigger": "Check"
+        },
+        {
+          "type": "summary-card",
+          "icon": "check",
+          "label": "Prioritize Right",
+          "text": "New subs and active sessions FIRST. Time wasters LAST.",
+          "color": "#27ae60",
+          "trigger": "Right"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. Avoid these mistakes and you'll sell more.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "goal"
+        }
+      ],
+      "narration": "Here's what to do instead. Use scripts. Eighty percent scripts, twenty percent personal touch. Every time. Check before you reply. Fan Insights, Notes, PPV History. Five seconds. And prioritize right. New subs and active sessions first. Time wasters last. Avoid these ten mistakes and you'll sell more from day one. Every conversation has one goal, a sale."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Advanced Section Complete!",
+      "sectionLabel": "Advanced",
+      "narration": "Quick check. A fan replied to your message. Before you type anything, what three things do you check? Pause. Fan Insights, Fan Notes, and PPV History. Five seconds. Every time. No exceptions. This is the foundation of being a great chatter. You've now completed the Advanced section. Next stop, the final exam. Let's see if you're ready to go live."
+    }
+  ]
+}

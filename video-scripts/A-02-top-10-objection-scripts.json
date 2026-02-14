@@ -1,0 +1,151 @@
+{
+  "title": "A-02: Top 10 Objection Scripts",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Top 10 Objection Scripts",
+      "subtitle": "A-02 — Advanced",
+      "sectionLabel": "Advanced",
+      "narration": "Fans will push back. They'll say it's too expensive, they have no money, or they're not sure. You need a script for every objection. Here are the top ten."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Objections 1 to 5: Price Related",
+      "layout": "definition-cards",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "/price — \"How much?\"",
+          "definition": "Reframe the value. Don't just state the number.",
+          "color": "#0b7dba",
+          "trigger": "Reframe"
+        },
+        {
+          "type": "definition",
+          "term": "/freecontent — \"Send free stuff\"",
+          "definition": "Redirect to the PPV. Never give content for free.",
+          "color": "#e74c3c",
+          "trigger": "Redirect"
+        },
+        {
+          "type": "definition",
+          "term": "/nomoney — \"I can't afford it\"",
+          "definition": "Downgrade option or seed and return later.",
+          "color": "#e67e22",
+          "trigger": "Downgrade"
+        },
+        {
+          "type": "definition",
+          "term": "/followup — Silent after PPV",
+          "definition": "Nudge them to open and unlock the content.",
+          "color": "#8e44ad",
+          "trigger": "Nudge"
+        },
+        {
+          "type": "callout",
+          "text": "/expensive — Value justification. Show what they get, not just the price.",
+          "icon": "dollar",
+          "color": "#27ae60",
+          "trigger": "justification"
+        }
+      ],
+      "narration": "The first five are price related. Slash price. When a fan asks how much, reframe the value. Don't just state a number. Slash freecontent. When they want free stuff, redirect to the PPV. Never give content for free. Slash nomoney. When they say I can't afford it, offer a downgrade option or seed and return later. Slash followup. When they go silent after a PPV, nudge them to open and unlock it. And slash expensive. When they say that's too much, use value justification. Show them what they're getting."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Objections 6 to 10: Behavioral",
+      "layout": "icon-grid",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "chat",
+          "term": "/noreply",
+          "description": "Fan stopped replying mid-convo — re-engagement hook",
+          "color": "#0b7dba",
+          "trigger": "stopped"
+        },
+        {
+          "type": "icon-card",
+          "icon": "shield",
+          "term": "/nogosexualfan",
+          "description": "Fan resists going sexual — playful redirection",
+          "color": "#8e44ad",
+          "trigger": "resists"
+        },
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "/discount",
+          "description": "Fan wants a deal — counter-offer, never free",
+          "color": "#e67e22",
+          "trigger": "counter"
+        },
+        {
+          "type": "icon-card",
+          "icon": "lock",
+          "term": "/cardnowork",
+          "description": "Card declined — offer alternatives",
+          "color": "#e74c3c",
+          "trigger": "declined"
+        },
+        {
+          "type": "callout",
+          "text": "There's a script for EVERY objection. Never improvise when a script exists.",
+          "icon": "check",
+          "color": "#27ae60",
+          "trigger": "improvise"
+        }
+      ],
+      "narration": "The next five are behavioral. Slash noreply. Fan stopped replying mid-conversation. Use a re-engagement hook. Slash nogosexualfan. The fan resists going sexual. Use playful redirection. Slash discount. The fan wants a deal. Give a counter-offer, but never free. Slash cardnowork. Their card was declined. Offer alternative solutions. And remember the golden rule. There is a script for every objection. Never improvise when a script exists."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The Psychology Behind Objections",
+      "layout": "summary-row",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "target",
+          "label": "Never Argue",
+          "text": "Redirect, don't debate. Arguing kills the sale.",
+          "color": "#e74c3c",
+          "trigger": "Argue"
+        },
+        {
+          "type": "summary-card",
+          "icon": "heart",
+          "label": "Ego is King",
+          "text": "Compliments and validation work better than logic.",
+          "color": "#8e44ad",
+          "trigger": "Ego"
+        },
+        {
+          "type": "highlight-box",
+          "value": "12",
+          "secondary": "Core techniques across all objection scripts",
+          "color": "#0b7dba",
+          "trigger": "twelve"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. Objection scripts get you past the no.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "goal"
+        }
+      ],
+      "narration": "Behind every objection script is psychology. First, never argue. Redirect, don't debate. Arguing kills the sale every time. Second, ego is king. Compliments and validation work better than logic. There are twelve core techniques spread across all the objection scripts. Reframe, takeaway, challenge, downgrade, social proof, scarcity, and more. Every conversation has one goal, a sale. Objection scripts get you past the no."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Custom Content Sales",
+      "sectionLabel": "Advanced",
+      "narration": "Quick check. A fan says your content is too expensive. Which script do you use? Pause. Slash expensive. You use value justification to show what they're getting. Never argue about the price. Good. Next, let's learn how to sell custom content using the TPDs method."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "A-04: Multitasking — Juggling Multiple Fans",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Multitasking",
+      "subtitle": "A-04 — Advanced",
+      "sectionLabel": "Advanced",
+      "narration": "In a real shift, you won't chat with one fan at a time. You'll have five, ten, sometimes fifteen conversations happening at once. Here's how to handle it."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The WAIT Trick",
+      "layout": "definition-cards",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "WAIT = Work on Another",
+          "definition": "When a script says WAIT 2 min → reply to other fans during that time.",
+          "color": "#0b7dba",
+          "trigger": "Work"
+        },
+        {
+          "type": "definition",
+          "term": "Dead Time = Zero",
+          "definition": "You should NEVER be idle. If one fan is quiet, another needs a reply.",
+          "color": "#e74c3c",
+          "trigger": "idle"
+        },
+        {
+          "type": "highlight-box",
+          "value": "< 2 min",
+          "secondary": "Target response time. Keep replies under 2 minutes.",
+          "color": "#27ae60",
+          "trigger": "Target"
+        },
+        {
+          "type": "callout",
+          "text": "Scripts have natural pauses. Use them to serve other fans efficiently.",
+          "icon": "check",
+          "color": "#8e44ad",
+          "trigger": "efficiently"
+        }
+      ],
+      "narration": "The WAIT trick is the secret to multitasking. When a script says wait two minutes, that's not dead time. That's when you reply to other fans. WAIT means Work on Another. You should never be idle. If one fan is quiet, another one needs a reply. Your target response time is under two minutes. Scripts have natural pauses built in. Use them to serve other fans efficiently."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Priority Switching",
+      "layout": "flow-chain",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "star",
+          "label": "Active Sexting",
+          "value": "Always first — money is flowing",
+          "trigger": "flowing"
+        },
+        {
+          "type": "flow-node",
+          "icon": "sparkle",
+          "label": "New Sub Reply",
+          "value": "Second — golden window",
+          "trigger": "Second"
+        },
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "NR Follow-up",
+          "value": "Third — re-engage silent fans",
+          "trigger": "Third"
+        },
+        {
+          "type": "flow-node",
+          "icon": "x",
+          "label": "Time Waster",
+          "value": "Last — quick bundle offer only",
+          "trigger": "Last"
+        },
+        {
+          "type": "callout",
+          "text": "Track where each fan is using notes and Infloww status tags.",
+          "icon": "eye",
+          "color": "#e67e22",
+          "trigger": "tags"
+        }
+      ],
+      "narration": "When switching between fans, follow the priority order. Active sexting always comes first. Money is actively flowing. New sub replies come second. They're in the golden window. NR follow-ups are third. Re-engaging silent fans. Time wasters come last. Just send a quick bundle offer. Track where each fan is using your notes and Infloww status tags. This way you never forget where you left off."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Common Multitasking Mistakes",
+      "layout": "summary-row",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "x",
+          "label": "Spending 20 min on 1 fan",
+          "text": "While 10 others wait. Spread your time.",
+          "color": "#e74c3c",
+          "trigger": "Spending"
+        },
+        {
+          "type": "summary-card",
+          "icon": "x",
+          "label": "Mixing up fan details",
+          "text": "Calling Jake 'Mike'. Always check notes first.",
+          "color": "#e74c3c",
+          "trigger": "Mixing"
+        },
+        {
+          "type": "summary-card",
+          "icon": "check",
+          "label": "Using WAIT time wisely",
+          "text": "Every pause is time to serve another fan.",
+          "color": "#27ae60",
+          "trigger": "wisely"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. Multitasking means MORE sales per shift.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "MORE"
+        }
+      ],
+      "narration": "Two common mistakes. First, spending twenty minutes on one fan while ten others wait. Spread your time. Second, mixing up fan details. Calling Jake Mike. Always check your notes before replying. The right approach is using WAIT time wisely. Every pause in one conversation is time to serve another fan. Every conversation has one goal, a sale. Multitasking means more sales per shift."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Shift Routine",
+      "sectionLabel": "Advanced",
+      "narration": "Quick check. A script says WAIT two minutes. What do you do during those two minutes? Pause. You reply to other fans. WAIT means Work on Another. Never sit idle. Good. Next, let's learn the exact routine for starting and ending every shift."
+    }
+  ]
+}

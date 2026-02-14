@@ -1,0 +1,150 @@
+{
+  "title": "J-05: Branch Rules & NR Waves",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Branch Rules & NR Waves",
+      "subtitle": "J-05 — The Journey",
+      "sectionLabel": "The Journey",
+      "narration": "After every PPV drop, three things can happen. The fan buys, the fan goes silent, or the fan objects. You need to know exactly what to do in each case."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The 3 Branch Rules",
+      "layout": "icon-grid",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "check",
+          "term": "Branch 1: BOUGHT",
+          "description": "Fan paid → continue the sequence to the next PPV",
+          "color": "#27ae60",
+          "trigger": "paid"
+        },
+        {
+          "type": "icon-card",
+          "icon": "eye",
+          "term": "Branch 2: SILENT",
+          "description": "3+ minutes no reply → start NR Wave",
+          "color": "#e67e22",
+          "trigger": "minutes"
+        },
+        {
+          "type": "icon-card",
+          "icon": "shield",
+          "term": "Branch 3: OBJECTION",
+          "description": "Fan says 'too expensive' → go to OBJ script",
+          "color": "#e74c3c",
+          "trigger": "expensive"
+        },
+        {
+          "type": "callout",
+          "text": "These 3 branches repeat after EVERY PPV drop. Memorize them.",
+          "icon": "target",
+          "color": "#0b7dba",
+          "trigger": "Memorize"
+        }
+      ],
+      "narration": "Here are the three branch rules. Branch one, the fan bought. They paid for the PPV. Great. Continue the sequence to the next PPV. Branch two, the fan is silent. Three or more minutes with no reply. Start a No Response Wave. Branch three, the fan objects. They say something like too expensive or not now. Go to the objection script. These three branches repeat after every single PPV drop. Memorize them."
+    },
+    {
+      "type": "wb-content",
+      "heading": "NR Waves — 5 Attempts, 5 Angles",
+      "layout": "flow-chain",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "Wave 1",
+          "value": "Playful nudge",
+          "trigger": "nudge"
+        },
+        {
+          "type": "flow-node",
+          "icon": "eye",
+          "label": "Wave 2",
+          "value": "Curiosity hook",
+          "trigger": "Curiosity"
+        },
+        {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "Wave 3",
+          "value": "Emotional pull",
+          "trigger": "Emotional"
+        },
+        {
+          "type": "flow-node",
+          "icon": "trending",
+          "label": "Wave 4",
+          "value": "Scarcity — limited time",
+          "trigger": "Scarcity"
+        },
+        {
+          "type": "flow-node",
+          "icon": "x",
+          "label": "Wave 5",
+          "value": "Final attempt — then stop",
+          "trigger": "Final"
+        },
+        {
+          "type": "highlight-box",
+          "value": "5",
+          "secondary": "Hard cap. After Wave 5, you STOP. Move on.",
+          "color": "#e74c3c",
+          "trigger": "cap"
+        }
+      ],
+      "narration": "When a fan goes silent, you have five attempts to bring them back. Wave one is a playful nudge. Something light and casual. Wave two is a curiosity hook. Make them wonder what they're missing. Wave three is an emotional pull. Connect on a personal level. Wave four is scarcity. Limited time, this offer won't last. Wave five is your final attempt. Then you stop. Five is a hard cap. After wave five, you move on to other fans. Never send a sixth."
+    },
+    {
+      "type": "wb-content",
+      "heading": "NR Wave Spacing",
+      "layout": "summary-row",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "calendar",
+          "label": "Wave 1-2",
+          "text": "3-5 minutes apart. Quick follow-ups.",
+          "color": "#0b7dba",
+          "trigger": "Quick"
+        },
+        {
+          "type": "summary-card",
+          "icon": "calendar",
+          "label": "Wave 3-5",
+          "text": "Longer gaps. 30 min to hours between.",
+          "color": "#8e44ad",
+          "trigger": "Longer"
+        },
+        {
+          "type": "callout",
+          "text": "Use WAIT time between waves to reply to OTHER fans. Never waste time staring.",
+          "icon": "check",
+          "color": "#27ae60",
+          "trigger": "staring"
+        },
+        {
+          "type": "stat",
+          "value": "0",
+          "label": "messages after Wave 5. Zero. Stop.",
+          "color": "#e74c3c",
+          "trigger": "Zero"
+        }
+      ],
+      "narration": "Spacing matters. Waves one and two should be three to five minutes apart. Quick follow-ups while the energy is still there. Waves three through five have longer gaps. Thirty minutes to hours between them. And here's the key. Use the wait time between waves to reply to other fans. Never waste time staring at one inbox. After wave five, you send zero more messages. Zero. You stop. Move on."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Fan Assessment & Prioritization",
+      "sectionLabel": "The Journey",
+      "narration": "Quick check. A fan has been silent for five minutes after you dropped a PPV. What do you do? Pause. Start a No Response wave. Wave one, a playful nudge. Then follow the five wave system. And if they still don't respond after wave five? You stop. Good. Next, let's learn how to decide which fans to respond to first."
+    }
+  ]
+}

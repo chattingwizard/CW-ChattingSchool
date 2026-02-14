@@ -1,0 +1,148 @@
+{
+  "title": "J-02: Rapport & Teasing Bridge",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Rapport & Teasing Bridge",
+      "subtitle": "J-02 — The Journey",
+      "sectionLabel": "The Journey",
+      "narration": "Now we get into the real work. Rapport and Teasing Bridge are the first two phases you use after the Welcome message. They build the connection that leads to a sale."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Rapport — Build the Connection",
+      "layout": "flow-chain",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "Ice-Break",
+          "value": "Light questions — name, location",
+          "trigger": "questions"
+        },
+        {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "Vibe",
+          "value": "Hobbies, interests, daily life",
+          "trigger": "Hobbies"
+        },
+        {
+          "type": "flow-node",
+          "icon": "star",
+          "label": "Heat",
+          "value": "Compliments, light flirting",
+          "trigger": "Compliments"
+        },
+        {
+          "type": "highlight-box",
+          "value": "R-1 to R-9",
+          "secondary": "7 to 9 messages — NOT an interview",
+          "color": "#0b7dba",
+          "trigger": "interview"
+        },
+        {
+          "type": "callout",
+          "text": "The model shares FIRST, then the fan reciprocates. Never just ask questions.",
+          "icon": "target",
+          "color": "#27ae60",
+          "trigger": "reciprocates"
+        }
+      ],
+      "narration": "Rapport has three blocks. Ice-Break, where you ask light questions like name and location. Vibe, where you talk about hobbies, interests, and daily life. And Heat, where you add compliments and light flirting. This takes seven to nine messages, scripts R one through R nine. But here's the key. It's not an interview. The model shares first, then the fan reciprocates. Never just fire questions at someone."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Teasing Bridge — Friendly to Flirty",
+      "layout": "definition-cards",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "The Pivot Moment",
+          "definition": "A natural shift from friendly chat to flirty energy. The fan barely notices.",
+          "color": "#8e44ad",
+          "trigger": "Pivot"
+        },
+        {
+          "type": "definition",
+          "term": "PPV 0 — Free Teaser",
+          "definition": "A free photo or short clip to build anticipation. No payment needed yet.",
+          "color": "#27ae60",
+          "trigger": "Teaser"
+        },
+        {
+          "type": "definition",
+          "term": "Message Length",
+          "definition": "Short: 1 sentence (most messages). Micro: 2-5 words. Never walls of text.",
+          "color": "#e67e22",
+          "trigger": "sentence"
+        },
+        {
+          "type": "callout",
+          "text": "TB-1 to TB-7. Build anticipation. The fan should be excited before PPV 1 drops.",
+          "icon": "dollar",
+          "color": "#0b7dba",
+          "trigger": "excited"
+        }
+      ],
+      "narration": "After Rapport comes the Teasing Bridge. This is the Pivot Moment. A natural shift from friendly chat to flirty energy. Done well, the fan barely notices it happened. During the bridge, you drop PPV zero, a free Teaser. A free photo or short clip to build anticipation. No payment needed yet. Keep messages short. One sentence for most messages. Two to five words for quick reactions. Never send walls of text. Scripts TB one through TB seven. The goal is simple. By the time you drop PPV one, the fan should already be excited."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Timing Rules",
+      "layout": "icon-grid",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "calendar",
+          "term": "Rapport Pace",
+          "description": "30-90 seconds between messages",
+          "color": "#0b7dba",
+          "trigger": "seconds"
+        },
+        {
+          "type": "icon-card",
+          "icon": "trending",
+          "term": "Teasing Pace",
+          "description": "15-45 seconds — faster, building momentum",
+          "color": "#8e44ad",
+          "trigger": "faster"
+        },
+        {
+          "type": "icon-card",
+          "icon": "x",
+          "term": "Max 2 in a Row",
+          "description": "Never send more than 2 messages without a fan reply",
+          "color": "#e74c3c",
+          "trigger": "reply"
+        },
+        {
+          "type": "stat",
+          "value": "2",
+          "label": "max messages before waiting",
+          "color": "#e74c3c",
+          "trigger": "waiting"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. Rapport and TB are the setup.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "goal"
+        }
+      ],
+      "narration": "Timing matters. During Rapport, send messages every thirty to ninety seconds. During Teasing Bridge, go faster. Fifteen to forty five seconds. You're building momentum. And never send more than two messages in a row without a fan reply. Two is the max. If they don't respond after two, you wait. Remember, every conversation has one goal, a sale. Rapport and Teasing Bridge are the setup that makes the sale possible."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Sexting & PPV Drops",
+      "sectionLabel": "The Journey",
+      "narration": "Quick check. During Rapport, who shares information first, you or the fan? Pause. You do. The model shares first, then the fan reciprocates. It's a conversation, not an interview. Good. Next up, the moment where the money is made. Sexting and PPV drops."
+    }
+  ]
+}

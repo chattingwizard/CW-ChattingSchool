@@ -1,0 +1,151 @@
+{
+  "title": "A-05: Shift Routine — Start & Handoff",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Shift Routine",
+      "subtitle": "A-05 — Advanced",
+      "sectionLabel": "Advanced",
+      "narration": "Every shift follows the same routine. A clean start and a clean handoff. If you do this right, the next chatter picks up without asking questions."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Shift Start Checklist",
+      "layout": "flow-chain",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "eye",
+          "label": "Read Handoff",
+          "value": "Check notes from previous shift",
+          "trigger": "Handoff"
+        },
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "Open Unread",
+          "value": "Go to Unread tab first",
+          "trigger": "Unread"
+        },
+        {
+          "type": "flow-node",
+          "icon": "user",
+          "label": "Backread",
+          "value": "Check context before replying",
+          "trigger": "Backread"
+        },
+        {
+          "type": "flow-node",
+          "icon": "star",
+          "label": "Prioritize",
+          "value": "Active > New > Whale > Past > TW",
+          "trigger": "Prioritize"
+        },
+        {
+          "type": "callout",
+          "text": "Reply time target: under 2 minutes. Speed is money.",
+          "icon": "trending",
+          "color": "#27ae60",
+          "trigger": "Speed"
+        }
+      ],
+      "narration": "When you start a shift, follow this order. First, read the handoff notes from the previous chatter. What conversations are active? Who's mid-sexting? Any issues? Second, open the Unread tab. These fans are waiting for a reply. Third, backread. Check context before replying to each fan. Don't send a message without knowing where you left off. Fourth, prioritize. Active sessions first, then new subs, then whales, then past spenders, then time wasters. Your target reply time is under two minutes. Speed is money."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Shift Handoff Checklist",
+      "layout": "icon-grid",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "chat",
+          "term": "Update Fan Notes",
+          "description": "For EVERY active conversation, update the notes",
+          "color": "#0b7dba",
+          "trigger": "update"
+        },
+        {
+          "type": "icon-card",
+          "icon": "star",
+          "term": "Flag Mid-Session",
+          "description": "Mark fans who are mid-sexting or mid-sale",
+          "color": "#e67e22",
+          "trigger": "Flag"
+        },
+        {
+          "type": "icon-card",
+          "icon": "shield",
+          "term": "Note Issues",
+          "description": "Report problems to your Team Leader",
+          "color": "#e74c3c",
+          "trigger": "problems"
+        },
+        {
+          "type": "icon-card",
+          "icon": "check",
+          "term": "Clean Handoff",
+          "description": "The next chatter should pick up without asking",
+          "color": "#27ae60",
+          "trigger": "Clean"
+        },
+        {
+          "type": "callout",
+          "text": "Your handoff notes are as important as your sales. Don't skip them.",
+          "icon": "target",
+          "color": "#8e44ad",
+          "trigger": "skip"
+        }
+      ],
+      "narration": "When your shift ends, don't just log off. First, update fan notes for every active conversation. What happened, where they are in the journey. Second, flag mid-session fans. If someone is mid-sexting or mid-sale, the next chatter needs to know immediately. Third, note any issues for your Team Leader. Problem fans, technical issues, anything unusual. Fourth, make it a clean handoff. The next chatter should pick up without asking questions. Your handoff notes are as important as your sales. Don't skip them."
+    },
+    {
+      "type": "wb-content",
+      "heading": "During the Shift",
+      "layout": "summary-row",
+      "sectionLabel": "Advanced",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "trending",
+          "label": "Reply Time",
+          "text": "Under 2 minutes. Every minute over = lost revenue.",
+          "color": "#27ae60",
+          "trigger": "minute"
+        },
+        {
+          "type": "summary-card",
+          "icon": "dollar",
+          "label": "Mass Messages",
+          "text": "Send if scheduled. Exclude TW, Muted, Whale, Custom tags.",
+          "color": "#0b7dba",
+          "trigger": "Mass"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. A clean shift = more sales.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "goal"
+        },
+        {
+          "type": "stat",
+          "value": "< 2m",
+          "label": "response time target",
+          "color": "#27ae60",
+          "trigger": "response"
+        }
+      ],
+      "narration": "During the shift, keep your reply time under two minutes. Every minute over that is lost revenue. If there's a mass message scheduled, send it. But always exclude fans tagged as Time Waster, Muted, Whale, or Custom. And always keep the main goal in focus. Every conversation has one goal, a sale. A clean, organized shift equals more sales."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Common Mistakes to Avoid",
+      "sectionLabel": "Advanced",
+      "narration": "Quick check. What should you ALWAYS do at the end of every shift? Pause. Write handoff notes for every active conversation. Flag mid-session fans, note issues for your TL, and make sure the next chatter can pick up without asking questions. Good. Next, let's cover the ten most common mistakes new chatters make."
+    }
+  ]
+}

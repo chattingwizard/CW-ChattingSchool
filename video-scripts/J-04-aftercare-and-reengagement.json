@@ -1,0 +1,144 @@
+{
+  "title": "J-04: Aftercare & Re-engagement",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Aftercare & Re-engagement",
+      "subtitle": "J-04 — The Journey",
+      "sectionLabel": "The Journey",
+      "narration": "The session is over. The fan just finished. What you do NOW determines if they ever come back. Aftercare is one of the most underrated skills in chatting."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Why Aftercare Matters",
+      "layout": "definition-cards",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "Post-Session Drop",
+          "definition": "After the session ends, fans often feel empty or regretful. Aftercare prevents this.",
+          "color": "#e74c3c",
+          "trigger": "empty"
+        },
+        {
+          "type": "definition",
+          "term": "Emotional Connection",
+          "definition": "Good aftercare makes the fan feel valued, not used. They come back.",
+          "color": "#27ae60",
+          "trigger": "valued"
+        },
+        {
+          "type": "highlight-box",
+          "value": "#1 Rule",
+          "secondary": "First sexting aftercare is the MOST important you'll ever do",
+          "color": "#8e44ad",
+          "trigger": "important"
+        },
+        {
+          "type": "callout",
+          "text": "Never go cold after a session. The conversation continues, the mood just shifts.",
+          "icon": "heart",
+          "color": "#0b7dba",
+          "trigger": "cold"
+        }
+      ],
+      "narration": "After a session ends, fans often feel empty or regretful. This is called the Post-Session Drop. Aftercare prevents this. Good aftercare makes the fan feel valued, not used. That emotional connection is what makes them come back and buy again. The number one rule. The aftercare after a first sexting is the most important aftercare you will ever do. That first session sets the tone for everything. And never go cold after a session. The conversation continues. The mood just shifts."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Aftercare Scripts + Re-engagement",
+      "layout": "icon-grid",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "heart",
+          "term": "AC-1: Validation",
+          "description": "\"That was amazing\" — make them feel special",
+          "color": "#8e44ad",
+          "trigger": "Validation"
+        },
+        {
+          "type": "icon-card",
+          "icon": "chat",
+          "term": "AC-2: Personal Touch",
+          "description": "Reference something specific from the session",
+          "color": "#0b7dba",
+          "trigger": "Personal"
+        },
+        {
+          "type": "icon-card",
+          "icon": "star",
+          "term": "AC-3: Future Hook",
+          "description": "Plant the seed for the next session",
+          "color": "#27ae60",
+          "trigger": "Future"
+        },
+        {
+          "type": "icon-card",
+          "icon": "trending",
+          "term": "RE-1 & RE-2",
+          "description": "Bring back inactive fans with hooks and callbacks",
+          "color": "#e67e22",
+          "trigger": "inactive"
+        },
+        {
+          "type": "callout",
+          "text": "Aftercare is also the BEST time to pitch customs. The fan is emotionally connected.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "customs"
+        }
+      ],
+      "narration": "Aftercare has three scripts. AC one is Validation. Make them feel amazing about what just happened. AC two is the Personal Touch. Reference something specific from the session. Something only they said. AC three is the Future Hook. Plant the seed for the next session. Something to look forward to. Then there's Re-engagement. RE one and RE two are for bringing back inactive fans with hooks and callbacks. And here's a pro tip. Aftercare is also the best time to pitch customs. The fan is emotionally connected and more likely to say yes."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Do This / Not This",
+      "layout": "summary-row",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "check",
+          "label": "Good Aftercare",
+          "text": "\"That was so intense babe, you always know how to make me feel things\"",
+          "color": "#27ae60",
+          "trigger": "intense"
+        },
+        {
+          "type": "summary-card",
+          "icon": "x",
+          "label": "Bad Aftercare",
+          "text": "\"Okay bye\" or just going silent after the session",
+          "color": "#e74c3c",
+          "trigger": "silent"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. Aftercare ensures the NEXT sale.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "next"
+        },
+        {
+          "type": "stat",
+          "value": "3x",
+          "label": "more likely to buy again with good aftercare",
+          "color": "#27ae60",
+          "trigger": "three"
+        }
+      ],
+      "narration": "Let me show you the difference. Good aftercare sounds like, that was so intense babe, you always know how to make me feel things. Bad aftercare is saying okay bye, or just going silent after the session. The difference is massive. Fans who get good aftercare are three times more likely to buy again. Every conversation has one goal, a sale. And aftercare ensures the next sale happens."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Branch Rules & NR Waves",
+      "sectionLabel": "The Journey",
+      "narration": "Quick check. Why is the aftercare after a FIRST sexting session more important than usual? Pause. Because it sets the tone for the entire relationship. If the fan feels valued after their first time, they'll come back again and again. If they feel nothing, they might never buy again. Good. Next, let's learn what to do when a fan goes silent after a PPV drop."
+    }
+  ]
+}

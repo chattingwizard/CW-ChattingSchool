@@ -1,0 +1,151 @@
+{
+  "title": "J-03: Sexting & PPV Drops",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Sexting & PPV Drops",
+      "subtitle": "J-03 — The Journey",
+      "sectionLabel": "The Journey",
+      "narration": "This is where revenue happens. The sexting sequence is where fans pay for content. If you master this, you master the job. Let's break it down."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The Sexting Sequence",
+      "layout": "flow-chain",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "Build Up",
+          "value": "Increase intensity gradually",
+          "trigger": "gradually"
+        },
+        {
+          "type": "flow-node",
+          "icon": "dollar",
+          "label": "PPV Drop",
+          "value": "At peak excitement — sell",
+          "trigger": "excitement"
+        },
+        {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "Continue",
+          "value": "Keep the energy going",
+          "trigger": "energy"
+        },
+        {
+          "type": "flow-node",
+          "icon": "dollar",
+          "label": "Next PPV",
+          "value": "Higher price, hotter content",
+          "trigger": "Higher"
+        },
+        {
+          "type": "callout",
+          "text": "YOU guide and control. The fan follows your lead. Never let the fan direct.",
+          "icon": "target",
+          "color": "#e74c3c",
+          "trigger": "control"
+        }
+      ],
+      "narration": "The sexting sequence follows a pattern. Build up intensity gradually. When excitement is at its peak, drop a PPV. After the purchase, keep the energy going. Then drop the next PPV at a higher price with hotter content. Scripts S one one through S one twenty two. There's one golden rule. You guide and control. The fan follows your lead. You never let the fan direct the conversation."
+    },
+    {
+      "type": "wb-content",
+      "heading": "PPV Timing & WAIT Instructions",
+      "layout": "icon-grid",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "calendar",
+          "term": "WAIT Instructions",
+          "description": "Real pauses in the script — build anticipation",
+          "color": "#8e44ad",
+          "trigger": "pauses"
+        },
+        {
+          "type": "icon-card",
+          "icon": "trending",
+          "term": "Faster Pace",
+          "description": "15-45 sec between messages during sexting",
+          "color": "#0b7dba",
+          "trigger": "Faster"
+        },
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "Drop at Peak",
+          "description": "PPV when the fan is most excited, not randomly",
+          "color": "#27ae60",
+          "trigger": "randomly"
+        },
+        {
+          "type": "icon-card",
+          "icon": "eye",
+          "term": "Explicitness Scale",
+          "description": "Start mild → build to explicit → PPV at climax",
+          "color": "#e67e22",
+          "trigger": "Scale"
+        },
+        {
+          "type": "callout",
+          "text": "PPV 1 is the most important sale. $5-$15. Break the payment barrier.",
+          "icon": "star",
+          "color": "#f39c12",
+          "trigger": "barrier"
+        }
+      ],
+      "narration": "When the script says WAIT, that means a real pause. Don't skip these. They build anticipation. During sexting, messages are fast. Fifteen to forty five seconds apart. Always drop your PPV at peak excitement, not randomly. The explicitness Scale goes from mild to explicit. Start gentle. Build intensity. Drop the PPV at the climax moment. And remember, PPV one is the most important sale. Five to fifteen dollars. It breaks the payment barrier. Once they pay the first time, everything after is easier."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Welcome Pricing vs Normal Pricing",
+      "layout": "summary-row",
+      "sectionLabel": "The Journey",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "star",
+          "label": "Welcome Prices",
+          "text": "Lower prices for new subs. Goal: get the FIRST sale, not max revenue.",
+          "color": "#27ae60",
+          "trigger": "Welcome"
+        },
+        {
+          "type": "summary-card",
+          "icon": "dollar",
+          "label": "Normal Prices",
+          "text": "Higher prices for returning fans. They already trust the value.",
+          "color": "#0b7dba",
+          "trigger": "Normal"
+        },
+        {
+          "type": "highlight-box",
+          "value": "Conversion > Revenue",
+          "secondary": "Getting the first sale matters more than the price",
+          "color": "#27ae60",
+          "trigger": "Conversion"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. The sexting sequence delivers it.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "delivers"
+        }
+      ],
+      "narration": "New subscribers get Welcome Prices. These are intentionally lower. The goal is to get the first sale, not maximum revenue. Conversion is more important than revenue at this stage. Once they've completed a full sexting session and paid, future sessions use Normal Prices. Higher prices for returning fans who already trust the value. Remember, every conversation has one goal, a sale. The sexting sequence delivers it."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Aftercare & Re-engagement",
+      "sectionLabel": "The Journey",
+      "narration": "Quick check. When should you drop a PPV during a sexting session? Pause. At peak excitement. Not randomly, not too early, not too late. When the fan is at the highest point of excitement, that's when you drop the PPV. Good. Next, let's learn what happens AFTER the session ends."
+    }
+  ]
+}
