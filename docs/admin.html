@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel &mdash; Chatting Wizard School</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth.js"></script>
+</head>
+<body>
+<div class="admin-page">
+
+  <!-- Header -->
+  <div class="admin-header">
+    <div class="admin-header-left">
+      <img src="logo.png" alt="CW" class="admin-logo">
+      <h1>Admin Panel</h1>
+    </div>
+    <div class="admin-header-right">
+      <a href="index.html" class="admin-back-link">&larr; Back to School</a>
+      <button onclick="cwSignOut()" class="logout-btn">Log Out</button>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div id="admin-loading" class="admin-loading">Loading admin data...</div>
+
+  <!-- Stats -->
+  <div id="admin-stats" class="admin-stats" style="display:none;">
+    <div class="admin-stat-card">
+      <div class="admin-stat-value" id="statStudents">0</div>
+      <div class="admin-stat-label">Students</div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="admin-stat-value" id="statCompleted">0</div>
+      <div class="admin-stat-label">Completed School</div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="admin-stat-value" id="statAvgScore">0%</div>
+      <div class="admin-stat-label">Avg Final Quiz</div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="admin-stat-value" id="statInvites">0</div>
+      <div class="admin-stat-label">Unused Invites</div>
+    </div>
+  </div>
+
+  <!-- Invite Codes Section -->
+  <div id="admin-invites" class="admin-section" style="display:none;">
+    <div class="admin-section-header">
+      <h2>Invite Codes</h2>
+      <button onclick="generateCode()" class="admin-btn" id="genBtn">Generate New Code</button>
+    </div>
+    <div id="newCodeMsg" class="admin-code-msg" style="display:none;"></div>
+    <table class="admin-table" id="inviteTable">
+      <thead>
+        <tr><th>Code</th><th>Status</th><th>Used By</th><th>Created</th></tr>
+      </thead>
+      <tbody id="inviteBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Students Section -->
+  <div id="admin-students" class="admin-section" style="display:none;">
+    <h2>Students</h2>
+    <table class="admin-table">
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Registered</th><th>Modules</th><th>Quizzes Passed</th><th>Details</th></tr>
+      </thead>
+      <tbody id="studentBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Student Detail Modal -->
+  <div id="studentDetail" class="admin-detail" style="display:none;">
+    <div class="admin-detail-card">
+      <div class="admin-detail-header">
+        <h3 id="detailName">Student Name</h3>
+        <button onclick="closeDetail()" class="admin-close">&times;</button>
+      </div>
+      <p id="detailEmail" class="admin-detail-email"></p>
+      <h4>Quiz Results</h4>
+      <table class="admin-table">
+        <thead><tr><th>Module</th><th>Score</th><th>Passed</th><th>Date</th></tr></thead>
+        <tbody id="detailQuizzes"></tbody>
+      </table>
+      <h4>Completed Modules</h4>
+      <div id="detailModules" class="admin-module-list"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+var allStudents = [];
+var allInvites = [];
+
+var MODULE_NAMES = {
+  'f-1':'Welcome + 3 Key Words','f-2':'Who is CW + Team','f-3':'OnlyFans + Money','f-4':'Your Role + Shift','f-5':'Banned Topics','f-6':'Foundations Review',
+  't-1':'Foundations Review Quiz','t-2':'Infloww Walkthrough','t-3':'Scripts 101','t-4':'Model Personas','t-5':'Journey + PPV Ladder','t-6':'48-Hour Rule',
+  'j-1':'Tools Review Quiz','j-2':'Rapport + Teasing','j-3':'Sexting + PPV','j-4':'Aftercare','j-5':'Branch Rules + NR','j-6':'Fan Assessment','j-7':'Annotated Chats',
+  'a-1':'Journey Review Quiz','a-2':'Objection Scripts','a-3':'Customs (TPDs)','a-4':'Multitasking','a-5':'Shift Routine','a-6':'Common Mistakes','a-7':'Full Simulation',
+  'g-1':'Advanced Review Quiz','g-2':'Final Quiz','g-3':'Supervised Shift'
+};
+
+(async function initAdmin() {
+  try {
+    var user = await getUser();
+    if (!user) { window.location.href = 'login.html'; return; }
+    var profile = await getUserProfile(user.id);
+    if (!profile || profile.role !== 'admin') {
+      alert('Access denied. Admin only.');
+      window.location.href = 'index.html';
+      return;
+    }
+
+    // Load data in parallel
+    var results = await Promise.all([
+      adminGetStudents(),
+      adminGetInviteCodes()
+    ]);
+    allStudents = results[0] || [];
+    allInvites = results[1] || [];
+
+    renderStats();
+    renderInvites();
+    renderStudents();
+
+    document.getElementById('admin-loading').style.display = 'none';
+    document.getElementById('admin-stats').style.display = '';
+    document.getElementById('admin-invites').style.display = '';
+    document.getElementById('admin-students').style.display = '';
+  } catch(err) {
+    document.getElementById('admin-loading').textContent = 'Error: ' + (err.message || 'Could not load admin data.');
+  }
+})();
+
+function renderStats() {
+  document.getElementById('statStudents').textContent = allStudents.length;
+  var completed = allStudents.filter(function(s) {
+    return s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === 'g-2' && q.passed; });
+  });
+  document.getElementById('statCompleted').textContent = completed.length;
+
+  var finalScores = allStudents.map(function(s) {
+    if (!s.quiz_results) return null;
+    var final = s.quiz_results.find(function(q) { return q.module_id === 'g-2'; });
+    return final ? final.percentage : null;
+  }).filter(function(x) { return x !== null; });
+
+  var avg = finalScores.length > 0 ? Math.round(finalScores.reduce(function(a,b){return a+b;},0) / finalScores.length) : 0;
+  document.getElementById('statAvgScore').textContent = avg + '%';
+
+  var unused = allInvites.filter(function(c) { return !c.used_by; });
+  document.getElementById('statInvites').textContent = unused.length;
+}
+
+function renderInvites() {
+  var body = document.getElementById('inviteBody');
+  body.innerHTML = '';
+  allInvites.forEach(function(inv) {
+    var tr = document.createElement('tr');
+    var status = inv.used_by ? 'Used' : 'Available';
+    var statusClass = inv.used_by ? 'admin-tag-used' : 'admin-tag-available';
+    var usedBy = '';
+    if (inv.used_by) {
+      var student = allStudents.find(function(s) { return s.id === inv.used_by; });
+      usedBy = student ? (student.full_name || student.email) : inv.used_by;
+    }
+    tr.innerHTML = '<td><code>' + inv.code + '</code></td>' +
+      '<td><span class="admin-tag ' + statusClass + '">' + status + '</span></td>' +
+      '<td>' + usedBy + '</td>' +
+      '<td>' + new Date(inv.created_at).toLocaleDateString() + '</td>';
+    body.appendChild(tr);
+  });
+  if (allInvites.length === 0) {
+    body.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#9ca3af;">No invite codes yet. Generate one above.</td></tr>';
+  }
+}
+
+function renderStudents() {
+  var body = document.getElementById('studentBody');
+  body.innerHTML = '';
+  allStudents.forEach(function(s, idx) {
+    var tr = document.createElement('tr');
+    var modules = s.modules_completed || 0;
+    var quizzes = s.quizzes_passed || 0;
+    tr.innerHTML = '<td>' + (s.full_name || '(no name)') + '</td>' +
+      '<td>' + s.email + '</td>' +
+      '<td>' + new Date(s.created_at).toLocaleDateString() + '</td>' +
+      '<td>' + modules + '</td>' +
+      '<td>' + quizzes + '</td>' +
+      '<td><button class="admin-btn-sm" onclick="showDetail(' + idx + ')">View</button></td>';
+    body.appendChild(tr);
+  });
+  if (allStudents.length === 0) {
+    body.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#9ca3af;">No students registered yet.</td></tr>';
+  }
+}
+
+function showDetail(idx) {
+  var s = allStudents[idx];
+  document.getElementById('detailName').textContent = s.full_name || s.email;
+  document.getElementById('detailEmail').textContent = s.email + ' — Registered ' + new Date(s.created_at).toLocaleDateString();
+
+  var qBody = document.getElementById('detailQuizzes');
+  qBody.innerHTML = '';
+  if (s.quiz_results && s.quiz_results.length > 0) {
+    s.quiz_results.forEach(function(q) {
+      var tr = document.createElement('tr');
+      var passClass = q.passed ? 'admin-tag-available' : 'admin-tag-used';
+      tr.innerHTML = '<td>' + (MODULE_NAMES[q.module_id] || q.module_id) + '</td>' +
+        '<td>' + q.score + ' (' + q.percentage + '%)</td>' +
+        '<td><span class="admin-tag ' + passClass + '">' + (q.passed ? 'Passed' : 'Failed') + '</span></td>' +
+        '<td>' + new Date(q.submitted_at).toLocaleDateString() + '</td>';
+      qBody.appendChild(tr);
+    });
+  } else {
+    qBody.innerHTML = '<tr><td colspan="4" style="color:#9ca3af;">No quizzes taken yet</td></tr>';
+  }
+
+  var mDiv = document.getElementById('detailModules');
+  if (s.completed_modules && s.completed_modules.length > 0) {
+    mDiv.innerHTML = s.completed_modules.map(function(m) {
+      return '<span class="admin-module-badge">' + (MODULE_NAMES[m] || m) + '</span>';
+    }).join(' ');
+  } else {
+    mDiv.innerHTML = '<span style="color:#9ca3af;">No modules completed yet</span>';
+  }
+
+  document.getElementById('studentDetail').style.display = '';
+}
+
+function closeDetail() {
+  document.getElementById('studentDetail').style.display = 'none';
+}
+
+async function generateCode() {
+  var btn = document.getElementById('genBtn');
+  var msgEl = document.getElementById('newCodeMsg');
+  btn.disabled = true;
+  btn.textContent = 'Generating...';
+  try {
+    var code = await adminGenerateInvite();
+    msgEl.innerHTML = 'New code: <code class="admin-code-highlight">' + code + '</code> — Share this with the new student.';
+    msgEl.style.display = 'block';
+    // Refresh invites
+    allInvites = await adminGetInviteCodes();
+    renderInvites();
+    renderStats();
+  } catch(err) {
+    msgEl.textContent = 'Error: ' + (err.message || 'Could not generate code.');
+    msgEl.style.display = 'block';
+  }
+  btn.disabled = false;
+  btn.textContent = 'Generate New Code';
+}
+</script>
+</body>
+</html>

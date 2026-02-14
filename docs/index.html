@@ -6,8 +6,15 @@
   <title>Chatting Wizard School</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth.js"></script>
 </head>
 <body>
+<div id="loading-overlay" class="loading-overlay">
+  <img src="logo.png" alt="" class="loading-logo">
+  <p>Loading your school...</p>
+</div>
+
 
 <!-- Header -->
 <div class="header">
@@ -18,6 +25,17 @@
     <span class="badge">Initial Training Program</span>
     <br>
     <a href="hiring-workflow.html" style="color: rgba(255,255,255,0.7); font-size: 0.8rem; text-decoration: underline; margin-top: 8px; display: inline-block;">Hiring Manager Workflow →</a>
+  </div>
+</div>
+
+<!-- User Bar -->
+<div id="user-bar" class="user-bar" style="display:none;">
+  <div class="user-bar-left">
+    <span class="user-greeting">Welcome, <strong class="user-name"></strong></span>
+  </div>
+  <div class="user-bar-right">
+    <a href="admin.html" class="admin-link" style="display:none;">Admin Panel</a>
+    <button onclick="cwSignOut()" class="logout-btn">Log Out</button>
   </div>
 </div>
 
@@ -2938,42 +2956,101 @@
 </div>
 
 <script>
-// ============ localStorage Progress System ============
-var STORAGE_KEY = 'cw-school-progress';
+// ============ App Initialization (Auth + Progress) ============
+var CW_USER_ID = null;
 
-function loadProgress() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { quizzes: {}, completed: {} }; }
-  catch(e) { return { quizzes: {}, completed: {} }; }
-}
-function saveProgress(data) { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+(async function initApp() {
+  var overlay = document.getElementById('loading-overlay');
+  try {
+    // 1. Check auth
+    var user = await getUser();
+    if (!user) { window.location.href = 'login.html'; return; }
+    CW_USER_ID = user.id;
+    document.body.setAttribute('data-user-id', user.id);
 
-// Module expand/collapse
-document.querySelectorAll('.module').forEach(function(mod) {
-  var header = mod.querySelector('.module-header');
-  if (header) {
-    header.style.cursor = 'pointer';
-    header.addEventListener('click', function() { mod.classList.toggle('open'); });
+    // 2. Load profile
+    var profile = await getUserProfile(user.id);
+    if (!profile) { await cwSignOut(); return; }
+
+    // 3. Show user bar
+    var bar = document.getElementById('user-bar');
+    bar.querySelector('.user-name').textContent = profile.full_name || profile.email;
+    if (profile.role === 'admin') { bar.querySelector('.admin-link').style.display = ''; }
+    bar.style.display = '';
+
+    // 4. Migrate localStorage (one-time)
+    await migrateLocalStorage(user.id);
+
+    // 5. Load progress from database
+    var progress = await loadUserProgress(user.id);
+
+    // 6. Determine which sections are unlocked
+    var unlocked = getUnlockedSections(progress.quizzes);
+
+    // 7. Initialize modules
+    initModules(user.id, progress, unlocked);
+
+    // 8. Set up expand/collapse
+    document.querySelectorAll('.module').forEach(function(mod) {
+      var header = mod.querySelector('.module-header');
+      if (header) {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', function() {
+          if (!mod.classList.contains('module-locked')) mod.classList.toggle('open');
+        });
+      }
+      var content = mod.querySelector('.module-content');
+      if (content) content.addEventListener('click', function(e) { e.stopPropagation(); });
+    });
+
+    // 9. Done — hide loading
+    if (overlay) overlay.style.display = 'none';
+
+  } catch(err) {
+    console.error('Init error:', err);
+    if (overlay) overlay.innerHTML = '<p style="color:#dc2626;">Error loading. Please <a href="login.html">log in again</a>.</p>';
   }
-  var content = mod.querySelector('.module-content');
-  if (content) { content.addEventListener('click', function(e) { e.stopPropagation(); }); }
-});
+})();
 
-// Initialize progress system: module IDs, checkboxes, progress bars, restore state
-(function initProgress() {
+// ============ Module Initialization ============
+function initModules(userId, progress, unlocked) {
   var prefixMap = { foundations: 'f', tools: 't', journey: 'j', advanced: 'a', golive: 'g', ongoing: 'o' };
-  var progress = loadProgress();
-  var sections = document.querySelectorAll('.day-section');
+  var gates = getSectionGates();
 
-  sections.forEach(function(section) {
-    var prefix = prefixMap[section.id] || section.id.charAt(0);
+  document.querySelectorAll('.day-section').forEach(function(section) {
+    var sectionId = section.id;
+    var prefix = prefixMap[sectionId] || sectionId.charAt(0);
     var modules = section.querySelectorAll('.module');
     var completedCount = 0;
+    var isGated = (unlocked[sectionId] === false);
+    var gateQuizId = gates[sectionId] || null;
+
+    if (isGated) section.classList.add('section-gated');
 
     modules.forEach(function(mod, i) {
       var moduleId = prefix + '-' + (i + 1);
       mod.setAttribute('data-module-id', moduleId);
 
-      // Add completion checkbox to module content
+      var isGateQuiz = (moduleId === gateQuizId);
+      var isLocked = isGated && !isGateQuiz;
+
+      if (isLocked) {
+        mod.classList.add('module-locked');
+        var lockMsg = mod.querySelector('.module-lock-msg');
+        if (!lockMsg) {
+          lockMsg = document.createElement('div');
+          lockMsg.className = 'module-lock-msg';
+          lockMsg.innerHTML = '&#128274; Pass the review quiz above to unlock';
+          mod.appendChild(lockMsg);
+        }
+        return;
+      }
+
+      if (isGateQuiz && isGated) {
+        mod.classList.add('module-gate');
+      }
+
+      // Add completion checkbox
       var content = mod.querySelector('.module-content');
       if (content) {
         var check = document.createElement('label');
@@ -2988,33 +3065,34 @@ document.querySelectorAll('.module').forEach(function(mod) {
           completedCount++;
         }
         cb.addEventListener('change', function() {
-          var p = loadProgress();
-          if (this.checked) { p.completed[moduleId] = true; mod.classList.add('module-complete'); }
-          else { delete p.completed[moduleId]; mod.classList.remove('module-complete'); }
-          saveProgress(p);
+          if (this.checked) mod.classList.add('module-complete');
+          else mod.classList.remove('module-complete');
+          saveModuleComplete(userId, moduleId, this.checked);
           updateProgressBars();
         });
       }
 
-      // Restore score badge if quiz was previously completed
+      // Restore score badge
       var quizData = progress.quizzes[moduleId];
-      if (quizData) { addScoreBadge(mod, quizData.score, quizData.passed); }
+      if (quizData) addScoreBadge(mod, quizData.score, quizData.passed);
     });
 
-    // Add progress bar after day-outcome
+    // Progress bar
     var outcome = section.querySelector('.day-outcome');
     if (outcome) {
-      var pct = modules.length > 0 ? Math.round(completedCount / modules.length * 100) : 0;
+      var total = modules.length;
+      var pct = total > 0 ? Math.round(completedCount / total * 100) : 0;
       var bar = document.createElement('div');
       bar.className = 'progress-bar';
-      bar.setAttribute('data-section', section.id);
+      bar.setAttribute('data-section', sectionId);
       bar.innerHTML = '<span class="progress-fill" style="width:' + pct + '%"></span>' +
-        '<span class="progress-text">' + completedCount + ' of ' + modules.length + ' completed</span>';
+        '<span class="progress-text">' + completedCount + ' of ' + total + ' completed</span>';
       outcome.parentNode.insertBefore(bar, outcome.nextSibling);
     }
   });
-})();
+}
 
+// ============ Score Badge ============
 function addScoreBadge(mod, scoreText, passed) {
   var meta = mod.querySelector('.module-meta');
   if (!meta) return;
@@ -3028,8 +3106,8 @@ function addScoreBadge(mod, scoreText, passed) {
   else meta.appendChild(badge);
 }
 
+// ============ Progress Bars ============
 function updateProgressBars() {
-  var progress = loadProgress();
   document.querySelectorAll('.progress-bar').forEach(function(bar) {
     var sectionId = bar.getAttribute('data-section');
     var section = document.getElementById(sectionId);
@@ -3037,7 +3115,7 @@ function updateProgressBars() {
     var modules = section.querySelectorAll('.module');
     var completed = 0;
     modules.forEach(function(mod) {
-      if (progress.completed[mod.getAttribute('data-module-id')]) completed++;
+      if (mod.classList.contains('module-complete')) completed++;
     });
     var pct = modules.length > 0 ? Math.round(completed / modules.length * 100) : 0;
     var fill = bar.querySelector('.progress-fill');
@@ -3047,7 +3125,7 @@ function updateProgressBars() {
   });
 }
 
-// Quiz checking with localStorage persistence
+// ============ Quiz Checking (saves to DB) ============
 function checkQuiz(btn) {
   var box = btn.closest('.activity-box');
   var questions = box.querySelectorAll('.quiz-question');
@@ -3084,29 +3162,37 @@ function checkQuiz(btn) {
   var pct = Math.round((correct / total) * 100);
   if (scoreEl) {
     var msg = 'Score: ' + correct + ' / ' + total + ' (' + pct + '%)';
-    if (correct === total) msg += ' — Perfect!';
-    else if (pct >= 80) msg += ' — Great job! You passed.';
-    else msg += ' — Review the material and try again.';
+    if (correct === total) msg += ' \u2014 Perfect!';
+    else if (pct >= 80) msg += ' \u2014 Great job! You passed.';
+    else msg += ' \u2014 Review the material and try again.';
     scoreEl.textContent = msg;
     scoreEl.className = 'quiz-score show ' + (pct >= 80 ? 'pass' : 'fail');
   }
   btn.disabled = true;
   btn.textContent = 'Submitted \u2713';
 
-  // Save score to localStorage
+  // Save to database
   var mod = btn.closest('.module');
-  if (mod) {
+  if (mod && CW_USER_ID) {
     var moduleId = mod.getAttribute('data-module-id');
     if (moduleId) {
-      var p = loadProgress();
-      p.quizzes[moduleId] = { score: correct + '/' + total, passed: pct >= 80, pct: pct, timestamp: new Date().toISOString() };
-      saveProgress(p);
+      saveQuizResult(CW_USER_ID, moduleId, correct + '/' + total, pct, pct >= 80);
       addScoreBadge(mod, correct + '/' + total, pct >= 80);
+
+      // If this was a gate quiz and passed, unlock the section
+      if (pct >= 80) {
+        var gates = getSectionGates();
+        var gatedSection = null;
+        Object.keys(gates).forEach(function(s) { if (gates[s] === moduleId) gatedSection = s; });
+        if (gatedSection) {
+          setTimeout(function() { location.reload(); }, 800);
+        }
+      }
     }
   }
 }
 
-// Reveal answers (scenario exercise)
+// ============ Reveal Answers ============
 function revealAnswer(btn) {
   var content = btn.nextElementSibling;
   if (content.classList.contains('visible')) {
@@ -3118,11 +3204,15 @@ function revealAnswer(btn) {
   }
 }
 
-// Reset all progress
+// ============ Reset Progress ============
 function resetProgress() {
   if (confirm('Reset all your progress? This will clear quiz scores and completion status.')) {
-    localStorage.removeItem(STORAGE_KEY);
-    location.reload();
+    if (CW_USER_ID) {
+      Promise.all([
+        sb().from('progress').delete().eq('user_id', CW_USER_ID),
+        sb().from('quiz_results').delete().eq('user_id', CW_USER_ID)
+      ]).then(function() { location.reload(); });
+    }
   }
 }
 </script>

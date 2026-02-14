@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login &mdash; Chatting Wizard School</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth.js"></script>
+</head>
+<body>
+<div class="login-page">
+  <div class="login-card">
+    <img src="logo.png" alt="Chatting Wizard" class="login-logo">
+    <h1 class="login-title">Chatting <span>School</span></h1>
+    <p class="login-subtitle" id="formTitle">Log in to your account</p>
+
+    <form id="authForm" onsubmit="handleAuth(event)">
+      <div id="nameField" class="login-field" style="display:none;">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Your full name" autocomplete="name">
+      </div>
+      <div class="login-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div class="login-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Minimum 6 characters" required minlength="6" autocomplete="current-password">
+      </div>
+      <div id="inviteField" class="login-field" style="display:none;">
+        <label for="inviteCode">Invite Code</label>
+        <input type="text" id="inviteCode" placeholder="CW-XXXXXXXX" autocomplete="off">
+      </div>
+
+      <div id="errorMsg" class="login-error" style="display:none;"></div>
+
+      <button type="submit" class="login-btn" id="submitBtn">Log In</button>
+    </form>
+
+    <p class="login-toggle">
+      <span id="toggleText">Don't have an account?</span>
+      <a href="#" id="toggleLink" onclick="toggleMode(event)">Register</a>
+    </p>
+  </div>
+</div>
+
+<script>
+var isRegister = false;
+
+// Check if already logged in
+(async function() {
+  try {
+    var user = await getUser();
+    if (user) window.location.href = 'index.html';
+  } catch(e) { /* not logged in, stay here */ }
+})();
+
+function toggleMode(e) {
+  e.preventDefault();
+  isRegister = !isRegister;
+  document.getElementById('nameField').style.display = isRegister ? '' : 'none';
+  document.getElementById('inviteField').style.display = isRegister ? '' : 'none';
+  document.getElementById('submitBtn').textContent = isRegister ? 'Create Account' : 'Log In';
+  document.getElementById('formTitle').textContent = isRegister ? 'Create your account' : 'Log in to your account';
+  document.getElementById('toggleText').textContent = isRegister ? 'Already have an account?' : "Don't have an account?";
+  document.getElementById('toggleLink').textContent = isRegister ? 'Log In' : 'Register';
+  document.getElementById('password').autocomplete = isRegister ? 'new-password' : 'current-password';
+  document.getElementById('errorMsg').style.display = 'none';
+}
+
+async function handleAuth(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submitBtn');
+  var errEl = document.getElementById('errorMsg');
+  errEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = isRegister ? 'Creating account...' : 'Logging in...';
+
+  try {
+    var email = document.getElementById('email').value.trim();
+    var password = document.getElementById('password').value;
+
+    if (isRegister) {
+      var fullName = document.getElementById('fullName').value.trim();
+      var inviteCode = document.getElementById('inviteCode').value.trim();
+      if (!fullName) throw new Error('Please enter your name.');
+      if (!inviteCode) throw new Error('Invite code is required to register.');
+      await cwSignUp(email, password, fullName, inviteCode);
+    } else {
+      await cwSignIn(email, password);
+    }
+
+    window.location.href = 'index.html';
+  } catch (err) {
+    var msg = err.message || 'Something went wrong. Please try again.';
+    if (msg.includes('Invalid login')) msg = 'Wrong email or password.';
+    if (msg.includes('already registered')) msg = 'This email is already registered. Try logging in.';
+    errEl.textContent = msg;
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = isRegister ? 'Create Account' : 'Log In';
+  }
+}
+</script>
+</body>
+</html>
