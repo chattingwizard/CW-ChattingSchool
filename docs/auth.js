@@ -134,13 +134,16 @@ function getSectionGates() {
   };
 }
 
-function getUnlockedSections(quizResults) {
+function getUnlockedSections(quizResults, manualUnlocks) {
   var gates = getSectionGates();
   var unlocked = { foundations: true, ongoing: true };
+  var overrides = manualUnlocks || [];
   Object.keys(gates).forEach(function(sectionId) {
     var gateQuiz = gates[sectionId];
     var result = quizResults[gateQuiz];
-    unlocked[sectionId] = !!(result && result.passed);
+    var passedQuiz = !!(result && result.passed);
+    var manuallyUnlocked = overrides.indexOf(sectionId) >= 0;
+    unlocked[sectionId] = passedQuiz || manuallyUnlocked;
   });
   return unlocked;
 }
@@ -214,6 +217,21 @@ async function adminGetInviteCodes() {
   var res = await sb().from('invite_codes').select('*').order('created_at', { ascending: false });
   if (res.error) throw res.error;
   return res.data || [];
+}
+
+async function loadUserUnlocks(userId) {
+  var res = await sb().from('section_unlocks').select('section_id').eq('user_id', userId);
+  return (res.data || []).map(function(r) { return r.section_id; });
+}
+
+async function adminGrantSection(targetId, sectionId) {
+  var res = await sb().rpc('admin_grant_section', { target_id: targetId, sect_id: sectionId });
+  if (res.error) throw res.error;
+}
+
+async function adminRevokeSection(targetId, sectionId) {
+  var res = await sb().rpc('admin_revoke_section', { target_id: targetId, sect_id: sectionId });
+  if (res.error) throw res.error;
 }
 
 async function adminUpdateStudent(targetId, newName, newRole) {

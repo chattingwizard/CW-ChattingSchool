@@ -1114,6 +1114,40 @@ body {
 
 /* Role tag */
 .admin-tag-admin { background: #ede9fe; color: #6d28d9; }
+.admin-tag-manual { background: #dbeafe; color: #1d4ed8; }
+
+/* Section access control */
+.admin-access-section {
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;
+  padding: 16px; margin-bottom: 12px;
+}
+.admin-access-section h4 { margin: 0 0 4px; border: none; color: #166534; }
+.admin-access-note { font-size: 0.78rem; color: #6b7280; margin: 0 0 12px; }
+.admin-access-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.admin-access-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 12px; transition: border-color 0.2s;
+}
+.admin-access-card.access-open { border-color: #86efac; }
+.admin-access-card.access-locked { border-color: #fecaca; }
+.access-card-top {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 8px;
+}
+.access-card-top strong { font-size: 0.85rem; color: #1e293b; }
+.access-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 0.8rem; color: #475569;
+}
+.access-toggle input[type="checkbox"] {
+  width: 18px; height: 18px; cursor: pointer;
+  accent-color: #16a34a;
+}
+.access-toggle input[disabled] { cursor: not-allowed; opacity: 0.5; }
+.access-toggle-label { user-select: none; }
 
 /* Module badges in detail */
 .admin-module-list { display: flex; flex-wrap: wrap; gap: 6px; }

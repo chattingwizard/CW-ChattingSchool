@@ -2984,11 +2984,11 @@ var CW_USER_ID = null;
     // 5. Load progress from database
     var progress = await loadUserProgress(user.id);
 
-    // 6. Determine which sections are unlocked (admins see everything)
-    var unlocked = getUnlockedSections(progress.quizzes);
+    // 6. Load manual unlocks + determine which sections are open
+    var manualUnlocks = await loadUserUnlocks(user.id);
+    var unlocked = getUnlockedSections(progress.quizzes, manualUnlocks);
     var isAdmin = (profile.role === 'admin');
     if (isAdmin) {
-      Object.keys(unlocked).forEach(function(k) { unlocked[k] = true; });
       unlocked.tools = true; unlocked.journey = true; unlocked.advanced = true; unlocked.golive = true;
     }
 

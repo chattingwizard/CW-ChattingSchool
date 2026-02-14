@@ -101,6 +101,13 @@
         </div>
       </div>
 
+      <!-- Section Access Control -->
+      <div class="admin-access-section">
+        <h4>&#128275; Section Access</h4>
+        <p class="admin-access-note">Toggle sections on/off for this student. Overrides quiz gating.</p>
+        <div class="admin-access-grid" id="accessGrid"></div>
+      </div>
+
       <!-- Danger Zone -->
       <div class="admin-danger-section">
         <h4>&#9888; Actions</h4>
@@ -142,7 +149,13 @@ var MODULE_NAMES = {
   'g-1':'Advanced Review Quiz','g-2':'Final Quiz','g-3':'Supervised Shift'
 };
 
-var SECTION_ORDER = ['f','t','j','a','g'];
+var SECTIONS = [
+  { id: 'foundations', label: 'Foundations', gated: false },
+  { id: 'tools', label: 'Tools & Scripts', gated: true },
+  { id: 'journey', label: 'The Journey', gated: true },
+  { id: 'advanced', label: 'Advanced Skills', gated: true },
+  { id: 'golive', label: 'Go Live', gated: true }
+];
 
 (async function initAdmin() {
   try {
@@ -292,7 +305,70 @@ function showDetail(idx) {
     mDiv.innerHTML = '<span style="color:#9ca3af;">No modules completed yet</span>';
   }
 
+  // Section access toggles
+  renderAccessGrid(s);
+
   document.getElementById('studentDetail').style.display = '';
+}
+
+function renderAccessGrid(student) {
+  var grid = document.getElementById('accessGrid');
+  var unlocks = student.unlocked_sections || [];
+  var gates = { tools: 't-1', journey: 'j-1', advanced: 'a-1', golive: 'g-1' };
+
+  grid.innerHTML = '';
+  SECTIONS.forEach(function(sec) {
+    if (!sec.gated) return; // Foundations always open, no toggle needed
+
+    var gateQuiz = gates[sec.id];
+    var passedQuiz = student.quiz_results && student.quiz_results.some(function(q) {
+      return q.module_id === gateQuiz && q.passed;
+    });
+    var manuallyUnlocked = unlocks.indexOf(sec.id) >= 0;
+    var isOpen = passedQuiz || manuallyUnlocked;
+
+    var card = document.createElement('div');
+    card.className = 'admin-access-card ' + (isOpen ? 'access-open' : 'access-locked');
+
+    var statusLabel = '';
+    if (passedQuiz) statusLabel = '<span class="admin-tag admin-tag-available">Quiz passed</span>';
+    else if (manuallyUnlocked) statusLabel = '<span class="admin-tag admin-tag-manual">Manual</span>';
+    else statusLabel = '<span class="admin-tag admin-tag-used">Locked</span>';
+
+    card.innerHTML =
+      '<div class="access-card-top">' +
+        '<strong>' + sec.label + '</strong>' +
+        statusLabel +
+      '</div>' +
+      '<label class="access-toggle">' +
+        '<input type="checkbox" ' + (manuallyUnlocked ? 'checked' : '') + ' ' +
+          (passedQuiz ? 'disabled title="Already passed via quiz"' : '') +
+          ' onchange="toggleSection(\'' + student.id + '\', \'' + sec.id + '\', this.checked)">' +
+        '<span class="access-toggle-label">' + (passedQuiz ? 'Earned via quiz' : 'Grant manual access') + '</span>' +
+      '</label>';
+
+    grid.appendChild(card);
+  });
+}
+
+async function toggleSection(studentId, sectionId, grant) {
+  try {
+    if (grant) {
+      await adminGrantSection(studentId, sectionId);
+    } else {
+      await adminRevokeSection(studentId, sectionId);
+    }
+    // Refresh data and re-render
+    await loadAllData();
+    if (currentDetailIdx >= 0) {
+      renderAccessGrid(allStudents[currentDetailIdx]);
+    }
+  } catch(err) {
+    alert('Error: ' + (err.message || 'Could not update access.'));
+    // Refresh to revert toggle state
+    await loadAllData();
+    if (currentDetailIdx >= 0) renderAccessGrid(allStudents[currentDetailIdx]);
+  }
 }
 
 function closeDetail() {
