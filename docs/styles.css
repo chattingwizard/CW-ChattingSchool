@@ -1067,10 +1067,53 @@ body {
   color: #6b7280; cursor: pointer;
 }
 .admin-close:hover { color: #1e293b; }
-.admin-detail-email { color: #6b7280; font-size: 0.85rem; margin-bottom: 16px; }
+.admin-detail-email { color: #6b7280; font-size: 0.82rem; margin: 16px 0 0; font-family: monospace; }
 .admin-detail-card h4 {
-  font-size: 0.95rem; color: #475569; margin: 16px 0 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px;
+  font-size: 0.95rem; color: #475569; margin: 20px 0 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px;
 }
+
+/* Edit section */
+.admin-edit-section {
+  background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px;
+  padding: 16px; margin-bottom: 12px;
+}
+.admin-edit-section h4 { margin: 0 0 12px; border: none; color: #0369a1; }
+.admin-edit-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+}
+.admin-edit-row label {
+  min-width: 50px; font-size: 0.82rem; font-weight: 600; color: #374151;
+}
+.admin-input {
+  flex: 1; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px;
+  font-size: 0.85rem; background: #fff;
+}
+.admin-input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37,99,235,0.1); }
+.admin-edit-actions {
+  display: flex; align-items: center; gap: 12px; margin-top: 12px;
+}
+.admin-feedback { font-size: 0.82rem; font-weight: 600; }
+.admin-feedback-ok { color: #16a34a; }
+.admin-feedback-err { color: #dc2626; }
+
+/* Danger section */
+.admin-danger-section {
+  background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px;
+  padding: 16px; margin-bottom: 12px;
+}
+.admin-danger-section h4 { margin: 0 0 10px; border: none; color: #dc2626; }
+.admin-danger-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.admin-btn-danger {
+  background: #fff; color: #dc2626; border: 1px solid #fca5a5;
+  padding: 8px 16px; border-radius: 6px; font-size: 0.82rem;
+  font-weight: 600; cursor: pointer;
+}
+.admin-btn-danger:hover { background: #fef2f2; border-color: #dc2626; }
+.admin-btn-danger:disabled { opacity: 0.5; cursor: not-allowed; }
+.admin-danger-note { font-size: 0.78rem; color: #9ca3af; margin: 8px 0 0; }
+
+/* Role tag */
+.admin-tag-admin { background: #ede9fe; color: #6d28d9; }
 
 /* Module badges in detail */
 .admin-module-list { display: flex; flex-wrap: wrap; gap: 6px; }

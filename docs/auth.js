@@ -215,3 +215,22 @@ async function adminGetInviteCodes() {
   if (res.error) throw res.error;
   return res.data || [];
 }
+
+async function adminUpdateStudent(targetId, newName, newRole) {
+  var res = await sb().rpc('admin_update_student', {
+    target_id: targetId,
+    new_name: newName || null,
+    new_role: newRole || null
+  });
+  if (res.error) throw res.error;
+}
+
+async function adminResetProgress(targetId) {
+  var res = await sb().rpc('admin_reset_progress', { target_id: targetId });
+  if (res.error) throw res.error;
+}
+
+async function adminResetQuizzes(targetId) {
+  var res = await sb().rpc('admin_reset_quizzes', { target_id: targetId });
+  if (res.error) throw res.error;
+}

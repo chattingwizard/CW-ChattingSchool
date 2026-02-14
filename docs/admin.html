@@ -67,27 +67,63 @@
     <h2>Students</h2>
     <table class="admin-table">
       <thead>
-        <tr><th>Name</th><th>Email</th><th>Registered</th><th>Modules</th><th>Quizzes Passed</th><th>Details</th></tr>
+        <tr><th>Name</th><th>Email</th><th>Role</th><th>Registered</th><th>Modules</th><th>Quizzes</th><th>Actions</th></tr>
       </thead>
       <tbody id="studentBody"></tbody>
     </table>
   </div>
 
-  <!-- Student Detail Modal -->
+  <!-- Student Detail / Edit Modal -->
   <div id="studentDetail" class="admin-detail" style="display:none;">
     <div class="admin-detail-card">
       <div class="admin-detail-header">
-        <h3 id="detailName">Student Name</h3>
+        <h3 id="detailTitle">Student Details</h3>
         <button onclick="closeDetail()" class="admin-close">&times;</button>
       </div>
-      <p id="detailEmail" class="admin-detail-email"></p>
-      <h4>Quiz Results</h4>
+
+      <!-- Edit Section -->
+      <div class="admin-edit-section">
+        <h4>&#9998; Edit Student</h4>
+        <div class="admin-edit-row">
+          <label>Name</label>
+          <input type="text" id="editName" class="admin-input" placeholder="Full name">
+        </div>
+        <div class="admin-edit-row">
+          <label>Role</label>
+          <select id="editRole" class="admin-input">
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <div class="admin-edit-actions">
+          <button onclick="saveStudentEdit()" class="admin-btn" id="saveEditBtn">Save Changes</button>
+          <span id="editFeedback" class="admin-feedback"></span>
+        </div>
+      </div>
+
+      <!-- Danger Zone -->
+      <div class="admin-danger-section">
+        <h4>&#9888; Actions</h4>
+        <div class="admin-danger-actions">
+          <button onclick="resetStudentQuizzes()" class="admin-btn-danger" id="resetQuizBtn">Reset All Quizzes</button>
+          <button onclick="resetStudentProgress()" class="admin-btn-danger" id="resetProgressBtn">Reset All Progress</button>
+        </div>
+        <p class="admin-danger-note">These actions cannot be undone. The student will need to redo quizzes and re-check modules.</p>
+      </div>
+
+      <!-- Quiz Results -->
+      <h4>&#128202; Quiz Results</h4>
       <table class="admin-table">
         <thead><tr><th>Module</th><th>Score</th><th>Passed</th><th>Date</th></tr></thead>
         <tbody id="detailQuizzes"></tbody>
       </table>
-      <h4>Completed Modules</h4>
+
+      <!-- Completed Modules -->
+      <h4>&#9989; Completed Modules</h4>
       <div id="detailModules" class="admin-module-list"></div>
+
+      <!-- Student Info -->
+      <p id="detailEmail" class="admin-detail-email"></p>
     </div>
   </div>
 
@@ -96,6 +132,7 @@
 <script>
 var allStudents = [];
 var allInvites = [];
+var currentDetailIdx = -1;
 
 var MODULE_NAMES = {
   'f-1':'Welcome + 3 Key Words','f-2':'Who is CW + Team','f-3':'OnlyFans + Money','f-4':'Your Role + Shift','f-5':'Banned Topics','f-6':'Foundations Review',
@@ -104,6 +141,8 @@ var MODULE_NAMES = {
   'a-1':'Journey Review Quiz','a-2':'Objection Scripts','a-3':'Customs (TPDs)','a-4':'Multitasking','a-5':'Shift Routine','a-6':'Common Mistakes','a-7':'Full Simulation',
   'g-1':'Advanced Review Quiz','g-2':'Final Quiz','g-3':'Supervised Shift'
 };
+
+var SECTION_ORDER = ['f','t','j','a','g'];
 
 (async function initAdmin() {
   try {
@@ -116,17 +155,7 @@ var MODULE_NAMES = {
       return;
     }
 
-    // Load data in parallel
-    var results = await Promise.all([
-      adminGetStudents(),
-      adminGetInviteCodes()
-    ]);
-    allStudents = results[0] || [];
-    allInvites = results[1] || [];
-
-    renderStats();
-    renderInvites();
-    renderStudents();
+    await loadAllData();
 
     document.getElementById('admin-loading').style.display = 'none';
     document.getElementById('admin-stats').style.display = '';
@@ -137,6 +166,19 @@ var MODULE_NAMES = {
   }
 })();
 
+async function loadAllData() {
+  var results = await Promise.all([
+    adminGetStudents(),
+    adminGetInviteCodes()
+  ]);
+  allStudents = results[0] || [];
+  allInvites = results[1] || [];
+  renderStats();
+  renderInvites();
+  renderStudents();
+}
+
+// ============ Stats ============
 function renderStats() {
   document.getElementById('statStudents').textContent = allStudents.length;
   var completed = allStudents.filter(function(s) {
@@ -146,8 +188,8 @@ function renderStats() {
 
   var finalScores = allStudents.map(function(s) {
     if (!s.quiz_results) return null;
-    var final = s.quiz_results.find(function(q) { return q.module_id === 'g-2'; });
-    return final ? final.percentage : null;
+    var f = s.quiz_results.find(function(q) { return q.module_id === 'g-2'; });
+    return f ? f.percentage : null;
   }).filter(function(x) { return x !== null; });
 
   var avg = finalScores.length > 0 ? Math.round(finalScores.reduce(function(a,b){return a+b;},0) / finalScores.length) : 0;
@@ -157,6 +199,7 @@ function renderStats() {
   document.getElementById('statInvites').textContent = unused.length;
 }
 
+// ============ Invite Codes ============
 function renderInvites() {
   var body = document.getElementById('inviteBody');
   body.innerHTML = '';
@@ -176,10 +219,11 @@ function renderInvites() {
     body.appendChild(tr);
   });
   if (allInvites.length === 0) {
-    body.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#9ca3af;">No invite codes yet. Generate one above.</td></tr>';
+    body.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#9ca3af;">No invite codes yet.</td></tr>';
   }
 }
 
+// ============ Students Table ============
 function renderStudents() {
   var body = document.getElementById('studentBody');
   body.innerHTML = '';
@@ -187,28 +231,44 @@ function renderStudents() {
     var tr = document.createElement('tr');
     var modules = s.modules_completed || 0;
     var quizzes = s.quizzes_passed || 0;
+    var roleClass = s.role === 'admin' ? 'admin-tag-admin' : 'admin-tag-available';
+    var roleLabel = s.role === 'admin' ? 'Admin' : 'Student';
     tr.innerHTML = '<td>' + (s.full_name || '(no name)') + '</td>' +
       '<td>' + s.email + '</td>' +
+      '<td><span class="admin-tag ' + roleClass + '">' + roleLabel + '</span></td>' +
       '<td>' + new Date(s.created_at).toLocaleDateString() + '</td>' +
       '<td>' + modules + '</td>' +
       '<td>' + quizzes + '</td>' +
-      '<td><button class="admin-btn-sm" onclick="showDetail(' + idx + ')">View</button></td>';
+      '<td><button class="admin-btn-sm" onclick="showDetail(' + idx + ')">Manage</button></td>';
     body.appendChild(tr);
   });
   if (allStudents.length === 0) {
-    body.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#9ca3af;">No students registered yet.</td></tr>';
+    body.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#9ca3af;">No students registered yet.</td></tr>';
   }
 }
 
+// ============ Student Detail / Edit Modal ============
 function showDetail(idx) {
+  currentDetailIdx = idx;
   var s = allStudents[idx];
-  document.getElementById('detailName').textContent = s.full_name || s.email;
-  document.getElementById('detailEmail').textContent = s.email + ' — Registered ' + new Date(s.created_at).toLocaleDateString();
 
+  document.getElementById('detailTitle').textContent = s.full_name || s.email;
+  document.getElementById('detailEmail').textContent = s.email + ' — ID: ' + s.id + ' — Registered ' + new Date(s.created_at).toLocaleDateString();
+
+  // Populate edit fields
+  document.getElementById('editName').value = s.full_name || '';
+  document.getElementById('editRole').value = s.role || 'student';
+  document.getElementById('editFeedback').textContent = '';
+
+  // Quiz results
   var qBody = document.getElementById('detailQuizzes');
   qBody.innerHTML = '';
   if (s.quiz_results && s.quiz_results.length > 0) {
-    s.quiz_results.forEach(function(q) {
+    // Sort by section order
+    var sorted = s.quiz_results.slice().sort(function(a, b) {
+      return (a.module_id || '').localeCompare(b.module_id || '');
+    });
+    sorted.forEach(function(q) {
       var tr = document.createElement('tr');
       var passClass = q.passed ? 'admin-tag-available' : 'admin-tag-used';
       tr.innerHTML = '<td>' + (MODULE_NAMES[q.module_id] || q.module_id) + '</td>' +
@@ -221,9 +281,11 @@ function showDetail(idx) {
     qBody.innerHTML = '<tr><td colspan="4" style="color:#9ca3af;">No quizzes taken yet</td></tr>';
   }
 
+  // Completed modules
   var mDiv = document.getElementById('detailModules');
   if (s.completed_modules && s.completed_modules.length > 0) {
-    mDiv.innerHTML = s.completed_modules.map(function(m) {
+    var sorted = s.completed_modules.slice().sort();
+    mDiv.innerHTML = sorted.map(function(m) {
       return '<span class="admin-module-badge">' + (MODULE_NAMES[m] || m) + '</span>';
     }).join(' ');
   } else {
@@ -235,8 +297,79 @@ function showDetail(idx) {
 
 function closeDetail() {
   document.getElementById('studentDetail').style.display = 'none';
+  currentDetailIdx = -1;
 }
 
+// ============ Save Edits ============
+async function saveStudentEdit() {
+  if (currentDetailIdx < 0) return;
+  var s = allStudents[currentDetailIdx];
+  var btn = document.getElementById('saveEditBtn');
+  var feedback = document.getElementById('editFeedback');
+  var newName = document.getElementById('editName').value.trim();
+  var newRole = document.getElementById('editRole').value;
+
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+  feedback.textContent = '';
+
+  try {
+    await adminUpdateStudent(s.id, newName, newRole);
+    feedback.textContent = 'Saved!';
+    feedback.className = 'admin-feedback admin-feedback-ok';
+
+    // Refresh data
+    await loadAllData();
+    // Update modal title
+    document.getElementById('detailTitle').textContent = newName || s.email;
+  } catch(err) {
+    feedback.textContent = 'Error: ' + (err.message || 'Could not save.');
+    feedback.className = 'admin-feedback admin-feedback-err';
+  }
+  btn.disabled = false;
+  btn.textContent = 'Save Changes';
+}
+
+// ============ Reset Actions ============
+async function resetStudentQuizzes() {
+  if (currentDetailIdx < 0) return;
+  var s = allStudents[currentDetailIdx];
+  if (!confirm('Reset ALL quiz results for ' + (s.full_name || s.email) + '? They will need to redo every quiz.')) return;
+
+  var btn = document.getElementById('resetQuizBtn');
+  btn.disabled = true;
+  btn.textContent = 'Resetting...';
+  try {
+    await adminResetQuizzes(s.id);
+    await loadAllData();
+    showDetail(currentDetailIdx);
+  } catch(err) {
+    alert('Error: ' + (err.message || 'Could not reset quizzes.'));
+  }
+  btn.disabled = false;
+  btn.textContent = 'Reset All Quizzes';
+}
+
+async function resetStudentProgress() {
+  if (currentDetailIdx < 0) return;
+  var s = allStudents[currentDetailIdx];
+  if (!confirm('Reset ALL progress for ' + (s.full_name || s.email) + '? This clears quizzes AND completed modules. They start from zero.')) return;
+
+  var btn = document.getElementById('resetProgressBtn');
+  btn.disabled = true;
+  btn.textContent = 'Resetting...';
+  try {
+    await adminResetProgress(s.id);
+    await loadAllData();
+    showDetail(currentDetailIdx);
+  } catch(err) {
+    alert('Error: ' + (err.message || 'Could not reset progress.'));
+  }
+  btn.disabled = false;
+  btn.textContent = 'Reset All Progress';
+}
+
+// ============ Generate Invite Code ============
 async function generateCode() {
   var btn = document.getElementById('genBtn');
   var msgEl = document.getElementById('newCodeMsg');
@@ -244,9 +377,8 @@ async function generateCode() {
   btn.textContent = 'Generating...';
   try {
     var code = await adminGenerateInvite();
-    msgEl.innerHTML = 'New code: <code class="admin-code-highlight">' + code + '</code> — Share this with the new student.';
+    msgEl.innerHTML = 'New code: <code class="admin-code-highlight">' + code + '</code> &mdash; Share this with the new student.';
     msgEl.style.display = 'block';
-    // Refresh invites
     allInvites = await adminGetInviteCodes();
     renderInvites();
     renderStats();
