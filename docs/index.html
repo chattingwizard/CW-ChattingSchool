@@ -35,7 +35,7 @@
 <div class="main">
   <div class="stats">
     <div class="stat">
-      <div class="stat-value" style="color: var(--cw-dark);">21</div>
+      <div class="stat-value" style="color: var(--cw-dark);">33</div>
       <div class="stat-label">Modules</div>
     </div>
     <div class="stat">
@@ -776,191 +776,503 @@
   <section class="day-section" id="tools">
     <div class="day-header">
       <div class="day-number" style="background: var(--day2);">T</div>
-      <h2>Your Tools & Scripts</h2>
+      <h2>Your Tools &amp; Scripts</h2>
     </div>
     <p class="day-subtitle">Learn Infloww, understand scripts, meet the model you'll become, and see the full fan journey.</p>
     <div class="day-outcome">
-      <strong>✅ Outcome:</strong> You can navigate Infloww, find and use scripts, and understand the complete journey from new sub to sale.
+      <strong>&check; Outcome:</strong> You can navigate Infloww, find and use scripts, and understand the complete journey from new sub to sale.
     </div>
 
-    <!-- M2.0 — NEW: Review quiz -->
+    <!-- ======================== T-1: FOUNDATIONS REVIEW QUIZ ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🔄</span> Foundations Review Quiz</div>
+        <div class="module-title"><span class="icon">&#128260;</span> Foundations Review Quiz</div>
         <div class="module-meta">
           <span class="module-duration">5 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Quiz</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Quick check: do you remember what you learned yesterday?</p>
-        <h4>Sample questions</h4>
-        <ul>
-          <li>Name 3 banned topics.</li>
-          <li>What % does OnlyFans take from each payment?</li>
-          <li>True or false: You chat as yourself, not as the model.</li>
-          <li>A fan asks to meet up. What do you do?</li>
-          <li>What is a PPV?</li>
-        </ul>
+        <p>Before we continue, let's check what you remember from Foundations. Get at least 80% correct to move on.</p>
+
+        <div class="activity-box" id="quiz-t1">
+          <h4>&#128260; Foundations Review &mdash; 5 Questions</h4>
+
+          <div class="quiz-question" data-correct="c">
+            <p>1. Which of these is NOT a banned topic?</p>
+            <label class="quiz-option"><input type="radio" name="t1q1" value="a"> Meeting a fan in person</label>
+            <label class="quiz-option"><input type="radio" name="t1q1" value="b"> Accepting PayPal payments</label>
+            <label class="quiz-option"><input type="radio" name="t1q1" value="c"> Talking about fitness and the gym</label>
+            <label class="quiz-option"><input type="radio" name="t1q1" value="d"> Pretending to use drugs</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>2. A fan says "Let's get high together tonight." What do you do?</p>
+            <label class="quiz-option"><input type="radio" name="t1q2" value="a"> Say "That sounds fun!"</label>
+            <label class="quiz-option"><input type="radio" name="t1q2" value="b"> Tell them drugs are a banned topic</label>
+            <label class="quiz-option"><input type="radio" name="t1q2" value="c"> Ignore it completely and redirect to a safe topic</label>
+            <label class="quiz-option"><input type="radio" name="t1q2" value="d"> Stop replying to the fan</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>3. What is the correct shift flow?</p>
+            <label class="quiz-option"><input type="radio" name="t1q3" value="a"> Login &rarr; Unread tab &rarr; Reply &rarr; Done</label>
+            <label class="quiz-option"><input type="radio" name="t1q3" value="b"> Login &rarr; Read handoff notes &rarr; Unread tab &rarr; Prioritize &rarr; Reply &rarr; Write handoff notes</label>
+            <label class="quiz-option"><input type="radio" name="t1q3" value="c"> Read notes &rarr; Login &rarr; Reply to everyone &rarr; Log out</label>
+            <label class="quiz-option"><input type="radio" name="t1q3" value="d"> Login &rarr; Send mass message &rarr; Reply &rarr; Done</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>4. Which word should you NEVER use in model messages on OnlyFans?</p>
+            <label class="quiz-option"><input type="radio" name="t1q4" value="a"> Love</label>
+            <label class="quiz-option"><input type="radio" name="t1q4" value="b"> Money</label>
+            <label class="quiz-option"><input type="radio" name="t1q4" value="c"> Meet</label>
+            <label class="quiz-option"><input type="radio" name="t1q4" value="d"> Beautiful</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>5. You earn ___% of every net sale.</p>
+            <label class="quiz-option"><input type="radio" name="t1q5" value="a"> 1%</label>
+            <label class="quiz-option"><input type="radio" name="t1q5" value="b"> 2%</label>
+            <label class="quiz-option"><input type="radio" name="t1q5" value="c"> 5%</label>
+            <label class="quiz-option"><input type="radio" name="t1q5" value="d"> 10%</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M2.1 -->
+    <!-- ======================== T-2: INFLOWW WALKTHROUGH ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🛠️</span> Infloww Walkthrough</div>
+        <div class="module-title"><span class="icon">&#128295;</span> Infloww Walkthrough</div>
         <div class="module-meta">
           <span class="module-duration">25 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Infloww is where you work. Learn every part of the interface.</p>
-        <h4>What you'll learn</h4>
+        <p><strong>Infloww</strong> is the platform where you work every day. It's like a super-powered messaging app built for OnlyFans chatters. Learn every part of the interface.</p>
+
+        <h4>Key Points</h4>
         <ul>
-          <li>Dashboard, Analytics, Messages Pro, Growth tabs</li>
-          <li>Managing multiple model inboxes simultaneously</li>
-          <li>Fan Insights panel: subscription time, total spent, highest purchase, last paid</li>
-          <li>Fan Info: location, source, nickname, birthday</li>
-          <li>Fan Notes: age, job, hobbies, preferences — how to record info</li>
-          <li>Vault Pro: finding and sending content (NEVER use "All Media" folder)</li>
-          <li>PPV history: sent, opened, locked — reading patterns</li>
-          <li>The built-in translator for non-English fans</li>
-          <li>Mass Messages: how to send MMs correctly (exclude Forbidden, TW, Muted, Whale, Custom tags)</li>
-          <li>Employee metrics: Golden Ratio, Unlock Ratio, Response Time</li>
+          <li><strong>Dashboard</strong> &mdash; shows your stats and performance at a glance</li>
+          <li><strong>Messages Pro</strong> &mdash; where you read and respond to fan messages</li>
+          <li><strong>Fan Insights panel</strong> &mdash; shows subscription time, total spent, highest purchase, last paid date</li>
+          <li><strong>Fan Info</strong> &mdash; location, source, nickname, birthday</li>
+          <li><strong>Fan Notes</strong> &mdash; where YOU record info: age, job, hobbies, preferences. This is critical for personalization.</li>
+          <li><strong>Vault Pro</strong> &mdash; where all the model's content is stored. NEVER use the "All Media" folder &mdash; always use the organized themed folders</li>
+          <li><strong>PPV History</strong> &mdash; shows what PPVs were sent, which were opened, and which are still locked</li>
+          <li><strong>Built-in translator</strong> &mdash; for fans who don't speak English</li>
+          <li><strong>Mass Messages</strong> &mdash; send to many fans at once. Always EXCLUDE these tags: Forbidden, TW, Muted, Whale, Custom</li>
+          <li><strong>Employee Metrics</strong> &mdash; Golden Ratio, Unlock Ratio, Response Time &mdash; your TL reviews these</li>
         </ul>
-        <h4>Practice</h4>
-        <ul>
-          <li>Open Infloww → find a model's inbox → check fan insights for 3 fans → write down each fan's total spent and subscription date</li>
-        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Infloww</span> <span class="term-def">The platform where chatters work &mdash; manages messages, content, and analytics</span></div>
+            <div class="term-item"><span class="term-word">Fan Insights</span> <span class="term-def">Panel showing a fan's spending history, subscription date, and purchase behavior</span></div>
+            <div class="term-item"><span class="term-word">Fan Notes</span> <span class="term-def">Where you record personal info about each fan (age, job, hobbies, preferences)</span></div>
+            <div class="term-item"><span class="term-word">Vault Pro</span> <span class="term-def">Content library with the model's photos and videos, organized in themed folders</span></div>
+            <div class="term-item"><span class="term-word">Mass Message (MM)</span> <span class="term-def">A message sent to many fans at once &mdash; used for promotions and new content</span></div>
+            <div class="term-item"><span class="term-word">Golden Ratio</span> <span class="term-def">A key performance metric your TL uses to evaluate your work</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#9888;&#65039;</span>
+          NEVER use the <strong>"All Media"</strong> folder in Vault. Always send content from the correct themed folder.
+        </div>
+
+        <div class="activity-box" id="quiz-t2">
+          <h4>&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. Where do you find a fan's total spending and subscription date?</p>
+            <label class="quiz-option"><input type="radio" name="t2q1" value="a"> Messages tab</label>
+            <label class="quiz-option"><input type="radio" name="t2q1" value="b"> Fan Insights panel</label>
+            <label class="quiz-option"><input type="radio" name="t2q1" value="c"> Vault Pro</label>
+            <label class="quiz-option"><input type="radio" name="t2q1" value="d"> Analytics dashboard</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>2. Which folder in Vault should you NEVER use?</p>
+            <label class="quiz-option"><input type="radio" name="t2q2" value="a"> Themed folders</label>
+            <label class="quiz-option"><input type="radio" name="t2q2" value="b"> Model-specific folders</label>
+            <label class="quiz-option"><input type="radio" name="t2q2" value="c"> All Media</label>
+            <label class="quiz-option"><input type="radio" name="t2q2" value="d"> Favorites</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>3. When sending Mass Messages, which tags should you EXCLUDE?</p>
+            <label class="quiz-option"><input type="radio" name="t2q3" value="a"> Active, Premium, VIP</label>
+            <label class="quiz-option"><input type="radio" name="t2q3" value="b"> Forbidden, TW, Muted, Whale, Custom</label>
+            <label class="quiz-option"><input type="radio" name="t2q3" value="c"> New, Recent, First-time</label>
+            <label class="quiz-option"><input type="radio" name="t2q3" value="d"> No tags need to be excluded</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
+
+        <h4>&#128221; Practice Task</h4>
+        <p>Open Infloww &rarr; find a model's inbox &rarr; check Fan Insights for 3 fans &rarr; write down each fan's total spent and subscription date in your notes.</p>
       </div>
     </div>
 
-    <!-- M2.2 -->
+    <!-- ======================== T-3: SCRIPTS & SEQUENCES 101 ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">📝</span> Scripts & Sequences 101</div>
+        <div class="module-title"><span class="icon">&#128221;</span> Scripts &amp; Sequences 101</div>
         <div class="module-meta">
           <span class="module-duration">20 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Scripts are your main weapon. 80% of your messages come from scripts. Learn what they are and how to use them.</p>
-        <h4>What you'll learn</h4>
+        <p><strong>Scripts</strong> are your main weapon. They are pre-written message chains that predict fan responses. <strong>80% of your messages come from scripts.</strong> Learn what they are and how to use them.</p>
+
+        <h4>Key Points</h4>
         <ul>
-          <li>What scripts are: pre-written message chains that predict fan responses</li>
-          <li>Why scripts: maximize sales, reduce mental load, stay consistent</li>
-          <li>The 80/20 rule: 80% scripts, 20% freestyle</li>
-          <li>How to activate: type /commandname in Infloww (e.g. /n for new sub, /s for sexting)</li>
-          <li>Types: Journey sequences, Objection (OBJ), Resistance (RES), Situational (SIT), No Response (NR)</li>
-          <li>GFE vs Sequencing: why sequencing wins (more fans, less burnout, higher earnings)</li>
+          <li><strong>What scripts are:</strong> Pre-written message sequences. Each script has multiple steps that guide a conversation.</li>
+          <li><strong>Why scripts:</strong> Maximize sales, reduce mental load, stay consistent. You don't need to invent messages from scratch.</li>
+          <li><strong>The 80/20 rule:</strong> 80% scripts, 20% freestyle. Scripts are the base &mdash; you personalize the last 20%.</li>
+          <li><strong>How to activate:</strong> Type <code>/commandname</code> in Infloww (e.g., <code>/n</code> for new sub, <code>/s</code> for sexting, <code>/price</code> for price objection)</li>
+          <li><strong>Script types:</strong></li>
+          <li>&bull; <strong>Journey scripts</strong> &mdash; Welcome (W), Rapport (R), Teasing Bridge (TB), Sexting (S), Aftercare (AC)</li>
+          <li>&bull; <strong>Objection scripts (OBJ)</strong> &mdash; Handle price complaints, "no money," etc.</li>
+          <li>&bull; <strong>Resistance scripts (RES)</strong> &mdash; Fan won't go sexual, fan is skeptical</li>
+          <li>&bull; <strong>Situational scripts (SIT)</strong> &mdash; Birthday, holidays, special events</li>
+          <li>&bull; <strong>No Response scripts (NR)</strong> &mdash; Fan went silent after a PPV drop</li>
+          <li><strong>Sequencing vs GFE:</strong> GFE (Girlfriend Experience) means chatting freely. Sequencing means following scripts systematically. <strong>Sequencing wins</strong> &mdash; more fans served, less burnout, higher earnings.</li>
         </ul>
-        <h4>Practice</h4>
-        <ul>
-          <li>Go to the <a href="https://chattingwizard.github.io/" target="_blank">Script Dashboard</a> → find the Rapport sequence → read through R-1 to R-5 → identify what info each step tries to gather</li>
-        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Script</span> <span class="term-def">Pre-written message chain that predicts fan responses and guides conversations</span></div>
+            <div class="term-item"><span class="term-word">Sequence</span> <span class="term-def">A series of scripts connected together to move a fan through the journey</span></div>
+            <div class="term-item"><span class="term-word">Command</span> <span class="term-def">What you type to activate a script (e.g., /n, /s, /price)</span></div>
+            <div class="term-item"><span class="term-word">80/20 Rule</span> <span class="term-def">80% scripts, 20% freestyle personalization</span></div>
+            <div class="term-item"><span class="term-word">GFE</span> <span class="term-def">Girlfriend Experience &mdash; chatting freely without scripts (less efficient)</span></div>
+            <div class="term-item"><span class="term-word">Sequencing</span> <span class="term-def">Following scripts systematically &mdash; more fans, less burnout, higher earnings</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128176;</span>
+          Every conversation has one goal: a <strong>SALE</strong>. Scripts are designed to get you there efficiently.
+        </div>
+
+        <div class="activity-box" id="quiz-t3">
+          <h4>&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. How do you activate a script in Infloww?</p>
+            <label class="quiz-option"><input type="radio" name="t3q1" value="a"> Copy-paste from a document</label>
+            <label class="quiz-option"><input type="radio" name="t3q1" value="b"> Type /commandname (e.g., /n, /price)</label>
+            <label class="quiz-option"><input type="radio" name="t3q1" value="c"> Click a button in the toolbar</label>
+            <label class="quiz-option"><input type="radio" name="t3q1" value="d"> Ask your TL to send it</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. Which types of scripts exist?</p>
+            <label class="quiz-option"><input type="radio" name="t3q2" value="a"> Only Journey scripts</label>
+            <label class="quiz-option"><input type="radio" name="t3q2" value="b"> Journey, Objection, Resistance, Situational, No Response</label>
+            <label class="quiz-option"><input type="radio" name="t3q2" value="c"> Short scripts and long scripts</label>
+            <label class="quiz-option"><input type="radio" name="t3q2" value="d"> Morning scripts and night scripts</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>3. Why is sequencing better than GFE (freestyle chatting)?</p>
+            <label class="quiz-option"><input type="radio" name="t3q3" value="a"> Because GFE is banned by the agency</label>
+            <label class="quiz-option"><input type="radio" name="t3q3" value="b"> More fans served, less burnout, higher earnings</label>
+            <label class="quiz-option"><input type="radio" name="t3q3" value="c"> Fans prefer robotic conversations</label>
+            <label class="quiz-option"><input type="radio" name="t3q3" value="d"> It requires less training</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
+
+        <h4>&#128221; Practice Task</h4>
+        <p>Go to the <a href="https://chattingwizard.github.io/" target="_blank">Script Dashboard</a> &rarr; find the Rapport sequence &rarr; read R-1 through R-5 &rarr; identify what info each step tries to gather from the fan.</p>
       </div>
     </div>
 
-    <!-- M2.3 -->
+    <!-- ======================== T-4: MODEL PERSONAS ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🎭</span> Model Personas: You ARE the Model</div>
+        <div class="module-title"><span class="icon">&#127917;</span> Model Personas: You ARE the Model</div>
         <div class="module-meta">
           <span class="module-duration">15 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Each model is a character with a personality, voice, and backstory. You need to become her.</p>
-        <h4>What you'll learn</h4>
+        <p>Each model is a <strong>character</strong> with a personality, voice, and backstory. When you chat, you <strong>become her</strong>. The fan must believe they're talking to the real model.</p>
+
+        <h4>Key Points</h4>
         <ul>
-          <li>Every model has a character profile: name, age, location, personality, hobbies</li>
-          <li>Voice rules: how she talks, what words she uses, her tone</li>
-          <li>Where to find model info: chatter guide (HTML page), Infloww notes</li>
-          <li>Staying in character: never break the illusion that you ARE the model</li>
-          <li>Scripts are already adapted per model — your job is to stay consistent</li>
+          <li>Every model has a <strong>character profile</strong>: name, age, location, personality traits, hobbies, communication style</li>
+          <li><strong>Voice rules:</strong> How she talks, what words she uses, her emoji style, her tone (playful? sweet? dominant?)</li>
+          <li><strong>Where to find model info:</strong> Chatter guide (HTML page) and Infloww notes</li>
+          <li><strong>Staying in character:</strong> NEVER break the illusion. If a fan says "you seem different today," you may have broken character.</li>
+          <li>Scripts are already adapted per model &mdash; but you still need to know her personality to add the personal 20%</li>
+          <li>If you don't know how the model would answer something &mdash; <strong>check the chatter guide or ask your TL</strong>. Never guess.</li>
         </ul>
-        <h4>Practice</h4>
-        <ul>
-          <li>Read a model's character profile → answer: What are her hobbies? How does she talk? What words does she never use? → Write 3 messages "as her" responding to a fan who says "Hey beautiful, how's your day?"</li>
-        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Character Profile</span> <span class="term-def">Document describing the model's personality, backstory, hobbies, and voice</span></div>
+            <div class="term-item"><span class="term-word">Chatter Guide</span> <span class="term-def">The reference page with everything you need to know about a model</span></div>
+            <div class="term-item"><span class="term-word">Voice Rules</span> <span class="term-def">How the model talks: her words, tone, emojis, and style</span></div>
+            <div class="term-item"><span class="term-word">In-Character</span> <span class="term-def">Staying consistent with the model's persona at all times</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#127917;</span>
+          You ARE the model. If you don't know something about her, <strong>check the chatter guide</strong>. Never guess and risk breaking character.
+        </div>
+
+        <div class="activity-box" id="quiz-t4">
+          <h4>&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="c">
+            <p>1. Where do you find a model's personality, hobbies, and voice rules?</p>
+            <label class="quiz-option"><input type="radio" name="t4q1" value="a"> OnlyFans profile page</label>
+            <label class="quiz-option"><input type="radio" name="t4q1" value="b"> Discord channel description</label>
+            <label class="quiz-option"><input type="radio" name="t4q1" value="c"> Chatter guide / model HTML page</label>
+            <label class="quiz-option"><input type="radio" name="t4q1" value="d"> Ask the fan about the model</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. A fan says "You seem different today." This probably means...</p>
+            <label class="quiz-option"><input type="radio" name="t4q2" value="a"> They're complimenting you</label>
+            <label class="quiz-option"><input type="radio" name="t4q2" value="b"> You may have broken character &mdash; your tone doesn't match the model's</label>
+            <label class="quiz-option"><input type="radio" name="t4q2" value="c"> They want a different chatter</label>
+            <label class="quiz-option"><input type="radio" name="t4q2" value="d"> They're testing you</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>3. You don't know how the model would respond to a specific question. What do you do?</p>
+            <label class="quiz-option"><input type="radio" name="t4q3" value="a"> Make up an answer &mdash; the fan won't notice</label>
+            <label class="quiz-option"><input type="radio" name="t4q3" value="b"> Ignore the question</label>
+            <label class="quiz-option"><input type="radio" name="t4q3" value="c"> Check the chatter guide or ask your TL</label>
+            <label class="quiz-option"><input type="radio" name="t4q3" value="d"> Tell the fan "I'm not sure"</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
+
+        <h4>&#128221; Practice Task</h4>
+        <p>Read a model's character profile &rarr; Answer: What are her hobbies? How does she talk? What words does she never use? &rarr; Write 3 messages "as her" responding to a fan who says "Hey beautiful, how's your day?"</p>
       </div>
     </div>
 
-    <!-- M2.4 -->
+    <!-- ======================== T-5: JOURNEY OVERVIEW + PPV LADDER ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🗺️</span> The Journey Overview + PPV Ladder</div>
+        <div class="module-title"><span class="icon">&#128506;</span> The Journey Overview + PPV Ladder</div>
         <div class="module-meta">
           <span class="module-duration">20 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Every fan goes through a journey. You guide them through it using scripts. This is the big picture.</p>
-        <h4>What you'll learn</h4>
+        <p>Every fan goes through a <strong>journey</strong>. You guide them through it using scripts. This is the big picture of how every conversation works.</p>
+
+        <h4>The Fan Journey &mdash; Phase by Phase</h4>
         <ul>
-          <li>The full journey: Welcome → Auto Follow-up → Rapport → Teasing Bridge → Sexting → Aftercare → Re-engagement</li>
-          <li>Script naming: W-1, AF-1, R-1 to R-9, TB-1 to TB-7, S1-1 to S1-22, AC-1 to AC-3</li>
-          <li>The PPV Ladder: PPV 0 (FREE hook) → PPV 1 ($5-15) → PPV 2 ($20-35) → PPV 3 ($35-50) → PPV 4+ ($50+)</li>
-          <li>Why this order matters: you build trust before asking for money</li>
-          <li>Fast-track rule: if fan is sexual in first 3 messages → skip to Teasing Bridge</li>
+          <li><strong>1. Welcome (W)</strong> &mdash; First message to a new subscriber. Make them feel special.</li>
+          <li><strong>2. Auto Follow-up (AF)</strong> &mdash; If the fan doesn't reply to Welcome, follow up automatically.</li>
+          <li><strong>3. Rapport (R-1 to R-9)</strong> &mdash; Ask questions, gather info, build a personal connection.</li>
+          <li><strong>4. Teasing Bridge (TB-1 to TB-7)</strong> &mdash; Transition from friendly to flirty. Build anticipation.</li>
+          <li><strong>5. Sexting (S1-1 to S1-22)</strong> &mdash; The selling phase. PPV drops happen here.</li>
+          <li><strong>6. Aftercare (AC-1 to AC-3)</strong> &mdash; After the session: make the fan feel special so they come back.</li>
+          <li><strong>7. Re-engagement (RE)</strong> &mdash; Bring back fans who went quiet.</li>
         </ul>
-        <h4>Practice</h4>
+
+        <h4>The PPV Ladder</h4>
         <ul>
-          <li>Label a blank journey map with all phases in order → match script codes to each phase</li>
+          <li><strong>PPV 0 (FREE)</strong> &mdash; A free teaser to hook interest. No payment needed.</li>
+          <li><strong>PPV 1 ($5&ndash;15)</strong> &mdash; The most important sale. Breaks the payment barrier.</li>
+          <li><strong>PPV 2 ($20&ndash;35)</strong> &mdash; Fan is buying. Build momentum.</li>
+          <li><strong>PPV 3 ($35&ndash;50)</strong> &mdash; Higher value content as excitement builds.</li>
+          <li><strong>PPV 4+ ($50+)</strong> &mdash; Premium content for engaged fans.</li>
+          <li><strong>Fast-track rule:</strong> If a fan is sexual in their first 3 messages, skip Rapport and go straight to Teasing Bridge.</li>
         </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Welcome (W)</span> <span class="term-def">First message to a new subscriber</span></div>
+            <div class="term-item"><span class="term-word">Rapport (R)</span> <span class="term-def">Building personal connection &mdash; asking questions, gathering info</span></div>
+            <div class="term-item"><span class="term-word">Teasing Bridge (TB)</span> <span class="term-def">Transition from friendly chat to flirty/sexual energy</span></div>
+            <div class="term-item"><span class="term-word">PPV Ladder</span> <span class="term-def">Progressive pricing: free hook &rarr; $5 &rarr; $20 &rarr; $35 &rarr; $50+</span></div>
+            <div class="term-item"><span class="term-word">Payment Barrier</span> <span class="term-def">The mental block fans have before their first purchase. PPV 1 breaks it.</span></div>
+            <div class="term-item"><span class="term-word">Fast-Track</span> <span class="term-def">Skip Rapport and go to Teasing Bridge when a fan is sexual immediately</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128176;</span>
+          PPV 1 is the <strong>most important sale</strong>. Once a fan pays for the first time, they're much more likely to pay again.
+        </div>
+
+        <div class="activity-box" id="quiz-t5">
+          <h4>&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. What is the correct order of the fan journey?</p>
+            <label class="quiz-option"><input type="radio" name="t5q1" value="a"> Sexting &rarr; Rapport &rarr; Aftercare</label>
+            <label class="quiz-option"><input type="radio" name="t5q1" value="b"> Welcome &rarr; Rapport &rarr; Teasing Bridge &rarr; Sexting &rarr; Aftercare</label>
+            <label class="quiz-option"><input type="radio" name="t5q1" value="c"> Rapport &rarr; Welcome &rarr; Sexting &rarr; Tips</label>
+            <label class="quiz-option"><input type="radio" name="t5q1" value="d"> Welcome &rarr; Sexting &rarr; Rapport &rarr; Aftercare</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. What price range is PPV 1?</p>
+            <label class="quiz-option"><input type="radio" name="t5q2" value="a"> Free</label>
+            <label class="quiz-option"><input type="radio" name="t5q2" value="b"> $5&ndash;15</label>
+            <label class="quiz-option"><input type="radio" name="t5q2" value="c"> $20&ndash;35</label>
+            <label class="quiz-option"><input type="radio" name="t5q2" value="d"> $50+</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>3. When should you fast-track to Teasing Bridge?</p>
+            <label class="quiz-option"><input type="radio" name="t5q3" value="a"> Always &mdash; skip rapport to save time</label>
+            <label class="quiz-option"><input type="radio" name="t5q3" value="b"> Only when the fan tips first</label>
+            <label class="quiz-option"><input type="radio" name="t5q3" value="c"> When the fan is sexual in their first 3 messages</label>
+            <label class="quiz-option"><input type="radio" name="t5q3" value="d"> Never &mdash; always follow the full journey</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>4. Why does the journey start with Rapport before selling?</p>
+            <label class="quiz-option"><input type="radio" name="t5q4" value="a"> Because fans demand it</label>
+            <label class="quiz-option"><input type="radio" name="t5q4" value="b"> To build trust before asking for money</label>
+            <label class="quiz-option"><input type="radio" name="t5q4" value="c"> It's just a tradition</label>
+            <label class="quiz-option"><input type="radio" name="t5q4" value="d"> To waste time so the fan subscribes longer</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M2.5 — NEW: Fan Lifecycle Strategy -->
+    <!-- ======================== T-6: THE 48-HOUR RULE ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">⏱️</span> The 48-Hour Rule: New Subs vs Time Wasters</div>
+        <div class="module-title"><span class="icon">&#9201;</span> The 48-Hour Rule: New Subs vs Time Wasters</div>
         <div class="module-meta">
           <span class="module-duration">15 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>This is one of the most important strategic concepts you'll learn. It changes how you think about EVERY fan.</p>
-        <h4>The core idea</h4>
+        <p>This is one of the most important strategic concepts you'll learn. It changes how you think about <strong>every single fan</strong> in your inbox.</p>
+
+        <h4>The Core Idea</h4>
         <ul>
-          <li>The first <strong>48-72 hours</strong> after a fan subscribes is the most valuable window. This is when they're most likely to buy.</li>
-          <li>Our entire Welcome Journey is designed to <strong>complete a full sexting session</strong> with new fans — that's the #1 goal</li>
-          <li>Why? Completing a sexting session creates a powerful emotional connection. The fan feels "we finished together." This drives retention and repeat purchases.</li>
-          <li>Welcome Journey prices are <strong>intentionally lower</strong> than normal. We prioritize CONVERSION over max revenue per sale.</li>
+          <li>The first <strong>48&ndash;72 hours</strong> after a fan subscribes is the most valuable window. This is when they're most likely to buy.</li>
+          <li>Our Welcome Journey is designed to complete a <strong>full sexting session</strong> with new fans &mdash; that's the #1 goal</li>
+          <li>Completing a sexting session creates a powerful emotional connection &mdash; "we finished together" drives retention and repeat purchases</li>
+          <li>Welcome Journey prices are <strong>intentionally lower</strong> than normal. We prioritize <strong>conversion</strong> over max revenue per sale.</li>
         </ul>
-        <h4>New Sub (first 48-72h) — what you do</h4>
+
+        <h4>New Sub (first 48&ndash;72h) &mdash; What You Do</h4>
         <ul>
-          <li>Follow the Welcome Journey scripts aggressively — don't let rapport drag on too long</li>
-          <li>Your GOAL: get this fan through a complete sexting session</li>
-          <li>Use the lower welcome prices — they're designed this way on purpose</li>
-          <li>After the sexting: <strong>invest HEAVILY in aftercare</strong>. This is where you build the connection that makes them come back</li>
-          <li>The aftercare after a FIRST sexting is more important than after a 10th sexting</li>
+          <li>Follow the Welcome Journey scripts aggressively &mdash; don't let rapport drag too long</li>
+          <li>Use the lower welcome prices &mdash; they're designed this way on purpose</li>
+          <li>After sexting: <strong>invest HEAVILY in aftercare</strong>. The aftercare after a FIRST sexting is more important than after a 10th sexting.</li>
         </ul>
-        <h4>Time Waster (48-72h+, $0 spent) — what you do</h4>
+
+        <h4>Time Waster (48&ndash;72h+, $0 spent) &mdash; What You Do</h4>
         <ul>
-          <li>If a fan has been subscribed 48-72+ hours and hasn't spent anything → they're a <strong>Time Waster</strong></li>
-          <li>STOP trying to push the standard sexting journey — it's not working</li>
-          <li>Switch to <strong>bundle/promotion selling</strong>: special deals, discounted packages, limited-time offers</li>
-          <li>Lower prices if needed — some revenue is better than zero revenue</li>
-          <li>Be creative with offers, but don't waste excessive time — these fans are <strong>lowest priority</strong></li>
+          <li>If a fan has been subscribed 48&ndash;72+ hours and hasn't spent anything &rarr; they're a <strong>Time Waster</strong></li>
+          <li>STOP trying to push the standard sexting journey &mdash; switch to <strong>bundle/promotion selling</strong></li>
+          <li>Offer special deals, discounted packages, limited-time offers</li>
+          <li>Don't waste excessive time &mdash; these fans are <strong>lowest priority</strong> in your inbox</li>
         </ul>
-        <h4>Practice</h4>
-        <ul>
-          <li>Look at 5 fans in Infloww → check their subscription date and total spent → classify each as "New Sub" or "Time Waster" → explain what approach you'd use for each</li>
-        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">48-Hour Rule</span> <span class="term-def">The first 48&ndash;72h is the highest-value window for converting a new fan</span></div>
+            <div class="term-item"><span class="term-word">New Sub</span> <span class="term-def">Fan in their first 48&ndash;72h &mdash; highest priority, use Welcome Journey</span></div>
+            <div class="term-item"><span class="term-word">Time Waster</span> <span class="term-def">Fan 48&ndash;72h+ with $0 spent &mdash; lowest priority, switch to deals/bundles</span></div>
+            <div class="term-item"><span class="term-word">Bundle Selling</span> <span class="term-def">Offering discounted packages to Time Wasters to extract some revenue</span></div>
+          </div>
+        </div>
+
+        <div class="do-dont">
+          <div class="do-box">
+            <strong>&#10004; New Sub Strategy</strong>
+            Fan subscribed 6 hours ago, $0 spent.<br>
+            &rarr; Full Welcome Journey, lower prices, aggressive progression, STRONG aftercare after first sale.<br>
+            <em>This fan is GOLD. Invest your best effort.</em>
+          </div>
+          <div class="dont-box">
+            <strong>&#10060; Time Waster Trap</strong>
+            Fan subscribed 5 days ago, $0 spent. You've been chatting for hours trying to build rapport.<br>
+            &rarr; STOP. Switch to bundle offers. Don't spend more than a few minutes.<br>
+            <em>Every minute on this fan is a minute NOT spent on a new sub.</em>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#9201;</span>
+          <strong>New subs = priority. Time wasters = deals only.</strong> Every minute you spend on a time waster is a minute stolen from a new sub who might buy.
+        </div>
+
+        <div class="activity-box" id="quiz-t6">
+          <h4>&#127919; Fan Classification Exercise</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 14px;">For each fan, identify their category and the correct approach.</p>
+
+          <div class="quiz-question" data-correct="c">
+            <p>1. Fan subscribed 4 days ago, $0 spent. This fan is a...</p>
+            <label class="quiz-option"><input type="radio" name="t6q1" value="a"> VIP</label>
+            <label class="quiz-option"><input type="radio" name="t6q1" value="b"> New Sub</label>
+            <label class="quiz-option"><input type="radio" name="t6q1" value="c"> Time Waster</label>
+            <label class="quiz-option"><input type="radio" name="t6q1" value="d"> Whale</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. Why are Welcome Journey prices lower than normal?</p>
+            <label class="quiz-option"><input type="radio" name="t6q2" value="a"> Because new fans are less valuable</label>
+            <label class="quiz-option"><input type="radio" name="t6q2" value="b"> To prioritize conversion &mdash; getting the first sale matters more than max revenue</label>
+            <label class="quiz-option"><input type="radio" name="t6q2" value="c"> Because the content is lower quality</label>
+            <label class="quiz-option"><input type="radio" name="t6q2" value="d"> It's a system error</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>3. After a new sub's FIRST sexting, what's most important?</p>
+            <label class="quiz-option"><input type="radio" name="t6q3" value="a"> Immediately pitch the next PPV</label>
+            <label class="quiz-option"><input type="radio" name="t6q3" value="b"> End the conversation to save time</label>
+            <label class="quiz-option"><input type="radio" name="t6q3" value="c"> Invest heavily in aftercare to build a lasting connection</label>
+            <label class="quiz-option"><input type="radio" name="t6q3" value="d"> Move on to the next fan right away</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
+
   </section>
 
   <!-- ============================================================ -->
@@ -973,199 +1285,614 @@
     </div>
     <p class="day-subtitle">Walk through every phase of a fan conversation, with real examples and practice at each step.</p>
     <div class="day-outcome">
-      <strong>✅ Outcome:</strong> You can follow a complete fan journey from first message to sale, handle silence and objections, and assess which fans deserve your time.
+      <strong>&check; Outcome:</strong> You can follow a complete fan journey from first message to sale, handle silence and objections, and assess which fans deserve your time.
     </div>
 
-    <!-- M3.0 — Review quiz -->
+    <!-- ======================== J-1: TOOLS REVIEW QUIZ ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🔄</span> Tools & Scripts Review Quiz</div>
+        <div class="module-title"><span class="icon">&#128260;</span> Tools &amp; Scripts Review Quiz</div>
         <div class="module-meta">
           <span class="module-duration">5 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Quiz</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Quick check on yesterday's material.</p>
-        <h4>Sample questions</h4>
-        <ul>
-          <li>What command do you type to activate the Rapport script?</li>
-          <li>A fan subscribed 3 days ago and hasn't spent anything. What category is he?</li>
-          <li>What are the journey phases in order?</li>
-          <li>Where do you find a model's character profile?</li>
-          <li>True or false: Welcome Journey PPV prices are higher than normal.</li>
-        </ul>
+        <p>Quick check on what you learned in the Tools &amp; Scripts section.</p>
+        <div class="activity-box" id="quiz-j1">
+          <h4>&#128260; Tools Review &mdash; 5 Questions</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. How do you activate a script in Infloww?</p>
+            <label class="quiz-option"><input type="radio" name="j1q1" value="a"> Click the script menu</label>
+            <label class="quiz-option"><input type="radio" name="j1q1" value="b"> Type /commandname (e.g., /n, /price)</label>
+            <label class="quiz-option"><input type="radio" name="j1q1" value="c"> Press Ctrl+S</label>
+            <label class="quiz-option"><input type="radio" name="j1q1" value="d"> Copy from the script dashboard</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>2. A fan subscribed 4 days ago, $0 spent. What category is he?</p>
+            <label class="quiz-option"><input type="radio" name="j1q2" value="a"> New Sub</label>
+            <label class="quiz-option"><input type="radio" name="j1q2" value="b"> Whale</label>
+            <label class="quiz-option"><input type="radio" name="j1q2" value="c"> Time Waster</label>
+            <label class="quiz-option"><input type="radio" name="j1q2" value="d"> VIP</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>3. What is the correct order of the journey phases?</p>
+            <label class="quiz-option"><input type="radio" name="j1q3" value="a"> Sexting &rarr; Rapport &rarr; Welcome &rarr; Aftercare</label>
+            <label class="quiz-option"><input type="radio" name="j1q3" value="b"> Welcome &rarr; Rapport &rarr; Teasing Bridge &rarr; Sexting &rarr; Aftercare</label>
+            <label class="quiz-option"><input type="radio" name="j1q3" value="c"> Rapport &rarr; Welcome &rarr; Sexting &rarr; Tips</label>
+            <label class="quiz-option"><input type="radio" name="j1q3" value="d"> Welcome &rarr; Sexting &rarr; Rapport &rarr; Aftercare</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>4. Where do you find a model's character profile?</p>
+            <label class="quiz-option"><input type="radio" name="j1q4" value="a"> OnlyFans settings</label>
+            <label class="quiz-option"><input type="radio" name="j1q4" value="b"> Fan Insights panel</label>
+            <label class="quiz-option"><input type="radio" name="j1q4" value="c"> Chatter guide / model HTML page</label>
+            <label class="quiz-option"><input type="radio" name="j1q4" value="d"> Discord pinned messages</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>5. Welcome Journey PPV prices are _____ than normal prices.</p>
+            <label class="quiz-option"><input type="radio" name="j1q5" value="a"> Lower</label>
+            <label class="quiz-option"><input type="radio" name="j1q5" value="b"> Higher</label>
+            <label class="quiz-option"><input type="radio" name="j1q5" value="c"> The same</label>
+            <label class="quiz-option"><input type="radio" name="j1q5" value="d"> Random</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M3.1 -->
+    <!-- ======================== J-2: RAPPORT & TEASING BRIDGE ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🤝</span> Rapport & Teasing Bridge</div>
+        <div class="module-title"><span class="icon">&#129309;</span> Rapport &amp; Teasing Bridge</div>
         <div class="module-meta">
           <span class="module-duration">20 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>The first part of every conversation: get to know the fan and smoothly transition to flirting.</p>
-        <h4>What you'll learn</h4>
+        <p>The first part of every conversation: get to know the fan and smoothly transition from friendly to flirty.</p>
+
+        <h4>Rapport Phase (R-1 to R-9)</h4>
         <ul>
-          <li>Rapport (R-1 to R-9): ask questions, gather info (age, job, hobbies, preferences), log notes</li>
-          <li>Timing: 30-90 seconds between messages during rapport</li>
-          <li>Teasing Bridge (TB-1 to TB-7): transition from friendly to flirty</li>
-          <li>PPV 0: the free hook — send a teaser image to build anticipation</li>
-          <li>Message length rules: micro (2-5 words, 20%), short (1 sentence, 50%), medium (2 sentences, 25%), long (3+, 5%)</li>
+          <li><strong>Goal:</strong> Gather info about the fan (age, job, hobbies, location, preferences) and build a personal connection</li>
+          <li>Ask open-ended questions: "What do you do for fun?" "Where are you from?"</li>
+          <li>Log EVERYTHING in fan notes &mdash; the next chatter needs this info</li>
+          <li><strong>Timing:</strong> 30&ndash;90 seconds between messages during rapport</li>
+          <li>Don't rush rapport, but don't let it drag on forever either. 5&ndash;10 messages is usually enough.</li>
         </ul>
-        <h4>Practice</h4>
+
+        <h4>Teasing Bridge Phase (TB-1 to TB-7)</h4>
         <ul>
-          <li>Read an annotated Rapport → Teasing Bridge conversation → identify each script step used → write your own version of R-3 and TB-2 in the model's voice</li>
+          <li><strong>Goal:</strong> Transition from friendly to flirty/sexual. Build anticipation.</li>
+          <li>Compliments become more suggestive: "I bet you look amazing" &rarr; "You're making me blush..."</li>
+          <li><strong>PPV 0 (free hook):</strong> Send a teaser image to build excitement. No payment yet.</li>
+          <li>This is where you plant the seed for the first paid PPV</li>
         </ul>
+
+        <h4>Message Length Rules</h4>
+        <ul>
+          <li><strong>Micro (2&ndash;5 words):</strong> 20% of messages. "Omg really??" "That's so hot"</li>
+          <li><strong>Short (1 sentence):</strong> 50% of messages. Most common length.</li>
+          <li><strong>Medium (2 sentences):</strong> 25% of messages. For questions + comments.</li>
+          <li><strong>Long (3+ sentences):</strong> 5% of messages. Only for special moments.</li>
+        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Rapport</span> <span class="term-def">Building personal connection by asking questions and gathering info</span></div>
+            <div class="term-item"><span class="term-word">Teasing Bridge</span> <span class="term-def">Smooth transition from friendly chat to flirty/sexual energy</span></div>
+            <div class="term-item"><span class="term-word">PPV 0</span> <span class="term-def">Free teaser image to hook interest &mdash; no payment needed</span></div>
+            <div class="term-item"><span class="term-word">Open-ended Question</span> <span class="term-def">Questions that can't be answered with yes/no &mdash; they start conversations</span></div>
+            <div class="term-item"><span class="term-word">Info Gathering</span> <span class="term-def">Collecting fan details (age, job, hobbies) for personalization</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128221;</span>
+          Log EVERYTHING in fan notes. <strong>Age, job, hobbies, location, preferences.</strong> The next chatter depends on your notes.
+        </div>
+
+        <div class="activity-box" id="quiz-j2">
+          <h4>&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. During rapport, what should you be doing?</p>
+            <label class="quiz-option"><input type="radio" name="j2q1" value="a"> Sending PPVs as fast as possible</label>
+            <label class="quiz-option"><input type="radio" name="j2q1" value="b"> Asking questions, gathering info, logging notes</label>
+            <label class="quiz-option"><input type="radio" name="j2q1" value="c"> Waiting for the fan to start the conversation</label>
+            <label class="quiz-option"><input type="radio" name="j2q1" value="d"> Talking about yourself (as the model)</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>2. What is PPV 0?</p>
+            <label class="quiz-option"><input type="radio" name="j2q2" value="a"> The cheapest paid PPV ($5)</label>
+            <label class="quiz-option"><input type="radio" name="j2q2" value="b"> A discount code for new fans</label>
+            <label class="quiz-option"><input type="radio" name="j2q2" value="c"> A free teaser image to hook interest</label>
+            <label class="quiz-option"><input type="radio" name="j2q2" value="d"> A PPV that failed to send</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>3. What percentage of messages should be "short" (1 sentence)?</p>
+            <label class="quiz-option"><input type="radio" name="j2q3" value="a"> 50%</label>
+            <label class="quiz-option"><input type="radio" name="j2q3" value="b"> 80%</label>
+            <label class="quiz-option"><input type="radio" name="j2q3" value="c"> 20%</label>
+            <label class="quiz-option"><input type="radio" name="j2q3" value="d"> 5%</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M3.2 -->
+    <!-- ======================== J-3: SEXTING & PPV DROPS ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🔥</span> Sexting & PPV Drops</div>
+        <div class="module-title"><span class="icon">&#128293;</span> Sexting &amp; PPV Drops</div>
         <div class="module-meta">
           <span class="module-duration">25 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>This is where the money happens. Learn the sexting flow and when to drop PPVs.</p>
-        <h4>What you'll learn</h4>
+        <p>This is where the money happens. The sexting sequence is your core selling flow.</p>
+
+        <h4>Key Points</h4>
         <ul>
-          <li>Sexting sequence (S1-1 to S1-22): the full flow with PPV drops at key moments</li>
-          <li>PPV 1 ($5-15): break the payment barrier — the most important sale</li>
-          <li>PPV 2-4: progressive upselling as excitement builds</li>
-          <li>Timing: 15-45 seconds between messages during sexting</li>
-          <li>WAIT instructions: actual pauses to build anticipation (use this time for other fans)</li>
-          <li>Maximum 2 messages in a row without fan reply</li>
-          <li>Guide & Control: you lead the conversation, never the fan. Never ask permission.</li>
-          <li>Explicitness scale: 0 (Rapport) → 3-5 (Teasing) → 5-10 (Sexting)</li>
-          <li>Remember: new sub welcome prices are lower on purpose — conversion > max revenue</li>
+          <li><strong>Sexting sequence (S1-1 to S1-22):</strong> A full flow with PPV drops at key emotional peaks</li>
+          <li><strong>PPV 1 ($5&ndash;15):</strong> Break the payment barrier &mdash; this is the hardest and most important sale</li>
+          <li><strong>PPV 2&ndash;4:</strong> Progressive upselling as excitement builds</li>
+          <li><strong>Timing:</strong> 15&ndash;45 seconds between messages during sexting (faster than rapport)</li>
+          <li><strong>WAIT instructions:</strong> When the script says "WAIT 2 min" &mdash; it means an actual pause to build anticipation. Use this time for other fans.</li>
+          <li><strong>Maximum 2 messages in a row</strong> without a fan reply &mdash; more than that looks desperate</li>
+          <li><strong>Guide &amp; Control:</strong> YOU lead the conversation, never the fan. Never ask permission &mdash; "I want to show you something" not "Would you like to see something?"</li>
+          <li><strong>Explicitness scale:</strong> 0 (Rapport) &rarr; 3&ndash;5 (Teasing) &rarr; 5&ndash;10 (Sexting)</li>
+          <li>New sub welcome prices are lower on purpose &mdash; conversion &gt; max revenue</li>
         </ul>
-        <h4>Practice</h4>
-        <ul>
-          <li>Read a full annotated sexting conversation → identify where each PPV was dropped → answer: why was PPV 1 priced at $X? Why not higher? → write your own S1-5 message in the model's voice</li>
-        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">PPV Drop</span> <span class="term-def">The moment you send a locked piece of content during sexting</span></div>
+            <div class="term-item"><span class="term-word">Payment Barrier</span> <span class="term-def">Mental block before first purchase. PPV 1 breaks it.</span></div>
+            <div class="term-item"><span class="term-word">WAIT</span> <span class="term-def">Script instruction to pause &mdash; builds anticipation, use time for other fans</span></div>
+            <div class="term-item"><span class="term-word">Guide &amp; Control</span> <span class="term-def">You lead the conversation. Never ask permission, make statements.</span></div>
+            <div class="term-item"><span class="term-word">Explicitness Scale</span> <span class="term-def">0-10 scale &mdash; rapport is 0, teasing is 3-5, sexting is 5-10</span></div>
+          </div>
+        </div>
+
+        <div class="do-dont">
+          <div class="do-box">
+            <strong>&#10004; Guide &amp; Control</strong>
+            "I want to show you something special... I made this just thinking about you"<br>
+            <em>&rarr; Leading statement. Fan feels desired. Sale feels natural.</em>
+          </div>
+          <div class="dont-box">
+            <strong>&#10060; Asking Permission</strong>
+            "Would you like to see some content? I can send you a PPV if you want?"<br>
+            <em>&rarr; Gives the fan power to say no. Kills momentum.</em>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128176;</span>
+          Every conversation has one goal: a <strong>SALE</strong>. The sexting sequence is designed to reach that goal naturally.
+        </div>
+
+        <div class="activity-box" id="quiz-j3">
+          <h4>&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. How many messages MAX can you send in a row without a fan reply?</p>
+            <label class="quiz-option"><input type="radio" name="j3q1" value="a"> 1</label>
+            <label class="quiz-option"><input type="radio" name="j3q1" value="b"> 2</label>
+            <label class="quiz-option"><input type="radio" name="j3q1" value="c"> 3</label>
+            <label class="quiz-option"><input type="radio" name="j3q1" value="d"> No limit</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>2. When the script says "WAIT 2 min," what should you do?</p>
+            <label class="quiz-option"><input type="radio" name="j3q2" value="a"> Skip the wait and keep sending</label>
+            <label class="quiz-option"><input type="radio" name="j3q2" value="b"> Stare at the screen and wait</label>
+            <label class="quiz-option"><input type="radio" name="j3q2" value="c"> Use that time to respond to other fans</label>
+            <label class="quiz-option"><input type="radio" name="j3q2" value="d"> Log off for a break</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>3. Why is PPV 1 the most important sale?</p>
+            <label class="quiz-option"><input type="radio" name="j3q3" value="a"> It breaks the payment barrier &mdash; the hardest sale to make</label>
+            <label class="quiz-option"><input type="radio" name="j3q3" value="b"> It's the most expensive PPV</label>
+            <label class="quiz-option"><input type="radio" name="j3q3" value="c"> Fans can't buy anything else without it</label>
+            <label class="quiz-option"><input type="radio" name="j3q3" value="d"> Your TL only counts PPV 1 sales</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M3.3 -->
+    <!-- ======================== J-4: AFTERCARE & RE-ENGAGEMENT ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">💝</span> Aftercare & Re-engagement</div>
+        <div class="module-title"><span class="icon">&#128157;</span> Aftercare &amp; Re-engagement</div>
         <div class="module-meta">
           <span class="module-duration">10 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>After the sale: take care of the fan so he comes back and buys again. This is MORE important than you think.</p>
-        <h4>What you'll learn</h4>
+        <p>After the sale, take care of the fan. This step is <strong>more important than you think</strong> &mdash; it's what makes fans come back and buy again.</p>
+
+        <h4>Key Points</h4>
         <ul>
-          <li>Aftercare scripts (AC-1 to AC-3): warmth, appreciation, "that was special"</li>
-          <li><strong>Critical:</strong> Aftercare after a FIRST sexting is the most important aftercare you'll ever do. This is where the long-term connection is built.</li>
-          <li>Why: the fan just had an emotional experience. If you go cold now, he won't come back. If you make him feel special, he'll be a repeat buyer.</li>
-          <li>Pitching custom content during aftercare (when appropriate)</li>
-          <li>Re-engagement (RE-1, RE-2): bringing back inactive fans</li>
+          <li><strong>Aftercare scripts (AC-1 to AC-3):</strong> Warmth, appreciation, "that was special"</li>
+          <li><strong>CRITICAL:</strong> Aftercare after a FIRST sexting is the most important aftercare you'll ever do. This is where the long-term connection is built.</li>
+          <li>If you go cold after a session, the fan feels used and doesn't return</li>
+          <li>If you make them feel special, they become a repeat buyer</li>
+          <li><strong>When appropriate:</strong> Pitch custom content during aftercare ("I'd love to make something special just for you")</li>
+          <li><strong>Re-engagement (RE-1, RE-2):</strong> Scripts for bringing back fans who went quiet (inactive for days/weeks)</li>
         </ul>
-        <h4>Practice</h4>
-        <ul>
-          <li>Write 3 aftercare messages for a fan who just completed his first sexting — make them warm, personal, and in-character</li>
-        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Aftercare</span> <span class="term-def">Post-session messages that make the fan feel valued and special</span></div>
+            <div class="term-item"><span class="term-word">Re-engagement</span> <span class="term-def">Scripts to bring back fans who stopped messaging</span></div>
+            <div class="term-item"><span class="term-word">Repeat Buyer</span> <span class="term-def">A fan who buys again because of the emotional connection you built</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128157;</span>
+          The aftercare after a <strong>FIRST</strong> sexting is the most important aftercare you'll ever do. Make them feel like it was truly special.
+        </div>
+
+        <div class="activity-box" id="quiz-j4">
+          <h4>&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. Why is aftercare after the FIRST sexting extra important?</p>
+            <label class="quiz-option"><input type="radio" name="j4q1" value="a"> Because the TL is watching</label>
+            <label class="quiz-option"><input type="radio" name="j4q1" value="b"> It builds the long-term connection that makes fans return and buy again</label>
+            <label class="quiz-option"><input type="radio" name="j4q1" value="c"> It's required by OnlyFans rules</label>
+            <label class="quiz-option"><input type="radio" name="j4q1" value="d"> To get a higher tip percentage</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>2. What happens if you go cold after a session (no aftercare)?</p>
+            <label class="quiz-option"><input type="radio" name="j4q2" value="a"> The fan tips more next time</label>
+            <label class="quiz-option"><input type="radio" name="j4q2" value="b"> Nothing &mdash; it doesn't matter</label>
+            <label class="quiz-option"><input type="radio" name="j4q2" value="c"> The fan feels used and doesn't return</label>
+            <label class="quiz-option"><input type="radio" name="j4q2" value="d"> The fan reports you</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>3. When might you pitch custom content?</p>
+            <label class="quiz-option"><input type="radio" name="j4q3" value="a"> During aftercare, when the fan is feeling connected</label>
+            <label class="quiz-option"><input type="radio" name="j4q3" value="b"> During rapport, before any trust is built</label>
+            <label class="quiz-option"><input type="radio" name="j4q3" value="c"> Never &mdash; customs are only for whales</label>
+            <label class="quiz-option"><input type="radio" name="j4q3" value="d"> Only when the fan explicitly asks</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M3.4 -->
+    <!-- ======================== J-5: BRANCH RULES & NR WAVES ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🔀</span> Branch Rules & No Response Waves</div>
+        <div class="module-title"><span class="icon">&#128256;</span> Branch Rules &amp; No Response Waves</div>
         <div class="module-meta">
           <span class="module-duration">20 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
         <p>The most critical decision points: what to do when a fan buys, goes silent, or pushes back.</p>
-        <h4>What you'll learn</h4>
+
+        <h4>After Every PPV Drop &mdash; 3 Things Can Happen</h4>
         <ul>
-          <li><strong>After every PPV drop, 3 things can happen:</strong></li>
-          <li>✅ Fan BOUGHT → continue the sequence to next PPV</li>
-          <li>😶 Fan is SILENT (3+ min) → start NR (No Response) wave</li>
-          <li>❌ Fan OBJECTS → go to OBJ script</li>
-          <li>NR Wave system: 5 waves, each with a different angle. Hard cap at 5.</li>
-          <li>NR-W1: playful nudge. NR-W2: curiosity hook. NR-W3: emotional pull. NR-W4: scarcity. NR-W5: final attempt.</li>
-          <li>This is a FLOWCHART — you will have a visual diagram to follow</li>
+          <li><strong>&#9989; Fan BOUGHT</strong> &rarr; Continue the sequence to the next PPV. Keep the momentum going!</li>
+          <li><strong>&#128566; Fan is SILENT (3+ min)</strong> &rarr; Start NR (No Response) wave</li>
+          <li><strong>&#10060; Fan OBJECTS</strong> &rarr; Go to the appropriate OBJ (Objection) script</li>
         </ul>
-        <h4>Practice</h4>
+
+        <h4>The NR Wave System</h4>
         <ul>
-          <li>Given 3 scenarios (fan bought, fan silent, fan objects) → write down exactly what you'd do for each, including the script command you'd use</li>
+          <li><strong>NR-W1 (Playful Nudge):</strong> Light, fun message. "Babe? Don't leave me hanging..."</li>
+          <li><strong>NR-W2 (Curiosity Hook):</strong> Tease something exciting. "I was about to show you something really special..."</li>
+          <li><strong>NR-W3 (Emotional Pull):</strong> Create emotional connection. "I was really enjoying our time together..."</li>
+          <li><strong>NR-W4 (Scarcity):</strong> Create urgency. "I don't usually do this, but just for you..."</li>
+          <li><strong>NR-W5 (Final Attempt):</strong> Last try. Graceful exit if no response.</li>
+          <li><strong>Hard cap at 5 waves.</strong> After W5, stop. Do NOT keep messaging.</li>
         </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Branch Point</span> <span class="term-def">Decision moment after a PPV drop &mdash; bought, silent, or objected</span></div>
+            <div class="term-item"><span class="term-word">NR Wave</span> <span class="term-def">No Response wave &mdash; a follow-up message when the fan goes silent</span></div>
+            <div class="term-item"><span class="term-word">OBJ Script</span> <span class="term-def">Objection script &mdash; handles price complaints, "no money," etc.</span></div>
+            <div class="term-item"><span class="term-word">Hard Cap</span> <span class="term-def">Maximum 5 NR waves &mdash; never send more</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128256;</span>
+          After every PPV: <strong>Bought &rarr; continue. Silent &rarr; NR wave. Objected &rarr; OBJ script.</strong> This is the flowchart you follow every time.
+        </div>
+
+        <div class="activity-box" id="quiz-j5">
+          <h4>&#127919; What Would You Do?</h4>
+
+          <div class="scenario-box">
+            <div class="scenario-label">Scenario 1</div>
+            <div class="scenario-fan-msg">You dropped PPV 2 ($25). The fan bought it within 30 seconds.</div>
+            <br>
+            <button class="reveal-btn" data-show-text="Show Answer" data-hide-text="Hide Answer" onclick="revealAnswer(this)">Show Answer</button>
+            <div class="reveal-content">
+              <strong>Fan BOUGHT!</strong> Continue the sexting sequence. Build excitement and prepare for PPV 3. Keep the momentum &mdash; don't slow down.
+            </div>
+          </div>
+
+          <div class="scenario-box">
+            <div class="scenario-label">Scenario 2</div>
+            <div class="scenario-fan-msg">You dropped PPV 1 ($10). It's been 5 minutes. No response.</div>
+            <br>
+            <button class="reveal-btn" data-show-text="Show Answer" data-hide-text="Hide Answer" onclick="revealAnswer(this)">Show Answer</button>
+            <div class="reveal-content">
+              <strong>Fan is SILENT.</strong> Start NR-W1 (playful nudge): something light like "Babe? I was really excited to show you that..." &mdash; If still no response after a few minutes, move to NR-W2 (curiosity hook).
+            </div>
+          </div>
+
+          <div class="scenario-box">
+            <div class="scenario-label">Scenario 3</div>
+            <div class="scenario-fan-msg">You dropped PPV 1 ($10). Fan replies: "That's too expensive for a photo."</div>
+            <br>
+            <button class="reveal-btn" data-show-text="Show Answer" data-hide-text="Hide Answer" onclick="revealAnswer(this)">Show Answer</button>
+            <div class="reveal-content">
+              <strong>Fan OBJECTED.</strong> Use the /price objection script. Reframe the value: "Babe this isn't just any photo... I made this thinking about you. You won't find this anywhere else." &mdash; Never lower the price immediately.
+            </div>
+          </div>
+
+          <h4 style="margin-top: 18px;">&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="c">
+            <p>1. How many NR waves maximum?</p>
+            <label class="quiz-option"><input type="radio" name="j5q1" value="a"> 3</label>
+            <label class="quiz-option"><input type="radio" name="j5q1" value="b"> 4</label>
+            <label class="quiz-option"><input type="radio" name="j5q1" value="c"> 5</label>
+            <label class="quiz-option"><input type="radio" name="j5q1" value="d"> No limit</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. What's the angle of NR-W1?</p>
+            <label class="quiz-option"><input type="radio" name="j5q2" value="a"> Scarcity and urgency</label>
+            <label class="quiz-option"><input type="radio" name="j5q2" value="b"> Playful nudge</label>
+            <label class="quiz-option"><input type="radio" name="j5q2" value="c"> Emotional pull</label>
+            <label class="quiz-option"><input type="radio" name="j5q2" value="d"> Final attempt</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M3.5 — MOVED from Day 4 -->
+    <!-- ======================== J-6: FAN ASSESSMENT ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🔍</span> Fan Assessment & Prioritization</div>
+        <div class="module-title"><span class="icon">&#128269;</span> Fan Assessment &amp; Prioritization</div>
         <div class="module-meta">
           <span class="module-duration">15 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Not all fans are equal. Learn who to focus on first — this ties directly to the 48-Hour Rule.</p>
-        <h4>What you'll learn</h4>
+        <p>Not all fans are equal. Learn who to focus on first &mdash; this directly affects your earnings.</p>
+
+        <h4>The Priority Order</h4>
         <ul>
-          <li>First check: subscription date + total spent → New Sub or Time Waster?</li>
-          <li>Priority order: 1) Active sexting 2) New subscribers (first 48h) 3) Whales 4) Past spenders 5) Time wasters (lowest)</li>
-          <li>How fan info affects pricing: high spender → higher PPV. New fan → welcome prices. Time waster → deals/bundles.</li>
-          <li>Backreading: review past conversations for context, tone, and unopened PPVs</li>
-          <li>Identify warm leads: fans who recently engaged, tipped, or opened PPVs</li>
+          <li><strong>1. Active sexting</strong> &mdash; Fan is currently in a session. Never leave them waiting.</li>
+          <li><strong>2. New subscribers (first 48h)</strong> &mdash; Highest conversion potential. Welcome Journey priority.</li>
+          <li><strong>3. Whales</strong> &mdash; High spenders. Worth extra attention.</li>
+          <li><strong>4. Past spenders</strong> &mdash; Fans who bought before but went quiet. Good re-engagement targets.</li>
+          <li><strong>5. Time wasters</strong> &mdash; Lowest priority. Bundle offers only, minimal time.</li>
         </ul>
-        <h4>Practice</h4>
+
+        <h4>How Fan Info Affects Pricing</h4>
         <ul>
-          <li>Given 6 fan profiles (with subscription date, total spent, last message) → rank them in priority order → explain your reasoning for each</li>
+          <li><strong>High spender</strong> &rarr; Higher PPV prices (they've shown willingness to pay)</li>
+          <li><strong>New fan</strong> &rarr; Welcome prices (lower, to break the barrier)</li>
+          <li><strong>Time waster</strong> &rarr; Deals and bundles (anything to get some revenue)</li>
         </ul>
+
+        <h4>First Check for Every Fan</h4>
+        <ul>
+          <li><strong>Step 1:</strong> Check subscription date + total spent in Fan Insights</li>
+          <li><strong>Step 2:</strong> Classify: New Sub or Time Waster?</li>
+          <li><strong>Step 3:</strong> Backread previous conversations for context</li>
+          <li><strong>Step 4:</strong> Check PPV history &mdash; any unopened PPVs?</li>
+        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Whale</span> <span class="term-def">High-spending fan &mdash; worth extra time and attention</span></div>
+            <div class="term-item"><span class="term-word">Warm Lead</span> <span class="term-def">Fan who recently engaged, tipped, or opened PPVs &mdash; likely to buy again</span></div>
+            <div class="term-item"><span class="term-word">Priority Order</span> <span class="term-def">Active sexting > New subs > Whales > Past spenders > Time wasters</span></div>
+          </div>
+        </div>
+
+        <div class="activity-box" id="quiz-j6">
+          <h4>&#127919; Rank These Fans</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 14px;">You have 4 fans waiting. Who do you respond to FIRST?</p>
+
+          <div class="quiz-question" data-correct="b">
+            <p>Fan A: Subscribed 3 days ago, $0 spent, asking for free content.<br>Fan B: Mid-sexting session, waiting for your next message.<br>Fan C: New subscriber (2 hours ago), just said "Hey!"<br>Fan D: Whale ($500 lifetime), sent a tip yesterday, asking a question.</p>
+            <label class="quiz-option"><input type="radio" name="j6q1" value="a"> Fan C first (newest sub)</label>
+            <label class="quiz-option"><input type="radio" name="j6q1" value="b"> Fan B first (active sexting)</label>
+            <label class="quiz-option"><input type="radio" name="j6q1" value="c"> Fan D first (whale, big spender)</label>
+            <label class="quiz-option"><input type="radio" name="j6q1" value="d"> Fan A first (been waiting longest)</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>After Fan B, who comes next?</p>
+            <label class="quiz-option"><input type="radio" name="j6q2" value="a"> Fan A (time waster)</label>
+            <label class="quiz-option"><input type="radio" name="j6q2" value="b"> Fan C (new sub, first 48h)</label>
+            <label class="quiz-option"><input type="radio" name="j6q2" value="c"> Fan D (whale)</label>
+            <label class="quiz-option"><input type="radio" name="j6q2" value="d"> Doesn't matter, any order</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M3.6 -->
+    <!-- ======================== J-7: ANNOTATED CHAT EXAMPLES ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">📖</span> Annotated Chat Examples</div>
+        <div class="module-title"><span class="icon">&#128214;</span> Annotated Chat Examples</div>
         <div class="module-meta">
           <span class="module-duration">20 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Interactive</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>See complete conversations from start to finish, with annotations explaining every decision.</p>
-        <h4>Examples included</h4>
-        <ul>
-          <li><strong>Example 1:</strong> Perfect new sub flow — Rapport → Teasing → Sexting → 3 PPVs bought → Strong aftercare (what good looks like)</li>
-          <li><strong>Example 2:</strong> Fan objects to price — chatter uses OBJ script, fan buys (handling objections)</li>
-          <li><strong>Example 3:</strong> Fan goes silent mid-sexting — chatter uses NR waves, fan returns (handling silence)</li>
-          <li><strong>Example 4:</strong> Time Waster — fan subscribed 4 days ago, $0 spent — chatter switches to bundle offers</li>
-          <li>Each message annotated: "This is R-3", "Here the chatter uses /followup", "This is NR-W2", "Fan classified as Time Waster — switching approach"</li>
-        </ul>
-        <h4>Format</h4>
-        <ul>
-          <li>Interactive chat replays with color-coded annotations</li>
-        </ul>
+        <p>Read complete conversations with annotations explaining every decision. These examples show you exactly what good chatting looks like.</p>
+
+        <!-- EXAMPLE 1: Handling a Price Objection -->
+        <h4 style="margin-top: 18px;">&#128172; Example: Handling a Price Objection</h4>
+        <p>Watch how the chatter handles a fan who objects to the price of PPV 1.</p>
+
+        <div class="chat-sim">
+          <div class="chat-annotation">&#9889; SEXTING PHASE &mdash; Fan is engaged, chatter is about to drop PPV 1</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Sophia (You)</div>
+            Mmm you're making me feel some type of way right now... I have something I made just for you &#128156;
+          </div>
+
+          <div class="chat-annotation">&#9757; Guide &amp; Control: she's TELLING, not asking. "I have something for you" not "Do you want to see?"</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Mike)</div>
+            Oh yeah? Show me baby
+          </div>
+
+          <div class="chat-annotation">&#9989; Fan is engaged and asking to see &mdash; perfect moment to drop PPV 1</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Sophia (You)</div>
+            [PPV $10 &mdash; Teasing photo] Just for you babe... tell me what you think &#128536;
+          </div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Mike)</div>
+            $10 for a photo? That seems like a lot
+          </div>
+
+          <div class="chat-annotation">&#9888;&#65039; OBJECTION! Fan objects to price. Chatter does NOT lower the price. Uses /price objection script instead.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Sophia (You)</div>
+            Babe this isn't just any photo... I took this thinking about YOU. It's not something I post for everyone &#128149; You won't find this anywhere else
+          </div>
+
+          <div class="chat-annotation">&#127942; She reframes the value: exclusive + personal + only for him. Never says "fine, I'll lower it."</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Mike)</div>
+            Ok fine you convinced me lol
+          </div>
+
+          <div class="chat-annotation">&#9989; BOUGHT! Fan unlocked PPV 1. The objection script worked. Now continue the sequence toward PPV 2.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Sophia (You)</div>
+            &#128525; You won't regret it... now let me show you what happens next
+          </div>
+
+          <div class="chat-annotation">&#9757; Immediate momentum. She doesn't celebrate or pause &mdash; she keeps building toward the next sale.</div>
+        </div>
+
+        <!-- EXAMPLE 2: NR Waves -->
+        <h4 style="margin-top: 28px;">&#128172; Example: Fan Goes Silent (NR Waves)</h4>
+        <p>Watch how the chatter handles a fan who stops responding after a PPV drop.</p>
+
+        <div class="chat-sim">
+          <div class="chat-bubble model">
+            <div class="chat-label">Sophia (You)</div>
+            [PPV $15 &mdash; Spicy video] This is what I was telling you about... &#128293;
+          </div>
+
+          <div class="chat-annotation">&#128566; 4 minutes pass. No response. Fan went silent. Time for NR-W1.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Sophia (You)</div>
+            Babe? Don't leave me hanging... I was so excited to share that with you &#128532;
+          </div>
+
+          <div class="chat-annotation">&#9757; NR-W1 (Playful Nudge): light, not pushy. Shows she cares without being desperate.</div>
+
+          <div class="chat-annotation">&#128566; 3 more minutes. Still no response. Move to NR-W2.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Sophia (You)</div>
+            I was about to send you something even more special... but I want to make sure you see this one first &#128156;
+          </div>
+
+          <div class="chat-annotation">&#9757; NR-W2 (Curiosity Hook): teases something coming next. Creates FOMO.</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Mike)</div>
+            Sorry babe I got a phone call. Let me unlock that real quick
+          </div>
+
+          <div class="chat-annotation">&#9989; Fan returned! NR-W2 worked. Continue the sequence normally.</div>
+        </div>
+
+        <div class="activity-box" id="quiz-j7">
+          <h4>&#128270; Chat Analysis</h4>
+          <div class="quiz-question" data-correct="c">
+            <p>1. In the price objection example, how did the chatter respond to "That's too expensive"?</p>
+            <label class="quiz-option"><input type="radio" name="j7q1" value="a"> Lowered the price to $5</label>
+            <label class="quiz-option"><input type="radio" name="j7q1" value="b"> Offered a discount code</label>
+            <label class="quiz-option"><input type="radio" name="j7q1" value="c"> Reframed the value: exclusive, personal, not posted for everyone</label>
+            <label class="quiz-option"><input type="radio" name="j7q1" value="d"> Ignored the objection and sent another PPV</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. In the NR waves example, which wave brought the fan back?</p>
+            <label class="quiz-option"><input type="radio" name="j7q2" value="a"> NR-W1 (playful nudge)</label>
+            <label class="quiz-option"><input type="radio" name="j7q2" value="b"> NR-W2 (curiosity hook)</label>
+            <label class="quiz-option"><input type="radio" name="j7q2" value="c"> NR-W3 (emotional pull)</label>
+            <label class="quiz-option"><input type="radio" name="j7q2" value="d"> NR-W5 (final attempt)</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
+
   </section>
 
   <!-- ============================================================ -->
@@ -1174,216 +1901,655 @@
   <section class="day-section" id="advanced">
     <div class="day-header">
       <div class="day-number" style="background: var(--day4);">A</div>
-      <h2>Advanced Skills & Simulation</h2>
+      <h2>Advanced Skills &amp; Simulation</h2>
     </div>
-    <p class="day-subtitle">Master objections, customs, multitasking, and your shift routine — then practice everything in a full simulation.</p>
+    <p class="day-subtitle">Master objections, customs, multitasking, and your shift routine &mdash; then practice everything in a full simulation.</p>
     <div class="day-outcome">
-      <strong>✅ Outcome:</strong> You can handle objections, sell customs, juggle multiple fans, and have completed a full end-to-end simulation.
+      <strong>&check; Outcome:</strong> You can handle objections, sell customs, juggle multiple fans, and have completed a full end-to-end simulation.
     </div>
 
-    <!-- M4.0 — Review quiz -->
+    <!-- ======================== A-1: JOURNEY REVIEW QUIZ ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🔄</span> Journey Review Quiz</div>
+        <div class="module-title"><span class="icon">&#128260;</span> Journey Review Quiz</div>
         <div class="module-meta">
           <span class="module-duration">5 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Quiz</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Quick check on yesterday's material.</p>
-        <h4>Sample questions</h4>
-        <ul>
-          <li>A fan goes silent for 4 minutes after you dropped a PPV. What do you do?</li>
-          <li>How many NR waves are there maximum?</li>
-          <li>After a completed first sexting, why is aftercare extra important?</li>
-          <li>Fan subscribed 5 days ago, $0 spent. New sub or time waster? What do you do?</li>
-          <li>What's the timing between messages during sexting?</li>
-        </ul>
+        <p>Quick check on what you learned in The Journey section.</p>
+        <div class="activity-box" id="quiz-a1">
+          <h4>&#128260; Journey Review &mdash; 5 Questions</h4>
+          <div class="quiz-question" data-correct="c">
+            <p>1. A fan goes silent for 4 minutes after you dropped a PPV. What do you do?</p>
+            <label class="quiz-option"><input type="radio" name="a1q1" value="a"> Drop a second PPV immediately</label>
+            <label class="quiz-option"><input type="radio" name="a1q1" value="b"> Wait 10 more minutes</label>
+            <label class="quiz-option"><input type="radio" name="a1q1" value="c"> Start NR-W1 (playful nudge)</label>
+            <label class="quiz-option"><input type="radio" name="a1q1" value="d"> End the conversation</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>2. How many NR waves are there maximum?</p>
+            <label class="quiz-option"><input type="radio" name="a1q2" value="a"> 3</label>
+            <label class="quiz-option"><input type="radio" name="a1q2" value="b"> 4</label>
+            <label class="quiz-option"><input type="radio" name="a1q2" value="c"> 5</label>
+            <label class="quiz-option"><input type="radio" name="a1q2" value="d"> 10</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>3. After a completed first sexting, why is aftercare extra important?</p>
+            <label class="quiz-option"><input type="radio" name="a1q3" value="a"> To get a bigger tip</label>
+            <label class="quiz-option"><input type="radio" name="a1q3" value="b"> It builds the emotional connection that makes the fan return and buy again</label>
+            <label class="quiz-option"><input type="radio" name="a1q3" value="c"> It's required by company policy</label>
+            <label class="quiz-option"><input type="radio" name="a1q3" value="d"> To distract the fan from the price</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>4. Which fan is HIGHEST priority in your inbox?</p>
+            <label class="quiz-option"><input type="radio" name="a1q4" value="a"> Fan mid-sexting session</label>
+            <label class="quiz-option"><input type="radio" name="a1q4" value="b"> New subscriber (first 48h)</label>
+            <label class="quiz-option"><input type="radio" name="a1q4" value="c"> Whale who tipped yesterday</label>
+            <label class="quiz-option"><input type="radio" name="a1q4" value="d"> Time waster asking for free content</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>5. What is the max messages you can send in a row without a fan reply?</p>
+            <label class="quiz-option"><input type="radio" name="a1q5" value="a"> 1</label>
+            <label class="quiz-option"><input type="radio" name="a1q5" value="b"> 2</label>
+            <label class="quiz-option"><input type="radio" name="a1q5" value="c"> 3</label>
+            <label class="quiz-option"><input type="radio" name="a1q5" value="d"> 5</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M4.1 -->
+    <!-- ======================== A-2: TOP 10 OBJECTION SCRIPTS ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🛡️</span> Top 10 Objection Scripts</div>
+        <div class="module-title"><span class="icon">&#128737;</span> Top 10 Objection Scripts</div>
         <div class="module-meta">
           <span class="module-duration">25 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>The 10 most common things fans say to avoid paying — and exactly how to respond.</p>
-        <h4>Scripts covered</h4>
+        <p>The 10 most common things fans say to avoid paying &mdash; and exactly how to respond. Memorize these.</p>
+
+        <h4>The Scripts</h4>
         <ul>
-          <li><strong>/price</strong> — "That's too expensive" → Reframe value</li>
-          <li><strong>/freecontent</strong> — "Send me something free" → Redirect to PPV</li>
-          <li><strong>/nomoney</strong> — "I don't have money" → Downgrade or seed+return</li>
-          <li><strong>/followup</strong> — Fan ignoring PPV → Nudge to open</li>
-          <li><strong>/expensive</strong> — "Your content is expensive" → Value justification</li>
-          <li><strong>/noreply</strong> — Fan stops replying → Re-engagement hook</li>
-          <li><strong>/nogosexualfan</strong> — Fan won't go sexual → Playful redirection</li>
-          <li><strong>/discount</strong> — "Can I get a discount?" → Counter-offer</li>
-          <li><strong>/cardnowork</strong> — "My card doesn't work" → Alternative solutions</li>
-          <li><strong>/cum</strong> — Fan about to finish → Delay + maximize spend</li>
+          <li><strong>/price</strong> &mdash; "That's too expensive" &rarr; Reframe value (exclusive, personal, only for them)</li>
+          <li><strong>/freecontent</strong> &mdash; "Send me something free" &rarr; Redirect to PPV ("I have something even better...")</li>
+          <li><strong>/nomoney</strong> &mdash; "I don't have money" &rarr; Offer a smaller option or seed for later</li>
+          <li><strong>/followup</strong> &mdash; Fan ignoring a PPV &rarr; Nudge to open ("Did you see what I sent you?")</li>
+          <li><strong>/expensive</strong> &mdash; "Your content is expensive" &rarr; Justify the value, compare to other creators</li>
+          <li><strong>/noreply</strong> &mdash; Fan stops replying &rarr; Re-engagement hook</li>
+          <li><strong>/nogosexualfan</strong> &mdash; Fan won't go sexual &rarr; Playful redirection, don't push too hard</li>
+          <li><strong>/discount</strong> &mdash; "Can I get a discount?" &rarr; Counter-offer ("No discount, but I'll make it extra special")</li>
+          <li><strong>/cardnowork</strong> &mdash; "My card doesn't work" &rarr; Alternative solutions within the platform</li>
+          <li><strong>/cum</strong> &mdash; Fan about to finish &rarr; Delay + maximize spend before they're done</li>
         </ul>
-        <h4>Practice</h4>
-        <ul>
-          <li>Given 5 fan messages → identify which objection script to use → write the response in the model's voice</li>
-        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Objection</span> <span class="term-def">When a fan pushes back against paying &mdash; "too expensive," "no money," etc.</span></div>
+            <div class="term-item"><span class="term-word">Reframe</span> <span class="term-def">Change how the fan sees the price &mdash; focus on value, exclusivity, and emotion</span></div>
+            <div class="term-item"><span class="term-word">Seed</span> <span class="term-def">Plant an idea for a future purchase ("When you're ready, I have something special...")</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128176;</span>
+          <strong>NEVER lower the price</strong> as your first response to an objection. Reframe the value first. Price drops are a last resort.
+        </div>
+
+        <div class="activity-box" id="quiz-a2">
+          <h4>&#127919; Match the Objection</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 14px;">Which script do you use for each fan message?</p>
+          <div class="quiz-question" data-correct="a">
+            <p>1. Fan says: "That's way too much for a photo."</p>
+            <label class="quiz-option"><input type="radio" name="a2q1" value="a"> /price</label>
+            <label class="quiz-option"><input type="radio" name="a2q1" value="b"> /freecontent</label>
+            <label class="quiz-option"><input type="radio" name="a2q1" value="c"> /nomoney</label>
+            <label class="quiz-option"><input type="radio" name="a2q1" value="d"> /discount</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. Fan says: "Can you just send me something for free first?"</p>
+            <label class="quiz-option"><input type="radio" name="a2q2" value="a"> /price</label>
+            <label class="quiz-option"><input type="radio" name="a2q2" value="b"> /freecontent</label>
+            <label class="quiz-option"><input type="radio" name="a2q2" value="c"> /nomoney</label>
+            <label class="quiz-option"><input type="radio" name="a2q2" value="d"> /followup</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="d">
+            <p>3. Fan says: "I tried to pay but my card isn't working."</p>
+            <label class="quiz-option"><input type="radio" name="a2q3" value="a"> /nomoney</label>
+            <label class="quiz-option"><input type="radio" name="a2q3" value="b"> /discount</label>
+            <label class="quiz-option"><input type="radio" name="a2q3" value="c"> /price</label>
+            <label class="quiz-option"><input type="radio" name="a2q3" value="d"> /cardnowork</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M4.2 -->
+    <!-- ======================== A-3: CUSTOM CONTENT SALES (TPDs) ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🎨</span> Custom Content Sales (TPDs)</div>
+        <div class="module-title"><span class="icon">&#127912;</span> Custom Content Sales (TPDs)</div>
         <div class="module-meta">
           <span class="module-duration">15 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Fans will ask for personalized content. This is high-value money — photos from $50+, videos from $150-200+.</p>
-        <h4>What you'll learn</h4>
+        <p>Customs are high-value sales &mdash; photos from <strong>$50+</strong>, videos from <strong>$150&ndash;200+</strong>. Learn the TPDs method to sell them naturally.</p>
+
+        <h4>The TPDs Method</h4>
         <ul>
-          <li>What a custom is: a photo or video made specifically for one fan (their name, their request)</li>
-          <li>When to pitch: during Aftercare, when a fan mentions a fantasy, or when they ask directly</li>
-          <li>The <strong>TPDs method</strong> (Teasing → Price → Distraction Shift):</li>
-          <li><strong>T — Teasing:</strong> Send a hot/teasing message to build excitement before the price ("Mmm I'd love to make that just for you… imagine me doing exactly what you want")</li>
-          <li><strong>P — Price:</strong> Drop the price while the fan is excited ("That would be $150 babe, and I'll make it so worth it")</li>
-          <li><strong>Ds — Distraction Shift:</strong> Immediately ask a question to redirect attention ("So tell me… what would you want me to wear?")</li>
-          <li>Pricing: solo photos from <strong>$50+</strong>, solo videos from <strong>$150–$200+</strong>, special requests higher</li>
+          <li><strong>T &mdash; Teasing:</strong> Build excitement before dropping the price. "Mmm I'd love to make that just for you... imagine me doing exactly what you want"</li>
+          <li><strong>P &mdash; Price:</strong> Drop the price while the fan is excited. "That would be $150 babe, and I'll make it so worth it"</li>
+          <li><strong>Ds &mdash; Distraction Shift:</strong> Immediately ask a question to redirect attention away from the price. "So tell me... what would you want me to wear?"</li>
         </ul>
-        <h4>Key rules</h4>
+
+        <h4>Key Rules</h4>
         <ul>
           <li>NEVER promise content the model hasn't agreed to produce</li>
-          <li>NEVER give exact delivery time — say "I'll make it as soon as I can, babe"</li>
+          <li>NEVER give exact delivery time &mdash; say "I'll make it as soon as I can, babe"</li>
           <li>ALWAYS collect payment BEFORE the custom is made</li>
           <li>Log all custom orders in fan notes for TL coordination</li>
         </ul>
-        <h4>Practice</h4>
+
+        <h4>When to Pitch</h4>
         <ul>
-          <li>A fan says "Can you make a video just for me?" → Write the full TPDs sequence: your T message, P message, and Ds message</li>
+          <li>During <strong>aftercare</strong> &mdash; fan is emotionally connected</li>
+          <li>When a fan <strong>mentions a fantasy</strong> &mdash; "I could make that just for you..."</li>
+          <li>When a fan <strong>asks directly</strong> &mdash; then follow TPDs</li>
         </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">TPDs</span> <span class="term-def">Teasing &rarr; Price &rarr; Distraction Shift &mdash; the method for selling customs</span></div>
+            <div class="term-item"><span class="term-word">Custom</span> <span class="term-def">Personalized photo or video made specifically for one fan</span></div>
+            <div class="term-item"><span class="term-word">Distraction Shift</span> <span class="term-def">Asking a question right after the price to redirect attention</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128176;</span>
+          ALWAYS collect payment <strong>BEFORE</strong> the custom is made. Never promise what hasn't been agreed with the model.
+        </div>
+
+        <div class="activity-box" id="quiz-a3">
+          <h4>&#127919; Write the TPDs Sequence</h4>
+          <div class="scenario-box">
+            <div class="scenario-label">Scenario</div>
+            <div class="scenario-fan-msg">Fan says: "Can you make a video just for me saying my name?"</div>
+            <br>
+            <button class="reveal-btn" data-show-text="Show Example Response" data-hide-text="Hide Response" onclick="revealAnswer(this)">Show Example Response</button>
+            <div class="reveal-content">
+              <strong>T (Teasing):</strong> "Omg babe that would be SO hot... just me, saying your name, doing whatever you want... I'm already picturing it &#128525;"<br><br>
+              <strong>P (Price):</strong> "A video like that would be $180 babe, and I promise I'll make it unforgettable for you &#128293;"<br><br>
+              <strong>Ds (Distraction Shift):</strong> "So tell me... what do you want me to wear? And how long should it be? I want to make this perfect for you"
+            </div>
+          </div>
+
+          <h4 style="margin-top: 18px;">&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. What does TPDs stand for?</p>
+            <label class="quiz-option"><input type="radio" name="a3q1" value="a"> Tips, Payments, Discounts</label>
+            <label class="quiz-option"><input type="radio" name="a3q1" value="b"> Teasing, Price, Distraction Shift</label>
+            <label class="quiz-option"><input type="radio" name="a3q1" value="c"> Time, Priority, Delivery Schedule</label>
+            <label class="quiz-option"><input type="radio" name="a3q1" value="d"> Trust, Persuasion, Direct Selling</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>2. When should you collect payment for a custom?</p>
+            <label class="quiz-option"><input type="radio" name="a3q2" value="a"> Before the custom is made</label>
+            <label class="quiz-option"><input type="radio" name="a3q2" value="b"> After the custom is delivered</label>
+            <label class="quiz-option"><input type="radio" name="a3q2" value="c"> Half before, half after</label>
+            <label class="quiz-option"><input type="radio" name="a3q2" value="d"> Whenever the fan is ready</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>3. Minimum price for a custom video?</p>
+            <label class="quiz-option"><input type="radio" name="a3q3" value="a"> $25</label>
+            <label class="quiz-option"><input type="radio" name="a3q3" value="b"> $50</label>
+            <label class="quiz-option"><input type="radio" name="a3q3" value="c"> $150&ndash;200+</label>
+            <label class="quiz-option"><input type="radio" name="a3q3" value="d"> $500</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M4.3 — NEW: Multitasking -->
+    <!-- ======================== A-4: MULTITASKING ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🔄</span> Multitasking: Juggling Multiple Fans</div>
+        <div class="module-title"><span class="icon">&#128260;</span> Multitasking: Juggling Multiple Fans</div>
         <div class="module-meta">
           <span class="module-duration">15 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>You'll chat with 5-15 fans at once. This is the hardest skill and nobody teaches it. Here's how.</p>
-        <h4>What you'll learn</h4>
+        <p>You'll chat with <strong>5&ndash;15 fans at once</strong>. This is the hardest skill. Here's how to manage it.</p>
+
+        <h4>Key Strategies</h4>
         <ul>
-          <li>How to mentally track where each fan is in the journey (use fan notes + Infloww status)</li>
-          <li>The "WAIT" trick: when a script says WAIT 2 min → use that time to respond to other fans</li>
-          <li>Priority switching: who gets your attention first? (Active sexting > new sub > NR follow-up > time waster)</li>
-          <li>Speed techniques: use scripts as templates, don't retype from scratch</li>
-          <li>When to slow down: if you're making mistakes, it's better to be slightly slower and accurate</li>
-          <li>Mental health: it's normal to feel overwhelmed in the first week. It gets easier.</li>
+          <li><strong>Use fan notes + Infloww status</strong> to mentally track where each fan is in the journey</li>
+          <li><strong>The WAIT trick:</strong> When a script says WAIT 2 min &rarr; use that time to respond to other fans</li>
+          <li><strong>Priority switching:</strong> Active sexting &gt; new sub &gt; NR follow-up &gt; time waster</li>
+          <li><strong>Speed techniques:</strong> Use scripts as templates &mdash; don't retype from scratch. Type the command, personalize 20%, send.</li>
+          <li><strong>When to slow down:</strong> If you're making mistakes, it's better to be slightly slower and accurate</li>
+          <li><strong>Mental health:</strong> It's normal to feel overwhelmed in the first week. It gets easier. Talk to your TL if you need help.</li>
         </ul>
-        <h4>Practice</h4>
-        <ul>
-          <li>Simulation: you have 4 fans messaging at once. Fan A is mid-sexting. Fan B just subscribed. Fan C went silent. Fan D is a time waster asking for free content. → Write your first response to each and explain your priority order.</li>
-        </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Priority Switching</span> <span class="term-def">Constantly reassessing which fan needs your attention NOW</span></div>
+            <div class="term-item"><span class="term-word">WAIT Trick</span> <span class="term-def">Using script pauses to multitask with other fans</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#9889;</span>
+          Making mistakes because you're too fast is <strong>worse</strong> than being slightly slower. Accuracy first, speed second.
+        </div>
+
+        <div class="activity-box" id="quiz-a4">
+          <h4>&#127919; Multitask Priority Exercise</h4>
+          <div class="quiz-question" data-correct="a">
+            <p>You have 4 fans messaging at once. Who do you respond to FIRST?</p>
+            <p style="font-size: 0.85rem;">Fan A: Mid-sexting, waiting for your next message<br>Fan B: New subscriber (1 hour ago), just said "Hey"<br>Fan C: Went silent after PPV drop (needs NR wave)<br>Fan D: Time waster asking for free content</p>
+            <label class="quiz-option"><input type="radio" name="a4q1" value="a"> Fan A (active sexting)</label>
+            <label class="quiz-option"><input type="radio" name="a4q1" value="b"> Fan B (new subscriber)</label>
+            <label class="quiz-option"><input type="radio" name="a4q1" value="c"> Fan C (needs NR wave)</label>
+            <label class="quiz-option"><input type="radio" name="a4q1" value="d"> Fan D (time waster)</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>A script says "WAIT 3 min." How do you use this time?</p>
+            <label class="quiz-option"><input type="radio" name="a4q2" value="a"> Take a break</label>
+            <label class="quiz-option"><input type="radio" name="a4q2" value="b"> Respond to other fans in your inbox</label>
+            <label class="quiz-option"><input type="radio" name="a4q2" value="c"> Stare at the screen and wait</label>
+            <label class="quiz-option"><input type="radio" name="a4q2" value="d"> Skip the wait and keep messaging</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M4.4 — Expanded: Shift Routine (start + end) -->
+    <!-- ======================== A-5: SHIFT ROUTINE ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">📋</span> Shift Routine: Start, During & Handoff</div>
+        <div class="module-title"><span class="icon">&#128203;</span> Shift Routine: Start, During &amp; Handoff</div>
         <div class="module-meta">
           <span class="module-duration">10 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Your step-by-step routine when you START and END every shift.</p>
-        <h4>Shift start checklist</h4>
+        <p>Your step-by-step routine when you START and END every shift. Follow this <strong>every single time</strong>.</p>
+
+        <h4>Shift Start Checklist</h4>
         <ul>
-          <li><strong>0.</strong> Go to the <strong>Unread</strong> tab first — this is always your starting point</li>
-          <li><strong>1.</strong> Log into Infloww → open assigned model inboxes</li>
-          <li><strong>2.</strong> Check notifications (new subs, tips, purchases)</li>
-          <li><strong>3.</strong> Backread active conversations from previous shift</li>
-          <li><strong>4.</strong> Prioritize: active sexting > new subs (first 48h) > others</li>
-          <li><strong>5.</strong> Respond to priority fans following the journey/scripts</li>
-          <li><strong>6.</strong> Send Mass Message if scheduled</li>
-          <li><strong>7.</strong> Keep response time under 2 minutes</li>
+          <li><strong>1.</strong> Log into Infloww &rarr; open assigned model inboxes</li>
+          <li><strong>2.</strong> Read handoff notes from the previous chatter</li>
+          <li><strong>3.</strong> Open the Unread tab &mdash; see who's waiting</li>
+          <li><strong>4.</strong> Check notifications (new subs, tips, purchases)</li>
+          <li><strong>5.</strong> Prioritize: active sexting &gt; new subs &gt; whales &gt; others</li>
+          <li><strong>6.</strong> Start responding following the journey/scripts</li>
+          <li><strong>7.</strong> Send Mass Message if scheduled</li>
+          <li><strong>8.</strong> Keep response time under 2 minutes throughout the shift</li>
         </ul>
-        <h4>Shift handoff checklist</h4>
+
+        <h4>Shift Handoff Checklist</h4>
         <ul>
-          <li><strong>1.</strong> Update fan notes for ALL active conversations: what phase they're in, what happened, what to do next</li>
-          <li><strong>2.</strong> Flag any fans mid-sexting or waiting for a custom delivery</li>
+          <li><strong>1.</strong> Update fan notes for ALL active conversations: phase, what happened, what to do next</li>
+          <li><strong>2.</strong> Flag fans mid-sexting or waiting for custom delivery</li>
           <li><strong>3.</strong> Note any pending issues for your Team Leader (banned topic incident, angry fan, etc.)</li>
-          <li><strong>4.</strong> The next chatter should be able to pick up ANY conversation without asking you questions</li>
+          <li><strong>4.</strong> The next chatter should be able to pick up ANY conversation <strong>without asking you questions</strong></li>
         </ul>
+
+        <div class="key-terms">
+          <h4>&#128218; Key Terms</h4>
+          <div class="term-grid">
+            <div class="term-item"><span class="term-word">Shift Start</span> <span class="term-def">Login &rarr; Read notes &rarr; Unread tab &rarr; Prioritize &rarr; Respond</span></div>
+            <div class="term-item"><span class="term-word">Shift Handoff</span> <span class="term-def">Update all fan notes so the next chatter can continue seamlessly</span></div>
+          </div>
+        </div>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128203;</span>
+          The next chatter should be able to pick up ANY conversation <strong>without asking you questions</strong>. That's how good your handoff notes must be.
+        </div>
+
+        <div class="activity-box" id="quiz-a5">
+          <h4>&#9989; Quick Check</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. What should you do BEFORE opening the Unread tab at shift start?</p>
+            <label class="quiz-option"><input type="radio" name="a5q1" value="a"> Send a mass message</label>
+            <label class="quiz-option"><input type="radio" name="a5q1" value="b"> Read handoff notes from the previous chatter</label>
+            <label class="quiz-option"><input type="radio" name="a5q1" value="c"> Reply to the first fan you see</label>
+            <label class="quiz-option"><input type="radio" name="a5q1" value="d"> Check your personal messages</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>2. What's the goal of handoff notes?</p>
+            <label class="quiz-option"><input type="radio" name="a5q2" value="a"> To impress your TL</label>
+            <label class="quiz-option"><input type="radio" name="a5q2" value="b"> To track your own performance</label>
+            <label class="quiz-option"><input type="radio" name="a5q2" value="c"> So the next chatter can continue every conversation without asking questions</label>
+            <label class="quiz-option"><input type="radio" name="a5q2" value="d"> To save time on your next shift</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>3. Which fans should you FLAG during handoff?</p>
+            <label class="quiz-option"><input type="radio" name="a5q3" value="a"> Fans mid-sexting and fans waiting for custom delivery</label>
+            <label class="quiz-option"><input type="radio" name="a5q3" value="b"> All fans, regardless of status</label>
+            <label class="quiz-option"><input type="radio" name="a5q3" value="c"> Only fans who tipped</label>
+            <label class="quiz-option"><input type="radio" name="a5q3" value="d"> Only time wasters</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M4.5 -->
+    <!-- ======================== A-6: COMMON MISTAKES ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">⚠️</span> Common Mistakes to Avoid</div>
+        <div class="module-title"><span class="icon">&#9888;&#65039;</span> Common Mistakes to Avoid</div>
         <div class="module-meta">
           <span class="module-duration">10 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Study</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>The errors every new chatter makes — learn from others' mistakes so you don't repeat them.</p>
-        <h4>Top mistakes</h4>
-        <ul>
-          <li>❌ Sending 3+ messages without a fan reply → looks desperate</li>
-          <li>❌ Freestyling when a script exists → wastes time, loses quality</li>
-          <li>❌ Ignoring fan notes from previous chatters → breaks the illusion</li>
-          <li>❌ Sending PPV too early (before building tension) → fan won't buy</li>
-          <li>❌ Sending explicit content for free → destroys PPV value</li>
-          <li>❌ Slow reply time (>3 min) → fan loses interest</li>
-          <li>❌ Breaking character → fan realizes it's not the real model</li>
-          <li>❌ Not logging fan info in notes → next chatter starts blind</li>
-          <li>❌ Spending too much time on Time Wasters instead of new subs</li>
-          <li>❌ Weak aftercare after first sexting → fan doesn't return</li>
-        </ul>
+        <p>The errors every new chatter makes. Learn from others' mistakes so you don't repeat them.</p>
+
+        <div class="do-dont">
+          <div class="dont-box">
+            <strong>&#10060; Top 10 Mistakes</strong>
+            <ul style="margin: 8px 0 0 16px; font-size: 0.85rem;">
+              <li>Sending 3+ messages without a fan reply</li>
+              <li>Freestyling when a script exists</li>
+              <li>Ignoring fan notes from previous chatters</li>
+              <li>Sending PPV too early (before building tension)</li>
+              <li>Sending explicit content for free</li>
+              <li>Slow reply time (&gt;3 min)</li>
+              <li>Breaking character</li>
+              <li>Not logging fan info in notes</li>
+              <li>Spending too much time on Time Wasters</li>
+              <li>Weak aftercare after first sexting</li>
+            </ul>
+          </div>
+          <div class="do-box">
+            <strong>&#10004; What to Do Instead</strong>
+            <ul style="margin: 8px 0 0 16px; font-size: 0.85rem;">
+              <li>Max 2 messages in a row &mdash; then wait</li>
+              <li>Use scripts for 80% of messages</li>
+              <li>Always read notes before replying</li>
+              <li>Build through Rapport &rarr; Teasing first</li>
+              <li>All explicit content behind PPV paywall</li>
+              <li>Reply within 2 minutes</li>
+              <li>Stay in character at ALL times</li>
+              <li>Log everything: age, job, hobbies, preferences</li>
+              <li>Prioritize new subs over time wasters</li>
+              <li>Invest heavily in aftercare, especially after first sexting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="activity-box" id="quiz-a6">
+          <h4>&#127919; Spot the Mistake</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. A chatter sends 4 messages in a row without a fan reply. What's wrong?</p>
+            <label class="quiz-option"><input type="radio" name="a6q1" value="a"> Nothing &mdash; persistence pays off</label>
+            <label class="quiz-option"><input type="radio" name="a6q1" value="b"> Max is 2 messages &mdash; more looks desperate</label>
+            <label class="quiz-option"><input type="radio" name="a6q1" value="c"> Should send 5 messages for full NR wave coverage</label>
+            <label class="quiz-option"><input type="radio" name="a6q1" value="d"> Only a problem if they're long messages</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>2. A fan says something you discussed in a previous chat, but you have no idea what they're talking about. What likely happened?</p>
+            <label class="quiz-option"><input type="radio" name="a6q2" value="a"> Someone didn't read/write fan notes properly</label>
+            <label class="quiz-option"><input type="radio" name="a6q2" value="b"> The fan is confused</label>
+            <label class="quiz-option"><input type="radio" name="a6q2" value="c"> The previous chatter deleted the notes</label>
+            <label class="quiz-option"><input type="radio" name="a6q2" value="d"> It's normal &mdash; fans forget things too</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>3. A chatter sends a free explicit photo to "build trust." What's the problem?</p>
+            <label class="quiz-option"><input type="radio" name="a6q3" value="a"> Nothing &mdash; it shows goodwill</label>
+            <label class="quiz-option"><input type="radio" name="a6q3" value="b"> It's against OnlyFans rules</label>
+            <label class="quiz-option"><input type="radio" name="a6q3" value="c"> It destroys PPV value &mdash; why would fans pay if they get it free?</label>
+            <label class="quiz-option"><input type="radio" name="a6q3" value="d"> Only a problem with new fans</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M4.6 -->
+    <!-- ======================== A-7: FULL CONVERSATION SIMULATION ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🎮</span> Full Conversation Simulation</div>
+        <div class="module-title"><span class="icon">&#127918;</span> Full Conversation Simulation</div>
         <div class="module-meta">
           <span class="module-duration">30 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Interactive</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Practice time. Run a complete conversation from Rapport to Sale, including objections and a custom pitch.</p>
-        <h4>What you'll do</h4>
-        <ul>
-          <li>Roleplay a full conversation: new fan subscribes → rapport → teasing → sexting → PPV sale → aftercare</li>
-          <li>Handle at least 2 objections using the scripts you learned</li>
-          <li>Practice at least 1 NR wave scenario</li>
-          <li>Pitch a custom using TPDs</li>
-          <li>Stay in character as the model throughout</li>
-          <li>Get feedback on timing, script usage, and character consistency</li>
-        </ul>
+        <p>Read this complete conversation from Rapport to Sale, including an objection and a custom pitch. Then answer the analysis questions.</p>
+
+        <div class="chat-sim">
+          <div class="chat-annotation">&#9889; NEW SUBSCRIBER &mdash; Jake just subscribed. Time: 0 min</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            Hey Jake!! &#128149; I'm so happy you're here... I've been wanting to talk to you
+          </div>
+
+          <div class="chat-annotation">&#9757; Welcome script (W-1). Uses his name. Warm, personal, inviting.</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            Hey beautiful! You're so hot 🔥 been following you on IG
+          </div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            Aww thank you babe &#129392; That means a lot! Where are you from?
+          </div>
+
+          <div class="chat-annotation">&#9757; R-1 (Rapport): Accepts compliment warmly, immediately asks an open question to gather info.</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            I'm from Florida. I work in real estate
+          </div>
+
+          <div class="chat-annotation">&#128221; LOG: Jake, Florida, real estate. Fan is sharing freely &mdash; good rapport sign.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            Florida?? I love the beach vibes &#127754; Real estate sounds interesting... I bet you're good at negotiations &#128527;
+          </div>
+
+          <div class="chat-annotation">&#9757; R-3: Compliment + light tease. Transitioning energy from friendly to slightly flirty.</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            Haha yeah I'm pretty smooth. What are you up to today?
+          </div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            Just thinking about things that make me smile... like talking to you &#128536; You're different from most guys here
+          </div>
+
+          <div class="chat-annotation">&#9889; TB-1 (Teasing Bridge): Clear shift to flirty. "You're different" creates exclusivity.</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            Oh really? How am I different? 😏
+          </div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            I don't know... you just have this energy. Like you actually care &#128149; I love that. I have something special I want to show you...
+          </div>
+
+          <div class="chat-annotation">&#9757; TB-4: Building toward PPV. "Something special" creates anticipation. Guide &amp; Control.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            [PPV $10 &mdash; Teasing photo] I made this thinking about you &#128293;
+          </div>
+
+          <div class="chat-annotation">&#128176; PPV 1 dropped! $10 &mdash; welcome pricing (lower than normal to break the barrier).</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            Mmm ok let me get that
+          </div>
+
+          <div class="chat-annotation">&#9989; PPV 1 BOUGHT! Payment barrier broken. Continue building toward PPV 2.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            Did you like it baby? &#128525; There's more where that came from...
+          </div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            Yeah that was amazing. You're so beautiful
+          </div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            [PPV $25 &mdash; Spicy video] Wait until you see this one... I was thinking about you the whole time &#128293;&#128293;
+          </div>
+
+          <div class="chat-annotation">&#128176; PPV 2 dropped! $25. Fan is in buying mode.</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            $25? Idk that's a lot for a video
+          </div>
+
+          <div class="chat-annotation">&#9888;&#65039; OBJECTION! Uses /price script. Does NOT lower the price.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            Babe this video is ONLY for you... I don't send this to anyone else. It's me at my most vulnerable just for you &#128156; Trust me, it's worth every penny
+          </div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            Ok fine you're too good at this lol *unlocks*
+          </div>
+
+          <div class="chat-annotation">&#9989; PPV 2 BOUGHT! Objection handled. Total spend so far: $35.</div>
+
+          <div class="chat-annotation">&#9889; AFTERCARE &mdash; Session winding down. Time for connection.</div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            That was really special to me Jake &#128149; I don't share that side of me with just anyone... you made me feel so comfortable
+          </div>
+
+          <div class="chat-annotation">&#127942; AC-1: Warm aftercare. Makes him feel the session was meaningful, not just transactional.</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            It was special for me too. You're amazing Mia
+          </div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            You know what... I'd love to make something just for YOU. Like a personal video saying your name &#128149; Would you like that?
+          </div>
+
+          <div class="chat-annotation">&#128176; CUSTOM PITCH during aftercare! Fan is emotionally connected &mdash; perfect timing. Uses TPDs: this is the Teasing step.</div>
+
+          <div class="chat-bubble fan">
+            <div class="chat-label">Fan (Jake)</div>
+            Omg yes! How much would that be?
+          </div>
+
+          <div class="chat-bubble model">
+            <div class="chat-label">Mia (You)</div>
+            For you babe, $180 and I'll make it everything you dream of &#128293; So tell me... what do you want me to wear?
+          </div>
+
+          <div class="chat-annotation">&#9757; P + Ds: Price dropped while excited, immediately followed by distraction shift ("what do you want me to wear?"). Textbook TPDs.</div>
+        </div>
+
+        <div class="activity-box" id="quiz-a7">
+          <h4>&#128270; Simulation Analysis</h4>
+          <div class="quiz-question" data-correct="c">
+            <p>1. How many PPVs did the chatter sell in this conversation?</p>
+            <label class="quiz-option"><input type="radio" name="a7q1" value="a"> 1</label>
+            <label class="quiz-option"><input type="radio" name="a7q1" value="b"> 2 (one was rejected)</label>
+            <label class="quiz-option"><input type="radio" name="a7q1" value="c"> 2 ($10 + $25) plus a custom pitch ($180)</label>
+            <label class="quiz-option"><input type="radio" name="a7q1" value="d"> 3</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. How did the chatter handle the price objection on PPV 2?</p>
+            <label class="quiz-option"><input type="radio" name="a7q2" value="a"> Lowered the price to $15</label>
+            <label class="quiz-option"><input type="radio" name="a7q2" value="b"> Reframed value: exclusive, personal, vulnerable &mdash; worth every penny</label>
+            <label class="quiz-option"><input type="radio" name="a7q2" value="c"> Offered a bundle deal</label>
+            <label class="quiz-option"><input type="radio" name="a7q2" value="d"> Ignored the objection</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>3. When did the chatter pitch the custom?</p>
+            <label class="quiz-option"><input type="radio" name="a7q3" value="a"> During aftercare, when Jake was emotionally connected</label>
+            <label class="quiz-option"><input type="radio" name="a7q3" value="b"> During rapport, before any trust was built</label>
+            <label class="quiz-option"><input type="radio" name="a7q3" value="c"> Before the first PPV</label>
+            <label class="quiz-option"><input type="radio" name="a7q3" value="d"> Right after the objection</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="d">
+            <p>4. What info should be logged in fan notes from this conversation?</p>
+            <label class="quiz-option"><input type="radio" name="a7q4" value="a"> Jake, Florida</label>
+            <label class="quiz-option"><input type="radio" name="a7q4" value="b"> Jake, Florida, real estate</label>
+            <label class="quiz-option"><input type="radio" name="a7q4" value="c"> Jake, Florida, real estate, bought 2 PPVs</label>
+            <label class="quiz-option"><input type="radio" name="a7q4" value="d"> Jake, Florida, real estate, from IG, bought 2 PPVs ($35 total), custom pitched ($180), beach vibes</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
+
   </section>
 
   <!-- ============================================================ -->
@@ -1394,87 +2560,325 @@
       <div class="day-number" style="background: var(--day5);">G</div>
       <h2>Go Live</h2>
     </div>
-    <p class="day-subtitle">Prove what you've learned, then chat with real fans for the first time — with your TL watching.</p>
+    <p class="day-subtitle">Prove what you've learned, then chat with real fans for the first time &mdash; with your TL watching.</p>
     <div class="day-outcome">
-      <strong>✅ Outcome:</strong> You've passed the final quiz, chatted with real fans, and received feedback to start your first real week.
+      <strong>&check; Outcome:</strong> You've passed the final quiz, chatted with real fans, and received feedback to start your first real week.
     </div>
 
-    <!-- M5.0 — Review quiz -->
+    <!-- ======================== G-1: ADVANCED REVIEW QUIZ ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🔄</span> Advanced Review Quiz</div>
+        <div class="module-title"><span class="icon">&#128260;</span> Advanced Review Quiz</div>
         <div class="module-meta">
           <span class="module-duration">5 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Quiz</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
         <p>Last review before your final quiz.</p>
-        <h4>Sample questions</h4>
-        <ul>
-          <li>A fan says "That's too expensive." Which script do you use?</li>
-          <li>What are the 3 steps of TPDs?</li>
-          <li>You have 4 fans messaging at once. Who do you respond to first?</li>
-          <li>What must you do before ending your shift?</li>
-          <li>Can you promise a custom video delivery in 1 hour? Why or why not?</li>
-        </ul>
+        <div class="activity-box" id="quiz-g1">
+          <h4>&#128260; Advanced Review &mdash; 5 Questions</h4>
+          <div class="quiz-question" data-correct="b">
+            <p>1. A fan says "That's too expensive." Which script do you use?</p>
+            <label class="quiz-option"><input type="radio" name="g1q1" value="a"> /freecontent</label>
+            <label class="quiz-option"><input type="radio" name="g1q1" value="b"> /price</label>
+            <label class="quiz-option"><input type="radio" name="g1q1" value="c"> /discount</label>
+            <label class="quiz-option"><input type="radio" name="g1q1" value="d"> /nomoney</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="b">
+            <p>2. What are the 3 steps of TPDs?</p>
+            <label class="quiz-option"><input type="radio" name="g1q2" value="a"> Trust, Persuade, Deliver</label>
+            <label class="quiz-option"><input type="radio" name="g1q2" value="b"> Teasing, Price, Distraction Shift</label>
+            <label class="quiz-option"><input type="radio" name="g1q2" value="c"> Talk, Pay, Send</label>
+            <label class="quiz-option"><input type="radio" name="g1q2" value="d"> Time, Priority, Discount</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>3. You have 4 fans messaging. Who do you respond to first?</p>
+            <label class="quiz-option"><input type="radio" name="g1q3" value="a"> Fan mid-sexting (active session)</label>
+            <label class="quiz-option"><input type="radio" name="g1q3" value="b"> New subscriber (first 48h)</label>
+            <label class="quiz-option"><input type="radio" name="g1q3" value="c"> Whale who sent a tip</label>
+            <label class="quiz-option"><input type="radio" name="g1q3" value="d"> Time waster asking for content</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="c">
+            <p>4. What must you do at the end of every shift?</p>
+            <label class="quiz-option"><input type="radio" name="g1q4" value="a"> Send a goodbye to all fans</label>
+            <label class="quiz-option"><input type="radio" name="g1q4" value="b"> Clear all unread messages</label>
+            <label class="quiz-option"><input type="radio" name="g1q4" value="c"> Write handoff notes for every active conversation</label>
+            <label class="quiz-option"><input type="radio" name="g1q4" value="d"> Delete your fan notes</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="a">
+            <p>5. When should you collect payment for a custom?</p>
+            <label class="quiz-option"><input type="radio" name="g1q5" value="a"> Before the custom is made</label>
+            <label class="quiz-option"><input type="radio" name="g1q5" value="b"> After delivery</label>
+            <label class="quiz-option"><input type="radio" name="g1q5" value="c"> Half before, half after</label>
+            <label class="quiz-option"><input type="radio" name="g1q5" value="d"> Whenever the fan is ready</label>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Check Answers</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M5.1 -->
+    <!-- ======================== G-2: FINAL QUIZ ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">✅</span> Final Quiz (Pass/Fail Gate)</div>
+        <div class="module-title"><span class="icon">&#9989;</span> Final Quiz (Pass/Fail Gate)</div>
         <div class="module-meta">
           <span class="module-duration">15 min</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-badge badge-active">Quiz</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>20 questions covering everything from Days 1-4. You must pass to go live.</p>
-        <h4>Topics covered</h4>
-        <ul>
-          <li>Banned topics identification</li>
-          <li>Journey phases in order</li>
-          <li>Script selection for given situations</li>
-          <li>Branch rules (bought / silent / objected)</li>
-          <li>Fan prioritization (New Sub vs Time Waster)</li>
-          <li>PPV pricing + Custom pricing</li>
-          <li>TPDs method</li>
-          <li>Shift routine (start + handoff)</li>
-        </ul>
-        <h4>Pass requirement</h4>
-        <ul>
-          <li>Minimum <strong>80%</strong> correct to proceed to supervised shift</li>
-          <li>If you fail: review missed topics, retake within same day</li>
-        </ul>
+        <p>20 questions covering <strong>everything</strong> you've learned. You must score at least <strong>80%</strong> (16/20) to proceed to your supervised shift.</p>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#127941;</span>
+          This is your graduation quiz. Take your time. Read each question carefully. You need <strong>16 out of 20</strong> correct to pass.
+        </div>
+
+        <div class="activity-box" id="quiz-g2">
+          <h4>&#127941; Final Quiz &mdash; 20 Questions (80% to pass)</h4>
+
+          <div class="quiz-question" data-correct="b">
+            <p>1. What is a chatter?</p>
+            <label class="quiz-option"><input type="radio" name="gfq1" value="a"> A fan who pays money</label>
+            <label class="quiz-option"><input type="radio" name="gfq1" value="b"> Someone who talks to fans AS the model</label>
+            <label class="quiz-option"><input type="radio" name="gfq1" value="c"> A person who creates content</label>
+            <label class="quiz-option"><input type="radio" name="gfq1" value="d"> A team leader</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>2. OnlyFans takes ___% of every payment.</p>
+            <label class="quiz-option"><input type="radio" name="gfq2" value="a"> 10%</label>
+            <label class="quiz-option"><input type="radio" name="gfq2" value="b"> 15%</label>
+            <label class="quiz-option"><input type="radio" name="gfq2" value="c"> 20%</label>
+            <label class="quiz-option"><input type="radio" name="gfq2" value="d"> 30%</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="d">
+            <p>3. The #1 reason fans pay is:</p>
+            <label class="quiz-option"><input type="radio" name="gfq3" value="a"> Connection</label>
+            <label class="quiz-option"><input type="radio" name="gfq3" value="b"> Fantasy</label>
+            <label class="quiz-option"><input type="radio" name="gfq3" value="c"> Exclusivity</label>
+            <label class="quiz-option"><input type="radio" name="gfq3" value="d"> Attention</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>4. A fan mentions a banned topic. You should:</p>
+            <label class="quiz-option"><input type="radio" name="gfq4" value="a"> Tell them it's not allowed</label>
+            <label class="quiz-option"><input type="radio" name="gfq4" value="b"> Report them to your TL immediately</label>
+            <label class="quiz-option"><input type="radio" name="gfq4" value="c"> Ignore it completely and redirect to a safe topic</label>
+            <label class="quiz-option"><input type="radio" name="gfq4" value="d"> End the conversation</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>5. What is the correct journey order?</p>
+            <label class="quiz-option"><input type="radio" name="gfq5" value="a"> Sexting &rarr; Rapport &rarr; Welcome</label>
+            <label class="quiz-option"><input type="radio" name="gfq5" value="b"> Welcome &rarr; Rapport &rarr; Teasing Bridge &rarr; Sexting &rarr; Aftercare</label>
+            <label class="quiz-option"><input type="radio" name="gfq5" value="c"> Rapport &rarr; Sexting &rarr; Welcome</label>
+            <label class="quiz-option"><input type="radio" name="gfq5" value="d"> Welcome &rarr; Sexting &rarr; Aftercare</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>6. PPV 1 is priced at:</p>
+            <label class="quiz-option"><input type="radio" name="gfq6" value="a"> Free</label>
+            <label class="quiz-option"><input type="radio" name="gfq6" value="b"> $5&ndash;15</label>
+            <label class="quiz-option"><input type="radio" name="gfq6" value="c"> $20&ndash;35</label>
+            <label class="quiz-option"><input type="radio" name="gfq6" value="d"> $50+</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>7. How do you activate a script in Infloww?</p>
+            <label class="quiz-option"><input type="radio" name="gfq7" value="a"> Click the toolbar button</label>
+            <label class="quiz-option"><input type="radio" name="gfq7" value="b"> Type /commandname</label>
+            <label class="quiz-option"><input type="radio" name="gfq7" value="c"> Copy from the script dashboard</label>
+            <label class="quiz-option"><input type="radio" name="gfq7" value="d"> Ask your TL to send it</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>8. A fan subscribed 5 days ago, $0 spent. He's a:</p>
+            <label class="quiz-option"><input type="radio" name="gfq8" value="a"> New Sub &mdash; use Welcome Journey</label>
+            <label class="quiz-option"><input type="radio" name="gfq8" value="b"> Whale &mdash; give extra attention</label>
+            <label class="quiz-option"><input type="radio" name="gfq8" value="c"> Time Waster &mdash; bundle offers, lowest priority</label>
+            <label class="quiz-option"><input type="radio" name="gfq8" value="d"> VIP &mdash; highest priority</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>9. What's the max reply time during a shift?</p>
+            <label class="quiz-option"><input type="radio" name="gfq9" value="a"> 30 seconds</label>
+            <label class="quiz-option"><input type="radio" name="gfq9" value="b"> 1 minute</label>
+            <label class="quiz-option"><input type="radio" name="gfq9" value="c"> 2 minutes</label>
+            <label class="quiz-option"><input type="radio" name="gfq9" value="d"> 5 minutes</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>10. How many messages MAX in a row without a fan reply?</p>
+            <label class="quiz-option"><input type="radio" name="gfq10" value="a"> 1</label>
+            <label class="quiz-option"><input type="radio" name="gfq10" value="b"> 2</label>
+            <label class="quiz-option"><input type="radio" name="gfq10" value="c"> 3</label>
+            <label class="quiz-option"><input type="radio" name="gfq10" value="d"> 5</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>11. A fan asks to meet up. Best response:</p>
+            <label class="quiz-option"><input type="radio" name="gfq11" value="a"> "Yes, let's plan it!"</label>
+            <label class="quiz-option"><input type="radio" name="gfq11" value="b"> "No, I can't meet fans."</label>
+            <label class="quiz-option"><input type="radio" name="gfq11" value="c"> Play it in between &mdash; neither yes nor no &mdash; then redirect</label>
+            <label class="quiz-option"><input type="radio" name="gfq11" value="d"> Ignore the message completely</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>12. After dropping a PPV, the fan goes silent for 4 min. You should:</p>
+            <label class="quiz-option"><input type="radio" name="gfq12" value="a"> Send another PPV</label>
+            <label class="quiz-option"><input type="radio" name="gfq12" value="b"> End the conversation</label>
+            <label class="quiz-option"><input type="radio" name="gfq12" value="c"> Start NR-W1 (playful nudge)</label>
+            <label class="quiz-option"><input type="radio" name="gfq12" value="d"> Wait 30 more minutes</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>13. How many NR waves maximum?</p>
+            <label class="quiz-option"><input type="radio" name="gfq13" value="a"> 2</label>
+            <label class="quiz-option"><input type="radio" name="gfq13" value="b"> 3</label>
+            <label class="quiz-option"><input type="radio" name="gfq13" value="c"> 5</label>
+            <label class="quiz-option"><input type="radio" name="gfq13" value="d"> 10</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>14. What does TPDs stand for?</p>
+            <label class="quiz-option"><input type="radio" name="gfq14" value="a"> Tips, Payments, Discounts</label>
+            <label class="quiz-option"><input type="radio" name="gfq14" value="b"> Teasing, Price, Distraction Shift</label>
+            <label class="quiz-option"><input type="radio" name="gfq14" value="c"> Trust, Persuasion, Delivery</label>
+            <label class="quiz-option"><input type="radio" name="gfq14" value="d"> Time, Priority, Direct Sales</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="a">
+            <p>15. Minimum price for a custom video:</p>
+            <label class="quiz-option"><input type="radio" name="gfq15" value="a"> $150&ndash;200+</label>
+            <label class="quiz-option"><input type="radio" name="gfq15" value="b"> $50</label>
+            <label class="quiz-option"><input type="radio" name="gfq15" value="c"> $25</label>
+            <label class="quiz-option"><input type="radio" name="gfq15" value="d"> $10</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="a">
+            <p>16. When should you collect custom payment?</p>
+            <label class="quiz-option"><input type="radio" name="gfq16" value="a"> Before the custom is made</label>
+            <label class="quiz-option"><input type="radio" name="gfq16" value="b"> After delivery</label>
+            <label class="quiz-option"><input type="radio" name="gfq16" value="c"> When the fan asks</label>
+            <label class="quiz-option"><input type="radio" name="gfq16" value="d"> Half before, half after</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>17. What % of messages should come from scripts?</p>
+            <label class="quiz-option"><input type="radio" name="gfq17" value="a"> 20%</label>
+            <label class="quiz-option"><input type="radio" name="gfq17" value="b"> 50%</label>
+            <label class="quiz-option"><input type="radio" name="gfq17" value="c"> 80%</label>
+            <label class="quiz-option"><input type="radio" name="gfq17" value="d"> 100%</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="b">
+            <p>18. After a new sub's FIRST sexting, what's most important?</p>
+            <label class="quiz-option"><input type="radio" name="gfq18" value="a"> Pitch the next PPV immediately</label>
+            <label class="quiz-option"><input type="radio" name="gfq18" value="b"> Invest heavily in aftercare</label>
+            <label class="quiz-option"><input type="radio" name="gfq18" value="c"> Move to the next fan</label>
+            <label class="quiz-option"><input type="radio" name="gfq18" value="d"> Log off for a break</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>19. What should you do BEFORE opening the Unread tab?</p>
+            <label class="quiz-option"><input type="radio" name="gfq19" value="a"> Send a mass message</label>
+            <label class="quiz-option"><input type="radio" name="gfq19" value="b"> Reply to the first fan you see</label>
+            <label class="quiz-option"><input type="radio" name="gfq19" value="c"> Read handoff notes from the previous chatter</label>
+            <label class="quiz-option"><input type="radio" name="gfq19" value="d"> Check your personal messages</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-correct="c">
+            <p>20. Which word should you NEVER use in model messages?</p>
+            <label class="quiz-option"><input type="radio" name="gfq20" value="a"> Love</label>
+            <label class="quiz-option"><input type="radio" name="gfq20" value="b"> Beautiful</label>
+            <label class="quiz-option"><input type="radio" name="gfq20" value="c"> Meet</label>
+            <label class="quiz-option"><input type="radio" name="gfq20" value="d"> Money</label>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="check-answers-btn" onclick="checkQuiz(this)">Submit Final Quiz</button>
+          <div class="quiz-score"></div>
+        </div>
       </div>
     </div>
 
-    <!-- M5.2 -->
+    <!-- ======================== G-3: FIRST SUPERVISED SHIFT ======================== -->
     <div class="module">
       <div class="module-header">
-        <div class="module-title"><span class="icon">🚀</span> First Supervised Shift</div>
+        <div class="module-title"><span class="icon">&#128640;</span> First Supervised Shift</div>
         <div class="module-meta">
-          <span class="module-duration">4-6 hours</span>
-          <span class="module-badge badge-soon">Coming Soon</span>
-          <span class="toggle-arrow">▶</span>
+          <span class="module-duration">4&ndash;6 hours</span>
+          <span class="module-badge badge-active">Practice</span>
+          <span class="toggle-arrow">&#9654;</span>
         </div>
       </div>
       <div class="module-content">
-        <p>Your first real shift. Chat with actual fans while your Team Leader monitors and guides you.</p>
-        <h4>How it works</h4>
+        <p>Congratulations &mdash; you passed the final quiz! Now it's time to chat with <strong>real fans</strong> for the first time, with your Team Leader watching and guiding you.</p>
+
+        <h4>How It Works</h4>
         <ul>
-          <li>Your TL assigns you 1-2 models to start (not the full workload)</li>
-          <li>Follow your Shift Start Checklist</li>
-          <li>Use scripts for every interaction</li>
-          <li>Your Team Leader reviews your chats in real-time and gives corrections</li>
+          <li>Your TL assigns you <strong>1&ndash;2 models</strong> to start (not the full workload)</li>
+          <li>Follow your <strong>Shift Start Checklist</strong> exactly</li>
+          <li>Use scripts for <strong>every interaction</strong></li>
+          <li>Your TL reviews your chats in <strong>real-time</strong> and gives corrections</li>
           <li>Focus on: staying in character, using scripts correctly, reply speed, proper fan classification</li>
-          <li>Don't worry about sales numbers yet — focus on doing it RIGHT</li>
-          <li>At the end: do a proper handoff with notes for every active conversation</li>
+          <li><strong>Don't worry about sales numbers yet</strong> &mdash; focus on doing it RIGHT</li>
+          <li>At the end: do a <strong>proper handoff</strong> with notes for every active conversation</li>
         </ul>
+
+        <h4>Your Supervised Shift Checklist</h4>
+        <ul>
+          <li>&#9744; Logged into Infloww &mdash; assigned model(s) open</li>
+          <li>&#9744; Read handoff notes from previous chatter</li>
+          <li>&#9744; Opened Unread tab &mdash; identified priority fans</li>
+          <li>&#9744; Classified fans: new subs vs time wasters</li>
+          <li>&#9744; Used scripts for all messages (80% scripts, 20% personalization)</li>
+          <li>&#9744; Stayed in character for every message</li>
+          <li>&#9744; Kept reply time under 2 minutes</li>
+          <li>&#9744; Logged fan info in notes (age, job, hobbies)</li>
+          <li>&#9744; Handled at least one NR wave (if needed)</li>
+          <li>&#9744; Wrote handoff notes for every active conversation</li>
+          <li>&#9744; Received feedback from TL</li>
+        </ul>
+
+        <div class="remember-box">
+          <span class="remember-icon">&#128640;</span>
+          Your first shift is about doing it <strong>RIGHT</strong>, not about numbers. Speed and sales will come naturally as you practice. Focus on <strong>scripts, character, and notes</strong>.
+        </div>
+
+        <div class="pro-tip" style="margin-top: 16px;">
+          <strong>&#128161; Pro Tip:</strong> Keep this school page open on a second tab during your first shifts. You can quickly reference the glossary, banned topics list, or the annotated chat examples whenever you're unsure.
+        </div>
       </div>
     </div>
 
@@ -1530,28 +2934,120 @@
   <img src="logo.png" alt="Chatting Wizard" class="footer-logo">
   <p>Chatting Wizard School — Internal Training Platform</p>
   <p style="margin-top:4px;">© 2026 Chatting Wizard. All rights reserved.</p>
+  <button class="reset-progress-btn" onclick="resetProgress()">Reset My Progress</button>
 </div>
 
 <script>
+// ============ localStorage Progress System ============
+var STORAGE_KEY = 'cw-school-progress';
+
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { quizzes: {}, completed: {} }; }
+  catch(e) { return { quizzes: {}, completed: {} }; }
+}
+function saveProgress(data) { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+
 // Module expand/collapse
 document.querySelectorAll('.module').forEach(function(mod) {
-  mod.removeAttribute('onclick');
   var header = mod.querySelector('.module-header');
   if (header) {
     header.style.cursor = 'pointer';
-    header.addEventListener('click', function() {
-      mod.classList.toggle('open');
-    });
+    header.addEventListener('click', function() { mod.classList.toggle('open'); });
   }
   var content = mod.querySelector('.module-content');
-  if (content) {
-    content.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-  }
+  if (content) { content.addEventListener('click', function(e) { e.stopPropagation(); }); }
 });
 
-// Quiz checking (multiple choice)
+// Initialize progress system: module IDs, checkboxes, progress bars, restore state
+(function initProgress() {
+  var prefixMap = { foundations: 'f', tools: 't', journey: 'j', advanced: 'a', golive: 'g', ongoing: 'o' };
+  var progress = loadProgress();
+  var sections = document.querySelectorAll('.day-section');
+
+  sections.forEach(function(section) {
+    var prefix = prefixMap[section.id] || section.id.charAt(0);
+    var modules = section.querySelectorAll('.module');
+    var completedCount = 0;
+
+    modules.forEach(function(mod, i) {
+      var moduleId = prefix + '-' + (i + 1);
+      mod.setAttribute('data-module-id', moduleId);
+
+      // Add completion checkbox to module content
+      var content = mod.querySelector('.module-content');
+      if (content) {
+        var check = document.createElement('label');
+        check.className = 'completion-check';
+        check.innerHTML = '<input type="checkbox" data-module="' + moduleId + '"> I have completed this module';
+        content.appendChild(check);
+
+        var cb = check.querySelector('input');
+        if (progress.completed[moduleId]) {
+          cb.checked = true;
+          mod.classList.add('module-complete');
+          completedCount++;
+        }
+        cb.addEventListener('change', function() {
+          var p = loadProgress();
+          if (this.checked) { p.completed[moduleId] = true; mod.classList.add('module-complete'); }
+          else { delete p.completed[moduleId]; mod.classList.remove('module-complete'); }
+          saveProgress(p);
+          updateProgressBars();
+        });
+      }
+
+      // Restore score badge if quiz was previously completed
+      var quizData = progress.quizzes[moduleId];
+      if (quizData) { addScoreBadge(mod, quizData.score, quizData.passed); }
+    });
+
+    // Add progress bar after day-outcome
+    var outcome = section.querySelector('.day-outcome');
+    if (outcome) {
+      var pct = modules.length > 0 ? Math.round(completedCount / modules.length * 100) : 0;
+      var bar = document.createElement('div');
+      bar.className = 'progress-bar';
+      bar.setAttribute('data-section', section.id);
+      bar.innerHTML = '<span class="progress-fill" style="width:' + pct + '%"></span>' +
+        '<span class="progress-text">' + completedCount + ' of ' + modules.length + ' completed</span>';
+      outcome.parentNode.insertBefore(bar, outcome.nextSibling);
+    }
+  });
+})();
+
+function addScoreBadge(mod, scoreText, passed) {
+  var meta = mod.querySelector('.module-meta');
+  if (!meta) return;
+  var existing = meta.querySelector('.score-badge');
+  if (existing) existing.remove();
+  var arrow = meta.querySelector('.toggle-arrow');
+  var badge = document.createElement('span');
+  badge.className = 'score-badge ' + (passed ? 'score-pass' : 'score-fail');
+  badge.textContent = scoreText;
+  if (arrow) meta.insertBefore(badge, arrow);
+  else meta.appendChild(badge);
+}
+
+function updateProgressBars() {
+  var progress = loadProgress();
+  document.querySelectorAll('.progress-bar').forEach(function(bar) {
+    var sectionId = bar.getAttribute('data-section');
+    var section = document.getElementById(sectionId);
+    if (!section) return;
+    var modules = section.querySelectorAll('.module');
+    var completed = 0;
+    modules.forEach(function(mod) {
+      if (progress.completed[mod.getAttribute('data-module-id')]) completed++;
+    });
+    var pct = modules.length > 0 ? Math.round(completed / modules.length * 100) : 0;
+    var fill = bar.querySelector('.progress-fill');
+    var text = bar.querySelector('.progress-text');
+    if (fill) fill.style.width = pct + '%';
+    if (text) text.textContent = completed + ' of ' + modules.length + ' completed';
+  });
+}
+
+// Quiz checking with localStorage persistence
 function checkQuiz(btn) {
   var box = btn.closest('.activity-box');
   var questions = box.querySelectorAll('.quiz-question');
@@ -1563,57 +3059,51 @@ function checkQuiz(btn) {
     var selected = q.querySelector('input[type="radio"]:checked');
     var feedback = q.querySelector('.quiz-feedback');
     var options = q.querySelectorAll('.quiz-option');
-
-    // Reset styles
-    options.forEach(function(opt) {
-      opt.classList.remove('correct', 'wrong');
-    });
+    options.forEach(function(opt) { opt.classList.remove('correct', 'wrong'); });
 
     if (selected) {
       var label = selected.closest('.quiz-option');
       if (selected.value === correctAnswer) {
         correct++;
         label.classList.add('correct');
-        if (feedback) {
-          feedback.textContent = '\u2713 Correct!';
-          feedback.className = 'quiz-feedback show correct-fb';
-        }
+        if (feedback) { feedback.textContent = '\u2713 Correct!'; feedback.className = 'quiz-feedback show correct-fb'; }
       } else {
         label.classList.add('wrong');
-        // Highlight correct answer
         options.forEach(function(opt) {
           var radio = opt.querySelector('input[type="radio"]');
-          if (radio && radio.value === correctAnswer) {
-            opt.classList.add('correct');
-          }
+          if (radio && radio.value === correctAnswer) opt.classList.add('correct');
         });
-        if (feedback) {
-          feedback.textContent = '\u2717 Incorrect';
-          feedback.className = 'quiz-feedback show wrong-fb';
-        }
+        if (feedback) { feedback.textContent = '\u2717 Incorrect'; feedback.className = 'quiz-feedback show wrong-fb'; }
       }
     } else {
-      if (feedback) {
-        feedback.textContent = '\u26A0 Please select an answer';
-        feedback.className = 'quiz-feedback show wrong-fb';
-      }
+      if (feedback) { feedback.textContent = '\u26A0 Please select an answer'; feedback.className = 'quiz-feedback show wrong-fb'; }
     }
   });
 
-  // Show score
   var scoreEl = box.querySelector('.quiz-score');
+  var pct = Math.round((correct / total) * 100);
   if (scoreEl) {
-    var pct = Math.round((correct / total) * 100);
     var msg = 'Score: ' + correct + ' / ' + total + ' (' + pct + '%)';
-    if (correct === total) msg += ' \u2014 Perfect!';
-    else if (pct >= 80) msg += ' \u2014 Great job! You passed.';
-    else msg += ' \u2014 Review the material and try again.';
+    if (correct === total) msg += ' — Perfect!';
+    else if (pct >= 80) msg += ' — Great job! You passed.';
+    else msg += ' — Review the material and try again.';
     scoreEl.textContent = msg;
     scoreEl.className = 'quiz-score show ' + (pct >= 80 ? 'pass' : 'fail');
   }
-
   btn.disabled = true;
   btn.textContent = 'Submitted \u2713';
+
+  // Save score to localStorage
+  var mod = btn.closest('.module');
+  if (mod) {
+    var moduleId = mod.getAttribute('data-module-id');
+    if (moduleId) {
+      var p = loadProgress();
+      p.quizzes[moduleId] = { score: correct + '/' + total, passed: pct >= 80, pct: pct, timestamp: new Date().toISOString() };
+      saveProgress(p);
+      addScoreBadge(mod, correct + '/' + total, pct >= 80);
+    }
+  }
 }
 
 // Reveal answers (scenario exercise)
@@ -1628,45 +3118,11 @@ function revealAnswer(btn) {
   }
 }
 
-// Calculator check
-function checkCalcs(btn) {
-  var box = btn.closest('.activity-box');
-  var answers = {
-    'calc1a': 40,
-    'calc1b': 0.80,
-    'calc2': 10
-  };
-  var allCorrect = true;
-
-  Object.keys(answers).forEach(function(id) {
-    var input = box.querySelector('#' + id) || document.getElementById(id);
-    if (!input) return;
-    var val = parseFloat(input.value);
-    if (isNaN(val)) {
-      input.classList.remove('correct');
-      input.classList.add('wrong');
-      allCorrect = false;
-      return;
-    }
-    if (Math.abs(val - answers[id]) < 0.02) {
-      input.classList.remove('wrong');
-      input.classList.add('correct');
-    } else {
-      input.classList.remove('correct');
-      input.classList.add('wrong');
-      allCorrect = false;
-    }
-  });
-
-  var scoreEl = box.querySelector('.quiz-score');
-  if (scoreEl) {
-    if (allCorrect) {
-      scoreEl.textContent = '\u2713 All correct! Great math skills.';
-      scoreEl.className = 'quiz-score show pass';
-    } else {
-      scoreEl.textContent = '\u2717 Some answers are wrong. Hint: $50 \u00D7 0.80 = $40 net. $40 \u00D7 0.02 = $0.80 for you.';
-      scoreEl.className = 'quiz-score show fail';
-    }
+// Reset all progress
+function resetProgress() {
+  if (confirm('Reset all your progress? This will clear quiz scores and completion status.')) {
+    localStorage.removeItem(STORAGE_KEY);
+    location.reload();
   }
 }
 </script>

@@ -357,6 +357,7 @@ body {
   .term-grid { grid-template-columns: 1fr; }
   .do-dont { grid-template-columns: 1fr; }
   .glossary-grid { grid-template-columns: 1fr; }
+  .progress-bar { margin-left: 0; }
 }
 
 /* ============================================================
@@ -695,6 +696,98 @@ body {
   color: #5b21b6;
 }
 .pro-tip strong { color: #7c3aed; }
+
+/* ============================================================
+   Progress System — Checkboxes, Bars, Score Badges
+   ============================================================ */
+
+/* Module complete state */
+.module.module-complete {
+  border-left: 4px solid #0e946a;
+}
+.module.module-complete .module-title::before {
+  content: "\2713  ";
+  color: #0e946a;
+  font-weight: 900;
+}
+
+/* Completion checkbox */
+.completion-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cw-dark);
+  cursor: pointer;
+  user-select: none;
+}
+.completion-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0e946a;
+  cursor: pointer;
+}
+
+/* Progress bar */
+.progress-bar {
+  margin: 12px 0 16px 66px;
+  background: #e5e7eb;
+  border-radius: 8px;
+  height: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #0e946a 0%, #34d399 100%);
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+.progress-text {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text);
+  z-index: 1;
+}
+
+/* Score badge on module header */
+.score-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.score-pass { background: #d1fae5; color: #0e946a; }
+.score-fail { background: #fee2e2; color: #dc2626; }
+
+/* Reset progress button */
+.reset-progress-btn {
+  background: none;
+  border: 1.5px solid #e5e7eb;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+.reset-progress-btn:hover { border-color: #dc2626; color: #dc2626; }
 
 /* Memory Aid */
 .memory-aid {
