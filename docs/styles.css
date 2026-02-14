@@ -331,7 +331,8 @@ body {
 
 /* --- Video player --- */
 .video-container {
-  margin: 16px 0 8px;
+  margin: 16px auto 8px;
+  max-width: 640px;
   border-radius: 12px;
   overflow: hidden;
   background: #000;
@@ -342,6 +343,17 @@ body {
   width: 100%;
   display: block;
   border-radius: 10px;
+}
+/* Videos directly inside module-content (no wrapper) */
+.module-content > video {
+  width: 100%;
+  max-width: 640px;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 20px rgba(11,125,186,0.12);
+  background: #000;
 }
 .module-badge.badge-live {
   background: #16a34a;
