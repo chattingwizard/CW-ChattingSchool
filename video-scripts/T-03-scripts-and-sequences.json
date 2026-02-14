@@ -1,0 +1,144 @@
+{
+  "title": "T-03: Scripts & Sequences 101",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Scripts & Sequences",
+      "subtitle": "T-03 — Tools & Scripts",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "Scripts are your main weapon. Eighty percent of your messages come from scripts. They are pre-written message chains designed to move a fan toward a sale. Let's break down how they work."
+    },
+    {
+      "type": "wb-content",
+      "heading": "What Scripts Are",
+      "layout": "definition-cards",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "Script",
+          "definition": "Pre-written message chain that predicts fan responses and guides conversations",
+          "color": "#0b7dba",
+          "trigger": "Script"
+        },
+        {
+          "type": "definition",
+          "term": "Sequence",
+          "definition": "Multiple scripts connected together to move a fan through the full journey",
+          "color": "#8e44ad",
+          "trigger": "Sequence"
+        },
+        {
+          "type": "definition",
+          "term": "Command",
+          "definition": "Type /name in Infloww to load a script — like /n, /s, or /price",
+          "color": "#27ae60",
+          "trigger": "Command"
+        },
+        {
+          "type": "highlight-box",
+          "value": "80/20",
+          "secondary": "80% scripts, 20% your personal touch",
+          "color": "#e67e22",
+          "trigger": "twenty"
+        }
+      ],
+      "narration": "A Script is a pre-written message chain. It predicts what the fan will say, and gives you the perfect reply. A Sequence is when you connect multiple scripts together. This moves a fan through the full journey, from hello to sale. You activate a script by typing a Command in Infloww. For example, slash n for new subscriber, slash s for sexting, slash price for a price objection. The golden rule is eighty twenty. Eighty percent of your messages are scripts. The other twenty percent is your personal touch. The fan's name, details, the model's voice."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Types of Scripts",
+      "layout": "icon-grid",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "chat",
+          "term": "Journey Scripts",
+          "description": "Welcome, Rapport, Teasing Bridge, Sexting, Aftercare",
+          "color": "#0b7dba",
+          "trigger": "Journey"
+        },
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "Objection Scripts",
+          "description": "Handle 'too expensive', 'no money', 'maybe later'",
+          "color": "#e67e22",
+          "trigger": "Objection"
+        },
+        {
+          "type": "icon-card",
+          "icon": "shield",
+          "term": "Resistance Scripts",
+          "description": "Fan won't go sexual, fan is skeptical",
+          "color": "#e74c3c",
+          "trigger": "Resistance"
+        },
+        {
+          "type": "icon-card",
+          "icon": "calendar",
+          "term": "Situational Scripts",
+          "description": "Birthday, holidays, special events",
+          "color": "#8e44ad",
+          "trigger": "Situational"
+        },
+        {
+          "type": "callout",
+          "text": "There's a script for almost every situation. Use them.",
+          "icon": "check",
+          "color": "#27ae60",
+          "trigger": "situation"
+        }
+      ],
+      "narration": "There are five types of scripts. Journey Scripts guide the fan through the main path. Welcome, Rapport, Teasing Bridge, Sexting, and Aftercare. Objection Scripts handle price complaints. When a fan says too expensive, or no money, or maybe later, you have a script for that. Resistance Scripts are for when a fan won't go sexual or is being skeptical. Situational Scripts cover special moments like birthdays or holidays. And No Response scripts are for when a fan goes silent after you dropped a pay per view. There's a script for almost every situation. Use them."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Sequencing vs GFE",
+      "layout": "summary-row",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "check",
+          "label": "Sequencing",
+          "text": "Scripts step by step. 30 fans per shift. Consistent results.",
+          "color": "#27ae60",
+          "trigger": "Sequencing"
+        },
+        {
+          "type": "summary-card",
+          "icon": "x",
+          "label": "GFE — Freestyle",
+          "text": "No scripts. 5 fans per shift. Burnout. Low earnings.",
+          "color": "#e74c3c",
+          "trigger": "Freestyle"
+        },
+        {
+          "type": "highlight-box",
+          "value": "30 vs 5",
+          "secondary": "Fans served per shift: Sequencing wins every time",
+          "color": "#0b7dba",
+          "trigger": "thirty"
+        },
+        {
+          "type": "callout",
+          "text": "Every conversation has one goal — a sale. Scripts get you there.",
+          "icon": "dollar",
+          "color": "#f39c12",
+          "trigger": "goal"
+        }
+      ],
+      "narration": "Now let's compare two approaches. Sequencing means following scripts step by step. You serve thirty fans per shift. Your results are consistent. Your earnings grow. G F E, or Girlfriend Experience, means chatting freestyle, no scripts. You serve five fans per shift, you burn out, your earnings are low. Thirty fans versus five fans. Sequencing wins every time. Remember, every conversation has one goal, a sale. Scripts get you there."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Model Personas",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "Quick check. What is the eighty twenty rule? Pause. Eighty percent of your messages come from scripts. Twenty percent is your personal touch, the fan's name, their details, the model's voice. That's how you stay efficient and still feel human. Good. Next, let's talk about model personas. Because when you chat, you ARE the model."
+    }
+  ]
+}

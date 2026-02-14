@@ -1,0 +1,148 @@
+{
+  "title": "T-06: The 48-Hour Rule",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "The 48-Hour Rule",
+      "subtitle": "T-06 — Tools & Scripts",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "This is one of the most important strategic concepts you will learn. It changes how you think about every single fan in your inbox. Listen carefully."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The Core Idea",
+      "layout": "definition-cards",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "highlight-box",
+          "value": "48–72h",
+          "secondary": "The golden window after a fan subscribes",
+          "color": "#e67e22",
+          "trigger": "seventy"
+        },
+        {
+          "type": "definition",
+          "term": "New Subscriber",
+          "definition": "First 48–72 hours. Most excited, most likely to buy. HIGHEST priority.",
+          "color": "#27ae60",
+          "trigger": "Subscriber"
+        },
+        {
+          "type": "definition",
+          "term": "Time Waster",
+          "definition": "72+ hours, $0 spent. Likelihood of buying drops every day.",
+          "color": "#e74c3c",
+          "trigger": "Waster"
+        },
+        {
+          "type": "callout",
+          "text": "New subs get the Welcome Journey. Time wasters get deals and bundles.",
+          "icon": "dollar",
+          "color": "#0b7dba",
+          "trigger": "bundles"
+        }
+      ],
+      "narration": "The first forty eight to seventy two hours after a fan subscribes is the golden window. This is when they are most excited and most likely to buy. We call this fan a New Subscriber. Highest priority. After seventy two hours with zero dollars spent, the fan becomes a Time Waster. Their likelihood of buying drops every day. New subs get the full Welcome Journey with scripts. Time wasters get deals and bundles."
+    },
+    {
+      "type": "wb-content",
+      "heading": "New Sub Strategy",
+      "layout": "flow-chain",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "star",
+          "label": "Full Journey",
+          "value": "Welcome → Rapport → TB → Sexting",
+          "trigger": "Journey"
+        },
+        {
+          "type": "flow-node",
+          "icon": "dollar",
+          "label": "Lower Prices",
+          "value": "Welcome prices are intentionally lower",
+          "trigger": "Prices"
+        },
+        {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "Strong Aftercare",
+          "value": "First aftercare is the MOST important",
+          "trigger": "Aftercare"
+        },
+        {
+          "type": "highlight-box",
+          "value": "#1",
+          "secondary": "Always reply to new subs FIRST in your inbox",
+          "color": "#27ae60",
+          "trigger": "First"
+        },
+        {
+          "type": "callout",
+          "text": "The aftercare after a FIRST sexting is more important than after a tenth.",
+          "icon": "heart",
+          "color": "#8e44ad",
+          "trigger": "tenth"
+        }
+      ],
+      "narration": "For a new subscriber, you go all in. Full Welcome Journey. Welcome, Rapport, Teasing Bridge, Sexting. Use the lower welcome prices. They are intentionally lower because we prioritize conversion, getting the first sale, over max revenue per sale. After sexting, invest heavily in aftercare. The aftercare after a first sexting is more important than after a tenth sexting. This is where the long-term connection is built. Always reply to new subs first in your inbox. They are priority number one."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Time Waster — Progressive Approach",
+      "layout": "icon-grid",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "calendar",
+          "term": "3–5 Days, $0",
+          "description": "Still try light rapport + casual content mention",
+          "color": "#e67e22",
+          "trigger": "five"
+        },
+        {
+          "type": "icon-card",
+          "icon": "trending",
+          "term": "5–10 Days, $0",
+          "description": "Less rapport, start mixing in soft offers",
+          "color": "#e74c3c",
+          "trigger": "ten"
+        },
+        {
+          "type": "icon-card",
+          "icon": "dollar",
+          "term": "10+ Days, $0",
+          "description": "Straight to bundles and deals. No more rapport.",
+          "color": "#e74c3c",
+          "trigger": "bundles"
+        },
+        {
+          "type": "stat",
+          "value": "$5",
+          "label": "Some revenue > no revenue",
+          "color": "#27ae60",
+          "trigger": "revenue"
+        },
+        {
+          "type": "callout",
+          "text": "The longer they go without spending, the less time you invest.",
+          "icon": "target",
+          "color": "#0b7dba",
+          "trigger": "invest"
+        }
+      ],
+      "narration": "The approach to time wasters is progressive. Three to five days with zero spent? Still try some light rapport plus a casual content mention. They might just be slow to warm up. Five to ten days with zero spent? Less rapport. Start mixing in soft offers. I made something special today. Don't invest more than a few minutes. Ten plus days with zero spent? Go straight to bundles and deals. No more rapport. They had their chance. The key idea is, some revenue is better than no revenue. Even a five dollar sale matters. The longer they go without spending, the less time you invest."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Tools & Scripts Complete!",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "Quick check. Two fans message you at the same time. One subscribed one hour ago. The other subscribed two weeks ago and has spent zero dollars. Who do you reply to first? Pause. The one who subscribed one hour ago. That's a new subscriber, your highest priority. The two-week fan is a time waster. They get a quick bundle offer, not your best effort. Remember, every conversation has one goal, a sale. And your time is your most valuable tool. Spend it where it counts."
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "title": "T-05: The Journey Overview + PPV Ladder",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "The Fan Journey",
+      "subtitle": "T-05 — Tools & Scripts",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "Every fan follows a journey. You guide them through it step by step, using scripts. This is the big picture of how every conversation works, from the first hello to the first sale."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The Journey — Phase by Phase",
+      "layout": "flow-chain",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "chat",
+          "label": "Welcome",
+          "value": "First message — make them feel special",
+          "trigger": "Welcome"
+        },
+        {
+          "type": "flow-node",
+          "icon": "user",
+          "label": "Rapport",
+          "value": "Ask questions, build connection",
+          "trigger": "Rapport"
+        },
+        {
+          "type": "flow-node",
+          "icon": "heart",
+          "label": "Teasing Bridge",
+          "value": "Friendly → flirty transition",
+          "trigger": "Bridge"
+        },
+        {
+          "type": "flow-node",
+          "icon": "dollar",
+          "label": "Sexting + PPV",
+          "value": "The selling phase — revenue here",
+          "trigger": "Sexting"
+        },
+        {
+          "type": "flow-node",
+          "icon": "star",
+          "label": "Aftercare",
+          "value": "Make them feel valued — retention",
+          "trigger": "Aftercare"
+        },
+        {
+          "type": "callout",
+          "text": "Every phase has scripts. You never improvise the structure.",
+          "icon": "check",
+          "color": "#27ae60",
+          "trigger": "improvise"
+        }
+      ],
+      "narration": "Here's the full journey. Phase one: Welcome. The first message to a new subscriber. Make them feel special. Use their name. Phase two: Rapport. Ask questions, gather info, build a personal connection. Log everything in fan notes. Phase three: Teasing Bridge. This is the transition from friendly to flirty. You build anticipation for content. Phase four: Sexting and P P V drops. This is the selling phase. This is where revenue is generated. Phase five: Aftercare. After the session, you make the fan feel valued so they come back and buy again. Every phase has scripts. You never improvise the structure."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The PPV Ladder",
+      "layout": "definition-cards",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "PPV 0 — FREE",
+          "definition": "A free teaser to hook interest. No payment needed.",
+          "color": "#27ae60",
+          "trigger": "free"
+        },
+        {
+          "type": "definition",
+          "term": "PPV 1 — $5 to $15",
+          "definition": "THE MOST IMPORTANT SALE. Breaks the payment barrier.",
+          "color": "#0b7dba",
+          "trigger": "fifteen"
+        },
+        {
+          "type": "definition",
+          "term": "PPV 2 — $20 to $35",
+          "definition": "Fan is buying. Build momentum with hotter content.",
+          "color": "#8e44ad",
+          "trigger": "thirty"
+        },
+        {
+          "type": "definition",
+          "term": "PPV 3+ — $35 to $50+",
+          "definition": "Premium content for invested fans.",
+          "color": "#e67e22",
+          "trigger": "fifty"
+        },
+        {
+          "type": "highlight-box",
+          "value": "PPV 1",
+          "secondary": "Once they pay the first time, they're much more likely to pay again",
+          "color": "#0b7dba",
+          "trigger": "first"
+        }
+      ],
+      "narration": "Content is priced using a P P V Ladder. P P V zero is free. A teaser to hook interest. No payment needed. P P V one is five to fifteen dollars. This is the most important sale. It breaks the payment barrier. Once a fan pays for the first time, they are much more likely to pay again. P P V two is twenty to thirty five dollars. The fan is buying. Build momentum with hotter content. And P P V three and above is thirty five to fifty dollars or more. Premium content for fans who are fully invested."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The Fast-Track Rule",
+      "layout": "summary-row",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "check",
+          "label": "Fast-Track",
+          "text": "Fan is sexual in first 3 messages → skip Rapport → go to Teasing Bridge",
+          "color": "#27ae60",
+          "trigger": "sexual"
+        },
+        {
+          "type": "summary-card",
+          "icon": "x",
+          "label": "Don't Kill the Vibe",
+          "text": "Fan says 'I wanna see more of you' — don't ask 'where are you from?'",
+          "color": "#e74c3c",
+          "trigger": "vibe"
+        },
+        {
+          "type": "callout",
+          "text": "Read the room. If they're already excited, don't slow them down.",
+          "icon": "target",
+          "color": "#e67e22",
+          "trigger": "room"
+        },
+        {
+          "type": "stat",
+          "value": "3",
+          "label": "messages — if sexual, fast-track",
+          "color": "#0b7dba",
+          "trigger": "three"
+        }
+      ],
+      "narration": "There's one important exception to the journey order. The Fast-Track Rule. If a fan is sexual in their first three messages, skip Rapport and go straight to Teasing Bridge. They're already excited. Don't slow them down with questions. Don't kill the vibe. If a fan says, I wanna see more of you, don't respond with, so where are you from? That kills the energy. Read the room. If they're already excited, don't slow them down. Three messages. If they're sexual, fast-track."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: The 48-Hour Rule",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "Quick check. What is the most important sale in the P P V ladder? Pause. P P V one. Five to fifteen dollars. It breaks the payment barrier. Once a fan pays for the first time, they are much more likely to pay again. Every conversation has one goal, a sale. Good. Next, let's learn the forty eight hour rule. It changes how you think about every fan in your inbox."
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "title": "T-02: Infloww Walkthrough",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Infloww Walkthrough",
+      "subtitle": "T-02 — Tools & Scripts",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "Infloww is the platform where you work every day. Think of it as a super-powered messaging app built for OnlyFans chatters. Let's walk through every part of it."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The Main Areas",
+      "layout": "icon-grid",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "chat",
+          "term": "Messages Pro",
+          "description": "Where you read and reply to fans — 95% of your time",
+          "color": "#0b7dba",
+          "trigger": "Messages"
+        },
+        {
+          "type": "icon-card",
+          "icon": "eye",
+          "term": "Fan Insights",
+          "description": "Subscription date, total spent, highest purchase",
+          "color": "#27ae60",
+          "trigger": "Insights"
+        },
+        {
+          "type": "icon-card",
+          "icon": "user",
+          "term": "Fan Notes",
+          "description": "Where YOU record age, job, hobbies, preferences",
+          "color": "#8e44ad",
+          "trigger": "Notes"
+        },
+        {
+          "type": "icon-card",
+          "icon": "film",
+          "term": "Vault Pro",
+          "description": "Model's content library — organized in themed folders",
+          "color": "#e67e22",
+          "trigger": "Vault"
+        },
+        {
+          "type": "callout",
+          "text": "NEVER use the All Media folder. Always send from themed folders.",
+          "icon": "x",
+          "color": "#e74c3c",
+          "trigger": "Never"
+        }
+      ],
+      "narration": "Here are the main areas you need to know. Messages Pro is where you read and reply to fan messages. You'll spend ninety five percent of your time here. Fan Insights shows you the fan's subscription date, total amount spent, and highest purchase. This is critical. Fan Notes is where you write down everything you learn about each fan. Age, job, hobbies, preferences. Vault Pro is the content library. All the model's photos and videos, organized in themed folders. Never use the All Media folder. Always pick from the correct themed folder."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Before You Reply — The 3-Check Rule",
+      "layout": "flow-chain",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "flow-node",
+          "icon": "eye",
+          "label": "Fan Insights",
+          "value": "How long? How much spent?",
+          "trigger": "Insights"
+        },
+        {
+          "type": "flow-node",
+          "icon": "user",
+          "label": "Fan Notes",
+          "value": "What do you know?",
+          "trigger": "Notes"
+        },
+        {
+          "type": "flow-node",
+          "icon": "film",
+          "label": "PPV History",
+          "value": "What did they buy?",
+          "trigger": "History"
+        },
+        {
+          "type": "highlight-box",
+          "value": "5 sec",
+          "secondary": "This check takes 5 seconds and changes everything",
+          "color": "#27ae60",
+          "trigger": "seconds"
+        },
+        {
+          "type": "callout",
+          "text": "Same message from a fan can mean two completely different approaches.",
+          "icon": "target",
+          "color": "#0b7dba",
+          "trigger": "different"
+        }
+      ],
+      "narration": "Before you reply to any fan, you must check three things. First, Fan Insights. How long have they been subscribed? How much have they spent? Second, Fan Notes. What do you already know about this person? Third, PPV History. What content have they already bought? Don't send duplicates. This whole check takes five seconds. But it changes everything about your reply. The same message from a fan can mean two completely different approaches depending on what Fan Insights tells you."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Other Key Tools",
+      "layout": "definition-cards",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "Mass Messages",
+          "definition": "Send to many fans at once. EXCLUDE: Forbidden, TW, Muted, Whale, Custom",
+          "color": "#e67e22",
+          "trigger": "Mass"
+        },
+        {
+          "type": "definition",
+          "term": "Employee Metrics",
+          "definition": "Golden Ratio, Unlock Ratio, Response Time — your TL reviews these",
+          "color": "#0b7dba",
+          "trigger": "Metrics"
+        },
+        {
+          "type": "definition",
+          "term": "Built-in Translator",
+          "definition": "For fans who don't speak English — translate before replying",
+          "color": "#8e44ad",
+          "trigger": "Translator"
+        },
+        {
+          "type": "callout",
+          "text": "Always check Fan Insights BEFORE you type. Every time. No exceptions.",
+          "icon": "check",
+          "color": "#27ae60",
+          "trigger": "exceptions"
+        }
+      ],
+      "narration": "A few more tools you need to know. Mass Messages let you send to many fans at once. But always exclude these tags: Forbidden, Time Waster, Muted, Whale, and Custom. Employee Metrics show your performance. Golden Ratio, Unlock Ratio, and Response Time. Your Team Leader reviews these. There's also a built-in Translator for fans who don't speak English. Remember, always check Fan Insights before you type. Every time. No exceptions."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: Scripts & Sequences 101",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "Quick check. You open a fan's message. What are the three things you check before replying? Pause. Fan Insights, Fan Notes, and PPV History. These three checks take five seconds and completely change your approach. Good. Next up, let's learn about scripts, the tool you'll use more than anything else."
+    }
+  ]
+}

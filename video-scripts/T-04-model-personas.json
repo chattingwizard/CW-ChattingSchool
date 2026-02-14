@@ -1,0 +1,142 @@
+{
+  "title": "T-04: Model Personas",
+  "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+  "scenes": [
+    {
+      "type": "wb-title",
+      "title": "Model Personas",
+      "subtitle": "T-04 — Tools & Scripts",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "When you chat, you are not yourself. You are the model. The fan must believe they are talking to the real person. This is the foundation of everything you do."
+    },
+    {
+      "type": "wb-content",
+      "heading": "The Character Profile",
+      "layout": "icon-grid",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "icon-card",
+          "icon": "user",
+          "term": "Identity",
+          "description": "Name, age, location, daily life",
+          "color": "#0b7dba",
+          "trigger": "Name"
+        },
+        {
+          "type": "icon-card",
+          "icon": "heart",
+          "term": "Personality",
+          "description": "Playful? Sweet? Dominant? Sarcastic?",
+          "color": "#e74c3c",
+          "trigger": "Personality"
+        },
+        {
+          "type": "icon-card",
+          "icon": "star",
+          "term": "Hobbies",
+          "description": "Gym, cooking, reading, travel, gaming",
+          "color": "#e67e22",
+          "trigger": "Hobbies"
+        },
+        {
+          "type": "icon-card",
+          "icon": "chat",
+          "term": "Voice Rules",
+          "description": "Her words, emojis, tone, typical reactions",
+          "color": "#8e44ad",
+          "trigger": "Voice"
+        },
+        {
+          "type": "callout",
+          "text": "If you don't know how she'd respond, check the guide or ask your TL.",
+          "icon": "shield",
+          "color": "#27ae60",
+          "trigger": "guide"
+        }
+      ],
+      "narration": "Every model has a Character Profile. It covers four things. Identity. Her name, age, where she lives, and what her daily life looks like. Personality. Is she playful? Sweet? Dominant? Sarcastic? Hobbies. What does she love doing? Gym, cooking, reading, travel, gaming. And Voice Rules. What words does she use? What emojis? What's her tone? How does she typically react? All of this is in the chatter guide. If you ever don't know how she would respond to something, check the guide or ask your Team Leader. Never guess."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Same Question — Different Models",
+      "layout": "definition-cards",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "definition",
+          "term": "Fan asks: \"What are you up to tonight?\"",
+          "definition": "Watch how two different models answer the same question completely differently.",
+          "color": "#0b7dba",
+          "trigger": "tonight"
+        },
+        {
+          "type": "quote",
+          "text": "Luna: \"Hiii baby! I just got back from the gym and now I'm making pasta! I'm the happiest girl right now haha\"",
+          "color": "#27ae60",
+          "trigger": "Luna"
+        },
+        {
+          "type": "quote",
+          "text": "Scarlett: \"Just opened a bottle of red wine and reading... it's one of those nights. What about you, handsome?\"",
+          "color": "#8e44ad",
+          "trigger": "Scarlett"
+        },
+        {
+          "type": "callout",
+          "text": "Same question. Completely different energy. That's what staying in character means.",
+          "icon": "target",
+          "color": "#e67e22",
+          "trigger": "energy"
+        }
+      ],
+      "narration": "Let me show you what staying in character actually looks like. A fan asks, what are you up to tonight? If you're Luna, who is sweet and bubbly, you say: H i i i baby! I just got back from the gym and now I'm making pasta! I'm the happiest girl right now, ha ha. If you're Scarlett, who is confident and mysterious, you say: Just opened a bottle of red wine and reading. It's one of those nights. What about you, handsome? Same question. Completely different energy. That's what staying in character means. Luna is warm and uses tons of emojis. Scarlett is calm and uses almost none."
+    },
+    {
+      "type": "wb-content",
+      "heading": "Breaking Character — What NOT to Do",
+      "layout": "summary-row",
+      "sectionLabel": "Tools & Scripts",
+      "visuals": [
+        {
+          "type": "summary-card",
+          "icon": "x",
+          "label": "Broken Character",
+          "text": "Using Luna's voice when you're chatting as Scarlett",
+          "color": "#e74c3c",
+          "trigger": "Broken"
+        },
+        {
+          "type": "summary-card",
+          "icon": "check",
+          "label": "Consistent Character",
+          "text": "Every message matches the model's personality and tone",
+          "color": "#27ae60",
+          "trigger": "Consistent"
+        },
+        {
+          "type": "highlight-box",
+          "value": "\"You seem different\"",
+          "secondary": "If a fan says this — you broke character. Fix it immediately.",
+          "color": "#e74c3c",
+          "trigger": "different"
+        },
+        {
+          "type": "callout",
+          "text": "The fan believes they're talking to the real model. Never break that illusion.",
+          "icon": "heart",
+          "color": "#0b7dba",
+          "trigger": "illusion"
+        }
+      ],
+      "narration": "The biggest mistake is breaking character. Imagine you're chatting as Scarlett, but you accidentally use Luna's voice. Omg babe, hi i i! Lots of emojis, bubbly energy. The fan who has been talking to Scarlett for weeks will notice immediately. If a fan ever says, you seem different today, that's a red flag. You broke character. Fix it immediately. Go back to the chatter guide, re-read the voice rules, and adjust. The fan believes they're talking to the real model. Never break that illusion."
+    },
+    {
+      "type": "wb-outro",
+      "title": "Quick Check",
+      "subtitle": "Next: The Journey Overview",
+      "sectionLabel": "Tools & Scripts",
+      "narration": "Quick check. A fan says you seem different today. What does that mean? Pause. It means you probably broke character. Your tone or voice doesn't match the model. Go back to the chatter guide and fix it right away. Good. Next, let's look at the big picture. The full fan journey, from hello to sale."
+    }
+  ]
+}
