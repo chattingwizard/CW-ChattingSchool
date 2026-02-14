@@ -4,8 +4,8 @@
 // SETUP: Replace these with your Supabase project values
 // Found at: supabase.com > Your Project > Settings > API
 // ============================================================
-var SUPABASE_URL = 'https://YOUR-PROJECT-ID.supabase.co';
-var SUPABASE_ANON_KEY = 'YOUR-ANON-KEY';
+var SUPABASE_URL = 'https://bnmrdlqqzxenyqjknqhy.supabase.co';
+var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJubXJkbHFxenhlbnlxamtucWh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwODIxNzMsImV4cCI6MjA4NjY1ODE3M30.do4TDZdu84GA_Ek37qZi2ZPGqzRKJs9N80opQQP6V90';
 
 var _sb = null;
 
