@@ -852,14 +852,19 @@ body {
 /* ============================================================
    CONTENT GATING — Locked Sections & Modules
    ============================================================ */
-.section-gated .day-outcome ~ .module.module-locked {
-  opacity: 0.4; pointer-events: none; position: relative;
+.module.module-locked {
+  opacity: 0.35; pointer-events: none; position: relative;
+  filter: grayscale(0.6);
 }
 .module-locked .module-header { cursor: not-allowed !important; }
+.module-locked .module-content { display: none !important; }
 .module-lock-msg {
   background: #fef3c7; color: #92400e; font-size: 0.82rem;
-  padding: 8px 14px; border-radius: 6px; margin-top: 8px;
-  text-align: center;
+  padding: 10px 16px; border-radius: 6px; margin: 8px 16px 12px;
+  text-align: center; pointer-events: auto; opacity: 1; filter: none;
+}
+.module-gate {
+  border: 2px dashed #f59e0b; border-radius: 8px;
 }
 .module-gate .module-header {
   border-left: 4px solid #f59e0b; padding-left: 12px;

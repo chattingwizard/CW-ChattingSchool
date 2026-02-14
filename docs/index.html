@@ -2984,8 +2984,13 @@ var CW_USER_ID = null;
     // 5. Load progress from database
     var progress = await loadUserProgress(user.id);
 
-    // 6. Determine which sections are unlocked
+    // 6. Determine which sections are unlocked (admins see everything)
     var unlocked = getUnlockedSections(progress.quizzes);
+    var isAdmin = (profile.role === 'admin');
+    if (isAdmin) {
+      Object.keys(unlocked).forEach(function(k) { unlocked[k] = true; });
+      unlocked.tools = true; unlocked.journey = true; unlocked.advanced = true; unlocked.golive = true;
+    }
 
     // 7. Initialize modules
     initModules(user.id, progress, unlocked);
