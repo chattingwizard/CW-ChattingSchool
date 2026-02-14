@@ -19,118 +19,146 @@
       <h1>Admin Panel</h1>
     </div>
     <div class="admin-header-right">
-      <a href="index.html" class="admin-back-link">&larr; Back to School</a>
+      <a href="index.html" class="admin-back-link">&larr; School</a>
       <button onclick="cwSignOut()" class="logout-btn">Log Out</button>
     </div>
   </div>
 
+  <!-- Tabs -->
+  <div class="admin-tabs">
+    <button class="admin-tab active" onclick="switchTab('dashboard')">Dashboard</button>
+    <button class="admin-tab" onclick="switchTab('students')">Students</button>
+    <button class="admin-tab" onclick="switchTab('invites')">Invites</button>
+  </div>
+
   <!-- Loading -->
-  <div id="admin-loading" class="admin-loading">Loading admin data...</div>
+  <div id="admin-loading" class="admin-loading">Loading...</div>
 
-  <!-- Stats -->
-  <div id="admin-stats" class="admin-stats" style="display:none;">
-    <div class="admin-stat-card">
-      <div class="admin-stat-value" id="statStudents">0</div>
-      <div class="admin-stat-label">Students</div>
+  <!-- ==================== TAB: DASHBOARD ==================== -->
+  <div id="tab-dashboard" class="admin-tab-content" style="display:none;">
+
+    <!-- Stats row -->
+    <div class="admin-stats">
+      <div class="admin-stat-card">
+        <div class="admin-stat-value" id="statStudents">0</div>
+        <div class="admin-stat-label">Total Students</div>
+      </div>
+      <div class="admin-stat-card stat-accent">
+        <div class="admin-stat-value" id="statActive">0</div>
+        <div class="admin-stat-label">Started (1+ quiz)</div>
+      </div>
+      <div class="admin-stat-card stat-success">
+        <div class="admin-stat-value" id="statCompleted">0</div>
+        <div class="admin-stat-label">Graduated</div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="admin-stat-value" id="statAvgScore">-</div>
+        <div class="admin-stat-label">Avg Final Score</div>
+      </div>
     </div>
-    <div class="admin-stat-card">
-      <div class="admin-stat-value" id="statCompleted">0</div>
-      <div class="admin-stat-label">Completed School</div>
+
+    <!-- Section funnel -->
+    <div class="admin-panel-card">
+      <h3>Section Progress Funnel</h3>
+      <p class="admin-panel-subtitle">How many students have unlocked each section</p>
+      <div id="funnelChart" class="admin-funnel"></div>
     </div>
-    <div class="admin-stat-card">
-      <div class="admin-stat-value" id="statAvgScore">0%</div>
-      <div class="admin-stat-label">Avg Final Quiz</div>
-    </div>
-    <div class="admin-stat-card">
-      <div class="admin-stat-value" id="statInvites">0</div>
-      <div class="admin-stat-label">Unused Invites</div>
+
+    <!-- Recent activity -->
+    <div class="admin-panel-card">
+      <h3>Recent Quiz Activity</h3>
+      <div id="recentActivity" class="admin-activity-list"></div>
     </div>
   </div>
 
-  <!-- Invite Codes Section -->
-  <div id="admin-invites" class="admin-section" style="display:none;">
-    <div class="admin-section-header">
-      <h2>Invite Codes</h2>
-      <button onclick="generateCode()" class="admin-btn" id="genBtn">Generate New Code</button>
+  <!-- ==================== TAB: STUDENTS ==================== -->
+  <div id="tab-students" class="admin-tab-content" style="display:none;">
+
+    <div class="admin-toolbar">
+      <input type="text" id="studentSearch" class="admin-search" placeholder="Search by name or email..." oninput="filterStudents()">
+      <select id="studentFilter" class="admin-filter" onchange="filterStudents()">
+        <option value="all">All students</option>
+        <option value="active">Active (1+ quiz)</option>
+        <option value="inactive">Not started</option>
+        <option value="graduated">Graduated</option>
+      </select>
+      <span id="studentCount" class="admin-result-count"></span>
     </div>
-    <div id="newCodeMsg" class="admin-code-msg" style="display:none;"></div>
-    <table class="admin-table" id="inviteTable">
-      <thead>
-        <tr><th>Code</th><th>Status</th><th>Used By</th><th>Created</th></tr>
-      </thead>
-      <tbody id="inviteBody"></tbody>
-    </table>
+
+    <div id="studentList" class="admin-student-list"></div>
   </div>
 
-  <!-- Students Section -->
-  <div id="admin-students" class="admin-section" style="display:none;">
-    <h2>Students</h2>
-    <table class="admin-table">
-      <thead>
-        <tr><th>Name</th><th>Email</th><th>Role</th><th>Registered</th><th>Modules</th><th>Quizzes</th><th>Actions</th></tr>
-      </thead>
-      <tbody id="studentBody"></tbody>
-    </table>
+  <!-- ==================== TAB: INVITES ==================== -->
+  <div id="tab-invites" class="admin-tab-content" style="display:none;">
+
+    <div class="admin-toolbar">
+      <button onclick="generateCode()" class="admin-btn" id="genBtn">+ Generate New Code</button>
+      <div id="newCodeMsg" class="admin-code-msg" style="display:none;"></div>
+      <select id="inviteFilter" class="admin-filter" onchange="renderInvites()">
+        <option value="all">All codes</option>
+        <option value="available">Available only</option>
+        <option value="used">Used only</option>
+      </select>
+    </div>
+
+    <div id="inviteList" class="admin-invite-list"></div>
   </div>
 
-  <!-- Student Detail / Edit Modal -->
-  <div id="studentDetail" class="admin-detail" style="display:none;">
-    <div class="admin-detail-card">
-      <div class="admin-detail-header">
-        <h3 id="detailTitle">Student Details</h3>
+  <!-- ==================== STUDENT DETAIL SLIDE-OUT ==================== -->
+  <div id="studentDetail" class="admin-slideout" style="display:none;">
+    <div class="admin-slideout-backdrop" onclick="closeDetail()"></div>
+    <div class="admin-slideout-panel">
+      <div class="admin-slideout-header">
+        <h3 id="detailTitle">Student</h3>
         <button onclick="closeDetail()" class="admin-close">&times;</button>
       </div>
+      <div class="admin-slideout-body">
 
-      <!-- Edit Section -->
-      <div class="admin-edit-section">
-        <h4>&#9998; Edit Student</h4>
-        <div class="admin-edit-row">
-          <label>Name</label>
-          <input type="text" id="editName" class="admin-input" placeholder="Full name">
+        <!-- Edit -->
+        <div class="admin-edit-section">
+          <h4>&#9998; Edit</h4>
+          <div class="admin-edit-row">
+            <label>Name</label>
+            <input type="text" id="editName" class="admin-input">
+          </div>
+          <div class="admin-edit-row">
+            <label>Role</label>
+            <select id="editRole" class="admin-input">
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <div class="admin-edit-actions">
+            <button onclick="saveStudentEdit()" class="admin-btn" id="saveEditBtn">Save</button>
+            <span id="editFeedback" class="admin-feedback"></span>
+          </div>
         </div>
-        <div class="admin-edit-row">
-          <label>Role</label>
-          <select id="editRole" class="admin-input">
-            <option value="student">Student</option>
-            <option value="admin">Admin</option>
-          </select>
+
+        <!-- Section access -->
+        <div class="admin-access-section">
+          <h4>&#128275; Section Access</h4>
+          <div class="admin-access-grid" id="accessGrid"></div>
         </div>
-        <div class="admin-edit-actions">
-          <button onclick="saveStudentEdit()" class="admin-btn" id="saveEditBtn">Save Changes</button>
-          <span id="editFeedback" class="admin-feedback"></span>
+
+        <!-- Progress visual -->
+        <h4>&#128202; Progress</h4>
+        <div id="detailProgress" class="admin-progress-visual"></div>
+
+        <!-- Quiz results -->
+        <h4>&#128221; Quiz Results</h4>
+        <div id="detailQuizzes" class="admin-quiz-list"></div>
+
+        <!-- Danger zone -->
+        <div class="admin-danger-section">
+          <h4>&#9888; Reset</h4>
+          <div class="admin-danger-actions">
+            <button onclick="resetStudentQuizzes()" class="admin-btn-danger" id="resetQuizBtn">Reset Quizzes</button>
+            <button onclick="resetStudentProgress()" class="admin-btn-danger" id="resetProgressBtn">Reset Everything</button>
+          </div>
         </div>
+
+        <p id="detailMeta" class="admin-detail-meta"></p>
       </div>
-
-      <!-- Section Access Control -->
-      <div class="admin-access-section">
-        <h4>&#128275; Section Access</h4>
-        <p class="admin-access-note">Toggle sections on/off for this student. Overrides quiz gating.</p>
-        <div class="admin-access-grid" id="accessGrid"></div>
-      </div>
-
-      <!-- Danger Zone -->
-      <div class="admin-danger-section">
-        <h4>&#9888; Actions</h4>
-        <div class="admin-danger-actions">
-          <button onclick="resetStudentQuizzes()" class="admin-btn-danger" id="resetQuizBtn">Reset All Quizzes</button>
-          <button onclick="resetStudentProgress()" class="admin-btn-danger" id="resetProgressBtn">Reset All Progress</button>
-        </div>
-        <p class="admin-danger-note">These actions cannot be undone. The student will need to redo quizzes and re-check modules.</p>
-      </div>
-
-      <!-- Quiz Results -->
-      <h4>&#128202; Quiz Results</h4>
-      <table class="admin-table">
-        <thead><tr><th>Module</th><th>Score</th><th>Passed</th><th>Date</th></tr></thead>
-        <tbody id="detailQuizzes"></tbody>
-      </table>
-
-      <!-- Completed Modules -->
-      <h4>&#9989; Completed Modules</h4>
-      <div id="detailModules" class="admin-module-list"></div>
-
-      <!-- Student Info -->
-      <p id="detailEmail" class="admin-detail-email"></p>
     </div>
   </div>
 
@@ -139,7 +167,17 @@
 <script>
 var allStudents = [];
 var allInvites = [];
+var filteredStudents = [];
 var currentDetailIdx = -1;
+var currentTab = 'dashboard';
+
+var SECTIONS = [
+  { id: 'foundations', label: 'Foundations', prefix: 'f', gated: false, color: '#2563eb' },
+  { id: 'tools', label: 'Tools & Scripts', prefix: 't', gated: true, gate: 't-1', color: '#7c3aed' },
+  { id: 'journey', label: 'The Journey', prefix: 'j', gated: true, gate: 'j-1', color: '#059669' },
+  { id: 'advanced', label: 'Advanced', prefix: 'a', gated: true, gate: 'a-1', color: '#d97706' },
+  { id: 'golive', label: 'Go Live', prefix: 'g', gated: true, gate: 'g-1', color: '#dc2626' }
+];
 
 var MODULE_NAMES = {
   'f-1':'Welcome + 3 Key Words','f-2':'Who is CW + Team','f-3':'OnlyFans + Money','f-4':'Your Role + Shift','f-5':'Banned Topics','f-6':'Foundations Review',
@@ -149,321 +187,353 @@ var MODULE_NAMES = {
   'g-1':'Advanced Review Quiz','g-2':'Final Quiz','g-3':'Supervised Shift'
 };
 
-var SECTIONS = [
-  { id: 'foundations', label: 'Foundations', gated: false },
-  { id: 'tools', label: 'Tools & Scripts', gated: true },
-  { id: 'journey', label: 'The Journey', gated: true },
-  { id: 'advanced', label: 'Advanced Skills', gated: true },
-  { id: 'golive', label: 'Go Live', gated: true }
-];
-
+// ============ Init ============
 (async function initAdmin() {
   try {
     var user = await getUser();
     if (!user) { window.location.href = 'login.html'; return; }
     var profile = await getUserProfile(user.id);
     if (!profile || profile.role !== 'admin') {
-      alert('Access denied. Admin only.');
-      window.location.href = 'index.html';
-      return;
+      alert('Access denied.'); window.location.href = 'index.html'; return;
     }
-
     await loadAllData();
-
     document.getElementById('admin-loading').style.display = 'none';
-    document.getElementById('admin-stats').style.display = '';
-    document.getElementById('admin-invites').style.display = '';
-    document.getElementById('admin-students').style.display = '';
+    switchTab('dashboard');
   } catch(err) {
-    document.getElementById('admin-loading').textContent = 'Error: ' + (err.message || 'Could not load admin data.');
+    document.getElementById('admin-loading').textContent = 'Error: ' + err.message;
   }
 })();
 
 async function loadAllData() {
-  var results = await Promise.all([
-    adminGetStudents(),
-    adminGetInviteCodes()
-  ]);
-  allStudents = results[0] || [];
-  allInvites = results[1] || [];
-  renderStats();
-  renderInvites();
-  renderStudents();
+  var res = await Promise.all([adminGetStudents(), adminGetInviteCodes()]);
+  allStudents = res[0] || [];
+  allInvites = res[1] || [];
+  filteredStudents = allStudents.slice();
 }
 
-// ============ Stats ============
-function renderStats() {
+// ============ Tabs ============
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.admin-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.admin-tab-content').forEach(function(c) { c.style.display = 'none'; });
+  document.querySelector('.admin-tab[onclick*="' + tab + '"]').classList.add('active');
+  var el = document.getElementById('tab-' + tab);
+  el.style.display = '';
+  if (tab === 'dashboard') renderDashboard();
+  else if (tab === 'students') { filterStudents(); }
+  else if (tab === 'invites') renderInvites();
+}
+
+// ============ DASHBOARD ============
+function renderDashboard() {
+  // Stats
   document.getElementById('statStudents').textContent = allStudents.length;
-  var completed = allStudents.filter(function(s) {
+  var active = allStudents.filter(function(s) { return s.quizzes_passed > 0; });
+  document.getElementById('statActive').textContent = active.length;
+  var graduated = allStudents.filter(function(s) {
     return s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === 'g-2' && q.passed; });
   });
-  document.getElementById('statCompleted').textContent = completed.length;
-
-  var finalScores = allStudents.map(function(s) {
+  document.getElementById('statCompleted').textContent = graduated.length;
+  var finals = allStudents.map(function(s) {
     if (!s.quiz_results) return null;
     var f = s.quiz_results.find(function(q) { return q.module_id === 'g-2'; });
     return f ? f.percentage : null;
   }).filter(function(x) { return x !== null; });
+  document.getElementById('statAvgScore').textContent = finals.length > 0
+    ? Math.round(finals.reduce(function(a,b){return a+b;},0)/finals.length) + '%' : '-';
 
-  var avg = finalScores.length > 0 ? Math.round(finalScores.reduce(function(a,b){return a+b;},0) / finalScores.length) : 0;
-  document.getElementById('statAvgScore').textContent = avg + '%';
-
-  var unused = allInvites.filter(function(c) { return !c.used_by; });
-  document.getElementById('statInvites').textContent = unused.length;
-}
-
-// ============ Invite Codes ============
-function renderInvites() {
-  var body = document.getElementById('inviteBody');
-  body.innerHTML = '';
-  allInvites.forEach(function(inv) {
-    var tr = document.createElement('tr');
-    var status = inv.used_by ? 'Used' : 'Available';
-    var statusClass = inv.used_by ? 'admin-tag-used' : 'admin-tag-available';
-    var usedBy = '';
-    if (inv.used_by) {
-      var student = allStudents.find(function(s) { return s.id === inv.used_by; });
-      usedBy = student ? (student.full_name || student.email) : inv.used_by;
+  // Funnel
+  var funnel = document.getElementById('funnelChart');
+  funnel.innerHTML = '';
+  var total = allStudents.length || 1;
+  SECTIONS.forEach(function(sec) {
+    var count = 0;
+    if (!sec.gated) { count = allStudents.length; }
+    else {
+      count = allStudents.filter(function(s) {
+        var passedGate = s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === sec.gate && q.passed; });
+        var manual = s.unlocked_sections && s.unlocked_sections.indexOf(sec.id) >= 0;
+        return passedGate || manual;
+      }).length;
     }
-    tr.innerHTML = '<td><code>' + inv.code + '</code></td>' +
-      '<td><span class="admin-tag ' + statusClass + '">' + status + '</span></td>' +
-      '<td>' + usedBy + '</td>' +
-      '<td>' + new Date(inv.created_at).toLocaleDateString() + '</td>';
-    body.appendChild(tr);
+    var pct = Math.round(count / total * 100);
+    funnel.innerHTML += '<div class="funnel-row">' +
+      '<span class="funnel-label">' + sec.label + '</span>' +
+      '<div class="funnel-bar-bg"><div class="funnel-bar-fill" style="width:' + pct + '%;background:' + sec.color + '"></div></div>' +
+      '<span class="funnel-value">' + count + '/' + allStudents.length + '</span></div>';
   });
-  if (allInvites.length === 0) {
-    body.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#9ca3af;">No invite codes yet.</td></tr>';
+
+  // Recent activity
+  var activity = document.getElementById('recentActivity');
+  var allQuizzes = [];
+  allStudents.forEach(function(s) {
+    if (!s.quiz_results) return;
+    s.quiz_results.forEach(function(q) {
+      allQuizzes.push({ name: s.full_name || s.email, module: q.module_id, score: q.score, pct: q.percentage, passed: q.passed, date: q.submitted_at });
+    });
+  });
+  allQuizzes.sort(function(a,b) { return new Date(b.date) - new Date(a.date); });
+  var recent = allQuizzes.slice(0, 10);
+  if (recent.length === 0) {
+    activity.innerHTML = '<p class="admin-empty">No quiz activity yet.</p>';
+  } else {
+    activity.innerHTML = recent.map(function(q) {
+      var icon = q.passed ? '<span class="activity-pass">&#10003;</span>' : '<span class="activity-fail">&#10007;</span>';
+      var timeAgo = getTimeAgo(q.date);
+      return '<div class="activity-row">' + icon +
+        '<span class="activity-name">' + q.name + '</span>' +
+        '<span class="activity-module">' + (MODULE_NAMES[q.module] || q.module) + '</span>' +
+        '<span class="activity-score">' + q.score + '</span>' +
+        '<span class="activity-time">' + timeAgo + '</span></div>';
+    }).join('');
   }
 }
 
-// ============ Students Table ============
-function renderStudents() {
-  var body = document.getElementById('studentBody');
-  body.innerHTML = '';
-  allStudents.forEach(function(s, idx) {
-    var tr = document.createElement('tr');
-    var modules = s.modules_completed || 0;
-    var quizzes = s.quizzes_passed || 0;
-    var roleClass = s.role === 'admin' ? 'admin-tag-admin' : 'admin-tag-available';
-    var roleLabel = s.role === 'admin' ? 'Admin' : 'Student';
-    tr.innerHTML = '<td>' + (s.full_name || '(no name)') + '</td>' +
-      '<td>' + s.email + '</td>' +
-      '<td><span class="admin-tag ' + roleClass + '">' + roleLabel + '</span></td>' +
-      '<td>' + new Date(s.created_at).toLocaleDateString() + '</td>' +
-      '<td>' + modules + '</td>' +
-      '<td>' + quizzes + '</td>' +
-      '<td><button class="admin-btn-sm" onclick="showDetail(' + idx + ')">Manage</button></td>';
-    body.appendChild(tr);
-  });
-  if (allStudents.length === 0) {
-    body.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#9ca3af;">No students registered yet.</td></tr>';
-  }
+function getTimeAgo(dateStr) {
+  var diff = Date.now() - new Date(dateStr).getTime();
+  var mins = Math.floor(diff / 60000);
+  if (mins < 60) return mins + 'm ago';
+  var hrs = Math.floor(mins / 60);
+  if (hrs < 24) return hrs + 'h ago';
+  var days = Math.floor(hrs / 24);
+  return days + 'd ago';
 }
 
-// ============ Student Detail / Edit Modal ============
+// ============ STUDENTS ============
+function filterStudents() {
+  var search = (document.getElementById('studentSearch').value || '').toLowerCase();
+  var filter = document.getElementById('studentFilter').value;
+
+  filteredStudents = allStudents.filter(function(s) {
+    var matchSearch = !search || (s.full_name || '').toLowerCase().indexOf(search) >= 0 || (s.email || '').toLowerCase().indexOf(search) >= 0;
+    if (!matchSearch) return false;
+    if (filter === 'active') return s.quizzes_passed > 0;
+    if (filter === 'inactive') return !s.quizzes_passed;
+    if (filter === 'graduated') return s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === 'g-2' && q.passed; });
+    return true;
+  });
+
+  document.getElementById('studentCount').textContent = filteredStudents.length + ' of ' + allStudents.length;
+  renderStudentList();
+}
+
+function renderStudentList() {
+  var container = document.getElementById('studentList');
+  if (filteredStudents.length === 0) {
+    container.innerHTML = '<p class="admin-empty">No students found.</p>';
+    return;
+  }
+
+  container.innerHTML = filteredStudents.map(function(s, idx) {
+    // Build progress dots
+    var dots = SECTIONS.map(function(sec) {
+      var unlocked = false;
+      if (!sec.gated) { unlocked = true; }
+      else {
+        var passedGate = s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === sec.gate && q.passed; });
+        var manual = s.unlocked_sections && s.unlocked_sections.indexOf(sec.id) >= 0;
+        unlocked = passedGate || manual;
+      }
+      var cls = unlocked ? 'dot-done' : 'dot-locked';
+      return '<span class="progress-dot ' + cls + '" title="' + sec.label + '" style="' + (unlocked ? 'background:' + sec.color : '') + '"></span>';
+    }).join('');
+
+    var realIdx = allStudents.indexOf(s);
+    var quizCount = s.quizzes_passed || 0;
+    var moduleCount = s.modules_completed || 0;
+
+    return '<div class="student-card" onclick="showDetail(' + realIdx + ')">' +
+      '<div class="student-card-main">' +
+        '<div class="student-card-name">' + (s.full_name || '(no name)') + '</div>' +
+        '<div class="student-card-email">' + s.email + '</div>' +
+      '</div>' +
+      '<div class="student-card-progress">' + dots + '</div>' +
+      '<div class="student-card-stats">' +
+        '<span title="Modules completed">' + moduleCount + ' mod</span>' +
+        '<span title="Quizzes passed">' + quizCount + ' quiz</span>' +
+      '</div>' +
+      '<div class="student-card-date">' + new Date(s.created_at).toLocaleDateString() + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+// ============ INVITES ============
+function renderInvites() {
+  var filter = document.getElementById('inviteFilter') ? document.getElementById('inviteFilter').value : 'all';
+  var list = allInvites.filter(function(inv) {
+    if (filter === 'available') return !inv.used_by;
+    if (filter === 'used') return !!inv.used_by;
+    return true;
+  });
+
+  var container = document.getElementById('inviteList');
+  if (list.length === 0) {
+    container.innerHTML = '<p class="admin-empty">No codes match this filter.</p>';
+    return;
+  }
+
+  container.innerHTML = list.map(function(inv) {
+    var used = !!inv.used_by;
+    var student = used ? allStudents.find(function(s) { return s.id === inv.used_by; }) : null;
+    var usedBy = student ? (student.full_name || student.email) : '';
+    var statusClass = used ? 'invite-used' : 'invite-available';
+    var statusText = used ? 'Used by ' + usedBy : 'Available';
+
+    return '<div class="invite-card ' + statusClass + '">' +
+      '<code class="invite-code">' + inv.code + '</code>' +
+      '<span class="invite-status">' + statusText + '</span>' +
+      '<span class="invite-date">' + new Date(inv.created_at).toLocaleDateString() + '</span>' +
+    '</div>';
+  }).join('');
+}
+
+async function generateCode() {
+  var btn = document.getElementById('genBtn');
+  var msgEl = document.getElementById('newCodeMsg');
+  btn.disabled = true; btn.textContent = 'Generating...';
+  try {
+    var code = await adminGenerateInvite();
+    msgEl.innerHTML = 'New code: <code class="admin-code-highlight">' + code + '</code>';
+    msgEl.style.display = 'block';
+    allInvites = await adminGetInviteCodes();
+    renderInvites();
+  } catch(err) {
+    msgEl.textContent = 'Error: ' + err.message;
+    msgEl.style.display = 'block';
+  }
+  btn.disabled = false; btn.textContent = '+ Generate New Code';
+}
+
+// ============ STUDENT DETAIL SLIDE-OUT ============
 function showDetail(idx) {
   currentDetailIdx = idx;
   var s = allStudents[idx];
 
   document.getElementById('detailTitle').textContent = s.full_name || s.email;
-  document.getElementById('detailEmail').textContent = s.email + ' — ID: ' + s.id + ' — Registered ' + new Date(s.created_at).toLocaleDateString();
-
-  // Populate edit fields
   document.getElementById('editName').value = s.full_name || '';
   document.getElementById('editRole').value = s.role || 'student';
   document.getElementById('editFeedback').textContent = '';
+  document.getElementById('detailMeta').textContent = s.email + ' \u2022 ID: ' + s.id.substring(0, 8) + '... \u2022 Joined ' + new Date(s.created_at).toLocaleDateString();
+
+  // Progress visual
+  var progDiv = document.getElementById('detailProgress');
+  progDiv.innerHTML = SECTIONS.map(function(sec) {
+    var unlocked = !sec.gated;
+    if (sec.gated) {
+      var passedGate = s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === sec.gate && q.passed; });
+      var manual = s.unlocked_sections && s.unlocked_sections.indexOf(sec.id) >= 0;
+      unlocked = passedGate || manual;
+    }
+    var cls = unlocked ? 'prog-open' : 'prog-locked';
+    return '<div class="prog-section ' + cls + '">' +
+      '<div class="prog-section-color" style="background:' + sec.color + '"></div>' +
+      '<span>' + sec.label + '</span>' +
+      '<span class="prog-section-status">' + (unlocked ? '&#10003;' : '&#128274;') + '</span>' +
+    '</div>';
+  }).join('');
 
   // Quiz results
-  var qBody = document.getElementById('detailQuizzes');
-  qBody.innerHTML = '';
+  var qDiv = document.getElementById('detailQuizzes');
   if (s.quiz_results && s.quiz_results.length > 0) {
-    // Sort by section order
-    var sorted = s.quiz_results.slice().sort(function(a, b) {
-      return (a.module_id || '').localeCompare(b.module_id || '');
-    });
-    sorted.forEach(function(q) {
-      var tr = document.createElement('tr');
-      var passClass = q.passed ? 'admin-tag-available' : 'admin-tag-used';
-      tr.innerHTML = '<td>' + (MODULE_NAMES[q.module_id] || q.module_id) + '</td>' +
-        '<td>' + q.score + ' (' + q.percentage + '%)</td>' +
-        '<td><span class="admin-tag ' + passClass + '">' + (q.passed ? 'Passed' : 'Failed') + '</span></td>' +
-        '<td>' + new Date(q.submitted_at).toLocaleDateString() + '</td>';
-      qBody.appendChild(tr);
-    });
+    var sorted = s.quiz_results.slice().sort(function(a,b) { return (a.module_id||'').localeCompare(b.module_id||''); });
+    qDiv.innerHTML = sorted.map(function(q) {
+      var cls = q.passed ? 'quiz-row-pass' : 'quiz-row-fail';
+      return '<div class="quiz-detail-row ' + cls + '">' +
+        '<span class="quiz-detail-name">' + (MODULE_NAMES[q.module_id] || q.module_id) + '</span>' +
+        '<span class="quiz-detail-score">' + q.score + ' (' + q.percentage + '%)</span>' +
+        '<span class="quiz-detail-date">' + new Date(q.submitted_at).toLocaleDateString() + '</span></div>';
+    }).join('');
   } else {
-    qBody.innerHTML = '<tr><td colspan="4" style="color:#9ca3af;">No quizzes taken yet</td></tr>';
+    qDiv.innerHTML = '<p class="admin-empty">No quizzes taken yet.</p>';
   }
 
-  // Completed modules
-  var mDiv = document.getElementById('detailModules');
-  if (s.completed_modules && s.completed_modules.length > 0) {
-    var sorted = s.completed_modules.slice().sort();
-    mDiv.innerHTML = sorted.map(function(m) {
-      return '<span class="admin-module-badge">' + (MODULE_NAMES[m] || m) + '</span>';
-    }).join(' ');
-  } else {
-    mDiv.innerHTML = '<span style="color:#9ca3af;">No modules completed yet</span>';
-  }
-
-  // Section access toggles
+  // Access grid
   renderAccessGrid(s);
 
   document.getElementById('studentDetail').style.display = '';
+  setTimeout(function() { document.querySelector('.admin-slideout-panel').classList.add('open'); }, 10);
 }
 
 function renderAccessGrid(student) {
   var grid = document.getElementById('accessGrid');
   var unlocks = student.unlocked_sections || [];
-  var gates = { tools: 't-1', journey: 'j-1', advanced: 'a-1', golive: 'g-1' };
-
   grid.innerHTML = '';
   SECTIONS.forEach(function(sec) {
-    if (!sec.gated) return; // Foundations always open, no toggle needed
-
-    var gateQuiz = gates[sec.id];
-    var passedQuiz = student.quiz_results && student.quiz_results.some(function(q) {
-      return q.module_id === gateQuiz && q.passed;
-    });
+    if (!sec.gated) return;
+    var passedQuiz = student.quiz_results && student.quiz_results.some(function(q) { return q.module_id === sec.gate && q.passed; });
     var manuallyUnlocked = unlocks.indexOf(sec.id) >= 0;
     var isOpen = passedQuiz || manuallyUnlocked;
 
     var card = document.createElement('div');
     card.className = 'admin-access-card ' + (isOpen ? 'access-open' : 'access-locked');
-
-    var statusLabel = '';
-    if (passedQuiz) statusLabel = '<span class="admin-tag admin-tag-available">Quiz passed</span>';
-    else if (manuallyUnlocked) statusLabel = '<span class="admin-tag admin-tag-manual">Manual</span>';
-    else statusLabel = '<span class="admin-tag admin-tag-used">Locked</span>';
-
     card.innerHTML =
       '<div class="access-card-top">' +
         '<strong>' + sec.label + '</strong>' +
-        statusLabel +
+        (passedQuiz ? '<span class="admin-tag admin-tag-available">Earned</span>' :
+         manuallyUnlocked ? '<span class="admin-tag admin-tag-manual">Manual</span>' :
+         '<span class="admin-tag admin-tag-used">Locked</span>') +
       '</div>' +
       '<label class="access-toggle">' +
         '<input type="checkbox" ' + (manuallyUnlocked ? 'checked' : '') + ' ' +
-          (passedQuiz ? 'disabled title="Already passed via quiz"' : '') +
+          (passedQuiz ? 'disabled' : '') +
           ' onchange="toggleSection(\'' + student.id + '\', \'' + sec.id + '\', this.checked)">' +
-        '<span class="access-toggle-label">' + (passedQuiz ? 'Earned via quiz' : 'Grant manual access') + '</span>' +
+        '<span class="access-toggle-label">' + (passedQuiz ? 'Via quiz' : 'Grant access') + '</span>' +
       '</label>';
-
     grid.appendChild(card);
   });
 }
 
-async function toggleSection(studentId, sectionId, grant) {
-  try {
-    if (grant) {
-      await adminGrantSection(studentId, sectionId);
-    } else {
-      await adminRevokeSection(studentId, sectionId);
-    }
-    // Refresh data and re-render
-    await loadAllData();
-    if (currentDetailIdx >= 0) {
-      renderAccessGrid(allStudents[currentDetailIdx]);
-    }
-  } catch(err) {
-    alert('Error: ' + (err.message || 'Could not update access.'));
-    // Refresh to revert toggle state
-    await loadAllData();
-    if (currentDetailIdx >= 0) renderAccessGrid(allStudents[currentDetailIdx]);
-  }
-}
-
 function closeDetail() {
-  document.getElementById('studentDetail').style.display = 'none';
+  document.querySelector('.admin-slideout-panel').classList.remove('open');
+  setTimeout(function() { document.getElementById('studentDetail').style.display = 'none'; }, 250);
   currentDetailIdx = -1;
 }
 
-// ============ Save Edits ============
+// ============ Admin Actions ============
 async function saveStudentEdit() {
   if (currentDetailIdx < 0) return;
   var s = allStudents[currentDetailIdx];
   var btn = document.getElementById('saveEditBtn');
-  var feedback = document.getElementById('editFeedback');
-  var newName = document.getElementById('editName').value.trim();
-  var newRole = document.getElementById('editRole').value;
-
-  btn.disabled = true;
-  btn.textContent = 'Saving...';
-  feedback.textContent = '';
-
+  var fb = document.getElementById('editFeedback');
+  btn.disabled = true; btn.textContent = 'Saving...'; fb.textContent = '';
   try {
-    await adminUpdateStudent(s.id, newName, newRole);
-    feedback.textContent = 'Saved!';
-    feedback.className = 'admin-feedback admin-feedback-ok';
-
-    // Refresh data
+    await adminUpdateStudent(s.id, document.getElementById('editName').value.trim(), document.getElementById('editRole').value);
+    fb.textContent = '\u2713 Saved'; fb.className = 'admin-feedback admin-feedback-ok';
     await loadAllData();
-    // Update modal title
-    document.getElementById('detailTitle').textContent = newName || s.email;
+    document.getElementById('detailTitle').textContent = document.getElementById('editName').value.trim() || s.email;
   } catch(err) {
-    feedback.textContent = 'Error: ' + (err.message || 'Could not save.');
-    feedback.className = 'admin-feedback admin-feedback-err';
+    fb.textContent = err.message; fb.className = 'admin-feedback admin-feedback-err';
   }
-  btn.disabled = false;
-  btn.textContent = 'Save Changes';
+  btn.disabled = false; btn.textContent = 'Save';
 }
 
-// ============ Reset Actions ============
+async function toggleSection(studentId, sectionId, grant) {
+  try {
+    if (grant) await adminGrantSection(studentId, sectionId);
+    else await adminRevokeSection(studentId, sectionId);
+    await loadAllData();
+    if (currentDetailIdx >= 0) renderAccessGrid(allStudents[currentDetailIdx]);
+  } catch(err) { alert(err.message); await loadAllData(); if (currentDetailIdx >= 0) renderAccessGrid(allStudents[currentDetailIdx]); }
+}
+
 async function resetStudentQuizzes() {
   if (currentDetailIdx < 0) return;
   var s = allStudents[currentDetailIdx];
-  if (!confirm('Reset ALL quiz results for ' + (s.full_name || s.email) + '? They will need to redo every quiz.')) return;
-
-  var btn = document.getElementById('resetQuizBtn');
-  btn.disabled = true;
-  btn.textContent = 'Resetting...';
-  try {
-    await adminResetQuizzes(s.id);
-    await loadAllData();
-    showDetail(currentDetailIdx);
-  } catch(err) {
-    alert('Error: ' + (err.message || 'Could not reset quizzes.'));
-  }
-  btn.disabled = false;
-  btn.textContent = 'Reset All Quizzes';
+  if (!confirm('Reset quizzes for ' + (s.full_name || s.email) + '?')) return;
+  document.getElementById('resetQuizBtn').disabled = true;
+  try { await adminResetQuizzes(s.id); await loadAllData(); showDetail(currentDetailIdx); }
+  catch(err) { alert(err.message); }
+  document.getElementById('resetQuizBtn').disabled = false;
 }
 
 async function resetStudentProgress() {
   if (currentDetailIdx < 0) return;
   var s = allStudents[currentDetailIdx];
-  if (!confirm('Reset ALL progress for ' + (s.full_name || s.email) + '? This clears quizzes AND completed modules. They start from zero.')) return;
-
-  var btn = document.getElementById('resetProgressBtn');
-  btn.disabled = true;
-  btn.textContent = 'Resetting...';
-  try {
-    await adminResetProgress(s.id);
-    await loadAllData();
-    showDetail(currentDetailIdx);
-  } catch(err) {
-    alert('Error: ' + (err.message || 'Could not reset progress.'));
-  }
-  btn.disabled = false;
-  btn.textContent = 'Reset All Progress';
-}
-
-// ============ Generate Invite Code ============
-async function generateCode() {
-  var btn = document.getElementById('genBtn');
-  var msgEl = document.getElementById('newCodeMsg');
-  btn.disabled = true;
-  btn.textContent = 'Generating...';
-  try {
-    var code = await adminGenerateInvite();
-    msgEl.innerHTML = 'New code: <code class="admin-code-highlight">' + code + '</code> &mdash; Share this with the new student.';
-    msgEl.style.display = 'block';
-    allInvites = await adminGetInviteCodes();
-    renderInvites();
-    renderStats();
-  } catch(err) {
-    msgEl.textContent = 'Error: ' + (err.message || 'Could not generate code.');
-    msgEl.style.display = 'block';
-  }
-  btn.disabled = false;
-  btn.textContent = 'Generate New Code';
+  if (!confirm('Reset ALL progress for ' + (s.full_name || s.email) + '? They start from zero.')) return;
+  document.getElementById('resetProgressBtn').disabled = true;
+  try { await adminResetProgress(s.id); await loadAllData(); showDetail(currentDetailIdx); }
+  catch(err) { alert(err.message); }
+  document.getElementById('resetProgressBtn').disabled = false;
 }
 </script>
 </body>
