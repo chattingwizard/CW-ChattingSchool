@@ -26,7 +26,7 @@
   <div id="user-bar" class="topbar-right" style="display:none;">
     <span class="topbar-user"><span class="user-name"></span></span>
     <a href="admin.html" class="admin-link" style="display:none;">Admin</a>
-    <a href="hiring-workflow.html" class="topbar-link">Hiring</a>
+    <a href="hiring-workflow.html" class="topbar-link hiring-link" style="display:none;">Hiring</a>
     <button onclick="cwSignOut()" class="logout-btn">Log Out</button>
   </div>
 </div>
@@ -2957,7 +2957,7 @@ var CW_USER_ID = null;
     // 3. Show user bar
     var bar = document.getElementById('user-bar');
     bar.querySelector('.user-name').textContent = profile.full_name || profile.email;
-    if (profile.role === 'admin') { bar.querySelector('.admin-link').style.display = ''; }
+    if (profile.role === 'admin') { bar.querySelector('.admin-link').style.display = ''; bar.querySelector('.hiring-link').style.display = ''; }
     bar.style.display = '';
 
     // 4. Migrate localStorage (one-time)
