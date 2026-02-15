@@ -1228,6 +1228,65 @@ body {
 .admin-detail-meta { font-size: 0.75rem; color: #9ca3af; margin-top: 16px; font-family: monospace; }
 
 /* ============================================================
+   PPV MESSAGE STYLE (OnlyFans look)
+   ============================================================ */
+.ppv-message {
+  border: 2px solid #dc2626;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 6px 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  position: relative;
+}
+.ppv-message.ppv-paid {
+  border-color: #16a34a;
+}
+.ppv-message .ppv-content-preview {
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+}
+.ppv-message .ppv-blur {
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  backdrop-filter: blur(4px);
+  margin-bottom: 8px;
+}
+.ppv-message.ppv-paid .ppv-blur {
+  background: rgba(22,163,74,0.12);
+  color: #86efac;
+}
+.ppv-message .ppv-price-tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.ppv-message .ppv-price {
+  background: #dc2626;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+}
+.ppv-message.ppv-paid .ppv-price {
+  background: #16a34a;
+}
+.ppv-message .ppv-status {
+  font-size: 0.75rem;
+  color: #f87171;
+}
+.ppv-message.ppv-paid .ppv-status {
+  color: #86efac;
+}
+
+/* ============================================================
    RESPONSIVE (Mobile)
    ============================================================ */
 @media (max-width: 768px) {
