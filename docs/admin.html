@@ -59,9 +59,16 @@
 
     <!-- Section funnel -->
     <div class="admin-panel-card">
-      <h3>Section Progress Funnel</h3>
-      <p class="admin-panel-subtitle">How many students have unlocked each section</p>
-      <div id="funnelChart" class="admin-funnel"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+        <div>
+          <h3 style="margin:0;">Section Progress Funnel</h3>
+          <p class="admin-panel-subtitle" style="margin:2px 0 0;">How many students have unlocked each section</p>
+        </div>
+        <select id="funnelGroupFilter" class="admin-filter" onchange="renderDashboard()" style="min-width:160px;">
+          <option value="all">All groups</option>
+        </select>
+      </div>
+      <div id="funnelChart" class="admin-funnel" style="margin-top:12px;"></div>
     </div>
 
     <!-- Recent activity -->
@@ -83,6 +90,9 @@
         <option value="graduated">Graduated</option>
         <option value="deactivated">Deactivated</option>
       </select>
+      <select id="studentGroupFilter" class="admin-filter" onchange="filterStudents()">
+        <option value="all">All groups</option>
+      </select>
       <span id="studentCount" class="admin-result-count"></span>
     </div>
 
@@ -92,13 +102,30 @@
   <!-- ==================== TAB: INVITES ==================== -->
   <div id="tab-invites" class="admin-tab-content" style="display:none;">
 
+    <div class="admin-panel-card" style="margin-bottom:16px;">
+      <h3>Generate New Code</h3>
+      <div style="display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; margin-top:10px;">
+        <div style="flex:1; min-width:160px;">
+          <label style="font-size:0.78rem; color:#64748b; display:block; margin-bottom:4px;">Group Name</label>
+          <input type="text" id="codeGroupName" class="admin-input" placeholder="e.g. Batch February" style="width:100%;">
+        </div>
+        <div style="min-width:100px;">
+          <label style="font-size:0.78rem; color:#64748b; display:block; margin-bottom:4px;">Max Uses</label>
+          <input type="number" id="codeMaxUses" class="admin-input" value="10" min="1" style="width:100%;">
+        </div>
+        <button onclick="generateCode()" class="admin-btn" id="genBtn">+ Generate Code</button>
+      </div>
+      <div id="newCodeMsg" class="admin-code-msg" style="display:none; margin-top:10px;"></div>
+    </div>
+
     <div class="admin-toolbar">
-      <button onclick="generateCode()" class="admin-btn" id="genBtn">+ Generate New Code</button>
-      <div id="newCodeMsg" class="admin-code-msg" style="display:none;"></div>
       <select id="inviteFilter" class="admin-filter" onchange="renderInvites()">
         <option value="all">All codes</option>
         <option value="available">Available only</option>
-        <option value="used">Used only</option>
+        <option value="full">Full (max reached)</option>
+      </select>
+      <select id="inviteGroupFilter" class="admin-filter" onchange="renderInvites()">
+        <option value="all">All groups</option>
       </select>
     </div>
 
@@ -192,7 +219,7 @@ var SECTIONS = [
 
 var MODULE_NAMES = {
   'f-1':'Welcome + 3 Key Words','f-2':'Who is CW + Team','f-3':'OnlyFans + Money','f-4':'Your Role + Shift','f-5':'Banned Topics','f-6':'Foundations Review',
-  't-1':'Foundations Review Quiz','t-2':'Infloww Walkthrough','t-3':'Scripts 101','t-4':'Model Personas','t-5':'Journey + PPV Ladder','t-6':'48-Hour Rule',
+  't-1':'Foundations Review Quiz','t-2':'Infloww Walkthrough','t-3':'Vault Pro Guide','t-4':'Scripts 101','t-5':'Model Personas','t-6':'Journey + PPV Ladder','t-7':'48-Hour Rule',
   'j-1':'Tools Review Quiz','j-2':'Rapport + Teasing','j-3':'Sexting + PPV','j-4':'Aftercare','j-5':'Branch Rules + NR','j-6':'Fan Assessment','j-7':'Annotated Chats',
   'a-1':'Journey Review Quiz','a-2':'Objection Scripts','a-3':'Customs (TPDs)','a-4':'Multitasking','a-5':'Shift Routine','a-6':'Common Mistakes','a-7':'Full Simulation',
   'g-1':'Advanced Review Quiz','g-2':'Final Quiz','g-3':'Supervised Shift'
@@ -236,16 +263,49 @@ function switchTab(tab) {
 }
 
 // ============ DASHBOARD ============
+function getGroups() {
+  var groups = {};
+  allStudents.forEach(function(s) {
+    var g = s.group_name || '(No group)';
+    if (!groups[g]) groups[g] = [];
+    groups[g].push(s);
+  });
+  return groups;
+}
+
+function populateGroupFilters() {
+  var groups = Object.keys(getGroups()).sort();
+  var selectors = ['funnelGroupFilter', 'inviteGroupFilter', 'studentGroupFilter'];
+  selectors.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var current = el.value;
+    var opts = '<option value="all">All groups</option>';
+    groups.forEach(function(g) {
+      opts += '<option value="' + g + '"' + (current === g ? ' selected' : '') + '>' + g + '</option>';
+    });
+    el.innerHTML = opts;
+  });
+}
+
 function renderDashboard() {
+  populateGroupFilters();
+
+  var groupFilter = document.getElementById('funnelGroupFilter') ? document.getElementById('funnelGroupFilter').value : 'all';
+  var students = groupFilter === 'all' ? allStudents : allStudents.filter(function(s) {
+    var g = s.group_name || '(No group)';
+    return g === groupFilter;
+  });
+
   // Stats
-  document.getElementById('statStudents').textContent = allStudents.length;
-  var active = allStudents.filter(function(s) { return s.quizzes_passed > 0; });
+  document.getElementById('statStudents').textContent = students.length;
+  var active = students.filter(function(s) { return s.quizzes_passed > 0; });
   document.getElementById('statActive').textContent = active.length;
-  var graduated = allStudents.filter(function(s) {
+  var graduated = students.filter(function(s) {
     return s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === 'g-2' && q.passed; });
   });
   document.getElementById('statCompleted').textContent = graduated.length;
-  var finals = allStudents.map(function(s) {
+  var finals = students.map(function(s) {
     if (!s.quiz_results) return null;
     var f = s.quiz_results.find(function(q) { return q.module_id === 'g-2'; });
     return f ? f.percentage : null;
@@ -253,31 +313,33 @@ function renderDashboard() {
   document.getElementById('statAvgScore').textContent = finals.length > 0
     ? Math.round(finals.reduce(function(a,b){return a+b;},0)/finals.length) + '%' : '-';
 
-  // Funnel
+  // Funnel with hover tooltips
   var funnel = document.getElementById('funnelChart');
   funnel.innerHTML = '';
-  var total = allStudents.length || 1;
+  var total = students.length || 1;
   SECTIONS.forEach(function(sec) {
-    var count = 0;
-    if (!sec.gated) { count = allStudents.length; }
+    var matched = [];
+    if (!sec.gated) { matched = students.slice(); }
     else {
-      count = allStudents.filter(function(s) {
+      matched = students.filter(function(s) {
         var passedGate = s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === sec.gate && q.passed; });
         var manual = s.unlocked_sections && s.unlocked_sections.indexOf(sec.id) >= 0;
         return passedGate || manual;
-      }).length;
+      });
     }
+    var count = matched.length;
     var pct = Math.round(count / total * 100);
+    var names = matched.map(function(s) { return s.full_name || s.email; }).join('\n');
     funnel.innerHTML += '<div class="funnel-row">' +
       '<span class="funnel-label">' + sec.label + '</span>' +
-      '<div class="funnel-bar-bg"><div class="funnel-bar-fill" style="width:' + pct + '%;background:' + sec.color + '"></div></div>' +
-      '<span class="funnel-value">' + count + '/' + allStudents.length + '</span></div>';
+      '<div class="funnel-bar-bg" title="' + names + '" style="cursor:pointer;"><div class="funnel-bar-fill" style="width:' + pct + '%;background:' + sec.color + '"></div></div>' +
+      '<span class="funnel-value">' + count + '/' + students.length + '</span></div>';
   });
 
   // Recent activity
   var activity = document.getElementById('recentActivity');
   var allQuizzes = [];
-  allStudents.forEach(function(s) {
+  students.forEach(function(s) {
     if (!s.quiz_results) return;
     s.quiz_results.forEach(function(q) {
       allQuizzes.push({ name: s.full_name || s.email, module: q.module_id, score: q.score, pct: q.percentage, passed: q.passed, date: q.submitted_at });
@@ -312,8 +374,10 @@ function getTimeAgo(dateStr) {
 
 // ============ STUDENTS ============
 function filterStudents() {
+  populateGroupFilters();
   var search = (document.getElementById('studentSearch').value || '').toLowerCase();
   var filter = document.getElementById('studentFilter').value;
+  var groupFilter = document.getElementById('studentGroupFilter') ? document.getElementById('studentGroupFilter').value : 'all';
 
   filteredStudents = allStudents.filter(function(s) {
     var matchSearch = !search || (s.full_name || '').toLowerCase().indexOf(search) >= 0 || (s.email || '').toLowerCase().indexOf(search) >= 0;
@@ -322,6 +386,10 @@ function filterStudents() {
     if (filter === 'inactive') return !s.quizzes_passed;
     if (filter === 'graduated') return s.quiz_results && s.quiz_results.some(function(q) { return q.module_id === 'g-2' && q.passed; });
     if (filter === 'deactivated') return s.active === false;
+    if (groupFilter !== 'all') {
+      var g = s.group_name || '(No group)';
+      if (g !== groupFilter) return false;
+    }
     return true;
   });
 
@@ -357,9 +425,11 @@ function renderStudentList() {
     var inactive = s.active === false;
     var inactiveClass = inactive ? ' student-inactive' : '';
 
+    var groupTag = s.group_name ? '<span class="admin-tag" style="background:#ede9fe;color:#7c3aed;font-size:0.7rem;">' + s.group_name + '</span>' : '';
+
     return '<div class="student-card' + inactiveClass + '" onclick="showDetail(' + realIdx + ')">' +
       '<div class="student-card-main">' +
-        '<div class="student-card-name">' + (s.full_name || '(no name)') + '</div>' +
+        '<div class="student-card-name">' + (s.full_name || '(no name)') + ' ' + groupTag + '</div>' +
         '<div class="student-card-email">' + s.email + '</div>' +
       '</div>' +
       '<div class="student-card-progress">' + dots + '</div>' +
@@ -375,10 +445,22 @@ function renderStudentList() {
 
 // ============ INVITES ============
 function renderInvites() {
+  populateGroupFilters();
   var filter = document.getElementById('inviteFilter') ? document.getElementById('inviteFilter').value : 'all';
+  var groupFilter = document.getElementById('inviteGroupFilter') ? document.getElementById('inviteGroupFilter').value : 'all';
+
   var list = allInvites.filter(function(inv) {
-    if (filter === 'available') return !inv.used_by;
-    if (filter === 'used') return !!inv.used_by;
+    var useCount = inv.use_count || (inv.users ? inv.users.length : 0) || (inv.used_by ? 1 : 0);
+    var maxUses = inv.max_uses || 1;
+    var isFull = useCount >= maxUses;
+
+    if (filter === 'available') return !isFull;
+    if (filter === 'full') return isFull;
+
+    if (groupFilter !== 'all') {
+      var g = inv.group_name || '(No group)';
+      if (g !== groupFilter) return false;
+    }
     return true;
   });
 
@@ -389,15 +471,25 @@ function renderInvites() {
   }
 
   container.innerHTML = list.map(function(inv) {
-    var used = !!inv.used_by;
-    var student = used ? allStudents.find(function(s) { return s.id === inv.used_by; }) : null;
-    var usedBy = student ? (student.full_name || student.email) : '';
-    var statusClass = used ? 'invite-used' : 'invite-available';
-    var statusText = used ? 'Used by ' + usedBy : 'Available';
+    var useCount = inv.use_count || (inv.users ? inv.users.length : 0) || (inv.used_by ? 1 : 0);
+    var maxUses = inv.max_uses || 1;
+    var isFull = useCount >= maxUses;
+    var statusClass = isFull ? 'invite-used' : 'invite-available';
+    var groupTag = inv.group_name ? '<span class="admin-tag" style="background:#ede9fe;color:#7c3aed;margin-left:8px;">' + inv.group_name + '</span>' : '';
+    var usageText = useCount + ' / ' + maxUses + ' used';
+
+    // Build users list for tooltip
+    var userNames = '';
+    if (inv.users && inv.users.length > 0) {
+      userNames = inv.users.map(function(u) { return (u.full_name || u.email); }).join(', ');
+    }
 
     return '<div class="invite-card ' + statusClass + '">' +
-      '<code class="invite-code">' + inv.code + '</code>' +
-      '<span class="invite-status">' + statusText + '</span>' +
+      '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">' +
+        '<code class="invite-code">' + inv.code + '</code>' +
+        groupTag +
+      '</div>' +
+      '<span class="invite-status" title="' + userNames + '" style="cursor:' + (userNames ? 'help' : 'default') + ';">' + usageText + '</span>' +
       '<span class="invite-date">' + new Date(inv.created_at).toLocaleDateString() + '</span>' +
     '</div>';
   }).join('');
@@ -406,18 +498,28 @@ function renderInvites() {
 async function generateCode() {
   var btn = document.getElementById('genBtn');
   var msgEl = document.getElementById('newCodeMsg');
+  var groupName = (document.getElementById('codeGroupName').value || '').trim();
+  var maxUses = parseInt(document.getElementById('codeMaxUses').value) || 10;
+
+  if (!groupName) {
+    msgEl.textContent = 'Please enter a group name for this code.';
+    msgEl.style.display = 'block';
+    return;
+  }
+
   btn.disabled = true; btn.textContent = 'Generating...';
   try {
-    var code = await adminGenerateInvite();
-    msgEl.innerHTML = 'New code: <code class="admin-code-highlight">' + code + '</code>';
+    var code = await adminGenerateInvite(groupName, maxUses);
+    msgEl.innerHTML = 'New code: <code class="admin-code-highlight">' + code + '</code> &mdash; Group: <strong>' + groupName + '</strong> &mdash; Max: ' + maxUses + ' uses';
     msgEl.style.display = 'block';
     allInvites = await adminGetInviteCodes();
+    populateGroupFilters();
     renderInvites();
   } catch(err) {
     msgEl.textContent = 'Error: ' + err.message;
     msgEl.style.display = 'block';
   }
-  btn.disabled = false; btn.textContent = '+ Generate New Code';
+  btn.disabled = false; btn.textContent = '+ Generate Code';
 }
 
 // ============ STUDENT DETAIL SLIDE-OUT ============

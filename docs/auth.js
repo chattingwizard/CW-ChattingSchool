@@ -207,15 +207,23 @@ async function adminGetStudents() {
   return res.data || [];
 }
 
-async function adminGenerateInvite() {
-  var res = await sb().rpc('generate_invite_code');
+async function adminGenerateInvite(groupName, maxUses) {
+  var res = await sb().rpc('generate_invite_code', {
+    p_group_name: groupName || null,
+    p_max_uses: maxUses || 1
+  });
   if (res.error) throw res.error;
   return res.data;
 }
 
 async function adminGetInviteCodes() {
-  var res = await sb().from('invite_codes').select('*').order('created_at', { ascending: false });
-  if (res.error) throw res.error;
+  var res = await sb().rpc('admin_get_invite_codes');
+  if (res.error) {
+    // Fallback to direct query if RPC not yet deployed
+    res = await sb().from('invite_codes').select('*').order('created_at', { ascending: false });
+    if (res.error) throw res.error;
+    return res.data || [];
+  }
   return res.data || [];
 }
 

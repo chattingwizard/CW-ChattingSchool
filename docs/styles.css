@@ -1228,6 +1228,41 @@ body {
 .admin-detail-meta { font-size: 0.75rem; color: #9ca3af; margin-top: 16px; font-family: monospace; }
 
 /* ============================================================
+   FUNNEL TOOLTIP (hover to see names)
+   ============================================================ */
+.funnel-bar-bg {
+  position: relative;
+}
+.funnel-bar-bg[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  max-width: 280px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+.funnel-bar-bg[title]:hover::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1e293b;
+  z-index: 100;
+}
+
+/* ============================================================
    PPV MESSAGE STYLE (OnlyFans look)
    ============================================================ */
 .ppv-message {
