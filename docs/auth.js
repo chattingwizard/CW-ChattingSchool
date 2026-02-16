@@ -49,10 +49,14 @@ async function cwSignUp(email, password, fullName, inviteCode) {
   if (!check.data) throw new Error('Invalid or already used invite code.');
 
   // 2. Create account
+  var siteBase = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
   var res = await sb().auth.signUp({
     email: email,
     password: password,
-    options: { data: { full_name: fullName } }
+    options: {
+      data: { full_name: fullName },
+      emailRedirectTo: siteBase + '/confirm.html'
+    }
   });
   if (res.error) throw res.error;
 
