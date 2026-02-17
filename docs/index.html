@@ -4755,9 +4755,6 @@ function checkQuiz(btn) {
     scoreEl.textContent = msg;
     scoreEl.className = 'quiz-score show ' + (pct >= 80 ? 'pass' : 'fail');
   }
-  btn.disabled = true;
-  btn.textContent = 'Submitted \u2713';
-
   // Save to database
   var mod = btn.closest('.module');
   if (mod && CW_USER_ID) {
@@ -4786,6 +4783,32 @@ function checkQuiz(btn) {
       }
     }
   }
+
+  if (pct >= 80) {
+    btn.disabled = true;
+    btn.textContent = 'Submitted \u2713';
+  } else {
+    btn.disabled = false;
+    btn.textContent = 'Try Again';
+    btn.onclick = function() { resetQuiz(this); };
+  }
+}
+
+function resetQuiz(btn) {
+  var box = btn.closest('.activity-box');
+  var questions = box.querySelectorAll('.quiz-question');
+  questions.forEach(function(q) {
+    var radios = q.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(r) { r.checked = false; });
+    var options = q.querySelectorAll('.quiz-option');
+    options.forEach(function(opt) { opt.classList.remove('correct', 'wrong'); });
+    var feedback = q.querySelector('.quiz-feedback');
+    if (feedback) { feedback.textContent = ''; feedback.className = 'quiz-feedback'; }
+  });
+  var scoreEl = box.querySelector('.quiz-score');
+  if (scoreEl) { scoreEl.textContent = ''; scoreEl.className = 'quiz-score'; }
+  btn.textContent = 'Check Answers';
+  btn.onclick = function() { checkQuiz(this); };
 }
 
 // ============ Reveal Answers ============
