@@ -15,7 +15,11 @@ function sb() {
       console.error('Supabase JS not loaded. Add the CDN script.');
       return null;
     }
-    _sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    _sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        storageKey: 'cw-school-auth-token'
+      }
+    });
   }
   return _sb;
 }
