@@ -4540,14 +4540,33 @@ var CW_USER_ID = null;
 (async function initApp() {
   var overlay = document.getElementById('loading-overlay');
   try {
-    // 1. Check auth
-    var user = await getUser();
+    // 1. Check auth — try session refresh if stale
+    var user = null;
+    try {
+      user = await getUser();
+    } catch(authErr) {
+      console.warn('Auth check failed, attempting session refresh:', authErr);
+      try {
+        var client = sb();
+        if (client) await client.auth.refreshSession();
+        user = await getUser();
+      } catch(refreshErr) {
+        console.warn('Session refresh failed, redirecting to login:', refreshErr);
+        window.location.href = 'login.html';
+        return;
+      }
+    }
     if (!user) { window.location.href = 'login.html'; return; }
     CW_USER_ID = user.id;
     document.body.setAttribute('data-user-id', user.id);
 
     // 2. Load profile
-    var profile = await getUserProfile(user.id);
+    var profile = null;
+    try {
+      profile = await getUserProfile(user.id);
+    } catch(profileErr) {
+      console.warn('Profile load failed:', profileErr);
+    }
     if (!profile) { await cwSignOut(); return; }
     if (profile.active === false) {
       if (overlay) overlay.innerHTML = '<p style="color:#dc2626;font-size:1.1rem;font-weight:600;">Your account has been deactivated.</p><p style="color:#6b7280;margin-top:8px;">Contact your Team Leader for more information.</p>';
@@ -4561,13 +4580,15 @@ var CW_USER_ID = null;
     bar.style.display = '';
 
     // 4. Migrate localStorage (one-time)
-    await migrateLocalStorage(user.id);
+    try { await migrateLocalStorage(user.id); } catch(e) { console.warn('Migration skipped:', e); }
 
     // 5. Load progress from database
-    var progress = await loadUserProgress(user.id);
+    var progress = { completed: {}, quizzes: {} };
+    try { progress = await loadUserProgress(user.id); } catch(e) { console.warn('Progress load failed, using defaults:', e); }
 
     // 6. Load manual unlocks + determine which sections are open
-    var manualUnlocks = await loadUserUnlocks(user.id);
+    var manualUnlocks = [];
+    try { manualUnlocks = await loadUserUnlocks(user.id); } catch(e) { console.warn('Unlocks load failed:', e); }
     var unlocked = getUnlockedSections(progress.quizzes, manualUnlocks);
     var isAdmin = (profile.role === 'admin');
     if (isAdmin) {
@@ -4595,7 +4616,7 @@ var CW_USER_ID = null;
 
   } catch(err) {
     console.error('Init error:', err);
-    if (overlay) overlay.innerHTML = '<p style="color:#dc2626;">Error loading. Please <a href="login.html">log in again</a>.</p>';
+    window.location.href = 'login.html';
   }
 })();
 
