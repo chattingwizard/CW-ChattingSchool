@@ -4539,34 +4539,31 @@ var CW_USER_ID = null;
 
 (async function initApp() {
   var overlay = document.getElementById('loading-overlay');
+  var step = 'starting';
   try {
-    // 1. Check auth — try session refresh if stale
-    var user = null;
-    try {
-      user = await getUser();
-    } catch(authErr) {
-      console.warn('Auth check failed, attempting session refresh:', authErr);
+    // 1. Check auth
+    step = 'auth-check';
+    var user = await getUser();
+    if (!user) {
+      // Try refreshing the session once
+      step = 'auth-refresh';
       try {
         var client = sb();
-        if (client) await client.auth.refreshSession();
-        user = await getUser();
-      } catch(refreshErr) {
-        console.warn('Session refresh failed, redirecting to login:', refreshErr);
-        window.location.href = 'login.html';
-        return;
-      }
+        if (client) {
+          var refreshRes = await client.auth.refreshSession();
+          if (refreshRes.data && refreshRes.data.user) {
+            user = refreshRes.data.user;
+          }
+        }
+      } catch(e) { /* refresh failed */ }
+      if (!user) { window.location.href = 'login.html'; return; }
     }
-    if (!user) { window.location.href = 'login.html'; return; }
     CW_USER_ID = user.id;
     document.body.setAttribute('data-user-id', user.id);
 
     // 2. Load profile
-    var profile = null;
-    try {
-      profile = await getUserProfile(user.id);
-    } catch(profileErr) {
-      console.warn('Profile load failed:', profileErr);
-    }
+    step = 'load-profile';
+    var profile = await getUserProfile(user.id);
     if (!profile) { await cwSignOut(); return; }
     if (profile.active === false) {
       if (overlay) overlay.innerHTML = '<p style="color:#dc2626;font-size:1.1rem;font-weight:600;">Your account has been deactivated.</p><p style="color:#6b7280;margin-top:8px;">Contact your Team Leader for more information.</p>';
@@ -4574,19 +4571,23 @@ var CW_USER_ID = null;
     }
 
     // 3. Show user bar
+    step = 'user-bar';
     var bar = document.getElementById('user-bar');
     bar.querySelector('.user-name').textContent = profile.full_name || profile.email;
     if (profile.role === 'admin') { bar.querySelector('.admin-link').style.display = ''; bar.querySelector('.hiring-link').style.display = ''; }
     bar.style.display = '';
 
     // 4. Migrate localStorage (one-time)
+    step = 'migrate';
     try { await migrateLocalStorage(user.id); } catch(e) { console.warn('Migration skipped:', e); }
 
     // 5. Load progress from database
+    step = 'load-progress';
     var progress = { completed: {}, quizzes: {} };
     try { progress = await loadUserProgress(user.id); } catch(e) { console.warn('Progress load failed, using defaults:', e); }
 
     // 6. Load manual unlocks + determine which sections are open
+    step = 'load-unlocks';
     var manualUnlocks = [];
     try { manualUnlocks = await loadUserUnlocks(user.id); } catch(e) { console.warn('Unlocks load failed:', e); }
     var unlocked = getUnlockedSections(progress.quizzes, manualUnlocks);
@@ -4596,9 +4597,11 @@ var CW_USER_ID = null;
     }
 
     // 7. Initialize modules
+    step = 'init-modules';
     initModules(user.id, progress, unlocked);
 
     // 8. Set up expand/collapse
+    step = 'setup-ui';
     document.querySelectorAll('.module').forEach(function(mod) {
       var header = mod.querySelector('.module-header');
       if (header) {
@@ -4615,8 +4618,13 @@ var CW_USER_ID = null;
     if (overlay) overlay.style.display = 'none';
 
   } catch(err) {
-    console.error('Init error:', err);
-    window.location.href = 'login.html';
+    console.error('Init error at step [' + step + ']:', err);
+    if (overlay) overlay.innerHTML = '<div style="text-align:center;padding:40px 20px;">'
+      + '<p style="color:#dc2626;font-size:1.1rem;font-weight:600;">Something went wrong</p>'
+      + '<p style="color:#6b7280;margin:8px 0 4px;font-size:0.85rem;">Step: ' + step + '</p>'
+      + '<p style="color:#6b7280;margin:0 0 16px;font-size:0.8rem;">' + (err.message || err) + '</p>'
+      + '<a href="login.html" onclick="try{sb().auth.signOut()}catch(e){}" style="color:#2563eb;font-weight:600;">Sign out and try again</a>'
+      + '</div>';
   }
 })();
 
